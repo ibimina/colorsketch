@@ -24,10 +24,10 @@ export function ColoredSketchPreview({ sketchPath, fills, className = "" }: Colo
             .then((res) => res.text())
             .then((svgContent) => {
                 if (!containerRef.current) return;
-                
+
                 containerRef.current.innerHTML = svgContent;
                 const svg = containerRef.current.querySelector("svg");
-                
+
                 if (svg) {
                     // Make SVG responsive
                     svg.setAttribute("width", "100%");
@@ -42,7 +42,7 @@ export function ColoredSketchPreview({ sketchPath, fills, className = "" }: Colo
 
                     fillableElements.forEach((el) => {
                         const element = el as SVGElement;
-                        
+
                         // Generate ID for elements without one (same logic as canvas)
                         let regionId = element.id;
                         if (!regionId) {
@@ -70,7 +70,7 @@ export function ColoredSketchPreview({ sketchPath, fills, className = "" }: Colo
                         }
                     }
                 }
-                
+
                 setLoaded(true);
             })
             .catch((err) => {
@@ -79,8 +79,8 @@ export function ColoredSketchPreview({ sketchPath, fills, className = "" }: Colo
     }, [sketchPath, fills]);
 
     return (
-        <div 
-            ref={containerRef} 
+        <div
+            ref={containerRef}
             className={`${className} ${loaded ? "" : "animate-pulse bg-surface-container"}`}
         />
     );

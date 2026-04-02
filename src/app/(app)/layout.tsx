@@ -36,7 +36,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
         async function loadUserData() {
             const supabase = createClient();
             const { data: { user } } = await supabase.auth.getUser();
-            
+
             if (user) {
                 // Try to get name from user_profiles first
                 const { data: profile } = await supabase
@@ -44,7 +44,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                     .select("name")
                     .eq("id", user.id)
                     .single();
-                
+
                 if (profile?.name) {
                     setUserName(profile.name);
                 } else {

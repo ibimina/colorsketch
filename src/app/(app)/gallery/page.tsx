@@ -43,7 +43,7 @@ const sketchTitles: Record<string, string> = {
 
 // Helper to get sketch title
 function getSketchTitle(sketchId: string): string {
-    return sketchTitles[sketchId] || sketchId.split('-').map(word => 
+    return sketchTitles[sketchId] || sketchId.split('-').map(word =>
         word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
 }
@@ -71,11 +71,20 @@ export default function GalleryPage() {
     });
 
     const formatDate = (dateStr: string) => {
+        const date = new Date(dateStr);
+        const now = new Date();
+        const diffMs = now.getTime() - date.getTime();
+        const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+        
+        if (diffDays === 0) return "today";
+        if (diffDays === 1) return "yesterday";
+        if (diffDays < 7) return `${diffDays} days ago`;
+        if (diffDays < 30) return `${Math.floor(diffDays / 7)} week${diffDays >= 14 ? 's' : ''} ago`;
+        
         return new Intl.DateTimeFormat("en-US", {
             month: "short",
             day: "numeric",
-            year: "numeric",
-        }).format(new Date(dateStr));
+        }).format(date);
     };
 
     if (isLoading) {
@@ -154,7 +163,7 @@ export default function GalleryPage() {
                                 <ColoredSketchPreview
                                     sketchPath={`/sketches/${artwork.sketch_id}.svg`}
                                     fills={artwork.fills}
-                                    className="absolute inset-0 p-4"
+                                    className="absolute inset-0"
                                 />
 
                                 {/* Status Badge */}
@@ -185,14 +194,12 @@ export default function GalleryPage() {
                                 <h3 className="font-headline font-bold text-lg">
                                     {getSketchTitle(artwork.sketch_id)}
                                 </h3>
-                                <div className="flex items-center justify-between text-sm text-on-surface-variant">
-                                    <span>Started {formatDate(artwork.created_at)}</span>
-                                    {artwork.completed_at && (
-                                        <span className="text-green-600">
-                                            Done {formatDate(artwork.completed_at)}
-                                        </span>
-                                    )}
-                                </div>
+                                <p className="text-sm text-on-surface-variant">
+                                    {artwork.completed_at 
+                                        ? `Finished ${formatDate(artwork.completed_at)}`
+                                        : `Edited ${formatDate(artwork.updated_at)}`
+                                    }
+                                </p>
                             </div>
                         </Card>
                     ))}
@@ -208,7 +215,7 @@ export default function GalleryPage() {
                         Start coloring sketches and they will appear here automatically.
                     </p>
                     <p className="text-sm text-on-surface-variant mb-6">
-                        You've completed {totalSketches} {totalSketches === 1 ? 'sketch' : 'sketches'} so far!
+                        You&apos;ve completed {totalSketches} {totalSketches === 1 ? 'sketch' : 'sketches'} so far!
                     </p>
                     <Link href="/library">
                         <Button variant="primary">Browse Sketches</Button>

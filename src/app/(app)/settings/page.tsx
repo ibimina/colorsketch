@@ -29,7 +29,7 @@ export default function SettingsPage() {
         async function loadUserData() {
             const supabase = createClient();
             const { data: { user } } = await supabase.auth.getUser();
-            
+
             if (user) {
                 setUserEmail(user.email ?? null);
             }

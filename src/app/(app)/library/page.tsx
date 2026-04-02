@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Card, Button, ColoredSketchPreview, calculateProgress } from "@/components/ui";
-import { Category, Difficulty, Sketch } from "@/types";
+import { Card, Button, ColoredSketchPreview } from "@/components/ui";
+import { Category, Sketch } from "@/types";
 import { Icons } from "@/lib/icons";
 import { useSketchProgress } from "@/hooks";
 
@@ -1421,25 +1421,6 @@ const categories: { id: Category | "all"; label: string }[] = [
     { id: "abstract", label: "Abstract" },
 ];
 
-const difficultyColors: Record<Difficulty, string> = {
-    easy: "bg-green-100 text-green-700",
-    medium: "bg-yellow-100 text-yellow-700",
-    hard: "bg-red-100 text-red-700",
-};
-
-const categoryEmojis: Record<Category, string> = {
-    animals: "🦋",
-    botanical: "🌸",
-    fantasy: "🐉",
-    geometric: "🔷",
-    mandalas: "✨",
-    landscape: "🏔️",
-    zentangle: "🎨",
-    fashion: "👗",
-    abstract: "🌀",
-    people: "👧",
-};
-
 export default function LibraryPage() {
     return (
         <Suspense fallback={
@@ -1464,22 +1445,19 @@ function LibraryContent() {
     const searchParams = useSearchParams();
     const categoryParam = searchParams.get('category') as Category | null;
 
-    const [selectedCategory, setSelectedCategory] = useState<Category | "all">(categoryParam || "all");
+    // Initialize state from URL param, use useMemo pattern to sync with URL
+    const [selectedCategory, setSelectedCategory] = useState<Category | "all">("all");
     const [sortBy, setSortBy] = useState<"popularity" | "newest" | "difficulty">("popularity");
     const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-    
-    // Fetch user's sketch progress
-    const { progressMap, isLoading: progressLoading } = useSketchProgress();
 
-    // Update selected category when URL parameter changes
-    useEffect(() => {
-        if (categoryParam) {
-            setSelectedCategory(categoryParam);
-        }
-    }, [categoryParam]);
+    // Fetch user's sketch progress
+    const { progressMap } = useSketchProgress();
+
+    // Derive effective category from URL param or local state
+    const effectiveCategory = categoryParam || selectedCategory;
 
     const filteredSketches = sampleSketches.filter(
-        (sketch) => selectedCategory === "all" || sketch.category === selectedCategory
+        (sketch) => effectiveCategory === "all" || sketch.category === effectiveCategory
     );
 
     // Helper to get progress status for a sketch
@@ -1520,7 +1498,7 @@ function LibraryContent() {
                             className={`
                 shrink-0 px-4 py-2 rounded-full font-headline font-medium text-sm
                 transition-all duration-150 soft-touch
-                ${selectedCategory === cat.id
+                ${effectiveCategory === cat.id
                                     ? "bg-primary text-white"
                                     : "bg-surface-container-low text-on-surface-variant hover:bg-surface-container"
                                 }
@@ -1538,8 +1516,8 @@ function LibraryContent() {
                         <button
                             onClick={() => setViewMode("grid")}
                             className={`p-2 rounded transition-all ${viewMode === "grid"
-                                    ? "bg-primary text-white"
-                                    : "text-on-surface-variant hover:bg-surface-container"
+                                ? "bg-primary text-white"
+                                : "text-on-surface-variant hover:bg-surface-container"
                                 }`}
                             aria-label="Grid view"
                         >
@@ -1548,8 +1526,8 @@ function LibraryContent() {
                         <button
                             onClick={() => setViewMode("list")}
                             className={`p-2 rounded transition-all ${viewMode === "list"
-                                    ? "bg-primary text-white"
-                                    : "text-on-surface-variant hover:bg-surface-container"
+                                ? "bg-primary text-white"
+                                : "text-on-surface-variant hover:bg-surface-container"
                                 }`}
                             aria-label="List view"
                         >
@@ -1583,94 +1561,98 @@ function LibraryContent() {
                     const progress = progressMap[sketch.id];
                     const status = getProgressStatus(sketch.id);
                     const hasProgress = progress && Object.keys(progress.fills || {}).length > 0;
-                    
-                    return (
-                    <Card
-                        key={sketch.id}
-                        variant="elevated"
-                        padding="none"
-                        className={`overflow-hidden transition-transform ${viewMode === "list" ? "flex flex-row" : ""
-                            }`}
-                    >
-                        <Link href={`/canvas/${sketch.id}`} className={`${viewMode === "list" ? "flex w-full min-w-0" : "block"} hover:scale-[1.01] transition-transform`}>
-                            {/* Thumbnail */}
-                            <div className={`relative bg-surface-container-low flex items-center justify-center ${viewMode === "list" ? "w-32 sm:w-48 shrink-0" : "aspect-square"
-                                }`}>
-                                {hasProgress ? (
-                                    <ColoredSketchPreview
-                                        sketchPath={sketch.thumbnail}
-                                        fills={progress.fills}
-                                        className="absolute inset-0 p-4"
-                                    />
-                                ) : (
-                                    <Image
-                                        src={sketch.thumbnail}
-                                        alt={sketch.title}
-                                        fill
-                                        className="object-contain p-4"
-                                    />
-                                )}
-                                {/* Badges */}
-                                <div className="absolute top-1 sm:top-2 right-1 sm:right-2 flex gap-1 flex-wrap justify-end max-w-[calc(100%-2rem)]">
-                                    {/* Progress Badge */}
-                                    {status === "completed" && (
-                                        <span className="bg-green-500 text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
-                                            ✓ Done
-                                        </span>
-                                    )}
-                                    {status === "in-progress" && (
-                                        <span className="bg-yellow-500 text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
-                                            In Progress
-                                        </span>
-                                    )}
-                                    {status === "not-started" && sketch.isNew && (
-                                        <span className="bg-primary text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
-                                            NEW
-                                        </span>
-                                    )}
-                                    {sketch.isFeatured && (
-                                        <span className="bg-secondary text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
-                                            ⭐
-                                        </span>
-                                    )}
-                                    {sketch.isEditorChoice && (
-                                        <span className="bg-tertiary text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
-                                            👑
-                                        </span>
-                                    )}
-                                </div>
-                            </div>
 
-                            {/* Info */}
-                            <div className={`p-3 sm:p-4 ${viewMode === "list" ? "flex-1 flex flex-col justify-center min-w-0 overflow-hidden" : ""}`}>
-                                <h3 className="font-headline font-bold mb-1 text-sm sm:text-base truncate w-full">{sketch.title}</h3>
-                                <div className="flex items-center gap-2 text-xs text-on-surface-variant mb-3 shrink-0 flex-wrap">
-                                    <span className="capitalize">{sketch.difficulty}</span>
-                                    <span>•</span>
-                                    <span>~{sketch.estimatedMinutes} min</span>
-                                </div>
-                                {viewMode === "list" && sketch.tags && (
-                                    <div className="flex gap-1 mb-3 flex-wrap overflow-hidden">
-                                        {sketch.tags.slice(0, 3).map((tag) => (
-                                            <span
-                                                key={tag}
-                                                className="text-xs bg-surface-container px-2 py-1 rounded-full text-on-surface-variant shrink-0 max-w-full truncate"
-                                            >
-                                                {tag}
+                    return (
+                        <Card
+                            key={sketch.id}
+                            variant="elevated"
+                            padding="none"
+                            className={`overflow-hidden transition-transform ${viewMode === "list" ? "flex flex-row" : ""
+                                }`}
+                        >
+                            <Link href={`/canvas/${sketch.id}`} className={`${viewMode === "list" ? "flex w-full min-w-0" : "block"} hover:scale-[1.01] transition-transform`}>
+                                {/* Thumbnail */}
+                                <div className={`relative bg-surface-container-low flex items-center justify-center ${viewMode === "list" ? "w-32 sm:w-48 shrink-0" : "aspect-square"
+                                    }`}>
+                                    {hasProgress ? (
+                                        <ColoredSketchPreview
+                                            sketchPath={sketch.thumbnail}
+                                            fills={progress.fills}
+                                            className="absolute inset-0"
+                                        />
+                                    ) : (
+                                        <Image
+                                            src={sketch.thumbnail}
+                                            alt={sketch.title}
+                                            fill
+                                            className="object-contain p-4"
+                                        />
+                                    )}
+                                    {/* Badges */}
+                                    <div className="absolute top-1 sm:top-2 right-1 sm:right-2 flex gap-1 flex-wrap justify-end max-w-[calc(100%-2rem)]">
+                                        {/* Progress Badge */}
+                                        {status === "completed" && (
+                                            <span className="bg-green-500 text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
+                                                ✓ Done
                                             </span>
-                                        ))}
+                                        )}
+                                        {status === "in-progress" && (
+                                            <span className="bg-yellow-500 text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
+                                                In Progress
+                                            </span>
+                                        )}
+                                        {status === "not-started" && sketch.isNew && (
+                                            <span className="bg-primary text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
+                                                NEW
+                                            </span>
+                                        )}
+                                        {sketch.isFeatured && (
+                                            <span className="bg-secondary text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
+                                                ⭐
+                                            </span>
+                                        )}
+                                        {sketch.isEditorChoice && (
+                                            <span className="bg-tertiary text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
+                                                👑
+                                            </span>
+                                        )}
                                     </div>
-                                )}
-                                <Button 
-                                    variant={status === "completed" ? "secondary" : "primary"} 
-                                    size="sm" 
-                                    className="w-full text-xs sm:text-sm"
-                                >
-                                    {getButtonText(sketch.id)}
-                                </Button>
-                            </div>
-                        </Link>
-                    </Card>
+                                </div>
+
+                                {/* Info */}
+                                <div className={`p-3 sm:p-4 ${viewMode === "list" ? "flex-1 flex flex-col justify-center min-w-0 overflow-hidden" : ""}`}>
+                                    <h3 className="font-headline font-bold mb-1 text-sm sm:text-base truncate w-full">{sketch.title}</h3>
+                                    <div className="flex items-center gap-2 text-xs text-on-surface-variant mb-3 shrink-0 flex-wrap">
+                                        <span className="capitalize">{sketch.difficulty}</span>
+                                        <span>•</span>
+                                        {status === "completed" ? (
+                                            <span className="text-green-600 font-medium">Completed ✓</span>
+                                        ) : (
+                                            <span>~{sketch.estimatedMinutes} min</span>
+                                        )}
+                                    </div>
+                                    {viewMode === "list" && sketch.tags && (
+                                        <div className="flex gap-1 mb-3 flex-wrap overflow-hidden">
+                                            {sketch.tags.slice(0, 3).map((tag) => (
+                                                <span
+                                                    key={tag}
+                                                    className="text-xs bg-surface-container px-2 py-1 rounded-full text-on-surface-variant shrink-0 max-w-full truncate"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
+                                    <Button
+                                        variant={status === "completed" ? "secondary" : "primary"}
+                                        size="sm"
+                                        className="w-full text-xs sm:text-sm"
+                                    >
+                                        {getButtonText(sketch.id)}
+                                    </Button>
+                                </div>
+                            </Link>
+                        </Card>
                     );
                 })}
             </div>
