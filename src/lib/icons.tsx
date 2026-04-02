@@ -20,7 +20,8 @@ import {
     LayoutGrid,
     X,
     ChevronRight,
-    ArrowLeft
+    ArrowLeft,
+    Share2
 } from 'lucide-react';
 
 export const Icons = {
@@ -45,7 +46,8 @@ export const Icons = {
     Masonry: LayoutGrid,
     Close: X,
     ChevronRight,
-    Back: ArrowLeft
+    Back: ArrowLeft,
+    Share: Share2
 };
 
 // Keep emojis for decorative/fun elements

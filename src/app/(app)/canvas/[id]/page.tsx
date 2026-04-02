@@ -38,6 +38,7 @@ export default function CanvasPage({ params }: CanvasPageProps) {
     const [loading, setLoading] = useState(true);
     const [isExporting, setIsExporting] = useState(false);
     const [isSaving, setIsSaving] = useState(false);
+    const [isSharing, setIsSharing] = useState(false);
     const [isDrawing, setIsDrawing] = useState(false);
     const lastPos = useRef<{ x: number; y: number } | null>(null);
 
@@ -497,6 +498,69 @@ export default function CanvasPage({ params }: CanvasPageProps) {
         }
     };
 
+    const handleShare = async () => {
+        if (!artworkRef.current || isSharing) return;
+
+        setIsSharing(true);
+        addToast('Preparing to share...', 'info');
+
+        try {
+            const canvas = await html2canvas(artworkRef.current, {
+                backgroundColor: '#ffffff',
+                scale: 2,
+                logging: false,
+            });
+
+            const blob = await new Promise<Blob | null>((resolve) => {
+                canvas.toBlob(resolve, 'image/png');
+            });
+
+            if (!blob) {
+                addToast('Failed to generate image', 'error');
+                setIsSharing(false);
+                return;
+            }
+
+            const file = new File([blob], `${sketch.title}.png`, { type: 'image/png' });
+
+            // Share text
+            const shareText = `✨ Look what I colored on ColorSketch!\n\n🎨 "${sketch.title}"\n\nTry it yourself!`;
+
+            // Check if Web Share API is available (mainly mobile)
+            if (navigator.share && navigator.canShare?.({ files: [file] })) {
+                await navigator.share({
+                    title: `My ${sketch.title} Artwork`,
+                    text: shareText,
+                    files: [file],
+                });
+                addToast('Shared successfully! 🎉', 'success');
+            } else {
+                // Fallback: download the image
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `ColorSketch-${sketch.title}.png`;
+                a.click();
+                URL.revokeObjectURL(url);
+                addToast('Image saved! Share it anywhere 📤', 'success');
+            }
+
+            provideFeedback({
+                haptic: hapticFeedback,
+                hapticType: 'medium',
+                sound: soundEffects,
+                soundName: 'success',
+            });
+        } catch (error) {
+            if ((error as Error).name !== 'AbortError') {
+                console.error('Share failed:', error);
+                addToast('Share failed. Please try again.', 'error');
+            }
+        } finally {
+            setIsSharing(false);
+        }
+    };
+
     const handleReset = () => {
         // Reset fills from store
         reset();
@@ -534,6 +598,13 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                         label="Export artwork"
                         onClick={handleExport}
                         disabled={isExporting}
+                    />
+                    <IconButton
+                        icon={<Icons.Share className="w-4 h-4 sm:w-5 sm:h-5" />}
+                        variant="ghost"
+                        label="Share artwork"
+                        onClick={handleShare}
+                        disabled={isSharing}
                     />
                     <Button
                         variant="primary"
