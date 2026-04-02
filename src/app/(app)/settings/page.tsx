@@ -1,12 +1,17 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Card, Button } from "@/components/ui";
 import { usePreferencesStore } from "@/stores/preferencesStore";
 import { useToastStore } from "@/stores/toastStore";
 import { useProgressStore } from "@/stores/progressStore";
 import { provideFeedback } from "@/lib/feedback";
+import { createClient } from "@/lib/supabase/client";
 
 export default function SettingsPage() {
+    const [userEmail, setUserEmail] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+
     const {
         autoSave,
         soundEffects,
@@ -18,6 +23,21 @@ export default function SettingsPage() {
 
     const { addToast } = useToastStore();
     const { level, xp, totalSketches } = useProgressStore();
+
+    // Fetch user data from Supabase
+    useEffect(() => {
+        async function loadUserData() {
+            const supabase = createClient();
+            const { data: { user } } = await supabase.auth.getUser();
+            
+            if (user) {
+                setUserEmail(user.email ?? null);
+            }
+            setIsLoading(false);
+        }
+
+        loadUserData();
+    }, []);
 
     const handleExportData = () => {
         addToast('Export feature coming soon!', 'info');
@@ -63,7 +83,15 @@ export default function SettingsPage() {
                     <div className="flex items-center justify-between py-2">
                         <div>
                             <p className="font-medium">Email</p>
-                            <p className="text-sm text-on-surface-variant">user@example.com</p>
+                            <p className="text-sm text-on-surface-variant">
+                                {isLoading ? (
+                                    <span className="animate-pulse">Loading...</span>
+                                ) : userEmail ? (
+                                    userEmail
+                                ) : (
+                                    "Not signed in"
+                                )}
+                            </p>
                         </div>
                         <Button variant="ghost" size="sm" disabled>Change</Button>
                     </div>
