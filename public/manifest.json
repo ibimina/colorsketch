@@ -1,0 +1,24 @@
+{
+  "name": "ColorSketch",
+  "short_name": "ColorSketch",
+  "description": "A relaxing coloring experience for everyone",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f7f7",
+  "theme_color": "#b41924",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

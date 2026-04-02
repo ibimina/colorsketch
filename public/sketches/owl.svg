@@ -1,0 +1,66 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Owl Portrait - Detailed Wildlife -->
+  
+  <!-- Ear Tufts -->
+  <path id="ear-left" d="M120 80 Q100 40 115 20 Q135 35 140 70 Q138 85 130 90" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M115 30 Q125 45 130 65" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M120 35 Q128 50 132 70" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <path id="ear-right" d="M280 80 Q300 40 285 20 Q265 35 260 70 Q262 85 270 90" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M285 30 Q275 45 270 65" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M280 35 Q272 50 268 70" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Head Shape -->
+  <path id="head" d="M130 90 Q80 120 70 180 Q75 260 130 300 Q180 330 200 330 Q220 330 270 300 Q325 260 330 180 Q320 120 270 90 Q230 70 200 70 Q170 70 130 90" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Facial Disc - Left -->
+  <path id="face-disc-left" d="M100 150 Q90 180 95 220 Q110 260 150 270 Q175 265 185 240 Q190 200 180 160 Q165 130 140 130 Q115 135 100 150" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Facial Disc - Right -->
+  <path id="face-disc-right" d="M300 150 Q310 180 305 220 Q290 260 250 270 Q225 265 215 240 Q210 200 220 160 Q235 130 260 130 Q285 135 300 150" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Left Eye -->
+  <circle id="eye-left-outer" cx="145" cy="185" r="32" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle id="eye-left-iris" cx="145" cy="185" r="22" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="eye-left-pupil" cx="145" cy="185" r="12" fill="#1a1a1a"/>
+  <circle cx="150" cy="178" r="5" fill="white"/>
+  <circle cx="140" cy="190" r="2" fill="white"/>
+  
+  <!-- Right Eye -->
+  <circle id="eye-right-outer" cx="255" cy="185" r="32" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle id="eye-right-iris" cx="255" cy="185" r="22" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="eye-right-pupil" cx="255" cy="185" r="12" fill="#1a1a1a"/>
+  <circle cx="260" cy="178" r="5" fill="white"/>
+  <circle cx="250" cy="190" r="2" fill="white"/>
+  
+  <!-- Brow Feathers -->
+  <path d="M110 145 Q130 135 150 145" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M250 145 Q270 135 290 145" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Beak -->
+  <path id="beak" d="M200 220 Q190 225 185 240 Q190 260 200 265 Q210 260 215 240 Q210 225 200 220" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M193 235 Q200 240 207 235" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Chest Feathers Pattern -->
+  <path id="chest" d="M150 300 Q140 320 145 360 Q170 390 200 395 Q230 390 255 360 Q260 320 250 300" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Feather patterns on chest -->
+  <path d="M165 320 Q175 315 185 320 Q175 330 165 320" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M185 320 Q195 315 205 320 Q195 330 185 320" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M205 320 Q215 315 225 320 Q215 330 205 320" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M175 340 Q185 335 195 340 Q185 350 175 340" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M195 340 Q205 335 215 340 Q205 350 195 340" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M185 360 Q195 355 205 360 Q195 370 185 360" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Head feather details -->
+  <path d="M150 100 Q160 95 170 100 Q175 108 165 110 Q155 108 150 100" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M175 95 Q185 90 195 95 Q200 103 190 105 Q180 103 175 95" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M200 92 Q215 87 230 92 Q235 100 220 102 Q205 100 200 92" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M230 95 Q240 90 250 95 Q255 103 245 105 Q235 103 230 95" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Side feather texture -->
+  <path d="M85 180 Q95 175 100 185 Q95 195 85 190" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path d="M90 210 Q100 205 105 215 Q100 225 90 220" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path d="M315 180 Q305 175 300 185 Q305 195 315 190" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path d="M310 210 Q300 205 295 215 Q300 225 310 220" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

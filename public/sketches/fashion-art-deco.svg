@@ -1,0 +1,146 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Art Deco Fashion Lady - Adult Coloring -->
+  
+  <!-- Elaborate updo hairstyle -->
+  <g id="hair">
+    <ellipse id="hair-bun" cx="200" cy="50" rx="45" ry="35" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="hair-wave-l" d="M155 50 Q145 70 150 90 Q145 110 155 130" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-wave-r" d="M245 50 Q255 70 250 90 Q255 110 245 130" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-side-l" d="M150 90 Q130 100 125 130 Q130 150 140 160" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-side-r" d="M250 90 Q270 100 275 130 Q270 150 260 160" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    
+    <!-- Hair detail swirls -->
+    <path id="swirl-1" d="M180 45 Q185 35 195 40" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="swirl-2" d="M205 40 Q215 35 220 45" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="swirl-3" d="M175 55 Q180 50 190 55" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="swirl-4" d="M210 55 Q220 50 225 55" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Hair ornament - Art Deco feather -->
+  <g id="feather">
+    <path id="feather-main" d="M240 30 Q260 20 280 10 Q265 25 260 40 Q258 50 245 45" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <line x1="240" y1="30" x2="275" y2="13" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="feather-detail" d="M250 25 Q255 22 258 18" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="feather-detail-2" d="M255 32 Q260 28 265 22" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+  
+  <!-- Face -->
+  <ellipse id="face" cx="200" cy="120" rx="45" ry="55" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Eyes - Art Deco style -->
+  <g id="eyes">
+    <path id="eye-l" d="M170 115 Q180 105 190 115 Q180 120 170 115" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="iris-l" cx="180" cy="115" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="lid-l" d="M168 112 Q180 102 192 112" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <path id="eye-r" d="M210 115 Q220 105 230 115 Q220 120 210 115" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="iris-r" cx="220" cy="115" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="lid-r" d="M208 112 Q220 102 232 112" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Eyebrows - thin 1920s style -->
+  <path id="brow-l" d="M165 100 Q178 95 193 102" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="brow-r" d="M235 100 Q222 95 207 102" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M200 118 L198 138 Q200 142 202 138" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  
+  <!-- Cupid bow lips -->
+  <path id="lips" d="M187 155 Q193 148 200 151 Q207 148 213 155 Q207 162 200 160 Q193 162 187 155" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Long elegant neck -->
+  <path id="neck" d="M175 170 L175 210 L225 210 L225 170" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="neck-line" d="M180 175 L180 205" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+  <path id="neck-line-2" d="M220 175 L220 205" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+  
+  <!-- Art Deco evening gown -->
+  <g id="gown">
+    <!-- Bodice -->
+    <path id="bodice" d="M140 210 Q150 200 200 205 Q250 200 260 210 L265 280 Q230 285 200 282 Q170 285 135 280 L140 210" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- V neckline detail -->
+    <path id="vneck" d="M165 205 L200 240 L235 205" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="vneck-inner" d="M175 210 L200 235 L225 210" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <!-- Art Deco pattern on bodice -->
+    <g id="deco-pattern">
+      <path id="dp-1" d="M150 230 L155 245 L160 230" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="dp-2" d="M240 230 L245 245 L250 230" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="dp-c1" cx="157" cy="260" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="dp-c2" cx="243" cy="260" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    </g>
+    
+    <!-- Flowing skirt -->
+    <path id="skirt" d="M135 280 Q100 350 80 400 L320 400 Q300 350 265 280" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Skirt draping -->
+    <path id="drape-1" d="M145 285 Q130 340 115 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="drape-2" d="M170 283 Q155 340 145 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="drape-3" d="M200 280 Q195 340 190 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="drape-4" d="M230 283 Q245 340 255 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="drape-5" d="M255 285 Q270 340 285 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Art Deco fan pattern at hem -->
+    <g id="hem-pattern">
+      <path id="fan-1" d="M105 395 Q110 380 120 395 Q115 380 105 395" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="fan-2" d="M140 395 Q145 378 155 395 Q150 378 140 395" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="fan-3" d="M175 395 Q180 378 190 395 Q185 378 175 395" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="fan-4" d="M210 395 Q215 378 225 395 Q220 378 210 395" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="fan-5" d="M245 395 Q250 378 260 395 Q255 378 245 395" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="fan-6" d="M280 395 Q285 380 295 395 Q290 380 280 395" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    </g>
+  </g>
+  
+  <!-- Long gloves -->
+  <g id="gloves">
+    <path id="glove-l" d="M140 210 Q120 220 110 250 Q100 290 95 320 Q90 350 85 380" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="glove-cuff-l" cx="110" cy="250" rx="8" ry="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <path id="glove-r" d="M260 210 Q280 220 290 250 Q300 290 305 320 Q310 350 315 380" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="glove-cuff-r" cx="290" cy="250" rx="8" ry="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Long pearl necklace -->
+  <g id="pearls">
+    <path id="pearl-strand" d="M180 175 Q175 190 180 210 Q175 250 200 280 Q225 310 200 340 Q175 370 205 395" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="180" cy="185" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="178" cy="200" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="180" cy="215" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="178" cy="230" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="182" cy="245" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="190" cy="260" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="198" cy="275" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="210" cy="290" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="218" cy="305" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="212" cy="320" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="202" cy="335" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="188" cy="350" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="182" cy="365" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="190" cy="380" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="202" cy="392" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+  
+  <!-- Art Deco earrings -->
+  <g id="earrings">
+    <rect id="ear-l-1" x="138" y="135" width="8" height="12" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="ear-l-2" cx="142" cy="155" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <rect id="ear-l-3" x="139" y="162" width="6" height="10" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <rect id="ear-r-1" x="254" y="135" width="8" height="12" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="ear-r-2" cx="258" cy="155" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <rect id="ear-r-3" x="255" y="162" width="6" height="10" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Cigarette holder (optional 1920s accessory) -->
+  <g id="cigarette-holder">
+    <line x1="85" y1="380" x2="55" y2="365" stroke="#1a1a1a" stroke-width="1.5"/>
+    <ellipse cx="50" cy="362" rx="8" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Headband/tiara -->
+  <g id="headband">
+    <path id="band-main" d="M155 85 Q180 75 200 73 Q220 75 245 85" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+    <circle id="gem" cx="200" cy="73" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="gem-i" cx="200" cy="73" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+</svg>

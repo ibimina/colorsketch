@@ -1,0 +1,75 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Princess Castle - Fantasy -->
+  
+  <!-- Main castle body -->
+  <rect id="castle-body" x="100" y="200" width="200" height="180" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Castle battlements -->
+  <path id="battlements" d="M100 200 L100 185 L120 185 L120 200 L140 200 L140 185 L160 185 L160 200 L180 200 L180 185 L200 185 L200 200 L220 200 L220 185 L240 185 L240 200 L260 200 L260 185 L280 185 L280 200 L300 200 L300 185" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Left Tower -->
+  <rect id="tower-left" x="60" y="120" width="60" height="260" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="tower-left-top" d="M60 120 L90 60 L120 120" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle id="tower-left-window-1" cx="90" cy="160" r="15" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M90 145 L90 175 M75 160 L105 160" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="tower-left-window-2" cx="90" cy="220" r="12" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M90 208 L90 232 M78 220 L102 220" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <rect id="tower-left-window-3" x="80" y="280" width="20" height="30" rx="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Right Tower -->
+  <rect id="tower-right" x="280" y="120" width="60" height="260" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="tower-right-top" d="M280 120 L310 60 L340 120" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle id="tower-right-window-1" cx="310" cy="160" r="15" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M310 145 L310 175 M295 160 L325 160" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="tower-right-window-2" cx="310" cy="220" r="12" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M310 208 L310 232 M298 220 L322 220" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <rect id="tower-right-window-3" x="300" y="280" width="20" height="30" rx="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Center Tower (taller) -->
+  <rect id="tower-center" x="165" y="90" width="70" height="110" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="tower-center-top" d="M165 90 L200 30 L235 90" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle id="tower-center-window" cx="200" cy="130" r="18" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M200 112 L200 148 M182 130 L218 130" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Flags -->
+  <path id="flag-left" d="M90 60 L90 35 L115 45 L90 55" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="flag-center" d="M200 30 L200 5 L230 15 L200 25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="flag-right" d="M310 60 L310 35 L335 45 L310 55" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Main windows -->
+  <rect id="window-main-left" x="120" y="220" width="30" height="45" rx="15" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M135 220 L135 265 M120 240 L150 240" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <rect id="window-main-right" x="250" y="220" width="30" height="45" rx="15" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M265 220 L265 265 M250 240 L280 240" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Main door -->
+  <path id="door" d="M170 380 L170 300 Q200 280 230 300 L230 380" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path d="M200 300 L200 380" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="door-handle-left" cx="190" cy="345" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="door-handle-right" cx="210" cy="345" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Door decoration -->
+  <path d="M180 310 Q200 295 220 310" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Path to castle -->
+  <path id="path" d="M170 380 Q165 390 150 395 Q180 392 200 395 Q220 392 250 395 Q235 390 230 380" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Bushes -->
+  <circle id="bush-left-1" cx="45" cy="375" r="15" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="bush-left-2" cx="55" cy="365" r="12" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="bush-left-3" cx="35" cy="365" r="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <circle id="bush-right-1" cx="355" cy="375" r="15" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="bush-right-2" cx="345" cy="365" r="12" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="bush-right-3" cx="365" cy="365" r="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Stars/sparkles -->
+  <circle cx="50" cy="80" r="2" fill="#1a1a1a"/>
+  <circle cx="150" cy="50" r="2" fill="#1a1a1a"/>
+  <circle cx="250" cy="45" r="2" fill="#1a1a1a"/>
+  <circle cx="350" cy="90" r="2" fill="#1a1a1a"/>
+  
+  <!-- Hearts on castle -->
+  <path id="heart-1" d="M200 165 Q195 160 190 165 Q185 175 200 185 Q215 175 210 165 Q205 160 200 165" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+</svg>

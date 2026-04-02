@@ -1,0 +1,133 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tuscan Countryside Landscape - Adult Coloring -->
+  
+  <!-- Sky -->
+  <rect id="sky" x="0" y="0" width="400" height="180" fill="white" stroke="none"/>
+  
+  <!-- Sun -->
+  <circle id="sun" cx="350" cy="50" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Wispy clouds -->
+  <path id="cloud-1" d="M50 40 Q70 35 90 42 Q110 38 130 45 Q150 40 170 45" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="cloud-2" d="M200 55 Q220 48 240 55 Q260 50 280 58" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Rolling hills (back) -->
+  <path id="hill-far-1" d="M0 180 Q100 130 200 160 Q300 190 400 150 L400 200 L0 200 Z" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="hill-far-2" d="M0 200 Q80 170 160 190 Q250 210 340 180 Q380 170 400 180 L400 220 L0 220 Z" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Villa on hill -->
+  <g id="villa">
+    <rect id="villa-main" x="280" y="145" width="50" height="35" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="villa-roof" points="275,145 305,125 335,145" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <rect id="villa-door" x="300" y="165" width="10" height="15" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <rect id="villa-window-1" x="285" y="152" width="8" height="8" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <rect id="villa-window-2" x="317" y="152" width="8" height="8" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <!-- Tower -->
+    <rect id="villa-tower" x="260" y="130" width="20" height="50" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="tower-roof" points="258,130 270,115 282,130" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Cypress trees (iconic Tuscan) -->
+  <g id="cypress-row">
+    <path id="cypress-1" d="M240 180 Q238 140 243 100 Q248 140 246 180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="cypress-2" d="M220 185 Q218 150 223 115 Q228 150 226 185" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="cypress-3" d="M200 190 Q198 155 203 125 Q208 155 206 190" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Vineyard rows -->
+  <g id="vineyard">
+    <path id="vine-row-1" d="M0 240 Q50 235 100 238 Q150 241 200 237 Q250 233 300 238 Q350 243 400 238" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="vine-row-2" d="M0 260 Q50 255 100 258 Q150 261 200 257 Q250 253 300 258 Q350 263 400 258" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="vine-row-3" d="M0 280 Q50 275 100 278 Q150 281 200 277 Q250 273 300 278 Q350 283 400 278" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="vine-row-4" d="M0 300 Q50 295 100 298 Q150 301 200 297 Q250 293 300 298 Q350 303 400 298" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="vine-row-5" d="M0 320 Q50 315 100 318 Q150 321 200 317 Q250 313 300 318 Q350 323 400 318" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    
+    <!-- Grape vines detail -->
+    <g id="grapes">
+      <circle id="grape-1" cx="80" cy="250" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="grape-2" cx="85" cy="252" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="grape-3" cx="82" cy="255" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="grape-4" cx="180" cy="270" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="grape-5" cx="185" cy="272" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="grape-6" cx="182" cy="275" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="grape-7" cx="280" cy="290" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="grape-8" cx="285" cy="292" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    </g>
+  </g>
+  
+  <!-- Winding road -->
+  <path id="road" d="M0 350 Q80 340 120 355 Q180 370 220 350 Q280 330 350 360 Q380 370 400 365" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="road-inner" d="M0 355 Q80 345 120 360 Q180 375 220 355 Q280 335 350 365 Q380 375 400 370" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Olive trees -->
+  <g id="olive-1">
+    <line x1="50" y1="350" x2="50" y2="330" stroke="#1a1a1a" stroke-width="1.5"/>
+    <ellipse id="olive-crown-1" cx="50" cy="320" rx="20" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="olive-inner-1" cx="50" cy="320" rx="12" ry="9" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <g id="olive-2">
+    <line x1="150" y1="365" x2="150" y2="345" stroke="#1a1a1a" stroke-width="1.5"/>
+    <ellipse id="olive-crown-2" cx="150" cy="335" rx="18" ry="13" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="olive-inner-2" cx="150" cy="335" rx="10" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <g id="olive-3">
+    <line x1="320" y1="360" x2="320" y2="340" stroke="#1a1a1a" stroke-width="1.5"/>
+    <ellipse id="olive-crown-3" cx="320" cy="330" rx="22" ry="16" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="olive-inner-3" cx="320" cy="330" rx="14" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Sunflowers in foreground -->
+  <g id="sunflowers">
+    <g id="sunflower-1">
+      <line x1="30" y1="400" x2="30" y2="370" stroke="#1a1a1a" stroke-width="1"/>
+      <circle id="sf-center-1" cx="30" cy="360" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+      <g id="sf-petals-1">
+        <ellipse cx="30" cy="348" rx="3" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+        <ellipse cx="38" cy="352" rx="3" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(45 38 352)"/>
+        <ellipse cx="42" cy="360" rx="3" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(90 42 360)"/>
+        <ellipse cx="38" cy="368" rx="3" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(135 38 368)"/>
+        <ellipse cx="30" cy="372" rx="3" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+        <ellipse cx="22" cy="368" rx="3" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(-135 22 368)"/>
+        <ellipse cx="18" cy="360" rx="3" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(-90 18 360)"/>
+        <ellipse cx="22" cy="352" rx="3" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(-45 22 352)"/>
+      </g>
+    </g>
+    
+    <g id="sunflower-2">
+      <line x1="60" y1="400" x2="58" y2="375" stroke="#1a1a1a" stroke-width="1"/>
+      <circle id="sf-center-2" cx="58" cy="365" r="7" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+      <g id="sf-petals-2">
+        <ellipse cx="58" cy="355" rx="2.5" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+        <ellipse cx="65" cy="358" rx="2.5" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(45 65 358)"/>
+        <ellipse cx="68" cy="365" rx="2.5" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(90 68 365)"/>
+        <ellipse cx="65" cy="372" rx="2.5" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(135 65 372)"/>
+        <ellipse cx="58" cy="375" rx="2.5" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+        <ellipse cx="51" cy="372" rx="2.5" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(-135 51 372)"/>
+        <ellipse cx="48" cy="365" rx="2.5" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(-90 48 365)"/>
+        <ellipse cx="51" cy="358" rx="2.5" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.4" transform="rotate(-45 51 358)"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Wild poppies -->
+  <g id="poppies">
+    <circle id="poppy-1" cx="380" cy="385" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="poppy-1c" cx="380" cy="385" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <line x1="380" y1="391" x2="380" y2="400" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <circle id="poppy-2" cx="365" cy="390" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="poppy-2c" cx="365" cy="390" r="2.5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <line x1="365" y1="395" x2="365" y2="400" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <circle id="poppy-3" cx="395" cy="392" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="poppy-3c" cx="395" cy="392" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <line x1="395" y1="396" x2="395" y2="400" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Birds -->
+  <path id="bird-1" d="M100 80 Q105 75 110 80 Q115 75 120 80" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path id="bird-2" d="M140 90 Q144 86 148 90 Q152 86 156 90" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="bird-3" d="M120 100 Q123 97 126 100 Q129 97 132 100" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+</svg>

@@ -1,0 +1,72 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cute Puppy - Kawaii Style -->
+  
+  <!-- Body -->
+  <ellipse id="body" cx="200" cy="280" rx="80" ry="65" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Chest Patch -->
+  <ellipse id="chest-patch" cx="200" cy="280" rx="40" ry="45" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Head -->
+  <circle id="head" cx="200" cy="150" r="85" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Face Patch -->
+  <path id="face-patch" d="M160 100 Q200 85 240 100 Q255 130 250 170 Q230 200 200 210 Q170 200 150 170 Q145 130 160 100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Ears -->
+  <path id="ear-left" d="M115 100 Q80 50 70 100 Q65 150 100 180 Q115 170 125 145 Q130 115 115 100" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="ear-left-inner" d="M105 110 Q90 85 85 115 Q82 145 100 165" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <path id="ear-right" d="M285 100 Q320 50 330 100 Q335 150 300 180 Q285 170 275 145 Q270 115 285 100" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="ear-right-inner" d="M295 110 Q310 85 315 115 Q318 145 300 165" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Eyes -->
+  <circle id="eye-left" cx="165" cy="140" r="22" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle cx="170" cy="142" r="12" fill="#1a1a1a"/>
+  <circle cx="175" cy="137" r="5" fill="white"/>
+  <circle cx="168" cy="148" r="2" fill="white"/>
+  
+  <circle id="eye-right" cx="235" cy="140" r="22" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle cx="230" cy="142" r="12" fill="#1a1a1a"/>
+  <circle cx="225" cy="137" r="5" fill="white"/>
+  <circle cx="232" cy="148" r="2" fill="white"/>
+  
+  <!-- Eyebrows -->
+  <path d="M145 115 Q165 105 185 115" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M215 115 Q235 105 255 115" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Nose -->
+  <ellipse id="nose" cx="200" cy="175" rx="18" ry="14" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse cx="200" cy="175" rx="12" ry="9" fill="#1a1a1a"/>
+  <ellipse cx="196" cy="172" rx="4" ry="3" fill="white" opacity="0.6"/>
+  
+  <!-- Mouth -->
+  <path d="M200 185 L200 200" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M200 200 Q180 215 168 205" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M200 200 Q220 215 232 205" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Tongue -->
+  <path id="tongue" d="M195 200 Q190 215 200 225 Q210 215 205 200" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Cheeks (blush) -->
+  <ellipse id="cheek-left" cx="135" cy="165" rx="12" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="cheek-right" cx="265" cy="165" rx="12" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Front Paws -->
+  <path id="paw-front-left" d="M140 320 Q130 355 145 380 Q165 390 180 380 Q190 355 180 320" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M150 378 L152 368 M160 380 L160 370 M170 378 L168 368" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <path id="paw-front-right" d="M260 320 Q270 355 255 380 Q235 390 220 380 Q210 355 220 320" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M250 378 L248 368 M240 380 L240 370 M230 378 L232 368" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Back Paws (visible from front) -->
+  <ellipse id="paw-back-left" cx="125" cy="340" rx="20" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse id="paw-back-right" cx="275" cy="340" rx="20" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Tail -->
+  <path id="tail" d="M275 280 Q310 260 320 230 Q325 210 315 200" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Collar -->
+  <path id="collar" d="M145 225 Q200 240 255 225" fill="none" stroke="#1a1a1a" stroke-width="4"/>
+  <circle id="collar-tag" cx="200" cy="245" r="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+</svg>

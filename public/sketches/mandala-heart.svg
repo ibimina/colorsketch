@@ -1,0 +1,69 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Heart Zentangle Mandala - Adult Coloring -->
+  
+  <!-- Outer decorative border -->
+  <circle id="outer-border" cx="200" cy="200" r="195" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Outer heart ring -->
+  <g id="outer-hearts">
+    <path id="heart-1" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="heart-2" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(30 200 200)"/>
+    <path id="heart-3" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(60 200 200)"/>
+    <path id="heart-4" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(90 200 200)"/>
+    <path id="heart-5" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(120 200 200)"/>
+    <path id="heart-6" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(150 200 200)"/>
+    <path id="heart-7" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(180 200 200)"/>
+    <path id="heart-8" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(210 200 200)"/>
+    <path id="heart-9" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(240 200 200)"/>
+    <path id="heart-10" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(270 200 200)"/>
+    <path id="heart-11" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(300 200 200)"/>
+    <path id="heart-12" d="M200 15 Q208 8 218 15 Q228 25 218 40 L200 55 L182 40 Q172 25 182 15 Q192 8 200 15" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(330 200 200)"/>
+  </g>
+  
+  <!-- Decorative swirl ring -->
+  <circle id="swirl-ring" cx="200" cy="200" r="140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <g id="swirls-fill">
+    <path id="swirl-1" d="M200 60 Q230 70 225 95 Q220 115 200 110" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="swirl-2" d="M200 60 Q230 70 225 95 Q220 115 200 110" fill="none" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(60 200 200)"/>
+    <path id="swirl-3" d="M200 60 Q230 70 225 95 Q220 115 200 110" fill="none" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(120 200 200)"/>
+    <path id="swirl-4" d="M200 60 Q230 70 225 95 Q220 115 200 110" fill="none" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(180 200 200)"/>
+    <path id="swirl-5" d="M200 60 Q230 70 225 95 Q220 115 200 110" fill="none" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(240 200 200)"/>
+    <path id="swirl-6" d="M200 60 Q230 70 225 95 Q220 115 200 110" fill="none" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(300 200 200)"/>
+  </g>
+  
+  <!-- Leaf/petal ring -->
+  <g id="leaves">
+    <path id="leaf-1" d="M200 68 Q218 90 210 115 Q200 105 190 115 Q182 90 200 68" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="leaf-vein-1" d="M200 75 L200 105" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="leaf-2" d="M200 68 Q218 90 210 115 Q200 105 190 115 Q182 90 200 68" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(45 200 200)"/>
+    <path id="leaf-vein-2" d="M200 75 L200 105" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(45 200 200)"/>
+    <path id="leaf-3" d="M200 68 Q218 90 210 115 Q200 105 190 115 Q182 90 200 68" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(90 200 200)"/>
+    <path id="leaf-vein-3" d="M200 75 L200 105" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(90 200 200)"/>
+    <path id="leaf-4" d="M200 68 Q218 90 210 115 Q200 105 190 115 Q182 90 200 68" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(135 200 200)"/>
+    <path id="leaf-vein-4" d="M200 75 L200 105" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(135 200 200)"/>
+    <path id="leaf-5" d="M200 68 Q218 90 210 115 Q200 105 190 115 Q182 90 200 68" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(180 200 200)"/>
+    <path id="leaf-vein-5" d="M200 75 L200 105" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(180 200 200)"/>
+    <path id="leaf-6" d="M200 68 Q218 90 210 115 Q200 105 190 115 Q182 90 200 68" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(225 200 200)"/>
+    <path id="leaf-vein-6" d="M200 75 L200 105" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(225 200 200)"/>
+    <path id="leaf-7" d="M200 68 Q218 90 210 115 Q200 105 190 115 Q182 90 200 68" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(270 200 200)"/>
+    <path id="leaf-vein-7" d="M200 75 L200 105" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(270 200 200)"/>
+    <path id="leaf-8" d="M200 68 Q218 90 210 115 Q200 105 190 115 Q182 90 200 68" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(315 200 200)"/>
+    <path id="leaf-vein-8" d="M200 75 L200 105" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(315 200 200)"/>
+  </g>
+  
+  <!-- Center large heart -->
+  <path id="center-heart" d="M200 100 Q230 80 260 110 Q290 150 260 190 L200 260 L140 190 Q110 150 140 110 Q170 80 200 100" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Heart inner layers -->
+  <path id="heart-layer-1" d="M200 115 Q222 100 245 122 Q268 152 245 182 L200 235 L155 182 Q132 152 155 122 Q178 100 200 115" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="heart-layer-2" d="M200 130 Q215 118 232 135 Q250 155 232 175 L200 210 L168 175 Q150 155 168 135 Q185 118 200 130" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="heart-layer-3" d="M200 145 Q210 138 220 150 Q232 162 220 175 L200 195 L180 175 Q168 162 180 150 Q190 138 200 145" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Center decoration -->
+  <circle id="center-dot" cx="200" cy="165" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="center-dot-inner" cx="200" cy="165" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Small decorative hearts inside -->
+  <path id="tiny-heart-1" d="M180 180 Q183 177 187 180 Q191 184 187 188 L180 195 L173 188 Q169 184 173 180 Q177 177 180 180" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="tiny-heart-2" d="M220 180 Q223 177 227 180 Q231 184 227 188 L220 195 L213 188 Q209 184 213 180 Q217 177 220 180" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

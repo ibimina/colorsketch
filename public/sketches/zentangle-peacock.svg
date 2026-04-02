@@ -1,0 +1,157 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Zentangle Peacock - Adult Coloring -->
+  
+  <!-- Tail feathers spread -->
+  <g id="tail-display">
+    <!-- Large feather pattern (7 feathers) -->
+    <g id="feather-left-3" transform="translate(50, 150) rotate(-60)">
+      <ellipse cx="0" cy="0" rx="25" ry="120" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <ellipse cx="0" cy="-90" rx="20" ry="25" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-90" rx="12" ry="18" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="0" cy="-90" r="6" fill="#1a1a1a"/>
+      <circle cx="0" cy="-90" r="2" fill="white"/>
+      <line x1="0" y1="-70" x2="0" y2="120" stroke="#1a1a1a" stroke-width="1"/>
+      <path d="M -15,-60 Q 0,-65 15,-60" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -18,-40 Q 0,-45 18,-40" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -20,-20 Q 0,-25 20,-20" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -22,0 Q 0,-5 22,0" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -23,20 Q 0,15 23,20" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    
+    <g id="feather-left-2" transform="translate(100, 100) rotate(-40)">
+      <ellipse cx="0" cy="0" rx="28" ry="130" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <ellipse cx="0" cy="-95" rx="22" ry="28" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-95" rx="14" ry="20" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="0" cy="-95" r="7" fill="#1a1a1a"/>
+      <circle cx="0" cy="-95" r="2" fill="white"/>
+      <line x1="0" y1="-70" x2="0" y2="130" stroke="#1a1a1a" stroke-width="1"/>
+      <path d="M -17,-65 Q 0,-70 17,-65" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -20,-45 Q 0,-50 20,-45" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -23,-25 Q 0,-30 23,-25" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -25,-5 Q 0,-10 25,-5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -26,15 Q 0,10 26,15" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    
+    <g id="feather-left-1" transform="translate(150, 70) rotate(-20)">
+      <ellipse cx="0" cy="0" rx="30" ry="140" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <ellipse cx="0" cy="-100" rx="24" ry="30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-100" rx="16" ry="22" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="0" cy="-100" r="8" fill="#1a1a1a"/>
+      <circle cx="0" cy="-100" r="2" fill="white"/>
+      <line x1="0" y1="-75" x2="0" y2="140" stroke="#1a1a1a" stroke-width="1"/>
+      <path d="M -18,-70 Q 0,-75 18,-70" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -22,-50 Q 0,-55 22,-50" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -25,-30 Q 0,-35 25,-30" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -27,-10 Q 0,-15 27,-10" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -28,10 Q 0,5 28,10" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    
+    <g id="feather-center" transform="translate(200, 50)">
+      <ellipse cx="0" cy="0" rx="32" ry="150" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <ellipse cx="0" cy="-110" rx="26" ry="32" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-110" rx="18" ry="24" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="0" cy="-110" r="9" fill="#1a1a1a"/>
+      <circle cx="0" cy="-110" r="3" fill="white"/>
+      <line x1="0" y1="-80" x2="0" y2="150" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M -20,-75 Q 0,-80 20,-75" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -24,-55 Q 0,-60 24,-55" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -27,-35 Q 0,-40 27,-35" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -29,-15 Q 0,-20 29,-15" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -30,5 Q 0,0 30,5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    
+    <g id="feather-right-1" transform="translate(250, 70) rotate(20)">
+      <ellipse cx="0" cy="0" rx="30" ry="140" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <ellipse cx="0" cy="-100" rx="24" ry="30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-100" rx="16" ry="22" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="0" cy="-100" r="8" fill="#1a1a1a"/>
+      <circle cx="0" cy="-100" r="2" fill="white"/>
+      <line x1="0" y1="-75" x2="0" y2="140" stroke="#1a1a1a" stroke-width="1"/>
+      <path d="M -18,-70 Q 0,-75 18,-70" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -22,-50 Q 0,-55 22,-50" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -25,-30 Q 0,-35 25,-30" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -27,-10 Q 0,-15 27,-10" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -28,10 Q 0,5 28,10" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    
+    <g id="feather-right-2" transform="translate(300, 100) rotate(40)">
+      <ellipse cx="0" cy="0" rx="28" ry="130" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <ellipse cx="0" cy="-95" rx="22" ry="28" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-95" rx="14" ry="20" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="0" cy="-95" r="7" fill="#1a1a1a"/>
+      <circle cx="0" cy="-95" r="2" fill="white"/>
+      <line x1="0" y1="-70" x2="0" y2="130" stroke="#1a1a1a" stroke-width="1"/>
+      <path d="M -17,-65 Q 0,-70 17,-65" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -20,-45 Q 0,-50 20,-45" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -23,-25 Q 0,-30 23,-25" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -25,-5 Q 0,-10 25,-5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -26,15 Q 0,10 26,15" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    
+    <g id="feather-right-3" transform="translate(350, 150) rotate(60)">
+      <ellipse cx="0" cy="0" rx="25" ry="120" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <ellipse cx="0" cy="-90" rx="20" ry="25" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-90" rx="12" ry="18" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="0" cy="-90" r="6" fill="#1a1a1a"/>
+      <circle cx="0" cy="-90" r="2" fill="white"/>
+      <line x1="0" y1="-70" x2="0" y2="120" stroke="#1a1a1a" stroke-width="1"/>
+      <path d="M -15,-60 Q 0,-65 15,-60" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -18,-40 Q 0,-45 18,-40" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -20,-20 Q 0,-25 20,-20" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -22,0 Q 0,-5 22,0" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M -23,20 Q 0,15 23,20" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+  </g>
+  
+  <!-- Body -->
+  <ellipse id="body" cx="200" cy="320" rx="60" ry="80" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Body zentangle patterns -->
+  <g id="body-patterns">
+    <path d="M 160 280 Q 170 270 180 280 Q 190 270 200 280 Q 210 270 220 280 Q 230 270 240 280" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path d="M 155 300 Q 165 290 175 300 Q 185 290 195 300 Q 205 290 215 300 Q 225 290 235 300 Q 245 290 255 300" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path d="M 150 320 Q 160 310 170 320 Q 180 310 190 320 Q 200 310 210 320 Q 220 310 230 320 Q 240 310 250 320" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path d="M 155 340 Q 165 330 175 340 Q 185 330 195 340 Q 205 330 215 340 Q 225 330 235 340 Q 245 330 255 340" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path d="M 160 360 Q 170 350 180 360 Q 190 350 200 360 Q 210 350 220 360 Q 230 350 240 360" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="175" cy="310" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="200" cy="330" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="225" cy="310" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Neck -->
+  <path id="neck" d="M 200 240 Q 195 260 195 280" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="neck-inner" d="M 205 240 Q 203 260 203 280" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Head with crest -->
+  <ellipse id="head" cx="200" cy="230" rx="20" ry="25" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Crown feathers -->
+  <g id="crown">
+    <ellipse cx="195" cy="205" rx="3" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="195" cy="190" r="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <ellipse cx="200" cy="200" rx="3" ry="18" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="200" cy="182" r="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <ellipse cx="205" cy="205" rx="3" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="205" cy="190" r="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Eye -->
+  <circle id="eye" cx="207" cy="228" r="3" fill="#1a1a1a"/>
+  <circle id="eye-highlight" cx="208" cy="227" r="1" fill="white"/>
+  
+  <!-- Beak -->
+  <path id="beak" d="M 215 232 L 230 235 L 215 238 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Legs -->
+  <g id="legs">
+    <line x1="180" y1="380" x2="170" y2="460" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="170" y1="460" x2="160" y2="470" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="170" y1="460" x2="170" y2="475" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="170" y1="460" x2="180" y2="470" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <line x1="220" y1="380" x2="230" y2="460" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="230" y1="460" x2="220" y2="470" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="230" y1="460" x2="230" y2="475" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="230" y1="460" x2="240" y2="470" stroke="#1a1a1a" stroke-width="2"/>
+  </g>
+</svg>

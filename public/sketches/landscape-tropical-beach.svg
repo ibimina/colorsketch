@@ -1,0 +1,154 @@
+<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tropical Beach Landscape - Adult Coloring -->
+  
+  <!-- Sky -->
+  <rect x="0" y="0" width="500" height="200" fill="white" stroke="none"/>
+  
+  <!-- Sun -->
+  <circle id="sun" cx="100" cy="60" r="35" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="100" cy="60" r="30" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="100" cy="60" r="25" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  
+  <!-- Clouds -->
+  <g id="clouds">
+    <g transform="translate(300, 50)">
+      <ellipse cx="0" cy="0" rx="30" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <ellipse cx="-20" cy="-5" rx="20" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <ellipse cx="20" cy="-5" rx="20" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    </g>
+    <g transform="translate(450, 80)">
+      <ellipse cx="0" cy="0" rx="25" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <ellipse cx="-15" cy="-3" rx="18" ry="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <ellipse cx="15" cy="-3" rx="18" ry="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    </g>
+  </g>
+  
+  <!-- Ocean waves - distant -->
+  <g id="ocean-distant">
+    <path d="M 0 180 Q 50 175 100 180 Q 150 185 200 180 Q 250 175 300 180 Q 350 185 400 180 Q 450 175 500 180 L 500 280 L 0 280 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 0 195 Q 60 190 120 195 Q 180 200 240 195 Q 300 190 360 195 Q 420 200 500 195" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 0 210 Q 40 205 80 210 Q 120 215 160 210 Q 200 205 240 210 Q 280 215 320 210 Q 360 205 400 210 Q 440 215 500 210" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Mid-range waves -->
+  <g id="ocean-waves">
+    <path d="M 0 230 Q 70 225 140 235 Q 210 245 280 235 Q 350 225 420 235 Q 460 240 500 235" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 0 250 Q 50 245 100 255 Q 150 265 200 255 Q 250 245 300 255 Q 350 265 400 255 Q 450 245 500 255" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 0 265 Q 60 260 120 270 Q 180 280 240 270 Q 300 260 360 270 Q 420 280 500 270" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Beach/sand -->
+  <path d="M 0 280 L 0 400 L 500 400 L 500 320 Q 450 310 400 320 Q 350 330 300 320 Q 250 310 200 320 Q 150 330 100 320 Q 50 310 0 320 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Sand texture -->
+  <g id="sand-texture">
+    <path d="M 30 340 Q 60 335 90 340" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 120 350 Q 150 345 180 350" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 210 340 Q 240 335 270 340" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 300 350 Q 330 345 360 350" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 390 340 Q 420 335 450 340" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <path d="M 40 365 Q 70 360 100 365" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 140 370 Q 170 365 200 370" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 230 365 Q 260 360 290 365" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 320 370 Q 350 365 380 370" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 410 365 Q 440 360 470 365" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Palm tree left -->
+  <g id="palm-left" transform="translate(80, 280)">
+    <!-- Trunk -->
+    <path d="M -8 0 Q -10 40 -5 80 Q -8 120 0 160" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 8 0 Q 10 40 5 80 Q 8 120 0 160" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <!-- Trunk texture -->
+    <path d="M -8 20 Q 0 18 8 20" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -7 40 Q 0 38 7 40" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -6 60 Q 0 58 6 60" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -7 80 Q 0 78 7 80" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -5 100 Q 0 98 5 100" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -6 120 Q 0 118 6 120" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -5 140 Q 0 138 5 140" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Fronds -->
+    <path d="M 0 0 Q -40 -20 -70 -10" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M -15 -5 L -25 -8 M -30 -8 L -40 -10 M -45 -10 L -55 -9 M -60 -8 L -68 -7" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M 0 0 Q -30 -40 -45 -60" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M -10 -12 L -15 -20 M -18 -25 L -23 -33 M -25 -38 L -30 -46 M -33 -50 L -38 -56" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M 0 0 Q 0 -50 5 -75" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 0 -15 L -3 -20 M 1 -30 L -2 -35 M 2 -45 L -1 -50 M 3 -60 L 0 -65" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M 0 0 Q 30 -40 45 -60" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 10 -12 L 15 -20 M 18 -25 L 23 -33 M 25 -38 L 30 -46 M 33 -50 L 38 -56" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M 0 0 Q 40 -20 70 -10" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 15 -5 L 25 -8 M 30 -8 L 40 -10 M 45 -10 L 55 -9 M 60 -8 L 68 -7" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Palm tree right -->
+  <g id="palm-right" transform="translate(420, 260)">
+    <!-- Trunk -->
+    <path d="M -10 0 Q -12 50 -6 100 Q -10 150 0 200" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 10 0 Q 12 50 6 100 Q 10 150 0 200" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <!-- Trunk texture -->
+    <path d="M -10 25 Q 0 23 10 25" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -9 50 Q 0 48 9 50" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -8 75 Q 0 73 8 75" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -9 100 Q 0 98 9 100" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -7 125 Q 0 123 7 125" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -8 150 Q 0 148 8 150" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -6 175 Q 0 173 6 175" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Fronds -->
+    <path d="M 0 0 Q -50 -25 -85 -15" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M -18 -8 L -30 -12 M -37 -12 L -50 -14 M -55 -14 L -68 -13 M -73 -12 L -82 -10" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M 0 0 Q -35 -50 -55 -75" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M -12 -15 L -18 -25 M -22 -32 L -28 -42 M -30 -47 L -37 -58 M -40 -62 L -46 -70" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M 0 0 Q 0 -60 6 -90" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 0 -18 L -4 -25 M 1 -36 L -3 -43 M 3 -54 L -1 -61 M 4 -72 L 0 -80" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M 0 0 Q 35 -50 55 -75" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 12 -15 L 18 -25 M 22 -32 L 28 -42 M 30 -47 L 37 -58 M 40 -62 L 46 -70" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M 0 0 Q 50 -25 85 -15" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 18 -8 L 30 -12 M 37 -12 L 50 -14 M 55 -14 L 68 -13 M 73 -12 L 82 -10" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Seashells on beach -->
+  <g id="shells">
+    <g transform="translate(200, 360)">
+      <ellipse cx="0" cy="0" rx="12" ry="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M 0 -10 L 0 10 M -10 0 Q 0 -5 10 0 M -10 0 Q 0 5 10 0" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+    
+    <g transform="translate(350, 375)">
+      <path d="M 0 0 L -8 10 Q 0 15 8 10 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="-6" y1="8" x2="0" y2="2" stroke="#1a1a1a" stroke-width="0.7"/>
+      <line x1="6" y1="8" x2="0" y2="2" stroke="#1a1a1a" stroke-width="0.7"/>
+      <line x1="0" y1="2" x2="0" y2="12" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+    
+    <g transform="translate(280, 385)">
+      <circle cx="0" cy="0" r="8" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M -6 -4 Q -3 0 -6 4 M -3 -5 Q 0 0 -3 5 M 0 -6 Q 3 0 0 6 M 3 -5 Q 6 0 3 5 M 6 -4 Q 3 0 6 4" stroke="#1a1a1a" stroke-width="0.6"/>
+    </g>
+  </g>
+  
+  <!-- Starfish -->
+  <g id="starfish" transform="translate(140, 370)">
+    <g id="star-shape">
+      <path d="M 0 -12 L 3 -4 L 12 -3 L 6 3 L 8 12 L 0 7 L -8 12 L -6 3 L -12 -3 L -3 -4 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <!-- Center circle -->
+      <circle cx="0" cy="0" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <!-- Dots on arms -->
+      <circle cx="0" cy="-7" r="1" fill="#1a1a1a"/>
+      <circle cx="7" cy="-2" r="1" fill="#1a1a1a"/>
+      <circle cx="5" cy="7" r="1" fill="#1a1a1a"/>
+      <circle cx="-5" cy="7" r="1" fill="#1a1a1a"/>
+      <circle cx="-7" cy="-2" r="1" fill="#1a1a1a"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,121 @@
+<svg viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Zentangle Wolf - Adult Coloring -->
+  
+  <!-- Body -->
+  <ellipse id="body" cx="250" cy="320" rx="75" ry="65" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Body fur patterns - diagonal strokes -->
+  <g id="body-fur">
+    <path d="M 190 290 Q 200 280 210 290 Q 220 280 230 290 Q 240 280 250 290 Q 260 280 270 290 Q 280 280 290 290 Q 300 280 310 290 Q 320 280 330 290" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 185 305 Q 195 295 205 305 Q 215 295 225 305 Q 235 295 245 305 Q 255 295 265 305 Q 275 295 285 305 Q 295 295 305 305 Q 315 295 325 305" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 180 320 Q 190 310 200 320 Q 210 310 220 320 Q 230 310 240 320 Q 250 310 260 320 Q 270 310 280 320 Q 290 310 300 320 Q 310 310 320 320" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 185 335 Q 195 325 205 335 Q 215 325 225 335 Q 235 325 245 335 Q 255 325 265 335 Q 275 325 285 335 Q 295 325 305 335 Q 315 325 325 335" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 190 350 Q 200 340 210 350 Q 220 340 230 350 Q 240 340 250 350 Q 260 340 270 350 Q 280 340 290 350 Q 300 340 310 350" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 195 365 Q 205 355 215 365 Q 225 355 235 365 Q 245 355 255 365 Q 265 355 275 365 Q 285 355 295 365 Q 305 355 315 365" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Chest -->
+  <ellipse id="chest" cx="220" cy="300" rx="40" ry="50" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <g id="chest-patterns">
+    <path d="M 195 275 Q 205 265 215 275 Q 225 265 235 275 Q 245 265 255 275" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 190 290 Q 200 280 210 290 Q 220 280 230 290 Q 240 280 250 290" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 190 305 Q 200 295 210 305 Q 220 295 230 305 Q 240 295 250 305" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 195 320 Q 205 310 215 320 Q 225 310 235 320 Q 245 310 255 320" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 200 335 Q 210 325 220 335 Q 230 325 240 335 Q 250 325 260 335" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  </g>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="200" cy="200" rx="50" ry="55" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Head fur patterns -->
+  <g id="head-fur">
+    <path d="M 165 165 Q 175 155 185 165 Q 195 155 205 165 Q 215 155 225 165 Q 235 155 245 165" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 160 180 Q 170 170 180 180 Q 190 170 200 180 Q 210 170 220 180 Q 230 170 240 180 Q 250 170 260 180" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 160 195 Q 170 185 180 195 Q 190 185 200 195 Q 210 185 220 195 Q 230 185 240 195" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 165 210 Q 175 200 185 210 Q 195 200 205 210 Q 215 200 225 210 Q 235 200 245 210" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 170 225 Q 180 215 190 225 Q 200 215 210 225 Q 220 215 230 225 Q 240 215 250 225" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Snout -->
+  <ellipse id="snout" cx="200" cy="230" rx="35" ry="30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <g id="snout-fur">
+    <path d="M 175 215 Q 185 205 195 215 Q 205 205 215 215 Q 225 205 235 215" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 175 230 Q 185 220 195 230 Q 205 220 215 230 Q 225 220 235 230" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 180 245 Q 190 235 200 245 Q 210 235 220 245" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Ears -->
+  <g id="ears">
+    <path id="ear-l" d="M 165 140 L 140 60 L 180 120 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path id="ear-l-inner" d="M 160 130 L 145 75 L 175 120 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 152 110 Q 157 105 162 115" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 150 95 Q 155 90 160 100" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 148 80 Q 153 75 158 85" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <path id="ear-r" d="M 235 140 L 260 60 L 220 120 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path id="ear-r-inner" d="M 240 130 L 255 75 L 225 120 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 248 110 Q 243 105 238 115" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 250 95 Q 245 90 240 100" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 252 80 Q 247 75 242 85" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Eyes - piercing wolf eyes -->
+  <g id="eyes">
+    <ellipse id="eye-l" cx="180" cy="195" rx="10" ry="14" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <ellipse cx="180" cy="195" rx="5" ry="10" fill="#1a1a1a"/>
+    <ellipse cx="180" cy="191" rx="2" ry="3" fill="white"/>
+    
+    <ellipse id="eye-r" cx="220" cy="195" rx="10" ry="14" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <ellipse cx="220" cy="195" rx="5" ry="10" fill="#1a1a1a"/>
+    <ellipse cx="220" cy="191" rx="2" ry="3" fill="white"/>
+  </g>
+  
+  <!-- Nose -->
+  <ellipse id="nose" cx="200" cy="250" rx="10" ry="8" fill="#1a1a1a"/>
+  
+  <!-- Mouth/Fangs -->
+  <path id="mouth" d="M 200 250 L 200 265 M 200 265 Q 185 272 178 268 M 200 265 Q 215 272 222 268" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Front legs -->
+  <g id="front-legs">
+    <rect id="leg-fl" x="180" y="350" width="22" height="85" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 185 360 Q 191 355 197 360" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 185 380 Q 191 375 197 380" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 185 400 Q 191 395 197 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 185 420 Q 191 415 197 420" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <ellipse cx="191" cy="437" rx="14" ry="7" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <line x1="185" y1="437" x2="185" y2="442" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="191" y1="437" x2="191" y2="442" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="197" y1="437" x2="197" y2="442" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <rect id="leg-fr" x="260" y="350" width="22" height="85" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 265 360 Q 271 355 277 360" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 265 380 Q 271 375 277 380" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 265 400 Q 271 395 277 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 265 420 Q 271 415 277 420" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <ellipse cx="271" cy="437" rx="14" ry="7" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <line x1="265" y1="437" x2="265" y2="442" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="271" y1="437" x2="271" y2="442" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="277" y1="437" x2="277" y2="442" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Tail -->
+  <g id="tail">
+    <path id="tail-main" d="M 300 330 Q 350 310 380 280 Q 395 250 390 210 Q 385 170 360 150" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path id="tail-inner" d="M 305 325 Q 350 305 375 275 Q 388 248 383 215 Q 380 180 360 160" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Tail fur patterns -->
+    <g id="tail-fur">
+      <path d="M 315 320 Q 325 315 335 325" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 335 310 Q 345 305 355 315" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 355 295 Q 365 290 375 300" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 372 275 Q 382 270 390 280" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 385 255 Q 393 250 398 260" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 390 235 Q 395 230 398 240" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 388 215 Q 390 210 393 220" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 382 195 Q 385 190 388 200" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 375 175 Q 380 170 383 180" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 368 160 Q 373 155 376 165" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    </g>
+  </g>
+</svg>

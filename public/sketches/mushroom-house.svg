@@ -1,0 +1,81 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mushroom House - Fantasy Kawaii -->
+  
+  <!-- Mushroom Cap -->
+  <path id="cap" d="M50 180 Q50 80 200 60 Q350 80 350 180 Q300 200 200 200 Q100 200 50 180" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Cap spots -->
+  <ellipse id="spot-1" cx="120" cy="120" rx="25" ry="20" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse id="spot-2" cx="200" cy="100" rx="30" ry="22" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse id="spot-3" cx="280" cy="120" rx="25" ry="18" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse id="spot-4" cx="150" cy="160" rx="18" ry="14" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse id="spot-5" cx="250" cy="155" rx="20" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse id="spot-6" cx="90" cy="150" rx="15" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse id="spot-7" cx="310" cy="145" rx="15" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Stem/House -->
+  <path id="stem" d="M130 195 Q120 250 130 350 Q140 390 200 390 Q260 390 270 350 Q280 250 270 195" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Door -->
+  <path id="door" d="M170 390 L170 290 Q170 270 200 270 Q230 270 230 290 L230 390" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle id="doorknob" cx="220" cy="340" r="6" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Door arch decoration -->
+  <path d="M175 295 Q200 275 225 295" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Windows -->
+  <circle id="window-left" cx="145" cy="260" r="20" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M145 240 L145 280 M125 260 L165 260" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <circle id="window-right" cx="255" cy="260" r="20" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M255 240 L255 280 M235 260 L275 260" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Window shutters -->
+  <path id="shutter-left-1" d="M120 245 L125 240 L125 280 L120 275" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="shutter-left-2" d="M170 245 L165 240 L165 280 L170 275" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="shutter-right-1" d="M230 245 L235 240 L235 280 L230 275" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="shutter-right-2" d="M280 245 L275 240 L275 280 L280 275" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Chimney -->
+  <rect id="chimney" x="260" y="90" width="25" height="50" rx="3" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse id="chimney-top" cx="272" cy="90" rx="15" ry="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Smoke -->
+  <path id="smoke-1" d="M275 75 Q285 65 275 55 Q265 45 275 35" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="smoke-2" d="M270 70 Q260 60 270 50 Q280 40 268 28" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Grass -->
+  <path d="M50 390 Q60 380 70 390 Q80 380 90 390 Q100 380 110 390 Q120 380 130 390" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M270 390 Q280 380 290 390 Q300 380 310 390 Q320 380 330 390 Q340 380 350 390" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Flowers -->
+  <g id="flower-1">
+    <path d="M80 385 L80 365" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="80" cy="360" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="80" cy="360" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <g id="flower-2">
+    <path d="M320 385 L320 360" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="320" cy="355" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="320" cy="355" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Small mushrooms -->
+  <g id="small-mushroom-1">
+    <ellipse cx="55" cy="380" rx="15" ry="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <rect x="50" y="378" width="10" height="12" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse cx="55" cy="375" rx="5" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <g id="small-mushroom-2">
+    <ellipse cx="345" cy="378" rx="12" ry="6" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <rect x="341" y="377" width="8" height="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse cx="345" cy="374" rx="4" ry="2" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Stepping stones -->
+  <ellipse id="stone-1" cx="200" cy="398" rx="20" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="stone-2" cx="175" cy="395" rx="15" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <ellipse id="stone-3" cx="225" cy="395" rx="15" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+</svg>

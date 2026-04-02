@@ -1,0 +1,164 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Zentangle Owl - Adult Coloring -->
+  
+  <!-- Body outline -->
+  <ellipse id="body" cx="200" cy="260" rx="100" ry="120" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Feather pattern rows on body -->
+  <g id="feather-patterns">
+    <!-- Row 1 -->
+    <path id="fp-r1-1" d="M120 200 Q135 185 150 200" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r1-2" d="M145 200 Q160 185 175 200" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r1-3" d="M170 200 Q185 185 200 200" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r1-4" d="M195 200 Q210 185 225 200" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r1-5" d="M220 200 Q235 185 250 200" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r1-6" d="M245 200 Q260 185 275 200" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Row 2 -->
+    <path id="fp-r2-1" d="M115 225 Q130 210 145 225" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r2-2" d="M140 225 Q155 210 170 225" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r2-3" d="M165 225 Q180 210 195 225" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r2-4" d="M190 225 Q205 210 220 225" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r2-5" d="M215 225 Q230 210 245 225" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r2-6" d="M240 225 Q255 210 270 225" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r2-7" d="M265 225 Q280 210 285 225" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Row 3 -->
+    <path id="fp-r3-1" d="M112 250 Q127 235 142 250" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r3-2" d="M137 250 Q152 235 167 250" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r3-3" d="M162 250 Q177 235 192 250" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r3-4" d="M187 250 Q202 235 217 250" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r3-5" d="M212 250 Q227 235 242 250" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r3-6" d="M237 250 Q252 235 267 250" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r3-7" d="M262 250 Q277 235 288 250" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Row 4 -->
+    <path id="fp-r4-1" d="M115 275 Q130 260 145 275" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r4-2" d="M140 275 Q155 260 170 275" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r4-3" d="M165 275 Q180 260 195 275" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r4-4" d="M190 275 Q205 260 220 275" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r4-5" d="M215 275 Q230 260 245 275" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r4-6" d="M240 275 Q255 260 270 275" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r4-7" d="M265 275 Q280 260 285 275" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Row 5 -->
+    <path id="fp-r5-1" d="M120 300 Q135 285 150 300" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r5-2" d="M145 300 Q160 285 175 300" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r5-3" d="M170 300 Q185 285 200 300" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r5-4" d="M195 300 Q210 285 225 300" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r5-5" d="M220 300 Q235 285 250 300" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r5-6" d="M245 300 Q260 285 275 300" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Row 6 -->
+    <path id="fp-r6-1" d="M130 325 Q145 310 160 325" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r6-2" d="M155 325 Q170 310 185 325" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r6-3" d="M180 325 Q195 310 210 325" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r6-4" d="M205 325 Q220 310 235 325" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r6-5" d="M230 325 Q245 310 260 325" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Row 7 -->
+    <path id="fp-r7-1" d="M145 350 Q160 335 175 350" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r7-2" d="M170 350 Q185 335 200 350" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r7-3" d="M195 350 Q210 335 225 350" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fp-r7-4" d="M220 350 Q235 335 250 350" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  </g>
+  
+  <!-- Head -->
+  <circle id="head" cx="200" cy="100" r="65" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Ear tufts -->
+  <path id="ear-left" d="M140 50 Q150 30 160 50 Q145 60 140 50" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="ear-left-inner" d="M145 48 Q150 38 155 48" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="ear-right" d="M260 50 Q250 30 240 50 Q255 60 260 50" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="ear-right-inner" d="M255 48 Q250 38 245 48" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Eye circles (left) -->
+  <g id="eye-left">
+    <circle id="el-outer" cx="165" cy="95" r="35" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle id="el-mid" cx="165" cy="95" r="28" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle id="el-inner" cx="165" cy="95" r="20" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle id="el-iris" cx="165" cy="95" r="12" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="el-pupil" cx="165" cy="95" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <!-- Decorative rays -->
+    <line x1="165" y1="60" x2="165" y2="70" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="145" y1="75" x2="152" y2="82" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="130" y1="95" x2="140" y2="95" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="145" y1="115" x2="152" y2="108" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="165" y1="130" x2="165" y2="120" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="185" y1="115" x2="178" y2="108" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="185" y1="75" x2="178" y2="82" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Eye circles (right) -->
+  <g id="eye-right">
+    <circle id="er-outer" cx="235" cy="95" r="35" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle id="er-mid" cx="235" cy="95" r="28" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle id="er-inner" cx="235" cy="95" r="20" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle id="er-iris" cx="235" cy="95" r="12" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="er-pupil" cx="235" cy="95" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <!-- Decorative rays -->
+    <line x1="235" y1="60" x2="235" y2="70" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="215" y1="75" x2="222" y2="82" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="255" y1="75" x2="248" y2="82" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="270" y1="95" x2="260" y2="95" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="255" y1="115" x2="248" y2="108" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="235" y1="130" x2="235" y2="120" stroke="#1a1a1a" stroke-width="0.4"/>
+    <line x1="215" y1="115" x2="222" y2="108" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Beak -->
+  <path id="beak" d="M200 115 L190 140 L200 160 L210 140 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="200" y1="120" x2="200" y2="155" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Forehead pattern -->
+  <g id="forehead-pattern">
+    <path id="fh-1" d="M175 55 Q185 45 195 55" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="fh-2" d="M190 55 Q200 45 210 55" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="fh-3" d="M205 55 Q215 45 225 55" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="fh-4" d="M180 65 Q190 55 200 65" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="fh-5" d="M200 65 Q210 55 220 65" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Wings -->
+  <g id="wing-left">
+    <path id="wl-outline" d="M100 220 Q40 230 30 300 Q35 370 100 380" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- Wing feathers -->
+    <path id="wl-f1" d="M90 240 Q70 245 60 260" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="wl-f2" d="M85 260 Q65 265 55 280" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="wl-f3" d="M80 280 Q60 285 50 300" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="wl-f4" d="M80 300 Q60 305 50 320" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="wl-f5" d="M85 320 Q65 325 55 340" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="wl-f6" d="M90 340 Q70 345 65 360" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <!-- Decorative dots -->
+    <circle cx="70" cy="290" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="65" cy="320" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="75" cy="350" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <g id="wing-right">
+    <path id="wr-outline" d="M300 220 Q360 230 370 300 Q365 370 300 380" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- Wing feathers -->
+    <path id="wr-f1" d="M310 240 Q330 245 340 260" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="wr-f2" d="M315 260 Q335 265 345 280" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="wr-f3" d="M320 280 Q340 285 350 300" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="wr-f4" d="M320 300 Q340 305 350 320" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="wr-f5" d="M315 320 Q335 325 345 340" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="wr-f6" d="M310 340 Q330 345 335 360" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <!-- Decorative dots -->
+    <circle cx="330" cy="290" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="335" cy="320" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="325" cy="350" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Feet -->
+  <g id="feet">
+    <path id="foot-left" d="M160 380 L150 395 M160 380 L160 400 M160 380 L170 395" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path id="foot-right" d="M240 380 L230 395 M240 380 L240 400 M240 380 L250 395" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Branch -->
+  <path id="branch" d="M80 385 Q150 375 200 385 Q250 395 320 380" fill="none" stroke="#1a1a1a" stroke-width="4"/>
+  <path id="branch-texture" d="M90 382 Q100 385 110 380" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="branch-texture-2" d="M200 388 Q210 385 220 390" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="branch-texture-3" d="M280 382 Q290 378 300 382" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

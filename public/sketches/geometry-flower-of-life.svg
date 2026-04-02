@@ -1,0 +1,47 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sacred Geometry - Flower of Life - Adult Coloring -->
+  
+  <!-- Background -->
+  <rect id="background" x="0" y="0" width="400" height="400" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Center circle -->
+  <circle id="center" cx="200" cy="200" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- First ring of 6 circles -->
+  <circle id="ring1-1" cx="200" cy="160" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring1-2" cx="234.64" cy="180" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring1-3" cx="234.64" cy="220" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring1-4" cx="200" cy="240" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring1-5" cx="165.36" cy="220" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring1-6" cx="165.36" cy="180" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Second ring of 12 circles -->
+  <circle id="ring2-1" cx="200" cy="120" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring2-2" cx="234.64" cy="140" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring2-3" cx="269.28" cy="160" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring2-4" cx="269.28" cy="200" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring2-5" cx="269.28" cy="240" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring2-6" cx="234.64" cy="260" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring2-7" cx="200" cy="280" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring2-8" cx="165.36" cy="260" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring2-9" cx="130.72" cy="240" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring2-10" cx="130.72" cy="200" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring2-11" cx="130.72" cy="160" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring2-12" cx="165.36" cy="140" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Third partial ring -->
+  <circle id="ring3-1" cx="200" cy="80" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring3-2" cx="269.28" cy="120" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring3-3" cx="303.92" cy="180" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring3-4" cx="303.92" cy="220" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring3-5" cx="269.28" cy="280" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring3-6" cx="200" cy="320" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring3-7" cx="130.72" cy="280" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring3-8" cx="96.08" cy="220" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring3-9" cx="96.08" cy="180" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle id="ring3-10" cx="130.72" cy="120" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Outer containing circle -->
+  <circle id="outer-contain" cx="200" cy="200" r="160" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <circle id="outer-contain-2" cx="200" cy="200" r="165" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+</svg>

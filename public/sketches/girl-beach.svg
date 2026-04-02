@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Girl at Beach Building Sandcastle -->
+  
+  <!-- Sun -->
+  <circle id="sun" cx="350" cy="50" r="30" fill="white"/>
+  <path id="sun-ray-1" d="M350 10 L350 0" stroke-width="3"/>
+  <path id="sun-ray-2" d="M385 25 L395 15" stroke-width="3"/>
+  <path id="sun-ray-3" d="M390 50 L400 50" stroke-width="3"/>
+  <path id="sun-ray-4" d="M385 75 L395 85" stroke-width="3"/>
+  <path id="sun-ray-5" d="M350 90 L350 100" stroke-width="3"/>
+  
+  <!-- Cloud -->
+  <ellipse id="cloud-1" cx="80" cy="50" rx="30" ry="18" fill="white"/>
+  <ellipse id="cloud-2" cx="55" cy="55" rx="22" ry="14" fill="white"/>
+  <ellipse id="cloud-3" cx="105" cy="55" rx="20" ry="12" fill="white"/>
+  
+  <!-- Ocean/Water -->
+  <path id="ocean" d="M0 180 Q50 175 100 180 Q150 185 200 180 Q250 175 300 180 Q350 185 400 180 L400 200 L0 200 Z" fill="white"/>
+  <path id="wave-1" d="M0 185 Q25 180 50 185 Q75 190 100 185" fill="none"/>
+  <path id="wave-2" d="M150 182 Q175 177 200 182 Q225 187 250 182" fill="none"/>
+  <path id="wave-3" d="M300 185 Q325 180 350 185 Q375 190 400 185" fill="none"/>
+  
+  <!-- Beach/Sand -->
+  <path id="beach" d="M0 200 L400 200 L400 400 L0 400 Z" fill="white"/>
+  
+  <!-- Sandcastle -->
+  <!-- Main tower -->
+  <rect id="tower-main" x="240" y="280" width="60" height="80" fill="white"/>
+  <path id="tower-main-top" d="M235 280 L245 260 L255 280 L265 255 L275 280 L285 260 L295 280 L305 265 L310 280" fill="white"/>
+  
+  <!-- Side towers -->
+  <rect id="tower-left" x="200" y="310" width="40" height="50" fill="white"/>
+  <path id="tower-left-top" d="M195 310 L205 295 L215 310 L225 292 L235 310 L245 298 L250 310" fill="white"/>
+  
+  <rect id="tower-right" x="300" y="310" width="40" height="50" fill="white"/>
+  <path id="tower-right-top" d="M295 310 L305 295 L315 310 L325 292 L335 310 L345 300 L350 310" fill="white"/>
+  
+  <!-- Castle base/wall -->
+  <rect id="castle-wall" x="195" y="360" width="150" height="25" fill="white"/>
+  <path id="wall-pattern" d="M200 365 L200 380 M220 365 L220 380 M240 365 L240 380 M260 365 L260 380 M280 365 L280 380 M300 365 L300 380 M320 365 L320 380 M340 365 L340 380" fill="none"/>
+  
+  <!-- Castle details -->
+  <rect id="door" x="258" y="330" width="24" height="35" rx="12" fill="white"/>
+  <path id="window-1" d="M250 295 L250 305 L260 305 L260 295" fill="white"/>
+  <path id="window-2" d="M280 295 L280 305 L290 305 L290 295" fill="white"/>
+  
+  <!-- Flag -->
+  <path id="flag-pole" d="M270 255 L270 225" stroke-width="2"/>
+  <path id="flag" d="M270 225 L295 235 L270 245" fill="white"/>
+  
+  <!-- Seashells decorating castle -->
+  <ellipse id="shell-1" cx="250" cy="358" rx="6" ry="4" fill="white"/>
+  <path id="shell-1-lines" d="M246 358 L250 355 L254 358" fill="none"/>
+  <ellipse id="shell-2" cx="290" cy="358" rx="5" ry="3" fill="white"/>
+  
+  <!-- Girl sitting -->
+  <!-- Legs -->
+  <path id="leg-left" d="M100 330 Q90 350 95 380" fill="white"/>
+  <path id="leg-right" d="M140 330 Q150 350 145 380" fill="white"/>
+  
+  <!-- Feet -->
+  <ellipse id="foot-left" cx="98" cy="382" rx="15" ry="6" fill="white"/>
+  <ellipse id="foot-right" cx="148" cy="382" rx="15" ry="6" fill="white"/>
+  
+  <!-- Swimsuit/dress -->
+  <path id="swimsuit" d="M90 280 Q85 310 95 340 L145 340 Q155 310 150 280" fill="white"/>
+  <path id="swimsuit-pattern" d="M100 300 Q120 295 140 300" fill="none" stroke-dasharray="4,4"/>
+  
+  <!-- Body -->
+  <path id="torso" d="M100 220 L95 285 Q120 295 145 285 L140 220" fill="white"/>
+  
+  <!-- Straps -->
+  <path id="strap-left" d="M100 220 L108 280" stroke-width="3"/>
+  <path id="strap-right" d="M140 220 L132 280" stroke-width="3"/>
+  
+  <!-- Arms - one reaching toward castle -->
+  <path id="arm-left" d="M98 230 Q70 250 60 280 Q55 300 65 315" fill="white"/>
+  <path id="arm-right" d="M142 230 Q170 240 195 260 Q210 275 215 290" fill="white"/>
+  
+  <!-- Hands -->
+  <ellipse id="hand-left" cx="65" cy="318" rx="12" ry="10" fill="white"/>
+  <ellipse id="hand-right" cx="218" cy="295" rx="12" ry="10" fill="white"/>
+  
+  <!-- Bucket in left hand -->
+  <path id="bucket" d="M45 300 L40 340 L85 340 L80 300" fill="white"/>
+  <ellipse id="bucket-top" cx="62" cy="300" rx="20" ry="8" fill="white"/>
+  <path id="bucket-handle" d="M45 295 Q62 280 80 295" stroke-width="3" fill="none"/>
+  
+  <!-- Shovel near her -->
+  <rect id="shovel-handle" x="170" y="350" width="8" height="35" rx="2" fill="white"/>
+  <path id="shovel-head" d="M165 348 L183 348 L180 335 Q174 330 168 335 Z" fill="white"/>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="120" cy="175" rx="40" ry="45" fill="white"/>
+  
+  <!-- Hair with ponytail -->
+  <path id="hair-top" d="M80 175 Q75 130 120 115 Q165 130 160 175" fill="white"/>
+  <path id="hair-bangs" d="M85 150 Q95 140 105 150 Q115 138 125 148 Q135 138 145 150 Q155 142 158 155" fill="white"/>
+  <path id="ponytail" d="M155 145 Q175 140 185 160 Q195 180 185 210 Q180 230 175 245" fill="white"/>
+  <path id="ponytail-band" d="M155 145 Q165 142 165 150" fill="none" stroke-width="4"/>
+  
+  <!-- Hair blowing -->
+  <path id="hair-strand" d="M180 170 Q190 165 195 175" fill="none"/>
+  <path id="hair-strand-2" d="M182 190 Q195 188 200 195" fill="none"/>
+  
+  <!-- Face -->
+  <!-- Eyes - happy -->
+  <path id="eye-left" d="M105 170 Q112 162 120 170" fill="none" stroke-width="2.5"/>
+  <path id="eye-right" d="M125 170 Q132 162 140 170" fill="none" stroke-width="2.5"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M120 178 Q122 183 120 188" fill="none"/>
+  
+  <!-- Big happy smile -->
+  <path id="mouth" d="M108 198 Q120 210 132 198" fill="white"/>
+  <path id="mouth-line" d="M108 198 Q120 210 132 198" fill="none"/>
+  
+  <!-- Blush -->
+  <ellipse id="blush-left" cx="98" cy="185" rx="8" ry="4" fill="white" stroke-dasharray="2,2"/>
+  <ellipse id="blush-right" cx="142" cy="185" rx="8" ry="4" fill="white" stroke-dasharray="2,2"/>
+  
+  <!-- Scattered seashells on beach -->
+  <ellipse id="beach-shell-1" cx="50" cy="360" rx="8" ry="5" fill="white"/>
+  <path id="beach-shell-1-line" d="M45 360 L50 356 L55 360" fill="none"/>
+  <ellipse id="beach-shell-2" cx="350" cy="350" rx="6" ry="4" fill="white"/>
+  <ellipse id="beach-shell-3" cx="30" cy="385" rx="5" ry="3" fill="white"/>
+  
+  <!-- Starfish -->
+  <path id="starfish" d="M370 370 L375 355 L380 370 L395 365 L385 375 L395 385 L380 380 L375 395 L370 380 L355 385 L365 375 L355 365 Z" fill="white"/>
+  
+  <!-- Bird in sky -->
+  <path id="bird" d="M200 80 Q205 75 210 80 Q215 75 220 80" fill="none"/>
+</svg>

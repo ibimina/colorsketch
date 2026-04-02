@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Boy Fishing at Lake -->
+  
+  <!-- Sky -->
+  <!-- Clouds -->
+  <ellipse id="cloud-1-center" cx="320" cy="40" r="20" fill="white"/>
+  <ellipse id="cloud-1-left" cx="300" cy="45" rx="18" ry="12" fill="white"/>
+  <ellipse id="cloud-1-right" cx="340" cy="45" rx="15" ry="10" fill="white"/>
+  
+  <ellipse id="cloud-2-center" cx="80" cy="60" r="15" fill="white"/>
+  <ellipse id="cloud-2-left" cx="65" cy="62" rx="12" ry="8" fill="white"/>
+  <ellipse id="cloud-2-right" cx="95" cy="62" rx="10" ry="7" fill="white"/>
+  
+  <!-- Sun -->
+  <circle id="sun" cx="350" cy="100" r="20" fill="white"/>
+  <path id="sun-rays" d="M350 70 L350 65 M375 85 L380 80 M380 100 L385 100 M375 115 L380 120 M350 130 L350 135" fill="none" stroke-width="2"/>
+  
+  <!-- Trees in background -->
+  <path id="tree-1-trunk" d="M30 180 L30 280" stroke-width="6" fill="none"/>
+  <ellipse id="tree-1-leaves" cx="30" cy="160" rx="30" ry="40" fill="white"/>
+  
+  <path id="tree-2-trunk" d="M380 200 L380 290" stroke-width="5" fill="none"/>
+  <ellipse id="tree-2-leaves" cx="380" cy="180" rx="25" ry="35" fill="white"/>
+  
+  <!-- Lake/Water -->
+  <path id="water" d="M0 280 Q100 270 200 275 Q300 280 400 270 L400 400 L0 400 Z" fill="white"/>
+  <path id="water-ripple-1" d="M100 320 Q120 315 140 320" fill="none" stroke-dasharray="4,4"/>
+  <path id="water-ripple-2" d="M250 340 Q270 335 290 340" fill="none" stroke-dasharray="4,4"/>
+  <path id="water-ripple-3" d="M50 360 Q70 355 90 360" fill="none" stroke-dasharray="4,4"/>
+  
+  <!-- Dock/Pier -->
+  <rect id="dock" x="130" y="270" width="120" height="15" fill="white"/>
+  <rect id="dock-plank-1" x="130" y="270" width="25" height="15" fill="white"/>
+  <rect id="dock-plank-2" x="160" y="270" width="25" height="15" fill="white"/>
+  <rect id="dock-plank-3" x="190" y="270" width="25" height="15" fill="white"/>
+  <rect id="dock-plank-4" x="220" y="270" width="30" height="15" fill="white"/>
+  <path id="dock-support-1" d="M140 285 L140 310" stroke-width="4"/>
+  <path id="dock-support-2" d="M240 285 L240 315" stroke-width="4"/>
+  
+  <!-- Boy sitting on dock -->
+  <!-- Legs dangling -->
+  <rect id="leg-left" x="170" y="280" width="15" height="50" rx="5" fill="white"/>
+  <rect id="leg-right" x="195" y="280" width="15" height="50" rx="5" fill="white"/>
+  
+  <!-- Feet -->
+  <ellipse id="foot-left" cx="177" cy="335" rx="12" ry="6" fill="white"/>
+  <ellipse id="foot-right" cx="202" cy="335" rx="12" ry="6" fill="white"/>
+  
+  <!-- Shorts -->
+  <path id="shorts" d="M165 230 L162 285 Q190 295 218 285 L215 230" fill="white"/>
+  <path id="shorts-line" d="M190 235 L190 280" fill="none"/>
+  
+  <!-- Body/shirt -->
+  <path id="shirt" d="M170 160 L165 235 Q190 245 215 235 L210 160" fill="white"/>
+  <path id="shirt-pocket" d="M175 180 L195 180 L195 200 L175 200 Z" fill="white"/>
+  
+  <!-- Arms -->
+  <path id="arm-left" d="M168 170 Q145 185 130 210 Q125 225 130 240" fill="white"/>
+  <path id="arm-right" d="M212 170 Q235 180 250 170 Q265 165 275 175" fill="white"/>
+  
+  <!-- Hands -->
+  <ellipse id="hand-left" cx="132" cy="245" rx="10" ry="8" fill="white"/>
+  <ellipse id="hand-right" cx="278" cy="178" rx="10" ry="8" fill="white"/>
+  
+  <!-- Fishing rod -->
+  <path id="fishing-rod" d="M130 242 Q200 150 330 100" stroke-width="3" fill="none"/>
+  <circle id="rod-reel" cx="138" cy="238" r="8" fill="white"/>
+  
+  <!-- Fishing line -->
+  <path id="fishing-line" d="M330 100 L340 340" fill="none" stroke-dasharray="3,3"/>
+  
+  <!-- Bobber/Float -->
+  <ellipse id="bobber" cx="340" cy="340" rx="8" ry="12" fill="white"/>
+  <path id="bobber-line" d="M340 328 L340 340" fill="none"/>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="190" cy="115" rx="38" ry="42" fill="white"/>
+  
+  <!-- Hair - messy/casual -->
+  <path id="hair" d="M152 110 Q148 70 190 60 Q232 70 228 110" fill="white"/>
+  <path id="hair-spikes" d="M160 75 Q165 60 175 72 Q182 58 192 70 Q200 55 210 68 Q218 58 225 75" fill="white"/>
+  <path id="hair-detail" d="M158 90 Q170 85 180 90 Q190 82 200 88 Q210 82 220 90" fill="none"/>
+  
+  <!-- Cap -->
+  <path id="cap-brim" d="M150 100 Q130 95 120 105 Q125 115 150 110" fill="white"/>
+  <path id="cap-top" d="M152 100 Q155 85 190 82 Q220 85 225 100" fill="white"/>
+  
+  <!-- Face -->
+  <!-- Eyes - focused/watching bobber -->
+  <ellipse id="eye-left" cx="175" cy="112" rx="8" ry="10" fill="white"/>
+  <ellipse id="eye-right" cx="205" cy="112" rx="8" ry="10" fill="white"/>
+  <circle id="pupil-left" cx="178" cy="114" r="5" fill="white"/>
+  <circle id="pupil-right" cx="208" cy="114" r="5" fill="white"/>
+  <circle id="sparkle-left" cx="174" cy="109" r="2" fill="white"/>
+  <circle id="sparkle-right" cx="204" cy="109" r="2" fill="white"/>
+  
+  <!-- Eyebrows - concentrated -->
+  <path id="eyebrow-left" d="M165 100 Q175 97 185 102" fill="none"/>
+  <path id="eyebrow-right" d="M195 102 Q205 97 215 100" fill="none"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M190 118 Q193 125 190 132" fill="none"/>
+  
+  <!-- Mouth - patient smile -->
+  <path id="mouth" d="M182 142 Q190 148 198 142" fill="none"/>
+  
+  <!-- Tackle box next to him -->
+  <rect id="tacklebox" x="70" y="260" width="45" height="30" rx="3" fill="white"/>
+  <path id="tacklebox-handle" d="M80 260 Q92 250 105 260" stroke-width="2" fill="none"/>
+  <path id="tacklebox-latch" d="M88 275 L97 275" stroke-width="3"/>
+  
+  <!-- Fish jumping (splash) -->
+  <path id="fish-body" d="M280 290 Q295 280 310 290 Q305 300 290 300 Q285 300 280 295" fill="white"/>
+  <path id="fish-tail" d="M280 290 L265 280 L265 300 Z" fill="white"/>
+  <ellipse id="fish-eye" cx="302" cy="290" rx="3" ry="3" fill="white"/>
+  
+  <!-- Splash drops -->
+  <path id="splash-1" d="M275 285 Q278 275 281 285" fill="white"/>
+  <path id="splash-2" d="M315 288 Q318 278 321 288" fill="white"/>
+  <circle id="splash-drop-1" cx="270" cy="295" r="3" fill="white"/>
+  <circle id="splash-drop-2" cx="322" cy="300" r="2" fill="white"/>
+  
+  <!-- Birds in sky -->
+  <path id="bird-1" d="M250 80 Q255 75 260 80 Q265 75 270 80" fill="none"/>
+  <path id="bird-2" d="M280 60 Q283 57 286 60 Q289 57 292 60" fill="none"/>
+</svg>

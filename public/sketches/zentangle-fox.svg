@@ -1,0 +1,138 @@
+<svg viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Zentangle Fox - Adult Coloring -->
+  
+  <!-- Body -->
+  <ellipse id="body" cx="200" cy="320" rx="70" ry="60" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Body fur patterns -->
+  <g id="body-patterns">
+    <path d="M 150 300 Q 160 290 170 300 Q 180 290 190 300 Q 200 290 210 300 Q 220 290 230 300 Q 240 290 250 300" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 145 315 Q 155 305 165 315 Q 175 305 185 315 Q 195 305 205 315 Q 215 305 225 315 Q 235 305 245 315 Q 255 305 265 315" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 150 330 Q 160 320 170 330 Q 180 320 190 330 Q 200 320 210 330 Q 220 320 230 330 Q 240 320 250 330" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 145 345 Q 155 335 165 345 Q 175 335 185 345 Q 195 335 205 345 Q 215 335 225 345 Q 235 335 245 345 Q 255 335 265 345" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 155 360 Q 165 350 175 360 Q 185 350 195 360 Q 205 350 215 360 Q 225 350 235 360 Q 245 350 255 360" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  </g>
+  
+  <!-- Chest white patch with patterns -->
+  <ellipse id="chest" cx="200" cy="300" rx="35" ry="45" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <g id="chest-patterns">
+    <circle cx="200" cy="280" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="200" cy="295" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="200" cy="310" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 185 280 Q 200 275 215 280" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 180 300 Q 200 295 220 300" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 185 320 Q 200 315 215 320" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="200" cy="210" rx="55" ry="60" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Head patterns -->
+  <g id="head-patterns">
+    <path d="M 160 180 Q 170 170 180 180 Q 190 170 200 180 Q 210 170 220 180 Q 230 170 240 180" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 155 200 Q 165 190 175 200 Q 185 190 195 200 Q 205 190 215 200 Q 225 190 235 200 Q 245 190 255 200" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 160 220 Q 170 210 180 220 Q 190 210 200 220 Q 210 210 220 220 Q 230 210 240 220" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 165 240 Q 175 230 185 240 Q 195 230 205 240 Q 215 230 225 240 Q 235 230 245 240" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  </g>
+  
+  <!-- Snout white patch -->
+  <ellipse id="snout" cx="200" cy="240" rx="30" ry="35" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <g id="snout-patterns">
+    <circle cx="200" cy="230" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="195" cy="245" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="205" cy="245" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 180 235 Q 190 230 200 235 Q 210 230 220 235" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Ears -->
+  <g id="ears">
+    <path id="ear-l" d="M 160 150 L 130 80 L 170 130 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path id="ear-l-inner" d="M 155 140 L 140 95 L 165 130 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 145 120 Q 150 115 155 125" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 148 108 Q 153 103 158 113" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    
+    <path id="ear-r" d="M 240 150 L 270 80 L 230 130 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path id="ear-r-inner" d="M 245 140 L 260 95 L 235 130 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 255 120 Q 250 115 245 125" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 252 108 Q 247 103 242 113" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Eyes -->
+  <g id="eyes">
+    <ellipse id="eye-l" cx="175" cy="205" rx="12" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <ellipse cx="175" cy="205" rx="6" ry="10" fill="#1a1a1a"/>
+    <circle cx="176" cy="200" r="2" fill="white"/>
+    
+    <ellipse id="eye-r" cx="225" cy="205" rx="12" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <ellipse cx="225" cy="205" rx="6" ry="10" fill="#1a1a1a"/>
+    <circle cx="226" cy="200" r="2" fill="white"/>
+  </g>
+  
+  <!-- Nose -->
+  <ellipse id="nose" cx="200" cy="255" rx="8" ry="6" fill="#1a1a1a"/>
+  
+  <!-- Mouth -->
+  <path id="mouth" d="M 200 255 L 200 265 M 200 265 Q 185 270 180 265 M 200 265 Q 215 270 220 265" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Whiskers -->
+  <g id="whiskers">
+    <line x1="145" y1="240" x2="100" y2="235" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="145" y1="250" x2="95" y2="250" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="145" y1="260" x2="100" y2="265" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <line x1="255" y1="240" x2="300" y2="235" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="255" y1="250" x2="305" y2="250" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="255" y1="260" x2="300" y2="265" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Front legs -->
+  <g id="front-legs">
+    <rect id="leg-fl" x="150" y="350" width="20" height="80" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 155 360 Q 160 355 165 360" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 155 380 Q 160 375 165 380" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 155 400 Q 160 395 165 400" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="160" cy="370" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="160" cy="390" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="160" cy="410" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <ellipse cx="160" cy="432" rx="12" ry="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    
+    <rect id="leg-fr" x="230" y="350" width="20" height="80" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 235 360 Q 240 355 245 360" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 235 380 Q 240 375 245 380" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 235 400 Q 240 395 245 400" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="240" cy="370" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="240" cy="390" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="240" cy="410" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <ellipse cx="240" cy="432" rx="12" ry="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Fluffy tail -->
+  <g id="tail">
+    <path id="tail-main" d="M 150 340 Q 80 320 50 280 Q 30 250 40 200 Q 50 160 80 150" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path id="tail-fluff-1" d="M 145 330 Q 85 315 60 280 Q 45 255 50 210 Q 55 170 80 160" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="tail-fluff-2" d="M 140 320 Q 90 310 70 280 Q 55 260 60 220 Q 65 180 85 165" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Tail patterns -->
+    <g id="tail-patterns">
+      <path d="M 120 310 Q 130 305 140 315" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M 100 290 Q 110 285 120 295" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M 80 270 Q 90 265 100 275" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M 65 245 Q 75 240 85 250" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M 55 220 Q 65 215 75 225" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M 55 195 Q 65 190 75 200" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path d="M 60 170 Q 70 165 80 175" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      
+      <circle cx="110" cy="300" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle cx="90" cy="275" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle cx="70" cy="250" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle cx="60" cy="225" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle cx="60" cy="200" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle cx="65" cy="175" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    </g>
+    
+    <!-- Tail tip white -->
+    <ellipse id="tail-tip" cx="85" cy="140" rx="20" ry="25" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="85" cy="135" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="85" cy="145" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+</svg>

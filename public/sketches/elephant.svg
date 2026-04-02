@@ -1,0 +1,62 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Baby Elephant - Cute Style -->
+  
+  <!-- Body -->
+  <ellipse id="body" cx="200" cy="260" rx="120" ry="90" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Head -->
+  <circle id="head" cx="200" cy="140" r="85" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Left Ear -->
+  <path id="ear-left" d="M115 100 Q50 80 40 140 Q35 200 70 230 Q100 245 125 220 Q140 190 135 150 Q132 115 115 100" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="ear-left-inner" d="M110 120 Q70 110 65 150 Q62 190 85 210 Q105 220 115 200 Q125 175 120 145 Q118 125 110 120" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Right Ear -->
+  <path id="ear-right" d="M285 100 Q350 80 360 140 Q365 200 330 230 Q300 245 275 220 Q260 190 265 150 Q268 115 285 100" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="ear-right-inner" d="M290 120 Q330 110 335 150 Q338 190 315 210 Q295 220 285 200 Q275 175 280 145 Q282 125 290 120" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Trunk -->
+  <path id="trunk" d="M185 180 Q170 200 165 240 Q160 280 170 320 Q180 350 200 360 Q220 350 230 320 Q235 280 230 240 Q225 200 210 180" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path d="M175 250 Q200 245 220 250" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M178 280 Q200 275 218 280" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M180 310 Q200 305 215 310" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Trunk tip curl -->
+  <path id="trunk-tip" d="M200 360 Q220 365 230 355 Q240 340 230 330" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Left Eye -->
+  <circle id="eye-left" cx="160" cy="130" r="18" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle cx="163" cy="132" r="10" fill="#1a1a1a"/>
+  <circle cx="166" cy="128" r="4" fill="white"/>
+  
+  <!-- Right Eye -->
+  <circle id="eye-right" cx="240" cy="130" r="18" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle cx="243" cy="132" r="10" fill="#1a1a1a"/>
+  <circle cx="246" cy="128" r="4" fill="white"/>
+  
+  <!-- Eyebrows -->
+  <path d="M145 108 Q160 100 175 108" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M225 108 Q240 100 255 108" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Cheeks (blush) -->
+  <ellipse id="cheek-left" cx="130" cy="155" rx="12" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="cheek-right" cx="270" cy="155" rx="12" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Tusks -->
+  <path id="tusk-left" d="M165 195 Q150 210 145 230 Q143 240 150 245" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="tusk-right" d="M230 195 Q245 210 250 230 Q252 240 245 245" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Legs -->
+  <path id="leg-front-left" d="M120 310 Q115 350 120 380 Q130 395 145 395 Q160 395 165 380 Q170 350 165 310" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="leg-front-right" d="M235 310 Q230 350 235 380 Q245 395 260 395 Q275 395 280 380 Q285 350 280 310" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="leg-back-left" d="M95 280 Q85 320 90 360 Q100 380 115 380 Q130 380 135 360 Q140 320 130 280" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="leg-back-right" d="M270 280 Q280 320 275 360 Q265 380 250 380 Q235 380 230 360 Q225 320 235 280" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Toenails -->
+  <path d="M125 392 L125 388 M135 393 L135 389 M145 393 L145 389" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M250 392 L250 388 M260 393 L260 389 M270 393 L270 389" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Tail -->
+  <path id="tail" d="M320 250 Q350 260 360 290 Q365 310 355 325" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="tail-tuft" d="M355 325 Q365 335 360 345 Q350 340 355 325" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+</svg>

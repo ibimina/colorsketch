@@ -1,0 +1,190 @@
+<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Night Sky - Seasonal Themed - Adult Coloring -->
+  
+  <!-- Night sky background -->
+  <rect x="0" y="0" width="500" height="300" fill="white" stroke="none"/>
+  
+  <!-- Moon -->
+  <g id="moon" transform="translate(400, 80)">
+    <circle cx="0" cy="0" r="45" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+    <circle cx="-15" cy="-12" r="8" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="10" cy="-20" r="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="-8" cy="15" r="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="18" cy="8" r="7" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="5" cy="25" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="-25" cy="5" r="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="12" cy="-5" r="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Constellation - Big Dipper -->
+  <g id="big-dipper" transform="translate(100, 100)">
+    <circle cx="0" cy="0" r="4" fill="#1a1a1a"/>
+    <circle cx="30" cy="-10" r="4" fill="#1a1a1a"/>
+    <circle cx="60" cy="-15" r="4" fill="#1a1a1a"/>
+    <circle cx="90" cy="-10" r="4" fill="#1a1a1a"/>
+    <circle cx="100" cy="20" r="4" fill="#1a1a1a"/>
+    <circle cx="80" cy="40" r="4" fill="#1a1a1a"/>
+    <circle cx="60" cy="50" r="4" fill="#1a1a1a"/>
+    
+    <line x1="0" y1="0" x2="30" y2="-10" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="30" y1="-10" x2="60" y2="-15" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="60" y1="-15" x2="90" y2="-10" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="90" y1="-10" x2="100" y2="20" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="100" y1="20" x2="80" y2="40" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="80" y1="40" x2="60" y2="50" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+  </g>
+  
+  <!-- Constellation - Orion's Belt -->
+  <g id="orion" transform="translate(280, 180)">
+    <circle cx="0" cy="0" r="4" fill="#1a1a1a"/>
+    <circle cx="25" cy="-5" r="4" fill="#1a1a1a"/>
+    <circle cx="50" cy="0" r="4" fill="#1a1a1a"/>
+    
+    <line x1="0" y1="0" x2="25" y2="-5" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="25" y1="-5" x2="50" y2="0" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+    
+    <circle cx="10" cy="-30" r="4" fill="#1a1a1a"/>
+    <circle cx="40" cy="-25" r="4" fill="#1a1a1a"/>
+    <circle cx="15" cy="25" r="4" fill="#1a1a1a"/>
+    <circle cx="35" cy="30" r="4" fill="#1a1a1a"/>
+    
+    <line x1="10" y1="-30" x2="0" y2="0" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="40" y1="-25" x2="50" y2="0" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="0" y1="0" x2="15" y2="25" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="50" y1="0" x2="35" y2="30" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3,3"/>
+  </g>
+  
+  <!-- Stars - various sizes -->
+  <g id="stars">
+    <g transform="translate(50, 50)">
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="-6" y1="-6" x2="6" y2="6" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="6" y1="-6" x2="-6" y2="6" stroke="#1a1a1a" stroke-width="1.5"/>
+    </g>
+    
+    <g transform="translate(250, 50)">
+      <line x1="0" y1="-10" x2="0" y2="10" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="-10" y1="0" x2="10" y2="0" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="-7" y1="-7" x2="7" y2="7" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="7" y1="-7" x2="-7" y2="7" stroke="#1a1a1a" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <g transform="translate(320, 120)">
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="-6" y1="-6" x2="6" y2="6" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="6" y1="-6" x2="-6" y2="6" stroke="#1a1a1a" stroke-width="1.5"/>
+    </g>
+    
+    <circle cx="230" cy="140" r="2.5" fill="#1a1a1a"/>
+    <circle cx="180" cy="70" r="2" fill="#1a1a1a"/>
+    <circle cx="340" cy="200" r="2.5" fill="#1a1a1a"/>
+    <circle cx="420" cy="170" r="2" fill="#1a1a1a"/>
+    <circle cx="460" cy="220" r="2.5" fill="#1a1a1a"/>
+    <circle cx="80" cy="180" r="2" fill="#1a1a1a"/>
+    <circle cx="140" cy="220" r="2.5" fill="#1a1a1a"/>
+    <circle cx="380" cy="40" r="2" fill="#1a1a1a"/>
+    <circle cx="200" cy="200" r="2" fill="#1a1a1a"/>
+    <circle cx="290" cy="90" r="2.5" fill="#1a1a1a"/>
+    <circle cx="150" cy="140" r="2" fill="#1a1a1a"/>
+    <circle cx="470" cy="130" r="2" fill="#1a1a1a"/>
+    <circle cx="60" cy="120" r="2.5" fill="#1a1a1a"/>
+    <circle cx="410" cy="250" r="2" fill="#1a1a1a"/>
+  </g>
+  
+  <!-- Shooting star -->
+  <g id="shooting-star" transform="translate(200, 30)">
+    <path d="M 0 0 L 3 3 L 15 1 L 6 6 L 8 18 L 0 10 L -8 18 L -6 6 L -15 1 L -3 3 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 15 -5 L 60 -30" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 12 -8 L 55 -35" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 10 -10 L 50 -38" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Planets -->
+  <g id="saturn" transform="translate(100, 250)">
+    <circle cx="0" cy="0" r="25" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="40" ry="10" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M -38 0 Q -38 -8 -25 -5" fill="white" stroke="none"/>
+    <path d="M 38 0 Q 38 8 25 5" fill="white" stroke="none"/>
+    <path d="M -15 -15 Q -5 -20 10 -18" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -18 0 Q -8 -5 8 -3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M -15 15 Q -5 10 10 12" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Telescope on ground -->
+  <g id="telescope" transform="translate(350, 320)">
+    <path d="M 0 0 L -40 -60" stroke="#1a1a1a" stroke-width="5"/>
+    <path d="M -40 -60 L -50 -75" stroke="#1a1a1a" stroke-width="6"/>
+    <circle cx="-50" cy="-75" r="8" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="-50" cy="-75" r="5" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <rect x="-5" y="-5" width="10" height="10" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M -35 -45 L -25 -50" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <line x1="-15" y1="0" x2="-25" y2="30" stroke="#1a1a1a" stroke-width="3"/>
+    <line x1="0" y1="0" x2="0" y2="35" stroke="#1a1a1a" stroke-width="3"/>
+    <line x1="15" y1="0" x2="20" y2="30" stroke="#1a1a1a" stroke-width="3"/>
+    <circle cx="-23" cy="30" r="4" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="0" cy="35" r="4" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="20" cy="30" r="4" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  </g>
+  
+  <!-- Galaxy/nebula swirl -->
+  <g id="galaxy" transform="translate(50, 280)">
+    <path d="M 0 0 Q 10 -5 20 0 Q 30 5 40 0 Q 35 10 30 15 Q 20 20 10 15 Q 5 10 0 0 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 8 3 Q 15 1 22 3 Q 27 5 30 10" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 12 6 Q 18 5 24 7 Q 27 9 28 12" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="15" cy="7" r="1.5" fill="#1a1a1a"/>
+    <circle cx="20" cy="9" r="1" fill="#1a1a1a"/>
+    <circle cx="25" cy="6" r="1.5" fill="#1a1a1a"/>
+  </g>
+  
+  <!-- Ground/horizon -->
+  <rect x="0" y="300" width="500" height="100" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Silhouette trees -->
+  <g id="trees-silhouette">
+    <path d="M 450 300 L 445 260 L 455 260 Z" fill="#1a1a1a"/>
+    <path d="M 450 270 L 443 230 L 457 230 Z" fill="#1a1a1a"/>
+    <path d="M 450 240 L 440 200 L 460 200 Z" fill="#1a1a1a"/>
+    <rect x="447" y="300" width="6" height="25" fill="#1a1a1a"/>
+    
+    <path d="M 480 300 L 476 270 L 484 270 Z" fill="#1a1a1a"/>
+    <path d="M 480 280 L 474 250 L 486 250 Z" fill="#1a1a1a"/>
+    <path d="M 480 260 L 472 230 L 488 230 Z" fill="#1a1a1a"/>
+    <rect x="478" y="300" width="4" height="20" fill="#1a1a1a"/>
+    
+    <path d="M 420 300 L 415 265 L 425 265 Z" fill="#1a1a1a"/>
+    <path d="M 420 275 L 413 240 L 427 240 Z" fill="#1a1a1a"/>
+    <path d="M 420 250 L 411 215 L 429 215 Z" fill="#1a1a1a"/>
+    <rect x="417" y="300" width="6" height="23" fill="#1a1a1a"/>
+  </g>
+  
+  <!-- Owl on branch -->
+  <g id="owl" transform="translate(180, 330)">
+    <line x1="-40" y1="0" x2="40" y2="0" stroke="#1a1a1a" stroke-width="3"/>
+    <ellipse cx="0" cy="-15" rx="18" ry="22" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="-7" cy="-18" r="8" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="7" cy="-18" r="8" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="-7" cy="-18" r="4" fill="#1a1a1a"/>
+    <circle cx="7" cy="-18" r="4" fill="#1a1a1a"/>
+    <path d="M 0 -15 L -3 -12 L 0 -10 L 3 -12 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M -15 -28 L -20 -35 L -18 -30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 15 -28 L 20 -35 L 18 -30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M -12 -5 Q -10 0 -8 -2" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M -5 -2 Q -3 2 0 0" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 5 -2 Q 3 2 0 0" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 12 -5 Q 10 0 8 -2" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Grass silhouettes -->
+  <g id="grass-silhouette">
+    <line x1="20" y1="300" x2="18" y2="285" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="25" y1="300" x2="27" y2="283" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="30" y1="300" x2="28" y2="287" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="280" y1="300" x2="278" y2="285" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="285" y1="300" x2="287" y2="280" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="290" y1="300" x2="288" y2="288" stroke="#1a1a1a" stroke-width="2"/>
+  </g>
+</svg>

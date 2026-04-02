@@ -1,0 +1,80 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Astronaut in Space - Space Theme -->
+  
+  <!-- Stars background elements -->
+  <circle id="star-1" cx="50" cy="50" r="3" fill="#1a1a1a"/>
+  <circle id="star-2" cx="350" cy="30" r="2" fill="#1a1a1a"/>
+  <circle id="star-3" cx="380" cy="150" r="2" fill="#1a1a1a"/>
+  <circle id="star-4" cx="30" cy="200" r="2" fill="#1a1a1a"/>
+  <circle id="star-5" cx="370" cy="350" r="3" fill="#1a1a1a"/>
+  <circle id="star-6" cx="40" cy="350" r="2" fill="#1a1a1a"/>
+  <path id="star-7" d="M320 80 L323 88 L332 88 L325 94 L328 102 L320 97 L312 102 L315 94 L308 88 L317 88 Z" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Helmet (outer) -->
+  <circle id="helmet-outer" cx="200" cy="130" r="75" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+  
+  <!-- Helmet visor -->
+  <ellipse id="visor" cx="200" cy="135" rx="55" ry="50" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Visor reflection -->
+  <path id="visor-reflection" d="M160 110 Q175 100 200 105 Q210 108 215 120" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Face inside helmet -->
+  <circle id="face" cx="200" cy="140" r="35" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Eyes -->
+  <ellipse id="eye-left" cx="188" cy="135" rx="8" ry="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse cx="189" cy="136" rx="4" ry="5" fill="#1a1a1a"/>
+  <circle cx="190" cy="134" r="1.5" fill="white"/>
+  
+  <ellipse id="eye-right" cx="212" cy="135" rx="8" ry="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse cx="211" cy="136" rx="4" ry="5" fill="#1a1a1a"/>
+  <circle cx="210" cy="134" r="1.5" fill="white"/>
+  
+  <!-- Smile -->
+  <path d="M192 155 Q200 162 208 155" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Cheeks -->
+  <circle id="cheek-left" cx="178" cy="150" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <circle id="cheek-right" cx="222" cy="150" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Helmet ring/collar -->
+  <ellipse id="helmet-ring" cx="200" cy="200" rx="55" ry="15" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Body/Suit -->
+  <path id="body" d="M145 210 Q140 250 145 300 Q150 340 170 360 L230 360 Q250 340 255 300 Q260 250 255 210" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Chest panel -->
+  <rect id="chest-panel" x="170" y="230" width="60" height="50" rx="8" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle cx="185" cy="245" r="6" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="200" cy="245" r="6" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="215" cy="245" r="6" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <rect x="178" y="260" width="44" height="12" rx="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Backpack (life support) -->
+  <rect id="backpack" x="250" y="220" width="35" height="80" rx="8" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path d="M255 240 L280 240 M255 260 L280 260 M255 280 L280 280" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Arms -->
+  <path id="arm-left" d="M145 220 Q120 240 100 270 Q90 290 100 300 Q115 310 130 295 Q145 275 150 250" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="arm-right" d="M255 220 Q280 230 300 210 Q320 195 325 205 Q330 220 315 235 Q290 255 265 250" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Gloves -->
+  <ellipse id="glove-left" cx="105" cy="305" rx="18" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M95 300 L95 315 M105 302 L105 318 M115 300 L115 315" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <ellipse id="glove-right" cx="325" cy="215" rx="18" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M315 210 L315 225 M325 212 L325 228 M335 210 L335 225" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Legs -->
+  <path id="leg-left" d="M170 355 Q165 380 175 395 Q190 400 200 395" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="leg-right" d="M230 355 Q235 380 225 395 Q210 400 200 395" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Boots -->
+  <ellipse id="boot-left" cx="175" cy="395" rx="22" ry="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse id="boot-right" cx="225" cy="395" rx="22" ry="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Planet in background -->
+  <circle id="planet" cx="60" cy="120" r="30" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse id="planet-ring" cx="60" cy="120" rx="45" ry="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+</svg>

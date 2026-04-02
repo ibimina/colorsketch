@@ -1,26 +1,256 @@
 @import "tailwindcss";
 
+/* ============================================
+   ColorSketch Design System — "Digital Atélier"
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surface Hierarchy (No-Line Rule: use bg shifts, not borders) */
+  --surface: #f5f7f7;
+  --surface-dim: #d0d5d6;
+  --surface-bright: #f5f7f7;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eef1f1;
+  --surface-container: #e5e9e9;
+  --surface-container-high: #dfe3e3;
+  --surface-container-highest: #d9dede;
+  --surface-variant: #d9dede;
+
+  /* Primary (Red) */
+  --primary: #b41924;
+  --primary-dim: #a3041a;
+  --primary-container: #ff7671;
+  --primary-fixed: #ff7671;
+  --primary-fixed-dim: #ff5a58;
+  --on-primary: #ffefee;
+  --on-primary-container: #4e0007;
+
+  /* Secondary (Teal) */
+  --secondary: #006386;
+  --secondary-dim: #005675;
+  --secondary-container: #9adaff;
+  --on-secondary: #e7f5ff;
+  --on-secondary-container: #004d69;
+
+  /* Tertiary (Gold) */
+  --tertiary: #6e5a00;
+  --tertiary-container: #ffd740;
+  --on-tertiary: #fff2d1;
+  --on-tertiary-container: #5c4b00;
+
+  /* Neutral */
+  --background: #f5f7f7;
+  --on-background: #2c2f30;
+  --on-surface: #2c2f30;
+  --on-surface-variant: #595c5c;
+  --outline: #747778;
+  --outline-variant: #abadae;
+
+  /* Inverse */
+  --inverse-surface: #0b0f0f;
+  --inverse-on-surface: #9b9d9e;
+  --inverse-primary: #ff5353;
+
+  /* Error */
+  --error: #b31b25;
+  --error-container: #fb5151;
+  --on-error: #ffefee;
+  --on-error-container: #570008;
 }
 
 @theme inline {
+  /* Colors */
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-variant: var(--surface-variant);
+
+  --color-primary: var(--primary);
+  --color-primary-dim: var(--primary-dim);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary: var(--on-primary);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary: var(--on-secondary);
+
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-on-background: var(--on-background);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+
+  /* Fonts */
+  --font-headline: var(--font-plus-jakarta);
+  --font-body: var(--font-be-vietnam);
+
+  /* Border Radius (Soft aesthetic) */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 3rem;
+  --radius-full: 9999px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ==============================
+   Global Styles
+   ============================== */
+
+body {
+  background: var(--surface);
+  color: var(--on-surface);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Selection */
+::selection {
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+/* ==============================
+   Utility Classes
+   ============================== */
+
+/* Gradient Primary Button */
+.btn-primary-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-container) 100%
+  );
+}
+
+/* Canvas Shadow (Ambient, soft) */
+.canvas-shadow {
+  box-shadow: 0 12px 24px rgba(44, 47, 48, 0.08);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(245, 247, 247, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Ghost Border (15% opacity outline-variant) */
+.ghost-border {
+  box-shadow: inset 0 0 0 1px rgba(171, 173, 174, 0.15);
+}
+
+/* Soft-touch button interaction */
+.soft-touch {
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
+}
+.soft-touch:active {
+  transform: scale(0.96);
+}
+
+/* Ring input style */
+.input-ring {
+  box-shadow: inset 0 0 0 1px rgba(171, 173, 174, 0.3);
+}
+.input-ring:focus {
+  box-shadow: inset 0 0 0 2px var(--primary);
+}
+
+/* ==============================
+   Enhanced Tokens & Utilities
+   ============================== */
+
+:root {
+  /* Animation tokens */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Spacing scale (tighter) */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  /* Soft glow */
+  --glow-primary: 0 0 20px rgba(180, 25, 36, 0.15);
+  --glow-secondary: 0 0 20px rgba(0, 99, 134, 0.15);
+}
+
+/* Micro-interactions */
+.interactive {
+  transition: all var(--transition-fast);
+}
+.interactive:hover {
+  transform: translateY(-2px);
+}
+.interactive:active {
+  transform: translateY(0);
+}
+
+/* Focus visible styles */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* Animation utilities */
+@keyframes slide-in-from-bottom-5 {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-in.slide-in-from-bottom-5 {
+  animation: slide-in-from-bottom-5 0.3s ease-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--tw-rotate, 0));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--tw-rotate, 0));
+  }
+}
+
+@keyframes slide-in-from-top-2 {
+  from {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in.slide-in-from-top-2 {
+  animation: slide-in-from-top-2 0.3s ease-out;
+}
+
+/* Hide scrollbar while maintaining functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }

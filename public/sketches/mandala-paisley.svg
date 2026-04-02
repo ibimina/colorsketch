@@ -1,0 +1,87 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Intricate Paisley Mandala - Adult Coloring -->
+  
+  <!-- Outer border -->
+  <circle id="outer-border" cx="200" cy="200" r="195" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Large paisley motifs around the edge -->
+  <g id="paisley-ring">
+    <!-- Paisley 1 -->
+    <g id="paisley-1">
+      <path id="paisley-body-1" d="M200 20 Q240 40 235 80 Q230 110 200 100 Q170 90 175 60 Q180 30 200 20" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <path id="paisley-inner-1" d="M200 35 Q225 48 222 72 Q218 92 200 85 Q182 78 185 58 Q188 40 200 35" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+      <circle id="paisley-dot-1a" cx="200" cy="50" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle id="paisley-dot-1b" cx="210" cy="62" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle id="paisley-dot-1c" cx="190" cy="62" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    <!-- Paisley 2-8 (rotated) -->
+    <use href="#paisley-1" transform="rotate(45 200 200)"/>
+    <use href="#paisley-1" transform="rotate(90 200 200)"/>
+    <use href="#paisley-1" transform="rotate(135 200 200)"/>
+    <use href="#paisley-1" transform="rotate(180 200 200)"/>
+    <use href="#paisley-1" transform="rotate(225 200 200)"/>
+    <use href="#paisley-1" transform="rotate(270 200 200)"/>
+    <use href="#paisley-1" transform="rotate(315 200 200)"/>
+  </g>
+  
+  <!-- Decorative curved elements between paisleys -->
+  <g id="swirls">
+    <path id="swirl-1" d="M230 50 Q250 60 255 80 Q258 95 250 105" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="swirl-2" d="M230 50 Q250 60 255 80 Q258 95 250 105" fill="none" stroke="#1a1a1a" stroke-width="1" transform="rotate(45 200 200)"/>
+    <path id="swirl-3" d="M230 50 Q250 60 255 80 Q258 95 250 105" fill="none" stroke="#1a1a1a" stroke-width="1" transform="rotate(90 200 200)"/>
+    <path id="swirl-4" d="M230 50 Q250 60 255 80 Q258 95 250 105" fill="none" stroke="#1a1a1a" stroke-width="1" transform="rotate(135 200 200)"/>
+    <path id="swirl-5" d="M230 50 Q250 60 255 80 Q258 95 250 105" fill="none" stroke="#1a1a1a" stroke-width="1" transform="rotate(180 200 200)"/>
+    <path id="swirl-6" d="M230 50 Q250 60 255 80 Q258 95 250 105" fill="none" stroke="#1a1a1a" stroke-width="1" transform="rotate(225 200 200)"/>
+    <path id="swirl-7" d="M230 50 Q250 60 255 80 Q258 95 250 105" fill="none" stroke="#1a1a1a" stroke-width="1" transform="rotate(270 200 200)"/>
+    <path id="swirl-8" d="M230 50 Q250 60 255 80 Q258 95 250 105" fill="none" stroke="#1a1a1a" stroke-width="1" transform="rotate(315 200 200)"/>
+  </g>
+  
+  <!-- Middle ring decoration -->
+  <circle id="mid-ring-outer" cx="200" cy="200" r="100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="mid-ring-inner" cx="200" cy="200" r="95" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Teardrop pattern ring -->
+  <g id="teardrops">
+    <path id="tear-1" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="tear-2" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(30 200 200)"/>
+    <path id="tear-3" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(60 200 200)"/>
+    <path id="tear-4" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(90 200 200)"/>
+    <path id="tear-5" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(120 200 200)"/>
+    <path id="tear-6" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(150 200 200)"/>
+    <path id="tear-7" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(180 200 200)"/>
+    <path id="tear-8" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(210 200 200)"/>
+    <path id="tear-9" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(240 200 200)"/>
+    <path id="tear-10" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(270 200 200)"/>
+    <path id="tear-11" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(300 200 200)"/>
+    <path id="tear-12" d="M200 108 Q215 130 200 150 Q185 130 200 108" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(330 200 200)"/>
+  </g>
+  
+  <!-- Inner paisley cluster -->
+  <g id="inner-paisleys">
+    <path id="inner-paisley-1" d="M200 155 Q220 165 218 185 Q215 200 200 195 Q185 190 188 175 Q192 162 200 155" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="inner-paisley-2" d="M200 155 Q220 165 218 185 Q215 200 200 195 Q185 190 188 175 Q192 162 200 155" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(60 200 200)"/>
+    <path id="inner-paisley-3" d="M200 155 Q220 165 218 185 Q215 200 200 195 Q185 190 188 175 Q192 162 200 155" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(120 200 200)"/>
+    <path id="inner-paisley-4" d="M200 155 Q220 165 218 185 Q215 200 200 195 Q185 190 188 175 Q192 162 200 155" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(180 200 200)"/>
+    <path id="inner-paisley-5" d="M200 155 Q220 165 218 185 Q215 200 200 195 Q185 190 188 175 Q192 162 200 155" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(240 200 200)"/>
+    <path id="inner-paisley-6" d="M200 155 Q220 165 218 185 Q215 200 200 195 Q185 190 188 175 Q192 162 200 155" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(300 200 200)"/>
+  </g>
+  
+  <!-- Center decoration -->
+  <circle id="center-outer" cx="200" cy="200" r="45" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <g id="center-petals">
+    <ellipse id="cpetal-1" cx="200" cy="165" rx="8" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="cpetal-2" cx="200" cy="165" rx="8" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(45 200 200)"/>
+    <ellipse id="cpetal-3" cx="200" cy="165" rx="8" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(90 200 200)"/>
+    <ellipse id="cpetal-4" cx="200" cy="165" rx="8" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(135 200 200)"/>
+    <ellipse id="cpetal-5" cx="200" cy="165" rx="8" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(180 200 200)"/>
+    <ellipse id="cpetal-6" cx="200" cy="165" rx="8" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(225 200 200)"/>
+    <ellipse id="cpetal-7" cx="200" cy="165" rx="8" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(270 200 200)"/>
+    <ellipse id="cpetal-8" cx="200" cy="165" rx="8" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(315 200 200)"/>
+  </g>
+  
+  <!-- Center circles -->
+  <circle id="center-1" cx="200" cy="200" r="22" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="center-2" cx="200" cy="200" r="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="center-3" cx="200" cy="200" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="center-dot" cx="200" cy="200" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

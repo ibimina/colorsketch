@@ -1,0 +1,144 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Star of David Sacred Geometry - Adult Coloring -->
+  
+  <!-- Outer circle -->
+  <circle cx="200" cy="200" r="190" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="200" cy="200" r="170" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Main Star of David (hexagram) -->
+  <g id="main-star">
+    <!-- Upward triangle -->
+    <path d="M 200 50 L 320 260 L 80 260 Z" fill="white" stroke="#1a1a1a" stroke-width="3"/>
+    
+    <!-- Downward triangle -->
+    <path d="M 200 350 L 80 140 L 320 140 Z" fill="white" stroke="#1a1a1a" stroke-width="3"/>
+    
+    <!-- Inner hexagon created by intersection -->
+    <path d="M 240 140 L 280 200 L 240 260 L 160 260 L 120 200 L 160 140 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  </g>
+  
+  <!-- Decorative patterns in triangle sections -->
+  <g id="triangle-patterns">
+    <!-- Top triangle patterns -->
+    <g id="top-patterns">
+      <circle cx="200" cy="90" r="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="200" cy="90" r="12" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="200" cy="110" r="6" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      <path d="M 190 120 Q 200 115 210 120" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <!-- Upper right patterns -->
+    <g id="upper-right-patterns">
+      <circle cx="260" cy="170" r="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="260" cy="170" r="12" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="270" cy="190" r="6" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <!-- Upper left patterns -->
+    <g id="upper-left-patterns">
+      <circle cx="140" cy="170" r="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="140" cy="170" r="12" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="130" cy="190" r="6" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <!-- Bottom triangle patterns -->
+    <g id="bottom-patterns">
+      <circle cx="200" cy="310" r="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="200" cy="310" r="12" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="200" cy="290" r="6" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      <path d="M 190 280 Q 200 285 210 280" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <!-- Lower right patterns -->
+    <g id="lower-right-patterns">
+      <circle cx="270" cy="220" r="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="270" cy="220" r="12" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="280" cy="240" r="6" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <!-- Lower left patterns -->
+    <g id="lower-left-patterns">
+      <circle cx="130" cy="220" r="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="130" cy="220" r="12" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="120" cy="240" r="6" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- Center hexagon with detailed pattern -->
+  <g id="center-hexagon-pattern">
+    <circle cx="200" cy="200" r="50" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="200" cy="200" r="45" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="200" cy="200" r="40" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="200" cy="200" r="35" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="200" cy="200" r="30" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="200" cy="200" r="25" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="200" cy="200" r="20" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="200" cy="200" r="15" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="200" cy="200" r="10" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="200" cy="200" r="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Radiating lines in center -->
+    <line x1="200" y1="185" x2="200" y2="160" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="200" y1="215" x2="200" y2="240" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="185" y1="200" x2="160" y2="200" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="215" y1="200" x2="240" y2="200" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="214" y1="186" x2="228" y2="172" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="186" y1="214" x2="172" y2="228" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="186" y1="186" x2="172" y2="172" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="214" y1="214" x2="228" y2="228" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Small stars at hexagon vertices -->
+  <g id="vertex-stars">
+    <g transform="translate(240, 140)">
+      <circle r="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M 0 -7 L 2 -2 L 7 -2 L 3 1 L 5 6 L 0 3 L -5 6 L -3 1 L -7 -2 L -2 -2 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    <g transform="translate(280, 200)">
+      <circle r="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M 0 -7 L 2 -2 L 7 -2 L 3 1 L 5 6 L 0 3 L -5 6 L -3 1 L -7 -2 L -2 -2 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    <g transform="translate(240, 260)">
+      <circle r="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M 0 -7 L 2 -2 L 7 -2 L 3 1 L 5 6 L 0 3 L -5 6 L -3 1 L -7 -2 L -2 -2 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    <g transform="translate(160, 260)">
+      <circle r="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M 0 -7 L 2 -2 L 7 -2 L 3 1 L 5 6 L 0 3 L -5 6 L -3 1 L -7 -2 L -2 -2 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    <g transform="translate(120, 200)">
+      <circle r="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M 0 -7 L 2 -2 L 7 -2 L 3 1 L 5 6 L 0 3 L -5 6 L -3 1 L -7 -2 L -2 -2 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    <g transform="translate(160, 140)">
+      <circle r="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M 0 -7 L 2 -2 L 7 -2 L 3 1 L 5 6 L 0 3 L -5 6 L -3 1 L -7 -2 L -2 -2 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- Outer decorative elements -->
+  <g id="outer-decoration">
+    <!-- Circle dots around perimeter -->
+    <circle cx="200" cy="30" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="260" cy="60" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="310" cy="110" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="340" cy="170" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="350" cy="230" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="340" cy="290" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="310" cy="340" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="260" cy="370" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="200" cy="385" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="140" cy="370" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="90" cy="340" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="60" cy="290" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="50" cy="230" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="60" cy="170" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="90" cy="110" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="140" cy="60" r="5" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Middle ring pattern -->
+  <circle cx="200" cy="200" r="145" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="200" cy="200" r="135" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

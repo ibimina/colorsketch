@@ -1,0 +1,172 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Moroccan Fashion - Adult Coloring -->
+  
+  <!-- Flowing hair with headscarf -->
+  <g id="hair-scarf">
+    <!-- Hair -->
+    <path id="hair-l" d="M100 140 Q80 180 70 250 Q65 320 80 400" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-l-2" d="M120 150 Q100 190 90 260 Q85 330 95 400" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="hair-r" d="M300 140 Q320 180 330 250 Q335 320 320 400" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-r-2" d="M280 150 Q300 190 310 260 Q315 330 305 400" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Hair waves -->
+    <path id="hw-1" d="M75 220 Q85 215 95 225" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="hw-2" d="M72 280 Q82 275 92 285" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="hw-3" d="M310 220 Q320 215 330 225" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="hw-4" d="M315 280 Q325 275 335 285" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    
+    <!-- Headscarf -->
+    <path id="scarf-main" d="M100 80 Q140 60 200 55 Q260 60 300 80 Q310 90 305 100 Q295 110 280 120 L270 400" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="scarf-main-l" d="M100 80 Q90 90 95 100 Q105 110 120 120 L130 400" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Scarf pattern - geometric -->
+    <g id="scarf-pattern">
+      <path id="sp-1" d="M115 150 L125 165 L115 180 L105 165 Z" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="sp-2" d="M115 200 L125 215 L115 230 L105 215 Z" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="sp-3" d="M115 250 L125 265 L115 280 L105 265 Z" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="sp-4" d="M115 300 L125 315 L115 330 L105 315 Z" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      
+      <path id="sp-5" d="M285 150 L295 165 L285 180 L275 165 Z" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="sp-6" d="M285 200 L295 215 L285 230 L275 215 Z" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="sp-7" d="M285 250 L295 265 L285 280 L275 265 Z" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="sp-8" d="M285 300 L295 315 L285 330 L275 315 Z" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    </g>
+    
+    <!-- Scarf border -->
+    <path id="scarf-border-top" d="M100 80 Q140 65 200 60 Q260 65 300 80" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path id="scarf-border-inner" d="M105 90 Q145 75 200 70 Q255 75 295 90" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  </g>
+  
+  <!-- Face -->
+  <ellipse id="face" cx="200" cy="120" rx="48" ry="55" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Eyes with kohl -->
+  <g id="eyes">
+    <path id="eye-l" d="M170 115 Q180 105 195 115 Q180 122 170 115" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle id="iris-l" cx="182" cy="115" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="kohl-l" d="M165 115 Q168 112 170 115" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="lash-l" d="M170 112 Q175 108 180 110 Q185 108 190 112" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    
+    <path id="eye-r" d="M205 115 Q220 105 230 115 Q220 122 205 115" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle id="iris-r" cx="218" cy="115" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="kohl-r" d="M235 115 Q232 112 230 115" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="lash-r" d="M210 112 Q215 108 220 110 Q225 108 230 112" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Eyebrows -->
+  <path id="brow-l" d="M168 100 Q182 93 198 102" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path id="brow-r" d="M232 100 Q218 93 202 102" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M200 118 L196 140 Q200 145 204 140" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  
+  <!-- Lips -->
+  <path id="lips" d="M185 158 Q195 152 200 156 Q205 152 215 158 Q205 167 200 165 Q195 167 185 158" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Neck -->
+  <path id="neck" d="M175 175 L175 200 L225 200 L225 175" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Kaftan -->
+  <g id="kaftan">
+    <path id="kaftan-outline" d="M100 200 Q130 190 200 195 Q270 190 300 200 L320 400 L80 400 L100 200" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+    
+    <!-- Embroidered neckline -->
+    <g id="neckline-embroidery">
+      <path id="ne-v" d="M170 195 L200 250 L230 195" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      <path id="ne-v-inner" d="M175 200 L200 245 L225 200" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+      
+      <!-- Decorative elements -->
+      <circle id="ne-c1" cx="180" cy="210" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="ne-c2" cx="200" cy="225" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="ne-c3" cx="220" cy="210" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      
+      <!-- Filigree -->
+      <path id="fil-1" d="M185 215 Q190 212 195 218" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path id="fil-2" d="M205 218 Q210 212 215 215" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    
+    <!-- Center embroidery panel -->
+    <g id="center-panel">
+      <rect id="panel-bg" x="180" y="255" width="40" height="130" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+      
+      <!-- Geometric patterns -->
+      <polygon id="geo-1" points="200,265 210,280 200,295 190,280" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle cx="200" cy="280" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <polygon id="geo-2" points="200,305 210,320 200,335 190,320" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle cx="200" cy="320" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <polygon id="geo-3" points="200,345 210,360 200,375 190,360" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle cx="200" cy="360" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    
+    <!-- Side patterns -->
+    <g id="side-pattern-l">
+      <path id="spl-1" d="M120 250 Q130 245 140 255 Q130 265 120 260" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="spl-2" d="M115 300 Q125 295 135 305 Q125 315 115 310" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="spl-3" d="M110 350 Q120 345 130 355 Q120 365 110 360" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    </g>
+    
+    <g id="side-pattern-r">
+      <path id="spr-1" d="M280 250 Q270 245 260 255 Q270 265 280 260" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="spr-2" d="M285 300 Q275 295 265 305 Q275 315 285 310" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="spr-3" d="M290 350 Q280 345 270 355 Q280 365 290 360" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    </g>
+  </g>
+  
+  <!-- Sleeves -->
+  <g id="sleeves">
+    <path id="sleeve-l" d="M100 200 Q70 220 50 260 Q40 300 45 340" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="sleeve-r" d="M300 200 Q330 220 350 260 Q360 300 355 340" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    
+    <!-- Sleeve embroidery -->
+    <path id="se-l-1" d="M65 270 Q75 265 85 275" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="75" cy="270" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="se-l-2" d="M55 310 Q65 305 75 315" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    
+    <path id="se-r-1" d="M335 270 Q325 265 315 275" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="325" cy="270" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="se-r-2" d="M345 310 Q335 305 325 315" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+  
+  <!-- Hands with henna -->
+  <g id="hands">
+    <ellipse id="hand-l" cx="48" cy="350" rx="12" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <ellipse id="hand-r" cx="352" cy="350" rx="12" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Henna patterns -->
+    <path id="henna-l" d="M43 350 Q48 345 53 350 Q48 355 43 350" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="48" cy="350" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.2"/>
+    
+    <path id="henna-r" d="M347 350 Q352 345 357 350 Q352 355 347 350" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="352" cy="350" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.2"/>
+  </g>
+  
+  <!-- Jewelry -->
+  <g id="jewelry">
+    <!-- Forehead jewelry (tikka) -->
+    <path id="tikka-chain" d="M140 80 Q160 75 180 78 Q190 80 200 85" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="tikka-chain-r" d="M260 80 Q240 75 220 78 Q210 80 200 85" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <ellipse id="tikka-gem" cx="200" cy="88" rx="8" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <ellipse id="tikka-gem-i" cx="200" cy="88" rx="4" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    
+    <!-- Earrings -->
+    <g id="earring-l">
+      <circle cx="148" cy="130" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <ellipse cx="148" cy="145" rx="8" ry="12" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle cx="148" cy="145" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    
+    <g id="earring-r">
+      <circle cx="252" cy="130" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <ellipse cx="252" cy="145" rx="8" ry="12" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle cx="252" cy="145" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    
+    <!-- Necklace -->
+    <path id="necklace" d="M165 175 Q175 190 200 195 Q225 190 235 175" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="180" cy="185" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle cx="200" cy="193" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="220" cy="185" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+</svg>

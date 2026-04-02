@@ -1,0 +1,184 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bohemian Fashion Girl - Adult Coloring -->
+  
+  <!-- Hair flowing -->
+  <g id="hair">
+    <path id="hair-main" d="M130 80 Q100 100 80 150 Q60 200 70 280 Q80 350 100 400" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="hair-main-2" d="M140 85 Q115 110 100 160 Q85 220 95 300 Q105 370 120 400" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-right" d="M270 80 Q300 100 320 150 Q340 200 330 280 Q320 350 300 400" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="hair-right-2" d="M260 85 Q285 110 300 160 Q315 220 305 300 Q295 370 280 400" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-top" d="M130 80 Q150 60 200 50 Q250 60 270 80" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+    
+    <!-- Hair texture waves -->
+    <path id="wave-1" d="M90 180 Q100 175 110 185" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="wave-2" d="M85 220 Q95 215 105 225" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="wave-3" d="M80 260 Q90 255 100 265" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="wave-4" d="M85 300 Q95 295 105 305" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="wave-5" d="M290 180 Q300 175 310 185" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="wave-6" d="M295 220 Q305 215 315 225" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="wave-7" d="M300 260 Q310 255 320 265" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="wave-8" d="M295 300 Q305 295 315 305" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Face -->
+  <ellipse id="face" cx="200" cy="110" rx="55" ry="65" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Eyes -->
+  <g id="eyes">
+    <ellipse id="eye-l" cx="175" cy="105" rx="12" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle id="iris-l" cx="175" cy="105" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="lash-l-1" d="M163 100 Q165 95 168 98" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="lash-l-2" d="M166 98 Q169 93 172 97" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="lash-l-3" d="M170 97 Q174 92 177 97" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    
+    <ellipse id="eye-r" cx="225" cy="105" rx="12" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle id="iris-r" cx="225" cy="105" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="lash-r-1" d="M237 100 Q235 95 232 98" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="lash-r-2" d="M234 98 Q231 93 228 97" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="lash-r-3" d="M230 97 Q226 92 223 97" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Eyebrows -->
+  <path id="brow-l" d="M160 90 Q175 85 188 92" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path id="brow-r" d="M240 90 Q225 85 212 92" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M200 108 L197 125 Q200 130 203 125 L200 108" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Lips -->
+  <path id="lips" d="M185 145 Q195 140 200 143 Q205 140 215 145 Q207 155 200 155 Q193 155 185 145" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path id="lip-line" d="M188 148 Q200 145 212 148" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+  
+  <!-- Flower crown -->
+  <g id="flower-crown">
+    <path id="crown-vine" d="M130 80 Q150 70 170 75 Q200 65 230 75 Q250 70 270 80" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    
+    <!-- Flowers -->
+    <g id="fc-flower-1">
+      <circle cx="150" cy="72" r="10" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle cx="150" cy="72" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="150" cy="62" rx="3" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="150" cy="82" rx="3" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="140" cy="72" rx="5" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="160" cy="72" rx="5" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    
+    <g id="fc-flower-2">
+      <circle cx="200" cy="60" r="12" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle cx="200" cy="60" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="200" cy="48" rx="4" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="200" cy="72" rx="4" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="188" cy="60" rx="6" ry="4" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="212" cy="60" rx="6" ry="4" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    
+    <g id="fc-flower-3">
+      <circle cx="250" cy="72" r="10" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle cx="250" cy="72" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="250" cy="62" rx="3" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="250" cy="82" rx="3" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="240" cy="72" rx="5" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="260" cy="72" rx="5" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    
+    <!-- Small leaves -->
+    <path id="leaf-1" d="M170 73 Q175 68 180 73 Q175 78 170 73" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="leaf-2" d="M220 73 Q225 68 230 73 Q225 78 220 73" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+  
+  <!-- Neck -->
+  <path id="neck" d="M180 170 L180 195 L220 195 L220 170" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Bohemian top -->
+  <g id="top">
+    <path id="top-outline" d="M130 195 Q150 180 200 185 Q250 180 270 195 L280 280 Q240 290 200 285 Q160 290 120 280 L130 195" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+    
+    <!-- Embroidery pattern on top -->
+    <g id="embroidery">
+      <!-- Center flower -->
+      <circle id="em-center" cx="200" cy="230" r="15" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+      <circle id="em-center-i" cx="200" cy="230" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle id="em-center-c" cx="200" cy="230" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="200" cy="213" rx="4" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="200" cy="247" rx="4" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="183" cy="230" rx="7" ry="4" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <ellipse cx="217" cy="230" rx="7" ry="4" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <!-- Side flowers -->
+      <circle id="em-l" cx="160" cy="235" r="10" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle id="em-l-i" cx="160" cy="235" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <circle id="em-r" cx="240" cy="235" r="10" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle id="em-r-i" cx="240" cy="235" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <!-- Connecting vines -->
+      <path id="vine-1" d="M145 240 Q152 230 175 232" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="vine-2" d="M225 232 Q248 230 255 240" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      
+      <!-- Small leaves on vines -->
+      <path id="em-leaf-1" d="M155 235 Q160 230 165 235 Q160 240 155 235" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path id="em-leaf-2" d="M230 235 Q235 230 240 235 Q235 240 230 235" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    
+    <!-- Neckline detail -->
+    <path id="neckline" d="M150 195 Q175 210 200 205 Q225 210 250 195" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="neckline-2" d="M155 200 Q175 215 200 210 Q225 215 245 200" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Sleeves -->
+  <g id="sleeves">
+    <path id="sleeve-l" d="M130 195 Q100 200 80 230 Q70 260 85 290 L120 280" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="sleeve-l-frill" d="M80 290 Q85 295 90 290 Q95 295 100 290 Q105 295 110 290 Q115 295 120 290" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <path id="sleeve-r" d="M270 195 Q300 200 320 230 Q330 260 315 290 L280 280" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="sleeve-r-frill" d="M320 290 Q315 295 310 290 Q305 295 300 290 Q295 295 290 290 Q285 295 280 290" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  </g>
+  
+  <!-- Flowing skirt -->
+  <g id="skirt">
+    <path id="skirt-outline" d="M120 278 Q100 320 90 400 L310 400 Q300 320 280 278" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+    
+    <!-- Skirt folds -->
+    <path id="fold-1" d="M130 285 Q120 340 115 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fold-2" d="M160 285 Q150 340 145 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fold-3" d="M200 280 Q200 340 200 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fold-4" d="M240 285 Q250 340 255 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="fold-5" d="M270 285 Q280 340 285 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Skirt embroidery -->
+    <g id="skirt-em">
+      <circle id="sk-f1" cx="130" cy="340" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle id="sk-f1-i" cx="130" cy="340" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <circle id="sk-f2" cx="180" cy="350" r="10" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle id="sk-f2-i" cx="180" cy="350" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <circle id="sk-f3" cx="220" cy="345" r="9" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle id="sk-f3-i" cx="220" cy="345" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <circle id="sk-f4" cx="265" cy="335" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <circle id="sk-f4-i" cx="265" cy="335" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <!-- Connecting dots -->
+      <circle cx="155" cy="345" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <circle cx="200" cy="348" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <circle cx="243" cy="340" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+  </g>
+  
+  <!-- Earrings -->
+  <g id="earrings">
+    <circle id="ear-l" cx="140" cy="130" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <ellipse id="ear-l-drop" cx="140" cy="145" rx="4" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <circle id="ear-r" cx="260" cy="130" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <ellipse id="ear-r-drop" cx="260" cy="145" rx="4" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Necklace -->
+  <g id="necklace">
+    <path id="neck-chain" d="M170 175 Q185 185 200 183 Q215 185 230 175" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <ellipse id="pendant" cx="200" cy="190" rx="8" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <ellipse id="pendant-i" cx="200" cy="190" rx="4" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+</svg>

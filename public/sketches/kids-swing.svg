@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Kids on Playground Swing -->
+  
+  <!-- Sky elements -->
+  <circle id="sun" cx="350" cy="50" r="25" fill="white"/>
+  <path id="sun-ray-1" d="M350 15 L350 5" stroke-width="3"/>
+  <path id="sun-ray-2" d="M380 30 L390 20" stroke-width="3"/>
+  <path id="sun-ray-3" d="M385 50 L395 50" stroke-width="3"/>
+  
+  <!-- Cloud -->
+  <ellipse id="cloud-1" cx="80" cy="45" rx="25" ry="15" fill="white"/>
+  <ellipse id="cloud-2" cx="60" cy="50" rx="20" ry="12" fill="white"/>
+  <ellipse id="cloud-3" cx="100" cy="50" rx="18" ry="10" fill="white"/>
+  
+  <!-- Swing frame -->
+  <path id="frame-left" d="M50 380 L100 60" stroke-width="4" fill="none"/>
+  <path id="frame-right" d="M350 380 L300 60" stroke-width="4" fill="none"/>
+  <path id="frame-top" d="M100 60 L300 60" stroke-width="5" fill="none"/>
+  
+  <!-- Frame supports -->
+  <path id="frame-support-left" d="M75 220 L50 380" stroke-width="3" fill="none"/>
+  <path id="frame-support-right" d="M325 220 L350 380" stroke-width="3" fill="none"/>
+  
+  <!-- Swing ropes/chains -->
+  <path id="rope-left-front" d="M140 65 L145 250" stroke-width="2" fill="none"/>
+  <path id="rope-right-front" d="M180 65 L185 250" stroke-width="2" fill="none"/>
+  <path id="rope-left-back" d="M220 65 L200 250" stroke-width="2" fill="none"/>
+  <path id="rope-right-back" d="M260 65 L240 250" stroke-width="2" fill="none"/>
+  
+  <!-- Front swing seat -->
+  <rect id="seat-front" x="135" y="250" width="55" height="10" rx="2" fill="white"/>
+  
+  <!-- Back swing seat (higher, swinging) -->
+  <rect id="seat-back" x="190" y="245" width="55" height="10" rx="2" fill="white" transform="rotate(-8 215 250)"/>
+  
+  <!-- Girl on front swing -->
+  <!-- Dress -->
+  <path id="girl-dress" d="M150 200 Q145 230 150 255 L180 255 Q185 230 180 200" fill="white"/>
+  <path id="girl-dress-detail" d="M155 220 Q165 225 175 220" fill="none"/>
+  
+  <!-- Legs (swinging forward) -->
+  <path id="girl-leg-left" d="M155 255 Q150 280 160 310" fill="white"/>
+  <path id="girl-leg-right" d="M175 255 Q180 280 190 310" fill="white"/>
+  <ellipse id="girl-shoe-left" cx="162" cy="315" rx="12" ry="6" fill="white"/>
+  <ellipse id="girl-shoe-right" cx="193" cy="315" rx="12" ry="6" fill="white"/>
+  
+  <!-- Body -->
+  <path id="girl-torso" d="M152 155 L150 205 Q165 210 180 205 L178 155" fill="white"/>
+  
+  <!-- Arms holding ropes -->
+  <path id="girl-arm-left" d="M152 165 Q140 180 142 220" fill="none" stroke-width="6" stroke="white"/>
+  <path id="girl-arm-left-line" d="M152 165 Q140 180 142 220" fill="none"/>
+  <path id="girl-arm-right" d="M178 165 Q190 180 188 220" fill="none" stroke-width="6" stroke="white"/>
+  <path id="girl-arm-right-line" d="M178 165 Q190 180 188 220" fill="none"/>
+  
+  <!-- Hands -->
+  <circle id="girl-hand-left" cx="142" cy="225" r="6" fill="white"/>
+  <circle id="girl-hand-right" cx="188" cy="225" r="6" fill="white"/>
+  
+  <!-- Head -->
+  <ellipse id="girl-head" cx="165" cy="120" rx="30" ry="35" fill="white"/>
+  
+  <!-- Hair - pigtails -->
+  <path id="girl-hair-top" d="M135 115 Q130 85 165 75 Q200 85 195 115" fill="white"/>
+  <path id="girl-pigtail-left" d="M138 105 Q120 110 115 140 Q112 160 120 175" fill="white"/>
+  <path id="girl-pigtail-right" d="M192 105 Q210 110 215 140 Q218 160 210 175" fill="white"/>
+  <circle id="girl-hairband-left" cx="135" cy="100" r="5" fill="white"/>
+  <circle id="girl-hairband-right" cx="195" cy="100" r="5" fill="white"/>
+  
+  <!-- Girl face - happy -->
+  <path id="girl-eye-left" d="M152 118 Q158 112 164 118" fill="none" stroke-width="2"/>
+  <path id="girl-eye-right" d="M166 118 Q172 112 178 118" fill="none" stroke-width="2"/>
+  <path id="girl-mouth" d="M158 135 Q165 142 172 135" fill="none"/>
+  <ellipse id="girl-blush-left" cx="148" cy="128" rx="6" ry="3" fill="white" stroke-dasharray="2,2"/>
+  <ellipse id="girl-blush-right" cx="182" cy="128" rx="6" ry="3" fill="white" stroke-dasharray="2,2"/>
+  
+  <!-- Boy on back swing (higher, swinging back) -->
+  <!-- Shorts -->
+  <path id="boy-shorts" d="M205 200 L200 235 Q218 240 235 235 L230 200" fill="white" transform="rotate(-8 218 220)"/>
+  
+  <!-- Legs (swinging back) -->
+  <path id="boy-leg-left" d="M208 232 Q200 260 195 290" fill="white" transform="rotate(-8 200 260)"/>
+  <path id="boy-leg-right" d="M230 232 Q240 260 245 290" fill="white" transform="rotate(-8 238 260)"/>
+  <ellipse id="boy-shoe-left" cx="192" cy="295" rx="12" ry="6" fill="white" transform="rotate(-8 192 295)"/>
+  <ellipse id="boy-shoe-right" cx="248" cy="295" rx="12" ry="6" fill="white" transform="rotate(-8 248 295)"/>
+  
+  <!-- Shirt -->
+  <path id="boy-shirt" d="M205 150 L202 205 Q218 210 233 205 L230 150" fill="white" transform="rotate(-5 218 180)"/>
+  
+  <!-- Arms holding ropes -->
+  <path id="boy-arm-left" d="M205 160 Q195 175 198 210" fill="none" stroke-width="6" stroke="white"/>
+  <path id="boy-arm-left-line" d="M205 160 Q195 175 198 210" fill="none"/>
+  <path id="boy-arm-right" d="M233 160 Q245 175 242 210" fill="none" stroke-width="6" stroke="white"/>
+  <path id="boy-arm-right-line" d="M233 160 Q245 175 242 210" fill="none"/>
+  
+  <!-- Hands -->
+  <circle id="boy-hand-left" cx="198" cy="215" r="6" fill="white"/>
+  <circle id="boy-hand-right" cx="242" cy="215" r="6" fill="white"/>
+  
+  <!-- Head -->
+  <ellipse id="boy-head" cx="218" cy="115" rx="28" ry="32" fill="white"/>
+  
+  <!-- Hair - short spiky -->
+  <path id="boy-hair" d="M190 110 Q185 80 218 72 Q250 80 245 110" fill="white"/>
+  <path id="boy-hair-spikes" d="M200 82 Q205 70 212 80 Q218 68 225 78 Q232 68 238 80" fill="white"/>
+  
+  <!-- Boy face - excited -->
+  <ellipse id="boy-eye-left" cx="205" cy="112" rx="6" ry="8" fill="white"/>
+  <ellipse id="boy-eye-right" cx="230" cy="112" rx="6" ry="8" fill="white"/>
+  <circle id="boy-pupil-left" cx="207" cy="114" r="4" fill="white"/>
+  <circle id="boy-pupil-right" cx="232" cy="114" r="4" fill="white"/>
+  <path id="boy-mouth" d="M210 130 Q218 140 226 130" fill="white"/>
+  
+  <!-- Ground -->
+  <path id="ground" d="M0 380 L400 380" fill="none"/>
+  
+  <!-- Grass -->
+  <path id="grass-1" d="M20 380 Q25 370 30 380" fill="none"/>
+  <path id="grass-2" d="M370 380 Q375 368 380 380" fill="none"/>
+  
+  <!-- Butterfly -->
+  <path id="butterfly-wing-left" d="M290 150 Q280 140 285 125 Q295 130 295 145" fill="white"/>
+  <path id="butterfly-wing-right" d="M295 145 Q305 130 315 135 Q310 145 300 150" fill="white"/>
+  <ellipse id="butterfly-body" cx="295" cy="147" rx="2" ry="8" fill="white"/>
+</svg>

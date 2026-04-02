@@ -1,0 +1,159 @@
+<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Desert Dunes Landscape - Adult Coloring -->
+  
+  <!-- Sky -->
+  <rect x="0" y="0" width="500" height="200" fill="white" stroke="none"/>
+  
+  <!-- Sun -->
+  <circle id="sun" cx="400" cy="80" r="40" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <g id="sun-rays">
+    <line x1="400" y1="30" x2="400" y2="10" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="400" y1="130" x2="400" y2="150" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="350" y1="80" x2="330" y2="80" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="450" y1="80" x2="470" y2="80" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="365" y1="45" x2="352" y2="32" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="435" y1="115" x2="448" y2="128" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="365" y1="115" x2="352" y2="128" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="435" y1="45" x2="448" y2="32" stroke="#1a1a1a" stroke-width="2"/>
+  </g>
+  
+  <!-- Distant mountains -->
+  <path d="M 0 180 L 120 120 L 200 150 L 320 110 L 450 160 L 500 140 L 500 200 L 0 200 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Sand dunes with detailed texture -->
+  <g id="dunes">
+    <!-- First dune layer -->
+    <path d="M 0 220 Q 80 180 160 220 Q 240 260 340 220 Q 420 180 500 220 L 500 400 L 0 400 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <!-- Dune ridges and shadows -->
+    <path d="M 80 200 Q 120 190 160 200" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 240 240 Q 280 230 320 240" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 420 200 Q 460 190 500 200" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    
+    <!-- Sand texture lines - windswept patterns -->
+    <path d="M 20 260 Q 50 255 80 260" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 25 270 Q 55 265 85 270" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 15 280 Q 45 275 75 280" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 30 290 Q 60 285 90 290" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <path d="M 180 270 Q 210 265 240 270" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 175 280 Q 205 275 235 280" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 185 290 Q 215 285 245 290" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 180 300 Q 210 295 240 300" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <path d="M 340 260 Q 370 255 400 260" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 345 270 Q 375 265 405 270" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 335 280 Q 365 275 395 280" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 350 290 Q 380 285 410 290" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Front dune patterns -->
+    <path d="M 80 320 Q 110 315 140 320" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 85 330 Q 115 325 145 330" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 75 340 Q 105 335 135 340" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 90 350 Q 120 345 150 350" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <path d="M 280 330 Q 310 325 340 330" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 275 340 Q 305 335 335 340" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 285 350 Q 315 345 345 350" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 280 360 Q 310 355 340 360" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Cactus on left -->
+  <g id="cactus-left" transform="translate(100, 280)">
+    <rect x="-8" y="0" width="16" height="80" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <!-- Arm left -->
+    <path d="M -8 30 L -20 30 L -20 55 L -15 60 L -8 60" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <!-- Arm right -->
+    <path d="M 8 45 L 18 45 L 18 65 L 13 70 L 8 70" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <!-- Cactus needles/patterns -->
+    <line x1="-5" y1="10" x2="-3" y2="10" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="3" y1="10" x2="5" y2="10" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="-5" y1="25" x2="-3" y2="25" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="3" y1="25" x2="5" y2="25" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="-5" y1="40" x2="-3" y2="40" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="3" y1="40" x2="5" y2="40" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="-5" y1="55" x2="-3" y2="55" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="3" y1="55" x2="5" y2="55" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="-5" y1="70" x2="-3" y2="70" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="3" y1="70" x2="5" y2="70" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Arm needles -->
+    <line x1="-18" y1="40" x2="-16" y2="40" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="-18" y1="50" x2="-16" y2="50" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="16" y1="50" x2="14" y2="50" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="16" y1="60" x2="14" y2="60" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Vertical ridges -->
+    <line x1="-4" y1="0" x2="-4" y2="80" stroke="#1a1a1a" stroke-width="0.5"/>
+    <line x1="0" y1="0" x2="0" y2="80" stroke="#1a1a1a" stroke-width="0.5"/>
+    <line x1="4" y1="0" x2="4" y2="80" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Cactus on right -->
+  <g id="cactus-right" transform="translate(420, 260)">
+    <rect x="-10" y="0" width="20" height="100" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <!-- Arms -->
+    <path d="M -10 35 L -25 35 L -25 65 L -20 70 L -10 70" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 10 25 L 22 25 L 22 50 L 17 55 L 10 55" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 10 60 L 20 60 L 20 80 L 15 85 L 10 85" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <!-- Needles -->
+    <line x1="-6" y1="15" x2="-4" y2="15" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="4" y1="15" x2="6" y2="15" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="-6" y1="35" x2="-4" y2="35" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="4" y1="35" x2="6" y2="35" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="-6" y1="55" x2="-4" y2="55" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="4" y1="55" x2="6" y2="55" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="-6" y1="75" x2="-4" y2="75" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="4" y1="75" x2="6" y2="75" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="-6" y1="95" x2="-4" y2="95" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="4" y1="95" x2="6" y2="95" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Ridges -->
+    <line x1="-5" y1="0" x2="-5" y2="100" stroke="#1a1a1a" stroke-width="0.5"/>
+    <line x1="0" y1="0" x2="0" y2="100" stroke="#1a1a1a" stroke-width="0.5"/>
+    <line x1="5" y1="0" x2="5" y2="100" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Desert plants -->
+  <g id="desert-plants">
+    <!-- Tumbleweed -->
+    <circle cx="250" cy="330" r="20" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 240 320 Q 250 315 260 320" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 240 330 Q 250 325 260 330" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 240 340 Q 250 335 260 340" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="235" y1="330" x2="265" y2="330" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="250" y1="315" x2="250" y2="345" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Small yucca -->
+    <g transform="translate(350, 310)">
+      <line x1="0" y1="0" x2="0" y2="25" stroke="#1a1a1a" stroke-width="2"/>
+      <line x1="0" y1="10" x2="-15" y2="20" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="0" y1="10" x2="15" y2="20" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="0" y1="5" x2="-12" y2="12" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="0" y1="5" x2="12" y2="12" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="-10" y2="5" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="10" y2="5" stroke="#1a1a1a" stroke-width="1.5"/>
+    </g>
+  </g>
+  
+  <!-- Rocks/stones -->
+  <g id="rocks">
+    <ellipse cx="60" cy="365" rx="25" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 45 365 Q 60 355 75 365" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <ellipse cx="180" cy="375" rx="20" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 168 375 Q 180 368 192 375" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <ellipse cx="470" cy="350" rx="22" ry="14" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 455 350 Q 470 342 485 350" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Foreground sand ripples -->
+  <g id="foreground-sand">
+    <path d="M 0 380 Q 30 375 60 380 Q 90 385 120 380 Q 150 375 180 380" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 200 385 Q 230 380 260 385 Q 290 390 320 385 Q 350 380 380 385" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 400 380 Q 430 375 460 380 Q 480 385 500 380" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+</svg>

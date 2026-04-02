@@ -1,0 +1,67 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fox Portrait - Woodland Wildlife -->
+  
+  <!-- Ears -->
+  <path id="ear-left" d="M95 120 Q70 60 90 30 Q120 25 140 60 Q150 100 140 130" fill="white" stroke="#1a1a1a" stroke-width="1.8"/>
+  <path id="ear-left-inner" d="M105 110 Q90 70 105 50 Q125 50 135 80 Q140 105 130 120" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <path id="ear-right" d="M305 120 Q330 60 310 30 Q280 25 260 60 Q250 100 260 130" fill="white" stroke="#1a1a1a" stroke-width="1.8"/>
+  <path id="ear-right-inner" d="M295 110 Q310 70 295 50 Q275 50 265 80 Q260 105 270 120" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Head Shape -->
+  <path id="head" d="M140 130 Q90 150 70 200 Q65 250 100 300 Q150 350 200 360 Q250 350 300 300 Q335 250 330 200 Q310 150 260 130 Q220 115 200 115 Q180 115 140 130" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Forehead Marking -->
+  <path id="forehead" d="M140 150 Q170 130 200 125 Q230 130 260 150 Q240 175 200 180 Q160 175 140 150" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Face Markings - White patches -->
+  <path id="face-white-left" d="M100 200 Q90 240 110 280 Q140 310 175 305 Q190 280 185 240 Q175 200 150 180 Q120 185 100 200" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <path id="face-white-right" d="M300 200 Q310 240 290 280 Q260 310 225 305 Q210 280 215 240 Q225 200 250 180 Q280 185 300 200" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Eyes -->
+  <path id="eye-left" d="M130 210 Q115 200 120 185 Q135 175 150 185 Q155 200 145 215 Q135 220 130 210" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse cx="138" cy="198" rx="8" ry="10" fill="#1a1a1a"/>
+  <circle cx="140" cy="195" r="3" fill="white"/>
+  
+  <path id="eye-right" d="M270 210 Q285 200 280 185 Q265 175 250 185 Q245 200 255 215 Q265 220 270 210" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse cx="262" cy="198" rx="8" ry="10" fill="#1a1a1a"/>
+  <circle cx="264" cy="195" r="3" fill="white"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M185 280 Q175 295 185 310 Q195 320 200 320 Q205 320 215 310 Q225 295 215 280 Q205 270 200 270 Q195 270 185 280" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Nose highlight -->
+  <ellipse cx="200" cy="285" rx="5" ry="3" fill="white" opacity="0.3"/>
+  
+  <!-- Mouth -->
+  <path d="M200 320 L200 340" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M200 340 Q185 355 170 350" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M200 340 Q215 355 230 350" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round"/>
+  
+  <!-- Muzzle shape -->
+  <path id="muzzle" d="M160 260 Q140 280 150 310 Q175 340 200 345 Q225 340 250 310 Q260 280 240 260 Q220 245 200 245 Q180 245 160 260" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Cheek fur -->
+  <path id="cheek-left" d="M80 250 Q60 280 75 320 Q100 350 130 345 Q115 310 115 280 Q110 250 80 250" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M85 280 Q90 295 85 310" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M95 275 Q100 295 95 315" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <path id="cheek-right" d="M320 250 Q340 280 325 320 Q300 350 270 345 Q285 310 285 280 Q290 250 320 250" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M315 280 Q310 295 315 310" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M305 275 Q300 295 305 315" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Fur texture details -->
+  <path d="M160 150 Q170 145 180 150" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M180 145 Q195 140 210 145" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M220 150 Q230 145 240 150" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Whiskers -->
+  <path d="M165 300 Q130 295 100 290" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M165 310 Q130 310 95 310" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M165 320 Q135 325 105 330" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <path d="M235 300 Q270 295 300 290" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M235 310 Q270 310 305 310" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M235 320 Q265 325 295 330" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+</svg>

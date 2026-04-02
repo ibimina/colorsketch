@@ -1,0 +1,75 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cute Cat - Kawaii Style -->
+  
+  <!-- Body -->
+  <ellipse id="body" cx="200" cy="300" rx="85" ry="70" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Belly pattern -->
+  <ellipse id="belly" cx="200" cy="310" rx="50" ry="45" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Tail -->
+  <path id="tail" d="M280 300 Q330 280 350 240 Q365 200 350 175 Q340 190 340 220 Q340 260 310 290" fill="white" stroke="#1a1a1a" stroke-width="3"/>
+  
+  <!-- Head -->
+  <circle id="head" cx="200" cy="150" r="90" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Ears -->
+  <path id="ear-left" d="M110 90 Q100 20 140 50 Q155 70 155 100" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="ear-left-inner" d="M120 85 Q115 50 140 65 Q150 75 148 95" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <path id="ear-right" d="M290 90 Q300 20 260 50 Q245 70 245 100" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="ear-right-inner" d="M280 85 Q285 50 260 65 Q250 75 252 95" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Face marking -->
+  <path id="face-marking" d="M200 80 Q170 90 150 120 Q145 150 160 180 Q180 195 200 200 Q220 195 240 180 Q255 150 250 120 Q230 90 200 80" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Eyes -->
+  <ellipse id="eye-left" cx="160" cy="140" rx="22" ry="28" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse cx="165" cy="145" rx="12" ry="16" fill="#1a1a1a"/>
+  <ellipse cx="170" cy="138" rx="5" ry="6" fill="white"/>
+  <circle cx="162" cy="152" r="2" fill="white"/>
+  
+  <ellipse id="eye-right" cx="240" cy="140" rx="22" ry="28" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse cx="235" cy="145" rx="12" ry="16" fill="#1a1a1a"/>
+  <ellipse cx="230" cy="138" rx="5" ry="6" fill="white"/>
+  <circle cx="238" cy="152" r="2" fill="white"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M200 170 Q192 175 195 182 Q200 188 205 182 Q208 175 200 170" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse cx="200" cy="177" rx="5" ry="4" fill="#1a1a1a"/>
+  
+  <!-- Mouth -->
+  <path d="M200 185 L200 195" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M200 195 Q185 210 172 200" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M200 195 Q215 210 228 200" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Whiskers -->
+  <path d="M170 175 Q140 168 110 170" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M168 185 Q138 185 108 190" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M170 195 Q140 200 110 210" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <path d="M230 175 Q260 168 290 170" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M232 185 Q262 185 292 190" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M230 195 Q260 200 290 210" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Cheeks (blush) -->
+  <ellipse id="cheek-left" cx="125" cy="170" rx="15" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="cheek-right" cx="275" cy="170" rx="15" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Front Paws -->
+  <ellipse id="paw-front-left" cx="145" cy="365" rx="30" ry="18" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M125 362 Q125 375 130 370 M140 365 Q140 378 140 373 M155 365 Q155 378 155 373 M165 362 Q165 375 160 370" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <ellipse id="paw-front-right" cx="255" cy="365" rx="30" ry="18" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M235 362 Q235 375 240 370 M250 365 Q250 378 250 373 M265 365 Q265 378 265 373 M275 362 Q275 375 270 370" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Back paws peeking -->
+  <ellipse id="paw-back-left" cx="120" cy="335" rx="18" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse id="paw-back-right" cx="280" cy="335" rx="18" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Collar and bell -->
+  <path id="collar" d="M135 230 Q200 250 265 230" fill="none" stroke="#1a1a1a" stroke-width="4"/>
+  <circle id="bell" cx="200" cy="255" r="12" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M200 250 L200 260" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse cx="200" cy="262" rx="3" ry="2" fill="#1a1a1a"/>
+</svg>

@@ -1,0 +1,157 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Vintage 70s Fashion - Adult Coloring -->
+  
+  <!-- Hair - big 70s style -->
+  <g id="hair">
+    <path id="hair-left" d="M80 100 Q50 130 40 180 Q30 250 50 320 Q70 380 90 400" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="hair-left-2" d="M100 95 Q75 120 65 170 Q55 240 70 300 Q85 360 100 400" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-right" d="M320 100 Q350 130 360 180 Q370 250 350 320 Q330 380 310 400" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="hair-right-2" d="M300 95 Q325 120 335 170 Q345 240 330 300 Q315 360 300 400" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-top" d="M80 100 Q120 50 200 40 Q280 50 320 100" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+    <path id="hair-volume" d="M120 80 Q160 55 200 50 Q240 55 280 80" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Hair bangs -->
+    <path id="bangs-1" d="M140 70 Q145 85 150 80 Q155 95 160 85 Q165 100 170 90" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="bangs-2" d="M180 75 Q185 90 190 85 Q195 100 200 90 Q205 105 210 95" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="bangs-3" d="M230 70 Q235 85 240 80 Q245 95 250 85 Q255 100 260 90" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <!-- Hair waves -->
+    <path id="hw-1" d="M60 200 Q70 195 80 205" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="hw-2" d="M55 250 Q65 245 75 255" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="hw-3" d="M60 300 Q70 295 80 305" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="hw-4" d="M330 200 Q340 195 350 205" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="hw-5" d="M335 250 Q345 245 355 255" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="hw-6" d="M330 300 Q340 295 350 305" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Face -->
+  <ellipse id="face" cx="200" cy="115" rx="50" ry="58" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Big round sunglasses -->
+  <g id="sunglasses">
+    <circle id="lens-l" cx="170" cy="110" r="25" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+    <circle id="lens-l-inner" cx="170" cy="110" r="18" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="lens-r" cx="230" cy="110" r="25" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+    <circle id="lens-r-inner" cx="230" cy="110" r="18" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="bridge" d="M195 110 Q200 105 205 110" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="arm-l" d="M145 105 Q130 105 115 115" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="arm-r" d="M255 105 Q270 105 285 115" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Eyebrows above glasses -->
+  <path id="brow-l" d="M150 80 Q170 73 190 82" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path id="brow-r" d="M250 80 Q230 73 210 82" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M200 115 L197 135 Q200 140 203 135" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Lips -->
+  <path id="lips" d="M185 155 Q193 148 200 152 Q207 148 215 155 Q207 165 200 162 Q193 165 185 155" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Neck -->
+  <path id="neck" d="M175 170 L175 195 L225 195 L225 170" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Wide collar 70s shirt -->
+  <g id="shirt">
+    <path id="collar-l" d="M140 195 L100 240 L175 210 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="collar-r" d="M260 195 L300 240 L225 210 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Collar pattern -->
+    <circle id="col-dot-1" cx="130" cy="220" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle id="col-dot-2" cx="145" cy="212" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle id="col-dot-3" cx="270" cy="220" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle id="col-dot-4" cx="255" cy="212" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Vest/waistcoat -->
+  <g id="vest">
+    <path id="vest-outline" d="M125 245 L100 195 L130 200 L175 210 L175 280 L125 270 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="vest-outline-r" d="M275 245 L300 195 L270 200 L225 210 L225 280 L275 270 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Fringe at bottom -->
+    <g id="fringe-l">
+      <line x1="125" y1="270" x2="120" y2="290" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="135" y1="272" x2="130" y2="292" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="145" y1="275" x2="140" y2="295" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="155" y1="277" x2="150" y2="297" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="165" y1="279" x2="160" y2="299" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="175" y1="280" x2="170" y2="300" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    
+    <g id="fringe-r">
+      <line x1="275" y1="270" x2="280" y2="290" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="265" y1="272" x2="270" y2="292" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="255" y1="275" x2="260" y2="295" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="245" y1="277" x2="250" y2="297" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="235" y1="279" x2="240" y2="299" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="225" y1="280" x2="230" y2="300" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    
+    <!-- Vest embroidery -->
+    <g id="vest-embroidery">
+      <path id="ve-flower-1" d="M140 240 Q147 232 155 240 Q147 248 140 240" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle cx="147" cy="240" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <path id="ve-flower-2" d="M245 240 Q252 232 260 240 Q252 248 245 240" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+      <circle cx="252" cy="240" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+  </g>
+  
+  <!-- Bell bottom pants -->
+  <g id="pants">
+    <path id="pants-l" d="M145 280 L130 400" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="pants-l-2" d="M195 285 L180 400" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="pants-r" d="M205 285 L220 400" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="pants-r-2" d="M255 280 L270 400" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Bell flare -->
+    <path id="bell-l" d="M130 400 Q110 395 90 400" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="bell-l-2" d="M180 400 Q160 395 150 400" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="bell-r" d="M220 400 Q240 395 250 400" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="bell-r-2" d="M270 400 Q290 395 310 400" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Pants pattern -->
+    <g id="pants-pattern">
+      <path id="pp-1" d="M140 320 Q150 315 160 322" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="pp-2" d="M145 350 Q155 345 165 352" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="pp-3" d="M140 380 Q150 375 165 382" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="pp-4" d="M235 320 Q245 315 255 322" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="pp-5" d="M238 350 Q248 345 258 352" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path id="pp-6" d="M240 380 Q250 375 262 382" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    </g>
+  </g>
+  
+  <!-- Waist belt -->
+  <g id="belt">
+    <rect id="belt-strap" x="140" y="280" width="120" height="12" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="belt-buckle" cx="200" cy="286" rx="15" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle id="buckle-center" cx="200" cy="286" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Arms and hands -->
+  <g id="arms">
+    <path id="arm-l" d="M100 195 Q80 220 70 260 Q60 300 75 340" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="arm-r" d="M300 195 Q320 220 330 260 Q340 300 325 340" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    
+    <!-- Bracelets -->
+    <ellipse id="bracelet-l-1" cx="72" cy="310" rx="8" ry="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <ellipse id="bracelet-l-2" cx="73" cy="318" rx="8" ry="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <ellipse id="bracelet-r-1" cx="328" cy="310" rx="8" ry="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <ellipse id="bracelet-r-2" cx="327" cy="318" rx="8" ry="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Peace sign necklace -->
+  <g id="peace-necklace">
+    <path id="chain" d="M175 170 Q185 180 200 178 Q215 180 225 170" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="peace-outer" cx="200" cy="200" r="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <line x1="200" y1="185" x2="200" y2="215" stroke="#1a1a1a" stroke-width="0.6"/>
+    <line x1="200" y1="200" x2="189" y2="213" stroke="#1a1a1a" stroke-width="0.6"/>
+    <line x1="200" y1="200" x2="211" y2="213" stroke="#1a1a1a" stroke-width="0.6"/>
+  </g>
+  
+  <!-- Headband -->
+  <g id="headband">
+    <path id="band" d="M80 95 Q120 80 200 75 Q280 80 320 95" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+    <path id="band-pattern" d="M100 88 Q120 82 140 88 Q160 82 180 88 Q200 82 220 88 Q240 82 260 88 Q280 82 300 88" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+</svg>

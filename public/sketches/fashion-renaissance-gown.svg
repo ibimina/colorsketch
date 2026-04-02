@@ -1,0 +1,133 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fashion - Renaissance Gown - Adult Coloring -->
+  
+  <!-- Skirt with elaborate decorative panels -->
+  <path id="skirt" d="M 100 300 L 70 500 L 150 500 L 150 300 M 250 300 L 250 500 L 330 500 L 300 300" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Center front panel (stomacher) -->
+  <path id="stomacher" d="M 150 220 L 140 300 L 140 500 L 200 500 L 260 500 L 260 300 L 250 220 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Stomacher decorative pattern -->
+  <g id="stomacher-pattern">
+    <line x1="150" y1="240" x2="250" y2="240" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="148" y1="260" x2="252" y2="260" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="146" y1="280" x2="254" y2="280" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="144" y1="300" x2="256" y2="300" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <circle cx="175" cy="250" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="200" cy="235" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="225" cy="250" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="170" cy="270" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="200" cy="270" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="230" cy="270" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="165" cy="290" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="200" cy="290" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="235" cy="290" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    
+    <!-- Lace-like pattern -->
+    <path d="M 155 330 Q 165 325 175 330 Q 185 325 195 330 Q 205 325 215 330 Q 225 325 235 330 Q 245 325 255 330" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 150 350 Q 160 345 170 350 Q 180 345 190 350 Q 200 345 210 350 Q 220 345 230 350 Q 240 345 250 350 Q 260 345 270 350" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 148 370 Q 158 365 168 370 Q 178 365 188 370 Q 198 365 208 370 Q 218 365 228 370 Q 238 365 248 370 Q 258 365 268 370" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 146 390 Q 156 385 166 390 Q 176 385 186 390 Q 196 385 206 390 Q 216 385 226 390 Q 236 385 246 390 Q 256 385 266 390" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Jewels -->
+    <circle cx="200" cy="340" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="200" cy="360" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="200" cy="380" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle cx="200" cy="400" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Side panels with floral embroidery -->
+  <g id="side-patterns">
+    <ellipse cx="100" cy="380" rx="10" ry="15" fill="none" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(20 100 380)"/>
+    <circle cx="100" cy="375" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="97" cy="383" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="103" cy="383" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 100 390 L 100 410 M 100 400 L 95 405 M 100 400 L 105 405" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <ellipse cx="300" cy="380" rx="10" ry="15" fill="none" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(-20 300 380)"/>
+    <circle cx="300" cy="375" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="297" cy="383" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="303" cy="383" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 300 390 L 300 410 M 300 400 L 295 405 M 300 400 L 305 405" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Bodice with square neckline -->
+  <path id="bodice" d="M 120 140 L 110 220 L 150 220 L 150 200 L 250 200 L 250 220 L 290 220 L 280 140 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Bodice embroidery -->
+  <g id="bodice-pattern">
+    <path d="M 140 160 Q 150 155 160 160 Q 170 155 180 160 Q 190 155 200 160 Q 210 155 220 160 Q 230 155 240 160 Q 250 155 260 160" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 135 180 Q 145 175 155 180 Q 165 175 175 180 Q 185 175 195 180 Q 205 175 215 180 Q 225 175 235 180 Q 245 175 255 180 Q 265 175 275 180" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 130 200 Q 140 195 150 200 Q 160 195 170 200 Q 180 195 190 200 Q 200 195 210 200 Q 220 195 230 200 Q 240 195 250 200 Q 260 195 270 200" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <circle cx="160" cy="165" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="200" cy="165" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="240" cy="165" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="150" cy="185" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="200" cy="185" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="250" cy="185" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  </g>
+  
+  <!-- Puffed sleeves -->
+  <g id="sleeves">
+    <ellipse id="sleeve-l" cx="85" cy="160" rx="35" ry="45" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 70 140 Q 80 135 90 140 Q 100 135 110 140" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 65 160 Q 75 155 85 160 Q 95 155 105 160" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 70 180 Q 80 175 90 180 Q 100 175 110 180" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="85" cy="150" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="85" cy="170" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <ellipse id="sleeve-r" cx="315" cy="160" rx="35" ry="45" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 290 140 Q 300 135 310 140 Q 320 135 330 140" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 295 160 Q 305 155 315 160 Q 325 155 335 160" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 290 180 Q 300 175 310 180 Q 320 175 330 180" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="315" cy="150" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="315" cy="170" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  </g>
+  
+  <!-- Neck -->
+  <rect id="neck" x="185" y="115" width="30" height="30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="200" cy="85" rx="38" ry="42" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Hair in Renaissance style -->
+  <g id="hair">
+    <ellipse id="hair-top" cx="200" cy="60" rx="40" ry="38" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 168 75 Q 163 95 160 115" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 232 75 Q 237 95 240 115" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <!-- Hair decorations -->
+    <path d="M 175 55 Q 185 50 195 55 Q 205 50 215 55 Q 225 50 235 55" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path d="M 170 70 Q 180 65 190 70 Q 200 65 210 70 Q 220 65 230 70" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    
+    <!-- Pearl headband -->
+    <path d="M 165 60 Q 200 50 235 60" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="175" cy="57" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="190" cy="53" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="200" cy="52" r="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="210" cy="53" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="225" cy="57" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Face -->
+  <g id="eyes">
+    <path d="M 180 80 Q 185 77 190 80" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="185" cy="79" r="2" fill="#1a1a1a"/>
+    
+    <path d="M 210 80 Q 215 77 220 80" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="215" cy="79" r="2" fill="#1a1a1a"/>
+  </g>
+  
+  <path id="nose" d="M 200 85 L 198 95" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="mouth" d="M 192 105 Q 200 109 208 105" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Necklace -->
+  <g id="necklace">
+    <path d="M 175 140 Q 200 150 225 140" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="185" cy="143" r="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="200" cy="148" r="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="215" cy="143" r="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+</svg>

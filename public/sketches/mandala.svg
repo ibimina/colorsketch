@@ -1,0 +1,62 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mandala - Intricate Geometric Pattern -->
+  
+  <!-- Center Circle -->
+  <circle id="center" cx="200" cy="200" r="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Inner Ring 1 - 8 Petals -->
+  <path id="inner-petal-1" d="M200 185 Q210 165 200 145 Q190 165 200 185" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="inner-petal-2" d="M215 200 Q235 190 255 200 Q235 210 215 200" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="inner-petal-3" d="M200 215 Q210 235 200 255 Q190 235 200 215" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="inner-petal-4" d="M185 200 Q165 190 145 200 Q165 210 185 200" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="inner-petal-5" d="M211 189 Q230 170 245 155 Q225 165 211 189" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="inner-petal-6" d="M211 211 Q230 230 245 245 Q225 235 211 211" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="inner-petal-7" d="M189 211 Q170 230 155 245 Q175 235 189 211" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="inner-petal-8" d="M189 189 Q170 170 155 155 Q175 165 189 189" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Ring 2 - Teardrops -->
+  <path id="tear-1" d="M200 130 Q215 110 200 80 Q185 110 200 130" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="tear-2" d="M270 200 Q290 185 320 200 Q290 215 270 200" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="tear-3" d="M200 270 Q215 290 200 320 Q185 290 200 270" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="tear-4" d="M130 200 Q110 185 80 200 Q110 215 130 200" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="tear-5" d="M249 151 Q275 130 295 105 Q265 125 249 151" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="tear-6" d="M249 249 Q275 270 295 295 Q265 275 249 249" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="tear-7" d="M151 249 Q125 270 105 295 Q135 275 151 249" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="tear-8" d="M151 151 Q125 130 105 105 Q135 125 151 151" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Ring 3 - Large Petals -->
+  <path id="large-petal-1" d="M200 75 Q230 50 200 20 Q170 50 200 75" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="large-petal-2" d="M325 200 Q350 170 380 200 Q350 230 325 200" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="large-petal-3" d="M200 325 Q230 350 200 380 Q170 350 200 325" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="large-petal-4" d="M75 200 Q50 170 20 200 Q50 230 75 200" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="large-petal-5" d="M288 112 Q320 85 350 50 Q315 80 288 112" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="large-petal-6" d="M288 288 Q320 315 350 350 Q315 320 288 288" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="large-petal-7" d="M112 288 Q80 315 50 350 Q85 320 112 288" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="large-petal-8" d="M112 112 Q80 85 50 50 Q85 80 112 112" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Decorative Circles -->
+  <circle id="deco-circle-1" cx="200" cy="50" r="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="deco-circle-2" cx="350" cy="200" r="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="deco-circle-3" cx="200" cy="350" r="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="deco-circle-4" cx="50" cy="200" r="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="deco-circle-5" cx="306" cy="94" r="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="deco-circle-6" cx="306" cy="306" r="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="deco-circle-7" cx="94" cy="306" r="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="deco-circle-8" cx="94" cy="94" r="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Connecting Arcs -->
+  <path d="M200 60 Q240 80 260 100" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M200 60 Q160 80 140 100" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M340 200 Q320 240 300 260" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M340 200 Q320 160 300 140" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M200 340 Q240 320 260 300" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M200 340 Q160 320 140 300" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M60 200 Q80 240 100 260" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M60 200 Q80 160 100 140" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Small dots pattern -->
+  <circle cx="200" cy="100" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <circle cx="300" cy="200" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <circle cx="200" cy="300" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <circle cx="100" cy="200" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

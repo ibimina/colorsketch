@@ -1,0 +1,82 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rainbow with Clouds - Nature/Kawaii -->
+  
+  <!-- Left Cloud -->
+  <circle id="cloud-left-1" cx="70" cy="200" r="35" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle id="cloud-left-2" cx="45" cy="220" r="28" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle id="cloud-left-3" cx="95" cy="225" r="30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle id="cloud-left-4" cx="65" cy="235" r="25" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Cloud face -->
+  <circle cx="55" cy="210" r="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="57" cy="211" r="2.5" fill="#1a1a1a"/>
+  <circle cx="85" cy="210" r="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="83" cy="211" r="2.5" fill="#1a1a1a"/>
+  <path d="M63 225 Q70 232 77 225" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse cx="45" cy="220" rx="5" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  <ellipse cx="95" cy="220" rx="5" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  
+  <!-- Right Cloud -->
+  <circle id="cloud-right-1" cx="330" cy="200" r="35" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle id="cloud-right-2" cx="355" cy="220" r="28" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle id="cloud-right-3" cx="305" cy="225" r="30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle id="cloud-right-4" cx="335" cy="235" r="25" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Cloud face -->
+  <circle cx="315" cy="210" r="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="317" cy="211" r="2.5" fill="#1a1a1a"/>
+  <circle cx="345" cy="210" r="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="343" cy="211" r="2.5" fill="#1a1a1a"/>
+  <path d="M323 225 Q330 232 337 225" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse cx="305" cy="220" rx="5" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  <ellipse cx="355" cy="220" rx="5" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  
+  <!-- Rainbow Arcs (from outer to inner) -->
+  <path id="rainbow-red" d="M90 250 Q200 50 310 250" fill="none" stroke="#1a1a1a" stroke-width="12"/>
+  <path id="rainbow-orange" d="M100 250 Q200 65 300 250" fill="none" stroke="#1a1a1a" stroke-width="10"/>
+  <path id="rainbow-yellow" d="M110 250 Q200 80 290 250" fill="none" stroke="#1a1a1a" stroke-width="9"/>
+  <path id="rainbow-green" d="M120 250 Q200 95 280 250" fill="none" stroke="#1a1a1a" stroke-width="8"/>
+  <path id="rainbow-blue" d="M130 250 Q200 110 270 250" fill="none" stroke="#1a1a1a" stroke-width="7"/>
+  <path id="rainbow-indigo" d="M140 250 Q200 125 260 250" fill="none" stroke="#1a1a1a" stroke-width="6"/>
+  <path id="rainbow-violet" d="M150 250 Q200 140 250 250" fill="none" stroke="#1a1a1a" stroke-width="5"/>
+  
+  <!-- Sun peeking -->
+  <circle id="sun" cx="350" cy="80" r="40" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle cx="340" cy="70" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle cx="342" cy="71" r="2.5" fill="#1a1a1a"/>
+  <circle cx="360" cy="70" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle cx="358" cy="71" r="2.5" fill="#1a1a1a"/>
+  <path d="M340 90 Q350 100 360 90" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Sun rays -->
+  <path d="M350 30 L350 15" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <path d="M380 50 L395 40" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <path d="M395 80 L398 80" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <path d="M385 105 L398 115" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <path d="M320 50 L305 40" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Stars -->
+  <path id="star-1" d="M60 100 L63 108 L72 108 L65 114 L68 122 L60 117 L52 122 L55 114 L48 108 L57 108 Z" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path id="star-2" d="M100 60 L102 66 L108 66 L103 70 L105 76 L100 72 L95 76 L97 70 L92 66 L98 66 Z" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="star-3" d="M250 50 L252 56 L258 56 L253 60 L255 66 L250 62 L245 66 L247 60 L242 56 L248 56 Z" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Ground elements -->
+  <path d="M30 380 Q50 370 70 380 Q90 370 110 380 Q130 370 150 380 Q170 370 190 380 Q210 370 230 380 Q250 370 270 380 Q290 370 310 380 Q330 370 350 380 Q370 370 390 380" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Flowers on ground -->
+  <g id="ground-flower-1">
+    <path d="M80 378 L80 360" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="80" cy="355" r="7" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="80" cy="355" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  <g id="ground-flower-2">
+    <path d="M200 378 L200 355" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="200" cy="350" r="7" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="200" cy="350" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  <g id="ground-flower-3">
+    <path d="M320 378 L320 362" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="320" cy="357" r="7" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="320" cy="357" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+</svg>

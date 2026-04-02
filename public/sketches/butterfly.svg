@@ -1,0 +1,50 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Butterfly - Elegant Monarch Style -->
+  
+  <!-- Body -->
+  <ellipse id="body-head" cx="200" cy="95" rx="8" ry="10" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse id="body-thorax" cx="200" cy="120" rx="10" ry="18" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse id="body-abdomen" cx="200" cy="165" rx="8" ry="30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Antennae -->
+  <path d="M195 88 Q185 60 180 50" fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M205 88 Q215 60 220 50" fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="180" cy="48" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="220" cy="48" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Left Upper Wing -->
+  <path id="wing-left-upper-outer" d="M190 110 Q120 80 80 60 Q40 70 35 120 Q40 160 80 180 Q120 190 160 170 Q180 150 190 130" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="wing-left-upper-inner1" d="M185 115 Q150 100 120 95 Q100 100 95 120 Q100 140 120 150 Q145 155 175 140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="wing-left-upper-inner2" d="M175 120 Q155 115 140 118 Q130 125 135 138 Q145 145 165 138" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Left Upper Wing Spots -->
+  <ellipse id="wing-left-spot1" cx="70" cy="100" rx="8" ry="12" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="wing-left-spot2" cx="55" cy="130" rx="6" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="wing-left-spot3" cx="90" cy="150" rx="7" ry="9" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Right Upper Wing -->
+  <path id="wing-right-upper-outer" d="M210 110 Q280 80 320 60 Q360 70 365 120 Q360 160 320 180 Q280 190 240 170 Q220 150 210 130" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="wing-right-upper-inner1" d="M215 115 Q250 100 280 95 Q300 100 305 120 Q300 140 280 150 Q255 155 225 140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="wing-right-upper-inner2" d="M225 120 Q245 115 260 118 Q270 125 265 138 Q255 145 235 138" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Right Upper Wing Spots -->
+  <ellipse id="wing-right-spot1" cx="330" cy="100" rx="8" ry="12" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="wing-right-spot2" cx="345" cy="130" rx="6" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="wing-right-spot3" cx="310" cy="150" rx="7" ry="9" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Left Lower Wing -->
+  <path id="wing-left-lower-outer" d="M192 140 Q140 180 100 220 Q80 270 100 310 Q140 340 180 320 Q195 280 195 200" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="wing-left-lower-inner" d="M188 160 Q160 190 140 230 Q130 270 145 290 Q165 300 180 280 Q188 240 188 190" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse id="wing-left-lower-spot1" cx="120" cy="260" rx="10" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="wing-left-lower-spot2" cx="150" cy="300" rx="8" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Right Lower Wing -->
+  <path id="wing-right-lower-outer" d="M208 140 Q260 180 300 220 Q320 270 300 310 Q260 340 220 320 Q205 280 205 200" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="wing-right-lower-inner" d="M212 160 Q240 190 260 230 Q270 270 255 290 Q235 300 220 280 Q212 240 212 190" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse id="wing-right-lower-spot1" cx="280" cy="260" rx="10" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="wing-right-lower-spot2" cx="250" cy="300" rx="8" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Wing Edge Details -->
+  <path d="M35 120 Q30 140 40 160" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path d="M365 120 Q370 140 360 160" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

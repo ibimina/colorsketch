@@ -1,0 +1,76 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Teddy Bear - Cute Style -->
+  
+  <!-- Ears -->
+  <circle id="ear-left" cx="115" cy="85" r="40" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle id="ear-left-inner" cx="115" cy="85" r="22" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <circle id="ear-right" cx="285" cy="85" r="40" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle id="ear-right-inner" cx="285" cy="85" r="22" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Head -->
+  <circle id="head" cx="200" cy="150" r="95" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Eyes -->
+  <ellipse id="eye-left" cx="160" cy="135" rx="18" ry="22" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse cx="163" cy="138" rx="10" ry="12" fill="#1a1a1a"/>
+  <circle cx="167" cy="133" r="4" fill="white"/>
+  <circle cx="161" cy="144" r="2" fill="white"/>
+  
+  <ellipse id="eye-right" cx="240" cy="135" rx="18" ry="22" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse cx="237" cy="138" rx="10" ry="12" fill="#1a1a1a"/>
+  <circle cx="233" cy="133" r="4" fill="white"/>
+  <circle cx="239" cy="144" r="2" fill="white"/>
+  
+  <!-- Eyebrows -->
+  <path d="M142 112 Q160 105 178 114" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M222 114 Q240 105 258 112" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Muzzle -->
+  <ellipse id="muzzle" cx="200" cy="185" rx="45" ry="38" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Nose -->
+  <ellipse id="nose" cx="200" cy="170" rx="18" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M190 168 Q200 160 210 168 Q210 178 200 182 Q190 178 190 168" fill="#1a1a1a"/>
+  <ellipse cx="195" cy="167" rx="4" ry="3" fill="white" opacity="0.5"/>
+  
+  <!-- Mouth -->
+  <path d="M200 180 L200 195" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M200 195 Q180 210 168 200" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M200 195 Q220 210 232 200" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Cheeks -->
+  <ellipse id="cheek-left" cx="135" cy="170" rx="12" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <ellipse id="cheek-right" cx="265" cy="170" rx="12" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Body -->
+  <ellipse id="body" cx="200" cy="320" rx="90" ry="75" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Belly -->
+  <ellipse id="belly" cx="200" cy="325" rx="55" ry="50" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Arms -->
+  <ellipse id="arm-left" cx="105" cy="290" rx="35" ry="50" transform="rotate(-20 105 290)" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <ellipse id="arm-left-pad" cx="85" cy="325" rx="15" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <ellipse id="arm-right" cx="295" cy="290" rx="35" ry="50" transform="rotate(20 295 290)" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <ellipse id="arm-right-pad" cx="315" cy="325" rx="15" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Legs -->
+  <ellipse id="leg-left" cx="145" cy="385" rx="40" ry="25" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <ellipse id="leg-left-pad" cx="145" cy="385" rx="22" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="125" cy="378" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="140" cy="373" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="155" cy="373" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <ellipse id="leg-right" cx="255" cy="385" rx="40" ry="25" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <ellipse id="leg-right-pad" cx="255" cy="385" rx="22" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="240" cy="373" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="255" cy="373" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="270" cy="378" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Bow tie -->
+  <path id="bow-left" d="M175 250 Q150 245 145 260 Q150 275 175 270 Q180 260 175 250" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="bow-right" d="M225 250 Q250 245 255 260 Q250 275 225 270 Q220 260 225 250" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="bow-center" cx="200" cy="260" r="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+</svg>

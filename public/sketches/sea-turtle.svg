@@ -1,0 +1,60 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sea Turtle - Marine Life -->
+  
+  <!-- Shell (Carapace) -->
+  <ellipse id="shell" cx="200" cy="200" rx="130" ry="100" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Shell Pattern - Scutes -->
+  <path id="scute-center" d="M200 120 L240 160 L240 240 L200 280 L160 240 L160 160 Z" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <path id="scute-top-left" d="M160 160 L200 120 L150 100 L100 130 L110 170 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="scute-top-right" d="M240 160 L200 120 L250 100 L300 130 L290 170 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="scute-bottom-left" d="M160 240 L200 280 L150 295 L100 265 L110 225 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="scute-bottom-right" d="M240 240 L200 280 L250 295 L300 265 L290 225 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <path id="scute-left-1" d="M110 170 L100 130 L75 155 L80 200 L110 200 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="scute-left-2" d="M110 200 L80 200 L75 245 L100 265 L110 225 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="scute-right-1" d="M290 170 L300 130 L325 155 L320 200 L290 200 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="scute-right-2" d="M290 200 L320 200 L325 245 L300 265 L290 225 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Head -->
+  <path id="head" d="M200 100 Q165 65 145 50 Q130 55 125 75 Q125 95 140 105 Q170 115 200 108" fill="white" stroke="#1a1a1a" stroke-width="1.8"/>
+  <path d="M200 100 Q235 65 255 50 Q270 55 275 75 Q275 95 260 105 Q230 115 200 108" fill="white" stroke="#1a1a1a" stroke-width="1.8"/>
+  
+  <!-- Eyes -->
+  <circle id="eye-left" cx="155" cy="70" r="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="156" cy="69" r="4" fill="#1a1a1a"/>
+  <circle cx="157" cy="68" r="1.5" fill="white"/>
+  
+  <circle id="eye-right" cx="245" cy="70" r="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="244" cy="69" r="4" fill="#1a1a1a"/>
+  <circle cx="243" cy="68" r="1.5" fill="white"/>
+  
+  <!-- Beak/Mouth -->
+  <path d="M185 55 Q200 45 215 55" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Front Flippers -->
+  <path id="flipper-front-left" d="M85 160 Q40 130 20 160 Q10 200 40 230 Q70 250 100 230 Q115 210 100 180" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M60 170 L50 190 M70 180 L55 205 M80 195 L65 215" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <path id="flipper-front-right" d="M315 160 Q360 130 380 160 Q390 200 360 230 Q330 250 300 230 Q285 210 300 180" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M340 170 L350 190 M330 180 L345 205 M320 195 L335 215" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Back Flippers -->
+  <path id="flipper-back-left" d="M90 270 Q60 290 50 320 Q55 345 80 350 Q110 345 120 320 Q120 295 100 275" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M75 300 L70 320 M90 305 L80 330" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <path id="flipper-back-right" d="M310 270 Q340 290 350 320 Q345 345 320 350 Q290 345 280 320 Q280 295 300 275" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M325 300 L330 320 M310 305 L320 330" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Tail -->
+  <path id="tail" d="M200 300 Q200 330 190 350 Q185 360 195 365 Q205 360 210 350 Q200 330 200 300" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Bubbles -->
+  <circle id="bubble-1" cx="330" cy="100" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle id="bubble-2" cx="350" cy="80" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <circle id="bubble-3" cx="340" cy="60" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Small fish -->
+  <path id="fish" d="M60 350 Q45 355 40 350 Q45 345 60 350 L55 340 L60 350 L55 360" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+</svg>

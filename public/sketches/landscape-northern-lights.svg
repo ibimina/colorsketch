@@ -1,0 +1,152 @@
+<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Northern Lights Landscape - Adult Coloring -->
+  
+  <!-- Sky with aurora patterns -->
+  <rect x="0" y="0" width="500" height="300" fill="white" stroke="none"/>
+  
+  <!-- Aurora borealis waves -->
+  <g id="aurora">
+    <path d="M 0 80 Q 50 60 100 80 Q 150 100 200 80 Q 250 60 300 80 Q 350 100 400 80 Q 450 60 500 80" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 0 90 Q 60 70 120 90 Q 180 110 240 90 Q 300 70 360 90 Q 420 110 480 90 L 500 90" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 0 100 Q 40 85 80 100 Q 120 115 160 100 Q 200 85 240 100 Q 280 115 320 100 Q 360 85 400 100 Q 440 115 500 100" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    
+    <path d="M 0 120 Q 70 100 140 120 Q 210 140 280 120 Q 350 100 420 120 Q 460 140 500 120" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 0 135 Q 55 120 110 135 Q 165 150 220 135 Q 275 120 330 135 Q 385 150 440 135 L 500 135" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 0 145 Q 80 125 160 145 Q 240 165 320 145 Q 400 125 500 145" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Inner wave details -->
+    <path d="M 50 85 Q 75 75 100 85" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 150 105 Q 175 95 200 105" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 250 85 Q 275 75 300 85" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 350 105 Q 375 95 400 105" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Stars -->
+  <g id="stars">
+    <circle cx="60" cy="40" r="2" fill="#1a1a1a"/>
+    <circle cx="120" cy="30" r="1.5" fill="#1a1a1a"/>
+    <circle cx="180" cy="50" r="2" fill="#1a1a1a"/>
+    <circle cx="240" cy="35" r="1.5" fill="#1a1a1a"/>
+    <circle cx="300" cy="55" r="2" fill="#1a1a1a"/>
+    <circle cx="360" cy="25" r="1.5" fill="#1a1a1a"/>
+    <circle cx="420" cy="45" r="2" fill="#1a1a1a"/>
+    <circle cx="90" cy="60" r="1.5" fill="#1a1a1a"/>
+    <circle cx="150" cy="25" r="2" fill="#1a1a1a"/>
+    <circle cx="280" cy="40" r="1.5" fill="#1a1a1a"/>
+    <circle cx="340" cy="60" r="2" fill="#1a1a1a"/>
+    <circle cx="400" cy="30" r="1.5" fill="#1a1a1a"/>
+    
+    <!-- Larger stars with rays -->
+    <g transform="translate(100, 150)">
+      <circle r="2.5" fill="#1a1a1a"/>
+      <line x1="0" y1="-5" x2="0" y2="-7" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="0" y1="5" x2="0" y2="7" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="-5" y1="0" x2="-7" y2="0" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="5" y1="0" x2="7" y2="0" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    <g transform="translate(350, 170)">
+      <circle r="2.5" fill="#1a1a1a"/>
+      <line x1="0" y1="-5" x2="0" y2="-7" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="0" y1="5" x2="0" y2="7" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="-5" y1="0" x2="-7" y2="0" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="5" y1="0" x2="7" y2="0" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+  </g>
+  
+  <!-- Moon -->
+  <circle id="moon" cx="430" cy="80" r="30" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="440" cy="70" r="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="420" cy="90" r="6" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="435" cy="85" r="5" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Mountain range -->
+  <g id="mountains">
+    <path d="M 0 280 L 80 200 L 140 240 L 200 180 L 260 220 L 320 160 L 380 200 L 440 180 L 500 220 L 500 300 L 0 300 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <!-- Mountain details/ridges -->
+    <path d="M 80 200 L 100 230 M 80 200 L 120 220" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 200 180 L 220 210 M 200 180 L 240 200" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 320 160 L 340 190 M 320 160 L 360 180" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 440 180 L 460 200 M 440 180 L 470 195" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Snow caps -->
+    <path d="M 70 210 Q 80 200 90 210" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 190 190 Q 200 180 210 190" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 310 170 Q 320 160 330 170" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Pine trees on hillside -->
+  <g id="trees">
+    <!-- Left tree -->
+    <g transform="translate(50, 260)">
+      <line x1="0" y1="0" x2="0" y2="40" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M 0 10 L -12 25 L -8 25 L -15 38 L 15 38 L 8 25 L 12 25 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M -8 22 L 0 10 L 8 22" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+    
+    <!-- Center-left tree -->
+    <g transform="translate(120, 250)">
+      <line x1="0" y1="0" x2="0" y2="50" stroke="#1a1a1a" stroke-width="2.5"/>
+      <path d="M 0 5 L -15 25 L -10 25 L -18 45 L 18 45 L 10 25 L 15 25 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M -10 22 L 0 5 L 10 22" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <path d="M -14 38 L 0 20 L 14 38" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+    
+    <!-- Center-right tree -->
+    <g transform="translate(280, 255)">
+      <line x1="0" y1="0" x2="0" y2="45" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M 0 8 L -14 28 L -9 28 L -16 43 L 16 43 L 9 28 L 14 28 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M -9 25 L 0 8 L 9 25" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+    
+    <!-- Right tree -->
+    <g transform="translate(400, 265)">
+      <line x1="0" y1="0" x2="0" y2="35" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M 0 8 L -10 20 L -7 20 L -12 32 L 12 32 L 7 20 L 10 20 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M -7 18 L 0 8 L 7 18" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+    
+    <!-- Small distant trees -->
+    <g transform="translate(180, 235)">
+      <line x1="0" y1="0" x2="0" y2="20" stroke="#1a1a1a" stroke-width="1"/>
+      <path d="M 0 5 L -7 15 L 7 15 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    <g transform="translate(350, 230)">
+      <line x1="0" y1="0" x2="0" y2="20" stroke="#1a1a1a" stroke-width="1"/>
+      <path d="M 0 5 L -7 15 L 7 15 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- Ground/snow -->
+  <rect x="0" y="300" width="500" height="100" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Snow texture -->
+  <g id="snow-texture">
+    <path d="M 0 320 Q 50 315 100 320 Q 150 325 200 320 Q 250 315 300 320 Q 350 325 400 320 Q 450 315 500 320" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 0 340 Q 60 335 120 340 Q 180 345 240 340 Q 300 335 360 340 Q 420 345 500 340" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 0 360 Q 40 355 80 360 Q 120 365 160 360 Q 200 355 240 360 Q 280 365 320 360 Q 360 355 400 360 Q 440 365 500 360" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Snowflakes on ground -->
+    <g transform="translate(80, 330)">
+      <circle r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <line x1="-3" y1="0" x2="3" y2="0" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="0" y1="-3" x2="0" y2="3" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="-2" y1="-2" x2="2" y2="2" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="-2" y1="2" x2="2" y2="-2" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    <g transform="translate(250, 350)">
+      <circle r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <line x1="-3" y1="0" x2="3" y2="0" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="0" y1="-3" x2="0" y2="3" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="-2" y1="-2" x2="2" y2="2" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="-2" y1="2" x2="2" y2="-2" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    <g transform="translate(420, 335)">
+      <circle r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <line x1="-3" y1="0" x2="3" y2="0" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="0" y1="-3" x2="0" y2="3" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="-2" y1="-2" x2="2" y2="2" stroke="#1a1a1a" stroke-width="0.5"/>
+      <line x1="-2" y1="2" x2="2" y2="-2" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+  </g>
+</svg>

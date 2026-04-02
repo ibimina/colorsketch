@@ -1,0 +1,144 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Enchanted Forest Landscape - Adult Coloring -->
+  
+  <!-- Background -->
+  <rect id="bg" x="0" y="0" width="400" height="400" fill="white" stroke="none"/>
+  
+  <!-- Misty background trees -->
+  <g id="mist-trees">
+    <path id="mist-1" d="M20 400 L20 200 Q30 180 20 160 L25 160 Q35 180 25 200 L25 400" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="mist-2" d="M50 400 L50 180 Q60 160 50 140 L55 140 Q65 160 55 180 L55 400" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="mist-3" d="M370 400 L370 190 Q380 170 370 150 L375 150 Q385 170 375 190 L375 400" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Main tree left -->
+  <g id="tree-left">
+    <path id="trunk-left" d="M80 400 Q75 350 70 300 Q65 250 75 200 Q70 150 80 100 L95 100 Q105 150 100 200 Q110 250 105 300 Q100 350 95 400 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- Bark texture -->
+    <path id="bark-1" d="M82 380 Q88 370 84 360" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="bark-2" d="M90 340 Q96 330 88 320" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="bark-3" d="M85 290 Q92 280 86 270" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="bark-4" d="M88 230 Q95 220 89 210" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <!-- Branches -->
+    <path id="branch-l1" d="M75 200 Q40 180 20 150" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+    <path id="branch-l2" d="M80 160 Q50 140 30 100" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path id="branch-l3" d="M85 120 Q60 100 50 60" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="branch-l4" d="M95 180 Q120 150 150 130" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path id="branch-l5" d="M100 140 Q130 110 160 90" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Main tree right -->
+  <g id="tree-right">
+    <path id="trunk-right" d="M305 400 Q300 350 295 300 Q290 250 300 200 Q295 150 305 120 L320 120 Q330 150 325 200 Q335 250 330 300 Q325 350 320 400 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- Bark texture -->
+    <path id="bark-r1" d="M307 380 Q313 370 309 360" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="bark-r2" d="M315 340 Q321 330 313 320" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="bark-r3" d="M310 290 Q317 280 311 270" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <!-- Branches -->
+    <path id="branch-r1" d="M325 200 Q360 180 380 150" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+    <path id="branch-r2" d="M320 160 Q350 140 370 100" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path id="branch-r3" d="M315 130 Q340 100 350 60" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="branch-r4" d="M300 180 Q270 150 240 130" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path id="branch-r5" d="M305 140 Q280 110 250 80" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Canopy leaves -->
+  <g id="canopy">
+    <ellipse id="leaf-cluster-1" cx="40" cy="130" rx="25" ry="20" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="leaf-cluster-2" cx="30" cy="80" rx="22" ry="18" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="leaf-cluster-3" cx="60" cy="50" rx="20" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="leaf-cluster-4" cx="140" cy="110" rx="28" ry="22" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="leaf-cluster-5" cx="160" cy="70" rx="25" ry="18" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="leaf-cluster-6" cx="200" cy="50" rx="30" ry="20" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="leaf-cluster-7" cx="250" cy="60" rx="25" ry="18" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="leaf-cluster-8" cx="280" cy="100" rx="28" ry="20" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="leaf-cluster-9" cx="360" cy="130" rx="25" ry="20" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="leaf-cluster-10" cx="370" cy="80" rx="22" ry="18" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="leaf-cluster-11" cx="350" cy="50" rx="20" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Forest floor path -->
+  <path id="path" d="M150 400 Q160 380 175 360 Q190 340 200 320 Q210 300 220 280 Q230 260 250 240" fill="white" stroke="#1a1a1a" stroke-width="3"/>
+  <path id="path-edge" d="M165 400 Q175 380 190 360 Q205 340 215 320 Q225 300 235 280 Q245 260 260 245" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Ferns -->
+  <g id="ferns">
+    <g id="fern-1">
+      <path id="fern-stem-1" d="M120 400 Q125 380 130 360" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <path id="fern-leaf-1a" d="M122 390 Q115 385 118 380" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path id="fern-leaf-1b" d="M125 380 Q118 375 121 370" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path id="fern-leaf-1c" d="M127 370 Q135 365 132 360" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path id="fern-leaf-1d" d="M124 385 Q131 382 130 377" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    <g id="fern-2">
+      <path id="fern-stem-2" d="M270 400 Q265 380 260 360" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <path id="fern-leaf-2a" d="M268 390 Q275 385 272 380" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path id="fern-leaf-2b" d="M265 380 Q272 375 269 370" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+      <path id="fern-leaf-2c" d="M262 370 Q255 365 258 360" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+  </g>
+  
+  <!-- Mushrooms -->
+  <g id="mushrooms">
+    <g id="mushroom-1">
+      <ellipse id="mush-cap-1" cx="200" cy="355" rx="18" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+      <rect id="mush-stem-1" x="195" y="355" width="10" height="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+      <ellipse id="mush-base-1" cx="200" cy="370" rx="8" ry="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+      <!-- Spots -->
+      <circle id="spot-1a" cx="193" cy="353" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <circle id="spot-1b" cx="207" cy="352" r="2.5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <circle id="spot-1c" cx="200" cy="350" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    
+    <g id="mushroom-2">
+      <ellipse id="mush-cap-2" cx="215" cy="365" rx="12" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+      <rect id="mush-stem-2" x="211" y="365" width="8" height="12" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+      <circle id="spot-2a" cx="210" cy="363" r="1.5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <circle id="spot-2b" cx="220" cy="362" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    
+    <g id="mushroom-3">
+      <ellipse id="mush-cap-3" cx="180" cy="380" rx="10" ry="6" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+      <rect id="mush-stem-3" x="177" y="380" width="6" height="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+      <circle id="spot-3a" cx="176" cy="378" r="1.5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <circle id="spot-3b" cx="184" cy="378" r="1" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+  </g>
+  
+  <!-- Fireflies/magical lights -->
+  <g id="fireflies">
+    <circle id="fly-1" cx="150" cy="250" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="fly-1-glow" cx="150" cy="250" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.2"/>
+    <circle id="fly-2" cx="250" cy="200" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="fly-2-glow" cx="250" cy="200" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.2"/>
+    <circle id="fly-3" cx="180" cy="180" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="fly-3-glow" cx="180" cy="180" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.2"/>
+    <circle id="fly-4" cx="230" cy="280" r="2.5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="fly-4-glow" cx="230" cy="280" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.2"/>
+    <circle id="fly-5" cx="170" cy="320" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="fly-6" cx="260" cy="350" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Small flowers on forest floor -->
+  <g id="forest-flowers">
+    <circle id="ff-1" cx="140" cy="395" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle id="ff-1c" cx="140" cy="395" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.2"/>
+    <circle id="ff-2" cx="255" cy="390" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle id="ff-2c" cx="255" cy="390" r="1.5" fill="white" stroke="#1a1a1a" stroke-width="0.2"/>
+    <circle id="ff-3" cx="190" cy="385" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle id="ff-3c" cx="190" cy="385" r="1.5" fill="white" stroke="#1a1a1a" stroke-width="0.2"/>
+  </g>
+  
+  <!-- Owl in tree -->
+  <g id="owl">
+    <ellipse id="owl-body" cx="85" cy="250" rx="12" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle id="owl-head" cx="85" cy="235" r="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <circle id="owl-eye-l" cx="81" cy="233" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="owl-eye-r" cx="89" cy="233" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="owl-pupil-l" cx="81" cy="233" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle id="owl-pupil-r" cx="89" cy="233" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="owl-beak" d="M85 238 L83 242 L85 241 L87 242 Z" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="owl-ear-l" d="M76 228 Q78 222 82 227" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="owl-ear-r" d="M94 228 Q92 222 88 227" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+</svg>

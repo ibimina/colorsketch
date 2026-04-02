@@ -1,0 +1,54 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Magical Unicorn - Fantasy Style -->
+  
+  <!-- Flowing Mane -->
+  <path id="mane-1" d="M140 80 Q120 100 130 140 Q110 160 125 200 Q105 220 120 260" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="mane-2" d="M155 75 Q140 95 145 135 Q125 155 140 195 Q120 215 135 255" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="mane-3" d="M170 70 Q160 90 165 130 Q145 150 160 190 Q140 210 155 250" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="mane-4" d="M185 72 Q175 92 180 132 Q165 152 175 192" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Horn -->
+  <path id="horn" d="M200 45 L185 120 L215 120 Z" fill="white" stroke="#1a1a1a" stroke-width="1.8"/>
+  <path d="M192 70 L208 70 M189 90 L211 90 M186 110 L214 110" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Head -->
+  <path id="head" d="M180 120 Q140 130 120 170 Q110 220 140 260 Q170 290 220 280 Q270 265 280 220 Q285 170 260 140 Q240 120 200 120" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Ear -->
+  <path id="ear" d="M250 110 Q265 80 255 60 Q240 70 235 100 Q238 115 250 115" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="ear-inner" d="M250 100 Q258 85 252 72 Q245 80 244 95" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Eye -->
+  <ellipse id="eye-outer" cx="200" cy="180" rx="25" ry="30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse id="eye-iris" cx="200" cy="185" rx="15" ry="18" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse cx="200" cy="185" rx="8" ry="10" fill="#1a1a1a"/>
+  <circle cx="205" cy="180" r="4" fill="white"/>
+  <path d="M175 165 Q200 155 225 165" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Long Eyelashes -->
+  <path d="M180 160 Q175 150 170 145" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M190 155 Q188 145 185 138" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M200 153 Q200 143 200 135" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Nostril -->
+  <ellipse id="nostril" cx="145" cy="240" rx="8" ry="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Muzzle -->
+  <path id="muzzle" d="M130 220 Q115 250 130 275 Q155 295 185 285 Q195 275 190 255 Q180 235 160 225 Q145 220 130 220" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Mouth -->
+  <path d="M140 265 Q160 275 175 270" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Neck -->
+  <path id="neck" d="M220 280 Q250 310 260 350 Q265 380 240 390 Q200 395 160 385 Q130 375 140 340 Q150 300 180 285" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Stars decoration -->
+  <path id="star-1" d="M290 150 L295 165 L310 165 L298 175 L303 190 L290 180 L277 190 L282 175 L270 165 L285 165 Z" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="star-2" d="M100 300 L103 310 L113 310 L105 317 L108 327 L100 320 L92 327 L95 317 L87 310 L97 310 Z" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="star-3" d="M320 280 L322 287 L330 287 L324 292 L326 300 L320 295 L314 300 L316 292 L310 287 L318 287 Z" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Sparkles -->
+  <circle cx="280" cy="100" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <circle cx="310" cy="200" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <circle cx="90" cy="180" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

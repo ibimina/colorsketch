@@ -1,0 +1,58 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hummingbird with Flowers - Nature Scene -->
+  
+  <!-- Hummingbird Body -->
+  <path id="bird-head" d="M280 120 Q300 100 310 120 Q315 140 295 150 Q275 145 280 120" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle id="bird-eye" cx="295" cy="125" r="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="296" cy="124" r="2" fill="#1a1a1a"/>
+  
+  <!-- Beak -->
+  <path id="bird-beak" d="M310 130 Q350 135 370 140 Q350 142 310 138" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Body -->
+  <path id="bird-body" d="M280 145 Q250 160 230 200 Q225 230 245 250 Q270 260 290 240 Q305 210 295 170 Q290 150 280 145" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Throat (gorget) -->
+  <path id="bird-throat" d="M280 145 Q265 155 260 175 Q265 185 280 180 Q290 170 285 155 Q283 148 280 145" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Wing -->
+  <path id="bird-wing-outer" d="M260 180 Q200 150 150 130 Q120 140 110 170 Q115 200 150 210 Q200 215 255 195" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="bird-wing-inner" d="M255 185 Q210 165 170 155 Q150 165 150 185 Q165 200 200 200 Q235 198 255 190" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M150 145 L145 150 M165 145 L160 152 M180 148 L175 156" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Tail Feathers -->
+  <path id="tail-1" d="M245 250 Q230 280 220 320 Q235 310 250 275 Q255 260 245 250" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="tail-2" d="M255 250 Q250 280 250 315 Q265 305 270 270 Q272 258 255 250" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="tail-3" d="M265 248 Q275 275 285 310 Q295 295 285 265 Q280 252 265 248" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Hibiscus Flower -->
+  <path id="flower-petal-1" d="M370 220 Q390 180 370 160 Q340 170 350 210 Q360 230 370 220" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="flower-petal-2" d="M350 210 Q310 200 300 230 Q320 260 355 240 Q365 230 350 210" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="flower-petal-3" d="M355 245 Q340 280 365 300 Q395 290 385 255 Q375 235 355 245" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="flower-petal-4" d="M380 250 Q400 230 395 205 Q370 210 370 240 Q375 255 380 250" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="flower-petal-5" d="M370 220 Q350 235 360 260 Q385 265 385 235 Q380 220 370 220" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Flower Center -->
+  <circle id="flower-center" cx="368" cy="235" r="12" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Stamen -->
+  <path d="M368 235 Q365 210 360 195" fill="none" stroke="#1a1a1a" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="360" cy="193" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M368 235 Q375 215 385 200" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle cx="386" cy="198" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Small Flower Bud -->
+  <path id="bud-1" d="M320 320 Q310 300 325 290 Q340 300 330 320 Q325 325 320 320" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M325 320 Q325 340 320 360" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Leaves -->
+  <path id="leaf-1" d="M340 340 Q300 330 280 350 Q290 380 330 375 Q355 365 340 340" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M340 340 Q310 360 290 365" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <path id="leaf-2" d="M380 290 Q395 310 385 340 Q360 330 365 305 Q370 290 380 290" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M380 290 Q375 310 370 325" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Motion Lines -->
+  <path d="M140 120 Q130 115 120 120" fill="none" stroke="#1a1a1a" stroke-width="0.5" opacity="0.5"/>
+  <path d="M135 130 Q125 128 115 133" fill="none" stroke="#1a1a1a" stroke-width="0.5" opacity="0.5"/>
+</svg>

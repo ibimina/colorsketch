@@ -1,0 +1,176 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Honeycomb Sacred Geometry - Adult Coloring -->
+  
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="190" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Hexagon calculations: radius ~30, vertical spacing ~52, horizontal ~45 -->
+  
+  <!-- Center hexagon -->
+  <g id="center-hex">
+    <path d="M 200 170 L 226 185 L 226 215 L 200 230 L 174 215 L 174 185 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="200" cy="200" r="15" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="200" cy="200" r="10" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="200" cy="200" r="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- First ring of hexagons (6 hexagons around center) -->
+  <g id="ring1">
+    <!-- Top -->
+    <path d="M 200 118 L 226 133 L 226 163 L 200 178 L 174 163 L 174 133 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="200" cy="148" r="8" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Top-right -->
+    <path d="M 245 144 L 271 159 L 271 189 L 245 204 L 219 189 L 219 159 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="245" cy="174" r="8" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Bottom-right -->
+    <path d="M 245 196 L 271 211 L 271 241 L 245 256 L 219 241 L 219 211 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="245" cy="226" r="8" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Bottom -->
+    <path d="M 200 222 L 226 237 L 226 267 L 200 282 L 174 267 L 174 237 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="200" cy="252" r="8" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Bottom-left -->
+    <path d="M 155 196 L 181 211 L 181 241 L 155 256 L 129 241 L 129 211 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="155" cy="226" r="8" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Top-left -->
+    <path d="M 155 144 L 181 159 L 181 189 L 155 204 L 129 189 L 129 159 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="155" cy="174" r="8" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Second ring of hexagons (12 hexagons) -->
+  <g id="ring2">
+    <!-- Top two -->
+    <path d="M 155 92 L 181 107 L 181 137 L 155 152 L 129 137 L 129 107 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="155" cy="122" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <path d="M 245 92 L 271 107 L 271 137 L 245 152 L 219 137 L 219 107 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="245" cy="122" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Upper-right two -->
+    <path d="M 290 118 L 316 133 L 316 163 L 290 178 L 264 163 L 264 133 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="290" cy="148" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <path d="M 290 170 L 316 185 L 316 215 L 290 230 L 264 215 L 264 185 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="290" cy="200" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Lower-right two -->
+    <path d="M 290 222 L 316 237 L 316 267 L 290 282 L 264 267 L 264 237 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="290" cy="252" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <path d="M 245 248 L 271 263 L 271 293 L 245 308 L 219 293 L 219 263 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="245" cy="278" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Bottom two -->
+    <path d="M 155 248 L 181 263 L 181 293 L 155 308 L 129 293 L 129 263 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="155" cy="278" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Lower-left two -->
+    <path d="M 110 222 L 136 237 L 136 267 L 110 282 L 84 267 L 84 237 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="110" cy="252" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <path d="M 110 170 L 136 185 L 136 215 L 110 230 L 84 215 L 84 185 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="110" cy="200" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Upper-left two -->
+    <path d="M 110 118 L 136 133 L 136 163 L 110 178 L 84 163 L 84 133 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="110" cy="148" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  </g>
+  
+  <!-- Third ring (partial - within circle bounds) -->
+  <g id="ring3">
+    <!-- Top -->
+    <path d="M 200 66 L 226 81 L 226 111 L 200 126 L 174 111 L 174 81 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="200" cy="96" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <!-- Top-right partial -->
+    <path d="M 290 66 L 316 81 L 316 111 L 290 126 L 264 111 L 264 81 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="290" cy="96" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <!-- Far right -->
+    <path d="M 335 144 L 361 159 L 361 189 L 335 204 L 309 189 L 309 159 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="335" cy="174" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <path d="M 335 196 L 361 211 L 361 241 L 335 256 L 309 241 L 309 211 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="335" cy="226" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <!-- Bottom-right -->
+    <path d="M 290 274 L 316 289 L 316 319 L 290 334 L 264 319 L 264 289 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="290" cy="304" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <!-- Bottom -->
+    <path d="M 200 300 L 226 315 L 226 345 L 200 360 L 174 345 L 174 315 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="200" cy="330" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <!-- Bottom-left -->
+    <path d="M 110 274 L 136 289 L 136 319 L 110 334 L 84 319 L 84 289 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="110" cy="304" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <!-- Far left -->
+    <path d="M 65 196 L 91 211 L 91 241 L 65 256 L 39 241 L 39 211 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="65" cy="226" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <path d="M 65 144 L 91 159 L 91 189 L 65 204 L 39 189 L 39 159 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="65" cy="174" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    
+    <!-- Top-left -->
+    <path d="M 110 66 L 136 81 L 136 111 L 110 126 L 84 111 L 84 81 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="110" cy="96" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Decorative bee in center -->
+  <g id="bee">
+    <ellipse cx="200" cy="200" rx="8" ry="6" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="196" y1="200" x2="198" y2="200" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="202" y1="200" x2="204" y2="200" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="198" cy="198" r="1" fill="#1a1a1a"/>
+    <circle cx="202" cy="198" r="1" fill="#1a1a1a"/>
+    
+    <!-- Wings -->
+    <ellipse cx="195" cy="196" rx="5" ry="3" fill="none" stroke="#1a1a1a" stroke-width="0.7" transform="rotate(-30 195 196)"/>
+    <ellipse cx="205" cy="196" rx="5" ry="3" fill="none" stroke="#1a1a1a" stroke-width="0.7" transform="rotate(30 205 196)"/>
+  </g>
+  
+  <!-- Decorative flowers at vertices -->
+  <g id="flowers">
+    <g transform="translate(200, 50)">
+      <circle r="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <circle r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="-4" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="4" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="-4" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="4" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+    
+    <g transform="translate(335, 200)">
+      <circle r="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <circle r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="-4" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="4" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="-4" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="4" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+    
+    <g transform="translate(200, 350)">
+      <circle r="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <circle r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="-4" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="4" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="-4" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="4" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+    
+    <g transform="translate(65, 200)">
+      <circle r="8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <circle r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="-4" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="4" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="-4" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="4" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+  </g>
+</svg>

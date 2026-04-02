@@ -1,0 +1,74 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Baby Lion - Cute Safari Style -->
+  
+  <!-- Mane -->
+  <circle id="mane-outer" cx="200" cy="170" r="110" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Mane texture -->
+  <path id="mane-tuft-1" d="M125 90 Q110 70 130 60 Q150 70 145 90" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="mane-tuft-2" d="M165 70 Q160 45 180 40 Q200 50 195 75" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="mane-tuft-3" d="M215 70 Q220 45 240 45 Q255 55 245 80" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="mane-tuft-4" d="M275 100 Q295 85 305 100 Q300 120 280 115" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="mane-tuft-5" d="M295 150 Q320 145 320 170 Q310 190 290 180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="mane-tuft-6" d="M290 215 Q315 225 310 250 Q290 255 285 235" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="mane-tuft-7" d="M110 215 Q85 225 90 250 Q110 255 115 235" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="mane-tuft-8" d="M105 150 Q80 145 80 170 Q90 190 110 180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="mane-tuft-9" d="M95 100 Q75 85 80 105 Q90 125 110 115" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Face -->
+  <circle id="face" cx="200" cy="170" r="75" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Ears -->
+  <ellipse id="ear-left" cx="130" cy="110" rx="25" ry="20" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse id="ear-left-inner" cx="130" cy="115" rx="12" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <ellipse id="ear-right" cx="270" cy="110" rx="25" ry="20" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse id="ear-right-inner" cx="270" cy="115" rx="12" ry="10" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Eyes -->
+  <ellipse id="eye-left" cx="165" cy="155" rx="18" ry="22" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse cx="168" cy="158" r="10" fill="#1a1a1a"/>
+  <circle cx="172" cy="153" r="4" fill="white"/>
+  
+  <ellipse id="eye-right" cx="235" cy="155" rx="18" ry="22" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse cx="232" cy="158" r="10" fill="#1a1a1a"/>
+  <circle cx="228" cy="153" r="4" fill="white"/>
+  
+  <!-- Eyebrow markings -->
+  <path d="M145 130 Q165 125 180 135" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M220 135 Q235 125 255 130" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Muzzle -->
+  <ellipse id="muzzle" cx="200" cy="200" rx="35" ry="28" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M200 185 Q185 190 185 200 Q190 212 200 215 Q210 212 215 200 Q215 190 200 185" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse cx="200" cy="195" rx="8" ry="6" fill="#1a1a1a"/>
+  
+  <!-- Mouth -->
+  <path d="M200 208 L200 218" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M200 218 Q185 228 175 220" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M200 218 Q215 228 225 220" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Whisker dots -->
+  <circle cx="170" cy="200" r="2" fill="#1a1a1a"/>
+  <circle cx="175" cy="208" r="2" fill="#1a1a1a"/>
+  <circle cx="172" cy="216" r="2" fill="#1a1a1a"/>
+  <circle cx="230" cy="200" r="2" fill="#1a1a1a"/>
+  <circle cx="225" cy="208" r="2" fill="#1a1a1a"/>
+  <circle cx="228" cy="216" r="2" fill="#1a1a1a"/>
+  
+  <!-- Body -->
+  <ellipse id="body" cx="200" cy="330" rx="70" ry="50" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Front Paws -->
+  <ellipse id="paw-left" cx="155" cy="375" rx="25" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M140 372 L140 380 M150 373 L150 382 M160 373 L160 382 M170 372 L170 380" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <ellipse id="paw-right" cx="245" cy="375" rx="25" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M230 372 L230 380 M240 373 L240 382 M250 373 L250 382 M260 372 L260 380" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Tail -->
+  <path id="tail" d="M270 320 Q310 330 330 300 Q340 280 330 265" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
+  <circle id="tail-tuft" cx="330" cy="265" r="12" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+</svg>

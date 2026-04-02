@@ -1,0 +1,89 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cherry Blossom Branch - Nature/Botanical -->
+  
+  <!-- Main Branch -->
+  <path id="branch-main" d="M50 380 Q100 350 150 300 Q200 250 250 200 Q300 150 350 100" fill="none" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Secondary branches -->
+  <path id="branch-1" d="M120 330 Q100 290 80 250" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+  <path id="branch-2" d="M180 275 Q150 240 140 200" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+  <path id="branch-3" d="M220 230 Q260 220 290 240" fill="none" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+  <path id="branch-4" d="M280 170 Q250 140 240 100" fill="none" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+  <path id="branch-5" d="M320 130 Q350 150 370 180" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Blossoms - Group 1 (bottom) -->
+  <g id="blossom-1">
+    <path d="M75 250 Q65 230 80 218 Q95 230 85 250 Q80 255 75 250" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M80 235 Q60 240 55 225 Q70 220 80 235" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M80 235 Q100 240 105 225 Q90 220 80 235" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M80 235 Q65 255 55 260 Q65 245 80 235" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M80 235 Q95 255 105 260 Q95 245 80 235" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="80" cy="235" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Blossom 2 -->
+  <g id="blossom-2">
+    <path d="M135 200 Q125 180 140 168 Q155 180 145 200 Q140 205 135 200" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M140 185 Q120 190 115 175 Q130 170 140 185" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M140 185 Q160 190 165 175 Q150 170 140 185" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M140 185 Q125 205 115 210 Q125 195 140 185" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M140 185 Q155 205 165 210 Q155 195 140 185" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="140" cy="185" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Blossom 3 -->
+  <g id="blossom-3">
+    <path d="M175 280 Q165 260 180 248 Q195 260 185 280 Q180 285 175 280" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M180 265 Q160 270 155 255 Q170 250 180 265" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M180 265 Q200 270 205 255 Q190 250 180 265" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M180 265 Q165 285 155 290 Q165 275 180 265" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M180 265 Q195 285 205 290 Q195 275 180 265" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="180" cy="265" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Blossom 4 -->
+  <g id="blossom-4">
+    <path d="M235 100 Q225 80 240 68 Q255 80 245 100 Q240 105 235 100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M240 85 Q220 90 215 75 Q230 70 240 85" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M240 85 Q260 90 265 75 Q250 70 240 85" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M240 85 Q225 105 215 110 Q225 95 240 85" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M240 85 Q255 105 265 110 Q255 95 240 85" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="240" cy="85" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Blossom 5 -->
+  <g id="blossom-5">
+    <path d="M290 235 Q280 215 295 203 Q310 215 300 235 Q295 240 290 235" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M295 220 Q275 225 270 210 Q285 205 295 220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M295 220 Q315 225 320 210 Q305 205 295 220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M295 220 Q280 240 270 245 Q280 230 295 220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M295 220 Q310 240 320 245 Q310 230 295 220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="295" cy="220" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Blossom 6 -->
+  <g id="blossom-6">
+    <path d="M365 175 Q355 155 370 143 Q385 155 375 175 Q370 180 365 175" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M370 160 Q350 165 345 150 Q360 145 370 160" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M370 160 Q390 165 395 150 Q380 145 370 160" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M370 160 Q355 180 345 185 Q355 170 370 160" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M370 160 Q385 180 395 185 Q385 170 370 160" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="370" cy="160" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Blossom 7 -->
+  <g id="blossom-7">
+    <path d="M345 65 Q335 45 350 33 Q365 45 355 65 Q350 70 345 65" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M350 50 Q330 55 325 40 Q340 35 350 50" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M350 50 Q370 55 375 40 Q360 35 350 50" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M350 50 Q335 70 325 75 Q335 60 350 50" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M350 50 Q365 70 375 75 Q365 60 350 50" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="350" cy="50" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Falling petals -->
+  <path id="petal-fall-1" d="M50 150 Q45 145 50 140 Q60 145 55 150 Q53 152 50 150" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path id="petal-fall-2" d="M100 100 Q95 95 100 90 Q110 95 105 100 Q103 102 100 100" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path id="petal-fall-3" d="M330 300 Q325 295 330 290 Q340 295 335 300 Q333 302 330 300" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path id="petal-fall-4" d="M280 350 Q275 345 280 340 Q290 345 285 350 Q283 352 280 350" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+</svg>

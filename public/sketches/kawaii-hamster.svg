@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Kawaii Hamster -->
+  
+  <!-- Sunflower seeds scattered -->
+  <ellipse id="seed-1" cx="70" cy="350" rx="8" ry="12" fill="white" transform="rotate(-20 70 350)"/>
+  <path id="seed-1-stripe" d="M68 342 L72 358" fill="none"/>
+  <ellipse id="seed-2" cx="95" cy="360" rx="6" ry="10" fill="white" transform="rotate(15 95 360)"/>
+  <path id="seed-2-stripe" d="M93 352 L97 368" fill="none"/>
+  <ellipse id="seed-3" cx="320" cy="355" rx="7" ry="11" fill="white" transform="rotate(-10 320 355)"/>
+  <path id="seed-3-stripe" d="M318 346 L322 364" fill="none"/>
+  
+  <!-- Body -->
+  <ellipse id="body" cx="200" cy="290" rx="90" ry="80" fill="white"/>
+  
+  <!-- Belly marking -->
+  <ellipse id="belly" cx="200" cy="300" rx="55" ry="50" fill="white" stroke-dasharray="3,3"/>
+  
+  <!-- Back feet -->
+  <ellipse id="foot-left" cx="130" cy="355" rx="25" ry="15" fill="white"/>
+  <ellipse id="foot-right" cx="270" cy="355" rx="25" ry="15" fill="white"/>
+  <path id="foot-left-toes" d="M115 355 L112 350 M125 352 L122 347 M135 352 L135 347" fill="none"/>
+  <path id="foot-right-toes" d="M285 355 L288 350 M275 352 L278 347 M265 352 L265 347" fill="none"/>
+  
+  <!-- Front paws -->
+  <ellipse id="paw-left" cx="145" cy="300" rx="22" ry="28" fill="white"/>
+  <ellipse id="paw-right" cx="255" cy="300" rx="22" ry="28" fill="white"/>
+  <path id="paw-left-lines" d="M138 310 L135 320 M145 312 L145 322 M152 310 L155 320" fill="none"/>
+  <path id="paw-right-lines" d="M248 310 L245 320 M255 312 L255 322 M262 310 L265 320" fill="none"/>
+  
+  <!-- Seed being held -->
+  <ellipse id="held-seed" cx="200" cy="310" rx="15" ry="22" fill="white"/>
+  <path id="held-seed-stripe-1" d="M195 295 L195 325" fill="none"/>
+  <path id="held-seed-stripe-2" d="M205 295 L205 325" fill="none"/>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="200" cy="150" rx="85" ry="80" fill="white"/>
+  
+  <!-- Cheek pouches (full!) -->
+  <ellipse id="cheek-left" cx="115" cy="175" rx="35" ry="40" fill="white"/>
+  <ellipse id="cheek-right" cx="285" cy="175" rx="35" ry="40" fill="white"/>
+  <path id="cheek-left-detail" d="M100 160 Q105 175 100 190" fill="none" stroke-dasharray="3,3"/>
+  <path id="cheek-right-detail" d="M300 160 Q295 175 300 190" fill="none" stroke-dasharray="3,3"/>
+  
+  <!-- Ears -->
+  <ellipse id="ear-left" cx="130" cy="80" rx="25" ry="30" fill="white"/>
+  <ellipse id="ear-right" cx="270" cy="80" rx="25" ry="30" fill="white"/>
+  <ellipse id="ear-inner-left" cx="130" cy="85" rx="12" ry="15" fill="white"/>
+  <ellipse id="ear-inner-right" cx="270" cy="85" rx="12" ry="15" fill="white"/>
+  
+  <!-- Face markings -->
+  <path id="face-marking" d="M155 110 Q200 95 245 110 L240 180 Q200 200 160 180 Z" fill="white" stroke-dasharray="3,3"/>
+  
+  <!-- Eyes -->
+  <ellipse id="eye-left" cx="170" cy="140" rx="18" ry="22" fill="white"/>
+  <ellipse id="eye-right" cx="230" cy="140" rx="18" ry="22" fill="white"/>
+  <circle id="pupil-left" cx="175" cy="145" r="12" fill="white"/>
+  <circle id="pupil-right" cx="235" cy="145" r="12" fill="white"/>
+  <circle id="sparkle-left-1" cx="167" cy="135" r="5" fill="white"/>
+  <circle id="sparkle-left-2" cx="180" cy="150" r="2" fill="white"/>
+  <circle id="sparkle-right-1" cx="227" cy="135" r="5" fill="white"/>
+  <circle id="sparkle-right-2" cx="240" cy="150" r="2" fill="white"/>
+  
+  <!-- Eyebrows -->
+  <path id="eyebrow-left" d="M155 115 Q170 108 185 115" fill="none"/>
+  <path id="eyebrow-right" d="M215 115 Q230 108 245 115" fill="none"/>
+  
+  <!-- Nose -->
+  <ellipse id="nose" cx="200" cy="175" rx="8" ry="6" fill="white"/>
+  
+  <!-- Mouth (small, eating) -->
+  <path id="mouth" d="M192 188 Q200 195 208 188" fill="none"/>
+  
+  <!-- Whiskers -->
+  <path id="whisker-left-1" d="M150 175 L110 165" fill="none"/>
+  <path id="whisker-left-2" d="M148 185 L108 185" fill="none"/>
+  <path id="whisker-left-3" d="M150 195 L110 205" fill="none"/>
+  <path id="whisker-right-1" d="M250 175 L290 165" fill="none"/>
+  <path id="whisker-right-2" d="M252 185 L292 185" fill="none"/>
+  <path id="whisker-right-3" d="M250 195 L290 205" fill="none"/>
+  
+  <!-- Blush -->
+  <ellipse id="blush-left" cx="145" cy="165" rx="12" ry="6" fill="white" stroke-dasharray="2,2"/>
+  <ellipse id="blush-right" cx="255" cy="165" rx="12" ry="6" fill="white" stroke-dasharray="2,2"/>
+  
+  <!-- Tail -->
+  <ellipse id="tail" cx="290" cy="320" rx="15" ry="12" fill="white"/>
+  
+  <!-- Hearts -->
+  <path id="heart-1" d="M60 120 Q65 115 70 120 Q75 115 80 120 Q80 130 70 138 Q60 130 60 120" fill="white"/>
+  <path id="heart-2" d="M330 100 Q333 97 336 100 Q339 97 342 100 Q342 106 336 112 Q330 106 330 100" fill="white"/>
+  
+  <!-- Stars -->
+  <path id="star-1" d="M50 200 L53 210 L43 205 L57 205 L47 210 Z" fill="white"/>
+  <path id="star-2" d="M355 220 L358 228 L350 224 L360 224 L352 228 Z" fill="white"/>
+</svg>

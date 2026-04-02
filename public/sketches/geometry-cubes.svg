@@ -1,0 +1,200 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Optical Illusion Cube Pattern - Adult Coloring -->
+  
+  <!-- Background -->
+  <rect id="background" x="0" y="0" width="400" height="400" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Isometric cubes pattern -->
+  <!-- Row 1 -->
+  <g id="cube-1">
+    <polygon id="cube-1-top" points="60,40 100,20 140,40 100,60" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-1-left" points="60,40 100,60 100,100 60,80" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-1-right" points="100,60 140,40 140,80 100,100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-2">
+    <polygon id="cube-2-top" points="140,40 180,20 220,40 180,60" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-2-left" points="140,40 180,60 180,100 140,80" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-2-right" points="180,60 220,40 220,80 180,100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-3">
+    <polygon id="cube-3-top" points="220,40 260,20 300,40 260,60" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-3-left" points="220,40 260,60 260,100 220,80" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-3-right" points="260,60 300,40 300,80 260,100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-4">
+    <polygon id="cube-4-top" points="300,40 340,20 380,40 340,60" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-4-left" points="300,40 340,60 340,100 300,80" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-4-right" points="340,60 380,40 380,80 340,100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Row 2 (offset) -->
+  <g id="cube-5">
+    <polygon id="cube-5-top" points="20,80 60,60 100,80 60,100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-5-left" points="20,80 60,100 60,140 20,120" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-5-right" points="60,100 100,80 100,120 60,140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-6">
+    <polygon id="cube-6-top" points="100,80 140,60 180,80 140,100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-6-left" points="100,80 140,100 140,140 100,120" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-6-right" points="140,100 180,80 180,120 140,140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-7">
+    <polygon id="cube-7-top" points="180,80 220,60 260,80 220,100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-7-left" points="180,80 220,100 220,140 180,120" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-7-right" points="220,100 260,80 260,120 220,140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-8">
+    <polygon id="cube-8-top" points="260,80 300,60 340,80 300,100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-8-left" points="260,80 300,100 300,140 260,120" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-8-right" points="300,100 340,80 340,120 300,140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-9">
+    <polygon id="cube-9-top" points="340,80 380,60 400,72 380,88" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-9-left" points="340,80 380,100 380,140 340,120" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-9-right" points="380,100 400,88 400,128 380,140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Row 3 -->
+  <g id="cube-10">
+    <polygon id="cube-10-top" points="60,120 100,100 140,120 100,140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-10-left" points="60,120 100,140 100,180 60,160" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-10-right" points="100,140 140,120 140,160 100,180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-11">
+    <polygon id="cube-11-top" points="140,120 180,100 220,120 180,140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-11-left" points="140,120 180,140 180,180 140,160" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-11-right" points="180,140 220,120 220,160 180,180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-12">
+    <polygon id="cube-12-top" points="220,120 260,100 300,120 260,140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-12-left" points="220,120 260,140 260,180 220,160" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-12-right" points="260,140 300,120 300,160 260,180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-13">
+    <polygon id="cube-13-top" points="300,120 340,100 380,120 340,140" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-13-left" points="300,120 340,140 340,180 300,160" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-13-right" points="340,140 380,120 380,160 340,180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- More rows following same pattern -->
+  <g id="cube-14">
+    <polygon id="cube-14-top" points="20,160 60,140 100,160 60,180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-14-left" points="20,160 60,180 60,220 20,200" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-14-right" points="60,180 100,160 100,200 60,220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-15">
+    <polygon id="cube-15-top" points="100,160 140,140 180,160 140,180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-15-left" points="100,160 140,180 140,220 100,200" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-15-right" points="140,180 180,160 180,200 140,220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-16">
+    <polygon id="cube-16-top" points="180,160 220,140 260,160 220,180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-16-left" points="180,160 220,180 220,220 180,200" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-16-right" points="220,180 260,160 260,200 220,220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-17">
+    <polygon id="cube-17-top" points="260,160 300,140 340,160 300,180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-17-left" points="260,160 300,180 300,220 260,200" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-17-right" points="300,180 340,160 340,200 300,220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-18">
+    <polygon id="cube-18-top" points="340,160 380,140 400,152 380,168" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-18-left" points="340,160 380,180 380,220 340,200" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-18-right" points="380,180 400,168 400,208 380,220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Row 5 -->
+  <g id="cube-19">
+    <polygon id="cube-19-top" points="60,200 100,180 140,200 100,220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-19-left" points="60,200 100,220 100,260 60,240" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-19-right" points="100,220 140,200 140,240 100,260" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-20">
+    <polygon id="cube-20-top" points="140,200 180,180 220,200 180,220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-20-left" points="140,200 180,220 180,260 140,240" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-20-right" points="180,220 220,200 220,240 180,260" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-21">
+    <polygon id="cube-21-top" points="220,200 260,180 300,200 260,220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-21-left" points="220,200 260,220 260,260 220,240" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-21-right" points="260,220 300,200 300,240 260,260" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-22">
+    <polygon id="cube-22-top" points="300,200 340,180 380,200 340,220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-22-left" points="300,200 340,220 340,260 300,240" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-22-right" points="340,220 380,200 380,240 340,260" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Continue pattern for more rows -->
+  <g id="cube-23">
+    <polygon id="cube-23-top" points="20,240 60,220 100,240 60,260" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-23-left" points="20,240 60,260 60,300 20,280" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-23-right" points="60,260 100,240 100,280 60,300" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-24">
+    <polygon id="cube-24-top" points="100,240 140,220 180,240 140,260" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-24-left" points="100,240 140,260 140,300 100,280" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-24-right" points="140,260 180,240 180,280 140,300" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-25">
+    <polygon id="cube-25-top" points="180,240 220,220 260,240 220,260" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-25-left" points="180,240 220,260 220,300 180,280" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-25-right" points="220,260 260,240 260,280 220,300" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-26">
+    <polygon id="cube-26-top" points="260,240 300,220 340,240 300,260" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-26-left" points="260,240 300,260 300,300 260,280" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-26-right" points="300,260 340,240 340,280 300,300" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-27">
+    <polygon id="cube-27-top" points="340,240 380,220 400,232 380,248" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-27-left" points="340,240 380,260 380,300 340,280" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-27-right" points="380,260 400,248 400,288 380,300" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Bottom rows -->
+  <g id="cube-28">
+    <polygon id="cube-28-top" points="60,280 100,260 140,280 100,300" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-28-left" points="60,280 100,300 100,340 60,320" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-28-right" points="100,300 140,280 140,320 100,340" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-29">
+    <polygon id="cube-29-top" points="140,280 180,260 220,280 180,300" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-29-left" points="140,280 180,300 180,340 140,320" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-29-right" points="180,300 220,280 220,320 180,340" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-30">
+    <polygon id="cube-30-top" points="220,280 260,260 300,280 260,300" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-30-left" points="220,280 260,300 260,340 220,320" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-30-right" points="260,300 300,280 300,320 260,340" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <g id="cube-31">
+    <polygon id="cube-31-top" points="300,280 340,260 380,280 340,300" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-31-left" points="300,280 340,300 340,340 300,320" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <polygon id="cube-31-right" points="340,300 380,280 380,320 340,340" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Girl with Umbrella in Rain -->
+  
+  <!-- Rain drops -->
+  <path id="rain-1" d="M50 30 L48 50" fill="none"/>
+  <path id="rain-2" d="M80 20 L78 45" fill="none"/>
+  <path id="rain-3" d="M120 35 L118 55" fill="none"/>
+  <path id="rain-4" d="M280 25 L278 50" fill="none"/>
+  <path id="rain-5" d="M320 30 L318 55" fill="none"/>
+  <path id="rain-6" d="M350 20 L348 45" fill="none"/>
+  <path id="rain-7" d="M30 80 L28 100" fill="none"/>
+  <path id="rain-8" d="M370 75 L368 95" fill="none"/>
+  <path id="rain-9" d="M40 150 L38 175" fill="none"/>
+  <path id="rain-10" d="M360 160 L358 185" fill="none"/>
+  <path id="rain-11" d="M25 230 L23 255" fill="none"/>
+  <path id="rain-12" d="M375 240 L373 265" fill="none"/>
+  <path id="rain-13" d="M50 300 L48 325" fill="none"/>
+  <path id="rain-14" d="M350 310 L348 335" fill="none"/>
+  
+  <!-- Puddle -->
+  <ellipse id="puddle" cx="200" cy="380" rx="120" ry="15" fill="white"/>
+  <ellipse id="puddle-inner" cx="200" cy="378" rx="80" ry="8" fill="white" stroke-dasharray="4,4"/>
+  
+  <!-- Splash drops -->
+  <path id="splash-1" d="M150 375 Q155 365 160 375" fill="white"/>
+  <path id="splash-2" d="M240 372 Q245 362 250 372" fill="white"/>
+  
+  <!-- Rain boots -->
+  <path id="boot-left" d="M160 340 L150 340 L145 365 L140 380 L175 380 L175 365 L170 340" fill="white"/>
+  <path id="boot-right" d="M230 340 L240 340 L245 365 L250 380 L215 380 L215 365 L220 340" fill="white"/>
+  <path id="boot-left-top" d="M150 340 Q160 335 170 340" fill="none"/>
+  <path id="boot-right-top" d="M220 340 Q230 335 240 340" fill="none"/>
+  <path id="boot-left-detail" d="M145 365 L175 365" fill="none"/>
+  <path id="boot-right-detail" d="M215 365 L245 365" fill="none"/>
+  
+  <!-- Legs -->
+  <rect id="leg-left" x="155" y="290" width="20" height="50" fill="white"/>
+  <rect id="leg-right" x="215" y="290" width="20" height="50" fill="white"/>
+  
+  <!-- Raincoat -->
+  <path id="raincoat" d="M140 180 L120 290 Q120 310 140 320 L175 330 Q195 335 215 330 L250 320 Q270 310 270 290 L250 180" fill="white"/>
+  <path id="raincoat-buttons" d="M195 200 L195 300" fill="none" stroke-dasharray="8,12"/>
+  <circle id="button-1" cx="195" cy="210" r="4" fill="white"/>
+  <circle id="button-2" cx="195" cy="245" r="4" fill="white"/>
+  <circle id="button-3" cx="195" cy="280" r="4" fill="white"/>
+  
+  <!-- Hood -->
+  <path id="hood" d="M145 150 Q140 120 170 100 Q195 90 220 100 Q250 120 245 150" fill="white"/>
+  <path id="hood-edge" d="M150 155 Q195 145 240 155" fill="none"/>
+  
+  <!-- Arm holding umbrella -->
+  <path id="arm-right" d="M245 190 Q270 170 290 140 Q300 125 305 110" fill="white"/>
+  <path id="arm-right-outline" d="M245 190 Q270 170 290 140 Q300 125 305 110" fill="none" stroke-width="12" stroke="white"/>
+  <path id="arm-right-line" d="M245 190 Q270 170 290 140 Q300 125 305 110" fill="none"/>
+  
+  <!-- Hand -->
+  <ellipse id="hand" cx="305" cy="105" rx="12" ry="10" fill="white"/>
+  
+  <!-- Other arm in pocket -->
+  <path id="arm-left" d="M145 200 Q130 220 135 260" fill="white"/>
+  <path id="pocket" d="M130 245 Q140 270 155 275 L148 250 Z" fill="white"/>
+  
+  <!-- Umbrella -->
+  <path id="umbrella-canopy" d="M120 100 Q195 -10 350 100 Q300 110 275 105 Q245 115 195 105 Q165 115 120 100" fill="white"/>
+  <path id="umbrella-section-1" d="M160 95 Q165 50 195 30" fill="none"/>
+  <path id="umbrella-section-2" d="M235 90 Q240 45 275 25" fill="none"/>
+  <path id="umbrella-section-3" d="M310 95 Q315 55 340 40" fill="none"/>
+  <path id="umbrella-edge" d="M120 100 Q140 115 160 100 Q180 115 200 100 Q220 115 240 100 Q260 115 280 100 Q300 115 320 100 Q340 115 350 100" fill="none"/>
+  
+  <!-- Umbrella handle -->
+  <line id="umbrella-pole" x1="235" y1="30" x2="305" y2="105" stroke-width="3"/>
+  <path id="umbrella-handle" d="M235 30 Q220 35 220 50 Q220 60 230 60" fill="none" stroke-width="3"/>
+  
+  <!-- Face (inside hood) -->
+  <ellipse id="face" cx="195" cy="145" rx="35" ry="40" fill="white"/>
+  
+  <!-- Hair peeking from hood -->
+  <path id="hair-bangs" d="M165 130 Q175 125 185 130 Q195 122 205 130 Q215 125 225 135" fill="white"/>
+  
+  <!-- Eyes - happy closed -->
+  <path id="eye-left" d="M178 142 Q185 135 192 142" fill="none" stroke-width="2.5"/>
+  <path id="eye-right" d="M198 142 Q205 135 212 142" fill="none" stroke-width="2.5"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M195 148 Q197 153 195 158" fill="none"/>
+  
+  <!-- Mouth - happy smile -->
+  <path id="mouth" d="M185 168 Q195 178 205 168" fill="none"/>
+  
+  <!-- Blush -->
+  <ellipse id="blush-left" cx="170" cy="155" rx="8" ry="4" fill="white" stroke-dasharray="2,2"/>
+  <ellipse id="blush-right" cx="220" cy="155" rx="8" ry="4" fill="white" stroke-dasharray="2,2"/>
+  
+  <!-- Rain ripples in puddle -->
+  <circle id="ripple-1" cx="160" cy="380" r="8" fill="none"/>
+  <circle id="ripple-2" cx="240" cy="378" r="6" fill="none"/>
+  <circle id="ripple-3" cx="200" cy="382" r="5" fill="none"/>
+</svg>

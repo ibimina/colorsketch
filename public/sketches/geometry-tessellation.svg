@@ -1,0 +1,62 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tessellation Pattern - Adult Coloring -->
+  
+  <!-- Background -->
+  <rect id="background" x="0" y="0" width="400" height="400" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Hexagonal tessellation base -->
+  <!-- Row 1 -->
+  <polygon id="hex-1-1" points="70,35 105,55 105,95 70,115 35,95 35,55" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-1-2" points="140,35 175,55 175,95 140,115 105,95 105,55" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-1-3" points="210,35 245,55 245,95 210,115 175,95 175,55" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-1-4" points="280,35 315,55 315,95 280,115 245,95 245,55" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-1-5" points="350,35 385,55 385,95 350,115 315,95 315,55" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Row 2 (offset) -->
+  <polygon id="hex-2-1" points="35,115 70,135 70,175 35,195 0,175 0,135" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-2-2" points="105,115 140,135 140,175 105,195 70,175 70,135" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-2-3" points="175,115 210,135 210,175 175,195 140,175 140,135" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-2-4" points="245,115 280,135 280,175 245,195 210,175 210,135" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-2-5" points="315,115 350,135 350,175 315,195 280,175 280,135" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-2-6" points="385,115 400,125 400,175 385,195 350,175 350,135" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Row 3 -->
+  <polygon id="hex-3-1" points="70,195 105,215 105,255 70,275 35,255 35,215" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-3-2" points="140,195 175,215 175,255 140,275 105,255 105,215" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-3-3" points="210,195 245,215 245,255 210,275 175,255 175,215" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-3-4" points="280,195 315,215 315,255 280,275 245,255 245,215" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-3-5" points="350,195 385,215 385,255 350,275 315,255 315,215" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Row 4 (offset) -->
+  <polygon id="hex-4-1" points="35,275 70,295 70,335 35,355 0,335 0,295" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-4-2" points="105,275 140,295 140,335 105,355 70,335 70,295" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-4-3" points="175,275 210,295 210,335 175,355 140,335 140,295" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-4-4" points="245,275 280,295 280,335 245,355 210,335 210,295" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-4-5" points="315,275 350,295 350,335 315,355 280,335 280,295" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-4-6" points="385,275 400,285 400,335 385,355 350,335 350,295" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Row 5 -->
+  <polygon id="hex-5-1" points="70,355 105,375 105,400 70,400 35,400 35,375" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-5-2" points="140,355 175,375 175,400 140,400 105,400 105,375" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-5-3" points="210,355 245,375 245,400 210,400 175,400 175,375" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-5-4" points="280,355 315,375 315,400 280,400 245,400 245,375" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-5-5" points="350,355 385,375 385,400 350,400 315,400 315,375" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Top partial row -->
+  <polygon id="hex-0-1" points="35,0 70,0 70,35 35,55 0,35 0,0" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-0-2" points="105,0 140,0 140,35 105,55 70,35 70,0" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-0-3" points="175,0 210,0 210,35 175,55 140,35 140,0" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-0-4" points="245,0 280,0 280,35 245,55 210,35 210,0" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-0-5" points="315,0 350,0 350,35 315,55 280,35 280,0" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <polygon id="hex-0-6" points="385,0 400,0 400,35 385,55 350,35 350,0" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Inner decorations in center hexagons -->
+  <circle id="deco-1" cx="210" cy="145" r="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="deco-inner-1" cx="210" cy="145" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <circle id="deco-2" cx="175" cy="235" r="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="deco-inner-2" cx="175" cy="235" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <circle id="deco-3" cx="245" cy="235" r="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="deco-inner-3" cx="245" cy="235" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

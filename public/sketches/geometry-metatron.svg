@@ -1,0 +1,55 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sacred Geometry - Metatron's Cube - Adult Coloring -->
+  
+  <!-- Background -->
+  <rect id="background" x="0" y="0" width="400" height="400" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Outer hexagon -->
+  <polygon id="outer-hex" points="200,30 347.5,115 347.5,285 200,370 52.5,285 52.5,115" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Inner hexagon -->
+  <polygon id="inner-hex" points="200,80 297.5,145 297.5,255 200,320 102.5,255 102.5,145" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- 13 circles (Fruit of Life) -->
+  <circle id="fruit-center" cx="200" cy="200" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- First ring -->
+  <circle id="fruit-1" cx="200" cy="150" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="fruit-2" cx="243" cy="175" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="fruit-3" cx="243" cy="225" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="fruit-4" cx="200" cy="250" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="fruit-5" cx="157" cy="225" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="fruit-6" cx="157" cy="175" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Second ring -->
+  <circle id="fruit-7" cx="200" cy="100" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="fruit-8" cx="286" cy="150" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="fruit-9" cx="286" cy="250" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="fruit-10" cx="200" cy="300" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="fruit-11" cx="114" cy="250" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="fruit-12" cx="114" cy="150" r="25" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Metatron's Cube connecting lines -->
+  <!-- Lines from center -->
+  <line id="line-c1" x1="200" y1="200" x2="200" y2="100" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-c2" x1="200" y1="200" x2="286" y2="150" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-c3" x1="200" y1="200" x2="286" y2="250" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-c4" x1="200" y1="200" x2="200" y2="300" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-c5" x1="200" y1="200" x2="114" y2="250" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-c6" x1="200" y1="200" x2="114" y2="150" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Cross connections -->
+  <line id="line-x1" x1="200" y1="100" x2="286" y2="250" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-x2" x1="200" y1="100" x2="114" y2="250" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-x3" x1="286" y1="150" x2="114" y2="250" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-x4" x1="286" y1="150" x2="200" y2="300" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-x5" x1="286" y1="250" x2="114" y2="150" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-x6" x1="286" y1="250" x2="200" y2="300" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-x7" x1="200" y1="300" x2="114" y2="150" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-x8" x1="114" y1="250" x2="200" y2="100" stroke="#1a1a1a" stroke-width="0.5"/>
+  <line id="line-x9" x1="114" y1="150" x2="286" y2="250" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Inner hexagram star -->
+  <polygon id="star-1" points="200,100 260,200 200,300 140,200" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <polygon id="star-2" points="200,130 243,200 200,270 157,200" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+</svg>

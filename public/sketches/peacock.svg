@@ -1,0 +1,77 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Peacock - Elegant Bird -->
+  
+  <!-- Tail Feathers (Fan) -->
+  <path id="feather-1" d="M200 200 Q120 100 60 30" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse id="feather-eye-1" cx="65" cy="40" rx="18" ry="25" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse cx="65" cy="40" rx="10" ry="14" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse cx="65" cy="40" rx="5" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <path id="feather-2" d="M200 200 Q150 90 120 20" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse id="feather-eye-2" cx="122" cy="28" rx="18" ry="25" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse cx="122" cy="28" rx="10" ry="14" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse cx="122" cy="28" rx="5" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <path id="feather-3" d="M200 200 Q185 85 180 15" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse id="feather-eye-3" cx="180" cy="22" rx="18" ry="25" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse cx="180" cy="22" rx="10" ry="14" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse cx="180" cy="22" rx="5" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <path id="feather-4" d="M200 200 Q215 85 220 15" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse id="feather-eye-4" cx="220" cy="22" rx="18" ry="25" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse cx="220" cy="22" rx="10" ry="14" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse cx="220" cy="22" rx="5" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <path id="feather-5" d="M200 200 Q250 90 280 20" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse id="feather-eye-5" cx="278" cy="28" rx="18" ry="25" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse cx="278" cy="28" rx="10" ry="14" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse cx="278" cy="28" rx="5" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <path id="feather-6" d="M200 200 Q280 100 340 30" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse id="feather-eye-6" cx="335" cy="40" rx="18" ry="25" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <ellipse cx="335" cy="40" rx="10" ry="14" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse cx="335" cy="40" rx="5" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Side feathers -->
+  <path id="feather-7" d="M200 200 Q100 150 30 100" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse id="feather-eye-7" cx="38" cy="105" rx="15" ry="20" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse cx="38" cy="105" rx="8" ry="11" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <path id="feather-8" d="M200 200 Q300 150 370 100" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse id="feather-eye-8" cx="362" cy="105" rx="15" ry="20" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse cx="362" cy="105" rx="8" ry="11" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Body -->
+  <ellipse id="body" cx="200" cy="290" rx="50" ry="70" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Neck -->
+  <path id="neck" d="M185 230 Q170 200 175 160 Q180 130 200 120 Q220 130 225 160 Q230 200 215 230" fill="white" stroke="#1a1a1a" stroke-width="1.8"/>
+  
+  <!-- Head -->
+  <circle id="head" cx="200" cy="115" r="30" fill="white" stroke="#1a1a1a" stroke-width="1.8"/>
+  
+  <!-- Crown feathers -->
+  <path id="crown-1" d="M190 90 Q185 60 195 45" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle cx="195" cy="42" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="crown-2" d="M200 88 Q200 55 200 40" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle cx="200" cy="37" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="crown-3" d="M210 90 Q215 60 205 45" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle cx="205" cy="42" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Eye -->
+  <ellipse id="eye" cx="190" cy="110" rx="8" ry="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse cx="191" cy="111" rx="4" ry="5" fill="#1a1a1a"/>
+  <circle cx="192" cy="109" r="2" fill="white"/>
+  
+  <!-- Beak -->
+  <path id="beak" d="M175 120 Q165 125 160 130 Q165 135 175 135 Q180 130 175 120" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Wing -->
+  <path id="wing" d="M165 270 Q130 290 120 320 Q130 350 165 345 Q190 340 200 310 Q195 280 180 265" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M165 285 Q150 300 150 320" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M175 280 Q165 300 168 325" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Legs -->
+  <path id="leg-left" d="M180 355 L175 385 M175 385 L165 395 M175 385 L175 398 M175 385 L185 395" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="leg-right" d="M220 355 L225 385 M225 385 L215 395 M225 385 L225 398 M225 385 L235 395" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+</svg>

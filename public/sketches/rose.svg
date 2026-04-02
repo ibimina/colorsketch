@@ -1,0 +1,50 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rose - Elegant Botanical Style -->
+  
+  <!-- Outer Petals -->
+  <path id="petal-outer-1" d="M200 120 Q150 100 120 140 Q100 180 130 220 Q160 240 200 220" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="petal-outer-2" d="M200 120 Q250 100 280 140 Q300 180 270 220 Q240 240 200 220" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="petal-outer-3" d="M130 220 Q100 240 95 280 Q100 320 140 330 Q180 330 200 300" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="petal-outer-4" d="M270 220 Q300 240 305 280 Q300 320 260 330 Q220 330 200 300" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="petal-outer-5" d="M200 120 Q200 80 180 60 Q150 50 130 80 Q120 120 150 150 Q180 170 200 160" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="petal-outer-6" d="M200 120 Q200 80 220 60 Q250 50 270 80 Q280 120 250 150 Q220 170 200 160" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Middle Petals -->
+  <path id="petal-mid-1" d="M200 150 Q170 140 155 165 Q150 200 175 220 Q195 225 200 210" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="petal-mid-2" d="M200 150 Q230 140 245 165 Q250 200 225 220 Q205 225 200 210" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="petal-mid-3" d="M175 220 Q160 240 165 265 Q175 285 200 280" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="petal-mid-4" d="M225 220 Q240 240 235 265 Q225 285 200 280" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Inner Petals (Rose Center) -->
+  <path id="petal-inner-1" d="M200 175 Q185 170 180 190 Q185 210 200 205" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="petal-inner-2" d="M200 175 Q215 170 220 190 Q215 210 200 205" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="petal-inner-3" d="M190 195 Q180 200 182 215 Q190 225 200 220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="petal-inner-4" d="M210 195 Q220 200 218 215 Q210 225 200 220" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Spiral Center -->
+  <path id="rose-center" d="M200 200 Q195 195 198 190 Q205 188 208 195 Q210 202 205 206 Q198 208 195 203 Q193 198 197 194" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Stem -->
+  <path id="stem" d="M200 300 Q200 340 195 380" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+  <path d="M200 320 Q198 330 195 340" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Left Leaf -->
+  <path id="leaf-left" d="M195 340 Q140 320 100 340 Q90 360 110 380 Q140 390 180 370 Q195 355 195 340" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M195 340 Q150 355 110 365" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M160 350 Q155 360 160 370" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path d="M130 355 Q125 365 130 375" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Right Leaf -->
+  <path id="leaf-right" d="M200 360 Q250 350 280 370 Q290 390 270 400 Q240 405 210 385 Q200 375 200 360" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M200 360 Q245 375 270 390" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M235 370 Q240 380 235 390" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Small Bud -->
+  <path id="bud-outer" d="M140 280 Q130 260 145 250 Q160 255 155 275 Q150 285 140 280" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="bud-inner" d="M145 265 Q142 260 148 258 Q152 262 150 270" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M140 280 Q130 300 135 320" fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Thorns on main stem -->
+  <path d="M198 310 Q190 308 188 312" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M197 350 Q205 348 208 352" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+</svg>

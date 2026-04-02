@@ -1,0 +1,70 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Koi Fish - Japanese Style -->
+  
+  <!-- Water Ripples Background -->
+  <circle cx="80" cy="80" r="30" fill="none" stroke="#1a1a1a" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="80" cy="80" r="45" fill="none" stroke="#1a1a1a" stroke-width="0.5" opacity="0.2"/>
+  <circle cx="320" cy="350" r="25" fill="none" stroke="#1a1a1a" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="320" cy="350" r="40" fill="none" stroke="#1a1a1a" stroke-width="0.5" opacity="0.2"/>
+  
+  <!-- Main Koi Body -->
+  <path id="koi-body" d="M100 200 Q140 150 200 140 Q280 135 320 180 Q350 230 320 280 Q280 320 200 310 Q140 300 100 250 Q80 225 100 200" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Head -->
+  <path id="koi-head" d="M100 200 Q80 180 90 160 Q110 145 140 155 Q155 165 150 190 Q145 210 130 220 Q110 225 100 210" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Eye -->
+  <circle id="koi-eye" cx="115" cy="180" r="10" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle cx="117" cy="178" r="5" fill="#1a1a1a"/>
+  <circle cx="119" cy="176" r="2" fill="white"/>
+  
+  <!-- Mouth -->
+  <path d="M85 195 Q80 200 85 205" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Whiskers (Barbels) -->
+  <path d="M90 195 Q70 185 55 190" fill="none" stroke="#1a1a1a" stroke-width="1" stroke-linecap="round"/>
+  <path d="M90 205 Q70 210 55 205" fill="none" stroke="#1a1a1a" stroke-width="1" stroke-linecap="round"/>
+  
+  <!-- Gill -->
+  <path d="M140 180 Q150 200 140 220" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Dorsal Fin -->
+  <path id="dorsal-fin" d="M180 145 Q200 100 230 90 Q260 95 280 120 Q290 145 290 165 Q270 155 240 155 Q210 158 180 155" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M200 115 Q205 135 210 150" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M230 105 Q235 125 238 145" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M260 115 Q262 135 265 152" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Pectoral Fins -->
+  <path id="pectoral-fin-top" d="M160 180 Q130 150 120 130 Q140 140 165 160 Q175 170 165 180" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="pectoral-fin-bottom" d="M160 240 Q130 260 115 280 Q135 270 160 250 Q170 245 165 240" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Ventral Fins -->
+  <path id="ventral-fin-1" d="M220 295 Q210 330 195 345 Q205 330 215 305" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="ventral-fin-2" d="M250 290 Q245 325 235 340 Q248 320 255 295" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Tail Fin -->
+  <path id="tail-upper" d="M310 200 Q340 170 370 130 Q380 150 370 180 Q350 200 320 210" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="tail-lower" d="M310 240 Q340 270 370 310 Q380 290 370 260 Q350 240 320 235" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M340 160 Q345 175 350 190" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M355 150 Q358 170 360 185" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M340 275 Q345 260 350 250" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M355 285 Q358 268 360 255" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Scale Pattern -->
+  <path id="scales-row-1" d="M170 180 Q180 175 190 180 Q200 175 210 180 Q220 175 230 180 Q240 175 250 180 Q260 175 270 180" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="scales-row-2" d="M160 200 Q170 195 180 200 Q190 195 200 200 Q210 195 220 200 Q230 195 240 200 Q250 195 260 200 Q270 195 280 200" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="scales-row-3" d="M165 220 Q175 215 185 220 Q195 215 205 220 Q215 215 225 220 Q235 215 245 220 Q255 215 265 220 Q275 215 285 220" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="scales-row-4" d="M175 240 Q185 235 195 240 Q205 235 215 240 Q225 235 235 240 Q245 235 255 240 Q265 235 275 240" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="scales-row-5" d="M190 260 Q200 255 210 260 Q220 255 230 260 Q240 255 250 260 Q260 255 270 260" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Spots/Markings -->
+  <ellipse id="marking-1" cx="190" cy="190" rx="15" ry="20" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="marking-2" cx="240" cy="210" rx="18" ry="22" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="marking-3" cx="210" cy="250" rx="12" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="marking-4" cx="270" cy="240" rx="10" ry="12" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Bubbles -->
+  <circle cx="60" cy="150" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle cx="50" cy="130" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle cx="70" cy="120" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+</svg>

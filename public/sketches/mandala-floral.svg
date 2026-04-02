@@ -1,0 +1,116 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Intricate Floral Mandala - Adult Coloring -->
+  
+  <!-- Background circle -->
+  <circle id="bg-outer" cx="200" cy="200" r="195" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Outer scalloped edge -->
+  <g id="outer-scallops">
+    <path id="scallop-1" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="scallop-2" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(12 200 200)"/>
+    <path id="scallop-3" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(24 200 200)"/>
+    <path id="scallop-4" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(36 200 200)"/>
+    <path id="scallop-5" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(48 200 200)"/>
+    <path id="scallop-6" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(60 200 200)"/>
+    <path id="scallop-7" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(72 200 200)"/>
+    <path id="scallop-8" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(84 200 200)"/>
+    <path id="scallop-9" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(96 200 200)"/>
+    <path id="scallop-10" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(108 200 200)"/>
+    <path id="scallop-11" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(120 200 200)"/>
+    <path id="scallop-12" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(132 200 200)"/>
+    <path id="scallop-13" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(144 200 200)"/>
+    <path id="scallop-14" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(156 200 200)"/>
+    <path id="scallop-15" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(168 200 200)"/>
+    <path id="scallop-16" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(180 200 200)"/>
+    <path id="scallop-17" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(192 200 200)"/>
+    <path id="scallop-18" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(204 200 200)"/>
+    <path id="scallop-19" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(216 200 200)"/>
+    <path id="scallop-20" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(228 200 200)"/>
+    <path id="scallop-21" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(240 200 200)"/>
+    <path id="scallop-22" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(252 200 200)"/>
+    <path id="scallop-23" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(264 200 200)"/>
+    <path id="scallop-24" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(276 200 200)"/>
+    <path id="scallop-25" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(288 200 200)"/>
+    <path id="scallop-26" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(300 200 200)"/>
+    <path id="scallop-27" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(312 200 200)"/>
+    <path id="scallop-28" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(324 200 200)"/>
+    <path id="scallop-29" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(336 200 200)"/>
+    <path id="scallop-30" d="M200 8 Q215 20 200 35 Q185 20 200 8" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(348 200 200)"/>
+  </g>
+  
+  <!-- Large rose petals - outer ring -->
+  <circle id="rose-ring" cx="200" cy="200" r="165" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <g id="rose-petals-outer">
+    <path id="rose-1" d="M200 40 Q240 80 230 130 Q200 100 170 130 Q160 80 200 40" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="rose-vein-1" d="M200 55 L200 100 M190 75 L200 85 L210 75" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="rose-2" d="M200 40 Q240 80 230 130 Q200 100 170 130 Q160 80 200 40" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(45 200 200)"/>
+    <path id="rose-vein-2" d="M200 55 L200 100 M190 75 L200 85 L210 75" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(45 200 200)"/>
+    <path id="rose-3" d="M200 40 Q240 80 230 130 Q200 100 170 130 Q160 80 200 40" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(90 200 200)"/>
+    <path id="rose-vein-3" d="M200 55 L200 100 M190 75 L200 85 L210 75" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(90 200 200)"/>
+    <path id="rose-4" d="M200 40 Q240 80 230 130 Q200 100 170 130 Q160 80 200 40" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(135 200 200)"/>
+    <path id="rose-vein-4" d="M200 55 L200 100 M190 75 L200 85 L210 75" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(135 200 200)"/>
+    <path id="rose-5" d="M200 40 Q240 80 230 130 Q200 100 170 130 Q160 80 200 40" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(180 200 200)"/>
+    <path id="rose-vein-5" d="M200 55 L200 100 M190 75 L200 85 L210 75" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(180 200 200)"/>
+    <path id="rose-6" d="M200 40 Q240 80 230 130 Q200 100 170 130 Q160 80 200 40" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(225 200 200)"/>
+    <path id="rose-vein-6" d="M200 55 L200 100 M190 75 L200 85 L210 75" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(225 200 200)"/>
+    <path id="rose-7" d="M200 40 Q240 80 230 130 Q200 100 170 130 Q160 80 200 40" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(270 200 200)"/>
+    <path id="rose-vein-7" d="M200 55 L200 100 M190 75 L200 85 L210 75" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(270 200 200)"/>
+    <path id="rose-8" d="M200 40 Q240 80 230 130 Q200 100 170 130 Q160 80 200 40" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(315 200 200)"/>
+    <path id="rose-vein-8" d="M200 55 L200 100 M190 75 L200 85 L210 75" fill="none" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(315 200 200)"/>
+  </g>
+  
+  <!-- Small flowers between roses -->
+  <g id="small-flowers">
+    <circle id="flower-center-1" cx="200" cy="70" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(22.5 200 200)"/>
+    <circle id="flower-petal-1a" cx="200" cy="60" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(22.5 200 200)"/>
+    <circle id="flower-center-2" cx="200" cy="70" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(67.5 200 200)"/>
+    <circle id="flower-petal-2a" cx="200" cy="60" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(67.5 200 200)"/>
+    <circle id="flower-center-3" cx="200" cy="70" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(112.5 200 200)"/>
+    <circle id="flower-petal-3a" cx="200" cy="60" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(112.5 200 200)"/>
+    <circle id="flower-center-4" cx="200" cy="70" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(157.5 200 200)"/>
+    <circle id="flower-petal-4a" cx="200" cy="60" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(157.5 200 200)"/>
+    <circle id="flower-center-5" cx="200" cy="70" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(202.5 200 200)"/>
+    <circle id="flower-petal-5a" cx="200" cy="60" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(202.5 200 200)"/>
+    <circle id="flower-center-6" cx="200" cy="70" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(247.5 200 200)"/>
+    <circle id="flower-petal-6a" cx="200" cy="60" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(247.5 200 200)"/>
+    <circle id="flower-center-7" cx="200" cy="70" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(292.5 200 200)"/>
+    <circle id="flower-petal-7a" cx="200" cy="60" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(292.5 200 200)"/>
+    <circle id="flower-center-8" cx="200" cy="70" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(337.5 200 200)"/>
+    <circle id="flower-petal-8a" cx="200" cy="60" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5" transform="rotate(337.5 200 200)"/>
+  </g>
+  
+  <!-- Middle decorative ring -->
+  <circle id="mid-ring-outer" cx="200" cy="200" r="95" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle id="mid-ring-inner" cx="200" cy="200" r="88" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Inner detailed petals -->
+  <g id="inner-petals">
+    <path id="ipetal-1" d="M200 112 Q218 140 210 165 Q200 155 190 165 Q182 140 200 112" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="ipetal-2" d="M200 112 Q218 140 210 165 Q200 155 190 165 Q182 140 200 112" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(36 200 200)"/>
+    <path id="ipetal-3" d="M200 112 Q218 140 210 165 Q200 155 190 165 Q182 140 200 112" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(72 200 200)"/>
+    <path id="ipetal-4" d="M200 112 Q218 140 210 165 Q200 155 190 165 Q182 140 200 112" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(108 200 200)"/>
+    <path id="ipetal-5" d="M200 112 Q218 140 210 165 Q200 155 190 165 Q182 140 200 112" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(144 200 200)"/>
+    <path id="ipetal-6" d="M200 112 Q218 140 210 165 Q200 155 190 165 Q182 140 200 112" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(180 200 200)"/>
+    <path id="ipetal-7" d="M200 112 Q218 140 210 165 Q200 155 190 165 Q182 140 200 112" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(216 200 200)"/>
+    <path id="ipetal-8" d="M200 112 Q218 140 210 165 Q200 155 190 165 Q182 140 200 112" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(252 200 200)"/>
+    <path id="ipetal-9" d="M200 112 Q218 140 210 165 Q200 155 190 165 Q182 140 200 112" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(288 200 200)"/>
+    <path id="ipetal-10" d="M200 112 Q218 140 210 165 Q200 155 190 165 Q182 140 200 112" fill="white" stroke="#1a1a1a" stroke-width="1" transform="rotate(324 200 200)"/>
+  </g>
+  
+  <!-- Center rose -->
+  <circle id="center-rose-outer" cx="200" cy="200" r="45" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <g id="center-rose-petals">
+    <path id="cr-petal-1" d="M200 158 Q212 175 208 195 Q200 188 192 195 Q188 175 200 158" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="cr-petal-2" d="M200 158 Q212 175 208 195 Q200 188 192 195 Q188 175 200 158" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(60 200 200)"/>
+    <path id="cr-petal-3" d="M200 158 Q212 175 208 195 Q200 188 192 195 Q188 175 200 158" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(120 200 200)"/>
+    <path id="cr-petal-4" d="M200 158 Q212 175 208 195 Q200 188 192 195 Q188 175 200 158" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(180 200 200)"/>
+    <path id="cr-petal-5" d="M200 158 Q212 175 208 195 Q200 188 192 195 Q188 175 200 158" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(240 200 200)"/>
+    <path id="cr-petal-6" d="M200 158 Q212 175 208 195 Q200 188 192 195 Q188 175 200 158" fill="white" stroke="#1a1a1a" stroke-width="0.8" transform="rotate(300 200 200)"/>
+  </g>
+  
+  <!-- Center details -->
+  <circle id="center-1" cx="200" cy="200" r="22" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="center-2" cx="200" cy="200" r="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="center-3" cx="200" cy="200" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle id="center-dot" cx="200" cy="200" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

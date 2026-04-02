@@ -1,0 +1,57 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- T-Rex Dinosaur - Kids Style -->
+  
+  <!-- Body -->
+  <ellipse id="body" cx="180" cy="240" rx="90" ry="70" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Head -->
+  <path id="head" d="M290 120 Q340 100 370 120 Q390 145 380 175 Q370 210 330 220 Q300 225 280 210 Q260 195 260 170 Q260 140 290 120" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Jaw -->
+  <path id="jaw" d="M300 195 Q330 210 360 200 Q375 210 370 225 Q350 240 310 235 Q290 230 285 215 Q290 200 300 195" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Teeth -->
+  <path d="M310 195 L315 208 L320 195 L328 208 L335 195 L345 208 L355 198" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M310 225 L315 215 L322 225 L330 215 L340 223" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Eye -->
+  <circle id="eye" cx="330" cy="145" r="15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle cx="333" cy="145" r="8" fill="#1a1a1a"/>
+  <circle cx="336" cy="142" r="3" fill="white"/>
+  
+  <!-- Eyebrow ridge -->
+  <path d="M315 125 Q330 115 350 125" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Nostril -->
+  <ellipse id="nostril" cx="375" cy="140" rx="5" ry="4" fill="#1a1a1a"/>
+  
+  <!-- Neck -->
+  <path id="neck" d="M280 210 Q260 220 240 235 Q265 185 280 170" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Back spines -->
+  <path id="spine-1" d="M130 170 L140 145 L150 170" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="spine-2" d="M155 175 L165 150 L175 175" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="spine-3" d="M180 180 L190 155 L200 180" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="spine-4" d="M205 185 L215 165 L225 190" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Tail -->
+  <path id="tail" d="M90 240 Q50 230 30 200 Q20 180 35 165 Q50 170 60 190 Q80 220 100 235" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Belly -->
+  <path id="belly" d="M120 280 Q180 320 240 280" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Arms (tiny T-Rex arms!) -->
+  <path id="arm-left" d="M250 230 Q265 245 260 265 Q255 275 245 270 L255 255 Q258 245 250 235" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="arm-right" d="M255 240 Q272 258 265 280 Q258 290 248 285 L260 268 Q265 255 258 245" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Legs -->
+  <path id="leg-left" d="M140 300 Q130 340 140 375 Q150 390 165 390 Q180 390 185 375 Q190 340 180 300" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path id="leg-right" d="M200 300 Q190 340 200 375 Q210 390 225 390 Q240 390 245 375 Q250 340 240 300" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Feet claws -->
+  <path d="M145 388 L140 398 M155 390 L155 400 M168 388 L173 398" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M205 388 L200 398 M218 390 L218 400 M232 388 L237 398" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Ground -->
+  <path d="M100 395 Q200 400 300 395" fill="none" stroke="#1a1a1a" stroke-width="0.8" opacity="0.5"/>
+</svg>

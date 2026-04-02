@@ -1,0 +1,84 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Octopus - Sea Life Kawaii -->
+  
+  <!-- Head -->
+  <ellipse id="head" cx="200" cy="130" rx="100" ry="90" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Eyes -->
+  <ellipse id="eye-left" cx="160" cy="120" rx="25" ry="30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse cx="165" cy="125" rx="12" ry="15" fill="#1a1a1a"/>
+  <ellipse cx="170" cy="118" rx="5" ry="6" fill="white"/>
+  <circle cx="163" cy="132" r="2.5" fill="white"/>
+  
+  <ellipse id="eye-right" cx="240" cy="120" rx="25" ry="30" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse cx="235" cy="125" rx="12" ry="15" fill="#1a1a1a"/>
+  <ellipse cx="230" cy="118" rx="5" ry="6" fill="white"/>
+  <circle cx="237" cy="132" r="2.5" fill="white"/>
+  
+  <!-- Eyebrows -->
+  <path d="M140 88 Q160 80 180 90" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path d="M220 90 Q240 80 260 88" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Cheeks -->
+  <ellipse id="cheek-left" cx="130" cy="145" rx="12" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <ellipse id="cheek-right" cx="270" cy="145" rx="12" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Smile -->
+  <path d="M175 165 Q200 185 225 165" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Tentacles -->
+  <!-- Tentacle 1 (far left) -->
+  <path id="tentacle-1" d="M105 200 Q70 230 60 280 Q55 320 80 360 Q100 380 90 390" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="75" cy="260" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="68" cy="290" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="70" cy="320" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="80" cy="348" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Tentacle 2 -->
+  <path id="tentacle-2" d="M135 210 Q110 250 120 300 Q130 350 110 380" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="118" cy="265" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="118" cy="295" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="122" cy="325" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="118" cy="355" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Tentacle 3 -->
+  <path id="tentacle-3" d="M165 215 Q155 260 165 310 Q175 360 155 395" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="160" cy="260" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="162" cy="295" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="167" cy="330" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="165" cy="365" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Tentacle 4 (center) -->
+  <path id="tentacle-4" d="M200 220 Q200 270 200 320 Q200 370 200 395" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="200" cy="255" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="200" cy="290" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="200" cy="325" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="200" cy="360" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Tentacle 5 -->
+  <path id="tentacle-5" d="M235 215 Q245 260 235 310 Q225 360 245 395" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="240" cy="260" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="238" cy="295" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="233" cy="330" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="238" cy="365" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Tentacle 6 -->
+  <path id="tentacle-6" d="M265 210 Q290 250 280 300 Q270 350 290 380" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="282" cy="265" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="282" cy="295" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="278" cy="325" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="282" cy="355" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Tentacle 7 (far right) -->
+  <path id="tentacle-7" d="M295 200 Q330 230 340 280 Q345 320 320 360 Q300 380 310 390" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="325" cy="260" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="332" cy="290" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="330" cy="320" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle cx="320" cy="348" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Bubbles -->
+  <circle id="bubble-1" cx="50" cy="100" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle id="bubble-2" cx="35" cy="70" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <circle id="bubble-3" cx="350" cy="80" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <circle id="bubble-4" cx="370" cy="55" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

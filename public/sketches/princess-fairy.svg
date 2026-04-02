@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Cute Princess / Fairy -->
+  
+  <!-- Magic sparkles background -->
+  <path id="sparkle-1" d="M50 80 L53 90 L43 85 L57 85 L47 90 Z" fill="white"/>
+  <path id="sparkle-2" d="M350 120 L353 130 L343 125 L357 125 L347 130 Z" fill="white"/>
+  <path id="sparkle-3" d="M80 200 L82 207 L75 203 L85 203 L78 207 Z" fill="white"/>
+  <path id="sparkle-4" d="M320 250 L322 257 L315 253 L325 253 L318 257 Z" fill="white"/>
+  <circle id="dot-1" cx="60" cy="150" r="3" fill="white"/>
+  <circle id="dot-2" cx="340" cy="180" r="3" fill="white"/>
+  <circle id="dot-3" cx="45" cy="280" r="2" fill="white"/>
+  <circle id="dot-4" cx="355" cy="300" r="2" fill="white"/>
+  
+  <!-- Fairy wings -->
+  <path id="wing-left-top" d="M140 200 Q80 150 70 200 Q80 210 100 200 Q120 195 140 210" fill="white"/>
+  <path id="wing-left-bottom" d="M130 220 Q70 250 75 300 Q95 290 115 260 Q130 240 135 230" fill="white"/>
+  <path id="wing-left-detail-1" d="M100 180 Q90 195 100 205" fill="none" stroke-dasharray="3,3"/>
+  <path id="wing-left-detail-2" d="M95 260 Q85 275 95 290" fill="none" stroke-dasharray="3,3"/>
+  
+  <path id="wing-right-top" d="M260 200 Q320 150 330 200 Q320 210 300 200 Q280 195 260 210" fill="white"/>
+  <path id="wing-right-bottom" d="M270 220 Q330 250 325 300 Q305 290 285 260 Q270 240 265 230" fill="white"/>
+  <path id="wing-right-detail-1" d="M300 180 Q310 195 300 205" fill="none" stroke-dasharray="3,3"/>
+  <path id="wing-right-detail-2" d="M305 260 Q315 275 305 290" fill="none" stroke-dasharray="3,3"/>
+  
+  <!-- Princess dress -->
+  <path id="dress-skirt" d="M150 280 Q120 350 100 380 L300 380 Q280 350 250 280" fill="white"/>
+  <path id="dress-fold-1" d="M140 300 Q145 340 135 375" fill="none"/>
+  <path id="dress-fold-2" d="M180 285 L175 375" fill="none"/>
+  <path id="dress-fold-3" d="M220 285 L225 375" fill="none"/>
+  <path id="dress-fold-4" d="M260 300 Q255 340 265 375" fill="none"/>
+  
+  <!-- Dress sparkle decorations -->
+  <circle id="dress-gem-1" cx="160" cy="320" r="4" fill="white"/>
+  <circle id="dress-gem-2" cx="200" cy="340" r="5" fill="white"/>
+  <circle id="dress-gem-3" cx="240" cy="320" r="4" fill="white"/>
+  <circle id="dress-gem-4" cx="180" cy="360" r="3" fill="white"/>
+  <circle id="dress-gem-5" cx="220" cy="360" r="3" fill="white"/>
+  
+  <!-- Dress bodice -->
+  <path id="bodice" d="M160 200 L150 285 Q200 295 250 285 L240 200" fill="white"/>
+  <path id="bodice-detail" d="M175 210 L200 280 L225 210" fill="none"/>
+  <circle id="bodice-gem" cx="200" cy="230" r="6" fill="white"/>
+  
+  <!-- Puffy sleeves -->
+  <ellipse id="sleeve-left" cx="145" cy="195" rx="20" ry="25" fill="white"/>
+  <ellipse id="sleeve-right" cx="255" cy="195" rx="20" ry="25" fill="white"/>
+  
+  <!-- Arms -->
+  <path id="arm-left" d="M135 215 Q115 240 105 270" fill="white"/>
+  <path id="arm-right" d="M265 215 Q285 230 295 250" fill="white"/>
+  
+  <!-- Hands -->
+  <ellipse id="hand-left" cx="102" cy="275" rx="12" ry="10" fill="white"/>
+  <ellipse id="hand-right" cx="298" cy="255" rx="12" ry="10" fill="white"/>
+  
+  <!-- Magic wand in right hand -->
+  <path id="wand" d="M300 250 L340 150" stroke-width="3" fill="none"/>
+  <path id="wand-star" d="M340 140 L343 150 L353 150 L345 156 L348 166 L340 160 L332 166 L335 156 L327 150 L337 150 Z" fill="white"/>
+  
+  <!-- Magic trail from wand -->
+  <circle id="magic-1" cx="335 " cy="170" r="4" fill="white"/>
+  <circle id="magic-2" cx="325" cy="185" r="3" fill="white"/>
+  <circle id="magic-3" cx="318" cy="200" r="2" fill="white"/>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="200" cy="130" rx="50" ry="55" fill="white"/>
+  
+  <!-- Long flowing hair -->
+  <path id="hair-top" d="M150 130 Q145 70 200 55 Q255 70 250 130" fill="white"/>
+  <path id="hair-bangs" d="M155 100 Q165 90 175 100 Q185 88 195 98 Q205 88 215 98 Q225 88 235 98 Q245 90 250 105" fill="white"/>
+  
+  <!-- Long side hair -->
+  <path id="hair-left" d="M150 130 Q130 180 125 250 Q120 300 130 350" fill="white"/>
+  <path id="hair-left-strand" d="M155 130 Q140 180 138 240 Q135 290 142 340" fill="none"/>
+  <path id="hair-right" d="M250 130 Q270 180 275 250 Q280 300 270 350" fill="white"/>
+  <path id="hair-right-strand" d="M245 130 Q260 180 262 240 Q265 290 258 340" fill="none"/>
+  
+  <!-- Back hair -->
+  <path id="hair-back-left" d="M140 140 Q110 200 100 300" fill="white"/>
+  <path id="hair-back-right" d="M260 140 Q290 200 300 300" fill="white"/>
+  
+  <!-- Crown/Tiara -->
+  <path id="tiara-band" d="M155 80 Q200 70 245 80" stroke-width="3" fill="none"/>
+  <path id="tiara-center" d="M190 80 L200 50 L210 80" fill="white"/>
+  <path id="tiara-left" d="M165 82 L170 65 L180 82" fill="white"/>
+  <path id="tiara-right" d="M220 82 L230 65 L235 82" fill="white"/>
+  <circle id="tiara-gem-center" cx="200" cy="60" r="5" fill="white"/>
+  <circle id="tiara-gem-left" cx="172" cy="72" r="3" fill="white"/>
+  <circle id="tiara-gem-right" cx="228" cy="72" r="3" fill="white"/>
+  
+  <!-- Face -->
+  <!-- Big princess eyes -->
+  <ellipse id="eye-left" cx="178" cy="125" rx="14" ry="18" fill="white"/>
+  <ellipse id="eye-right" cx="222" cy="125" rx="14" ry="18" fill="white"/>
+  <circle id="pupil-left" cx="180" cy="128" r="9" fill="white"/>
+  <circle id="pupil-right" cx="224" cy="128" r="9" fill="white"/>
+  <circle id="sparkle-eye-left-1" cx="174" cy="120" r="4" fill="white"/>
+  <circle id="sparkle-eye-left-2" cx="185" cy="132" r="2" fill="white"/>
+  <circle id="sparkle-eye-right-1" cx="218" cy="120" r="4" fill="white"/>
+  <circle id="sparkle-eye-right-2" cx="229" cy="132" r="2" fill="white"/>
+  
+  <!-- Eyelashes -->
+  <path id="lash-left-1" d="M165 118 L160 112" fill="none"/>
+  <path id="lash-left-2" d="M170 114 L167 107" fill="none"/>
+  <path id="lash-left-3" d="M177 112 L177 105" fill="none"/>
+  <path id="lash-right-1" d="M235 118 L240 112" fill="none"/>
+  <path id="lash-right-2" d="M230 114 L233 107" fill="none"/>
+  <path id="lash-right-3" d="M223 112 L223 105" fill="none"/>
+  
+  <!-- Eyebrows -->
+  <path id="eyebrow-left" d="M165 105 Q178 100 190 105" fill="none"/>
+  <path id="eyebrow-right" d="M210 105 Q222 100 235 105" fill="none"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M200 135 Q203 143 200 150" fill="none"/>
+  
+  <!-- Pretty smile -->
+  <path id="mouth" d="M188 162 Q200 172 212 162" fill="none"/>
+  
+  <!-- Blush -->
+  <ellipse id="blush-left" cx="162" cy="145" rx="10" ry="5" fill="white" stroke-dasharray="2,2"/>
+  <ellipse id="blush-right" cx="238" cy="145" rx="10" ry="5" fill="white" stroke-dasharray="2,2"/>
+</svg>

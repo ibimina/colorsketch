@@ -1,0 +1,133 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Zentangle Seahorse - Adult Coloring -->
+  
+  <!-- Curled tail -->
+  <g id="tail">
+    <path id="tail-main" d="M 220 450 Q 240 420 240 380 Q 240 340 220 310 Q 200 280 210 240 Q 220 200 240 180 Q 260 160 270 130 Q 275 100 260 80" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <!-- Tail segments -->
+    <circle cx="238" cy="440" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="240" cy="420" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="241" cy="400" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="240" cy="380" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="238" cy="360" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="234" cy="340" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="228" cy="320" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="220" cy="300" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="212" cy="280" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="207" cy="260" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="208" cy="240" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="215" cy="220" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="225" cy="200" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="238" cy="180" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="252" cy="160" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="265" cy="140" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="272" cy="120" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="273" cy="100" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    
+    <!-- Inner tail patterns -->
+    <path d="M 226 445 Q 230 440 234 445" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 228 425 Q 232 420 236 425" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 229 405 Q 233 400 237 405" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 228 385 Q 232 380 236 385" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 226 365 Q 230 360 234 365" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 222 345 Q 226 340 230 345" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 216 325 Q 220 320 224 325" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 208 305 Q 212 300 216 305" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path d="M 200 285 Q 204 280 208 285" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="238" cy="440" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="240" cy="400" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="238" cy="360" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="228" cy="320" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="212" cy="280" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="208" cy="240" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="225" cy="200" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="252" cy="160" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="272" cy="120" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Body pouch -->
+  <ellipse id="pouch" cx="200" cy="170" rx="45" ry="60" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Body zentangle patterns -->
+  <g id="pouch-patterns">
+    <path d="M 170 140 Q 180 130 190 140 Q 200 130 210 140 Q 220 130 230 140" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 165 155 Q 175 145 185 155 Q 195 145 205 155 Q 215 145 225 155 Q 235 145 245 155" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 165 170 Q 175 160 185 170 Q 195 160 205 170 Q 215 160 225 170 Q 235 160 245 170" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 165 185 Q 175 175 185 185 Q 195 175 205 185 Q 215 175 225 185 Q 235 175 245 185" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 170 200 Q 180 190 190 200 Q 200 190 210 200 Q 220 190 230 200" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <path d="M 175 215 Q 185 205 195 215 Q 205 205 215 215 Q 225 205 235 215" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <circle cx="185" cy="150" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="215" cy="150" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="175" cy="170" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="200" cy="175" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="225" cy="170" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="185" cy="195" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="215" cy="195" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Neck/chest -->
+  <path id="neck" d="M 190 110 Q 185 140 180 170 Q 220 170 215 140 Q 210 110 190 110" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <path d="M 193 120 Q 190 140 188 160" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M 197 115 Q 195 135 193 155" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M 203 115 Q 205 135 207 155" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M 207 120 Q 210 140 212 160" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="200" cy="80" rx="35" ry="40" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Head crown/spines -->
+  <g id="crown">
+    <path d="M 175 60 L 170 35 L 178 55" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="170" cy="35" r="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 185 50 L 182 22 L 188 48" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="182" cy="22" r="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 200 45 L 200 15 L 200 45" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="200" cy="15" r="6" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 215 50 L 218 22 L 212 48" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="218" cy="22" r="5" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path d="M 225 60 L 230 35 L 222 55" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="230" cy="35" r="4" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Head patterns -->
+  <g id="head-patterns">
+    <path d="M 180 70 Q 190 65 200 70 Q 210 65 220 70" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path d="M 175 85 Q 185 80 195 85 Q 205 80 215 85 Q 225 80 235 85" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="190" cy="75" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="210" cy="75" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="200" cy="90" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Snout -->
+  <path id="snout" d="M 200 95 L 190 110 L 210 110 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="200" y1="100" x2="200" y2="108" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Eyes -->
+  <g id="eyes">
+    <circle id="eye-l" cx="185" cy="75" r="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="185" cy="75" r="3" fill="#1a1a1a"/>
+    <circle cx="186" cy="73" r="1" fill="white"/>
+    
+    <circle id="eye-r" cx="215" cy="75" r="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="215" cy="75" r="3" fill="#1a1a1a"/>
+    <circle cx="216" cy="73" r="1" fill="white"/>
+  </g>
+  
+  <!-- Dorsal fin -->
+  <g id="dorsal-fin">
+    <path id="fin-outline" d="M 165 150 Q 130 140 120 160 Q 115 180 135 190 Q 155 185 165 170 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 160 155 L 130 165 M 158 165 L 128 175 M 157 175 L 135 182" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="145" cy="170" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="135" cy="175" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Pectoral fin -->
+  <g id="pectoral-fin">
+    <path id="fin-p-outline" d="M 155 185 Q 120 200 110 230 Q 115 250 140 245 Q 160 230 160 210 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 150 195 L 120 215 M 152 205 L 118 225 M 154 215 L 122 232" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle cx="135" cy="220" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="125" cy="230" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+</svg>

@@ -1,0 +1,165 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Victorian Lady Fashion - Adult Coloring -->
+  
+  <!-- Elaborate Victorian hairstyle -->
+  <g id="hair">
+    <path id="hair-top" d="M120 90 Q140 50 200 45 Q260 50 280 90" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="hair-side-l" d="M120 90 Q100 100 95 130 Q100 160 120 170" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-side-r" d="M280 90 Q300 100 305 130 Q300 160 280 170" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-back" d="M120 170 Q110 200 130 240 Q150 270 180 280" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="hair-back-r" d="M280 170 Q290 200 270 240 Q250 270 220 280" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    
+    <!-- Hair curls -->
+    <path id="curl-1" d="M130 100 Q125 110 135 115 Q145 110 140 100" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="curl-2" d="M270 100 Q275 110 265 115 Q255 110 260 100" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="curl-3" d="M115 140 Q110 150 120 155 Q130 150 125 140" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="curl-4" d="M285 140 Q290 150 280 155 Q270 150 275 140" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    
+    <!-- Top bun -->
+    <ellipse id="bun" cx="200" cy="55" rx="30" ry="20" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="bun-swirl" d="M185 55 Q195 50 200 55 Q205 60 195 60" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Hair decoration - roses -->
+  <g id="hair-roses">
+    <g id="rose-1">
+      <circle cx="170" cy="65" r="10" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path id="r1-petal" d="M165 65 Q170 60 175 65 Q170 70 165 65" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <circle cx="170" cy="65" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    <g id="rose-2">
+      <circle cx="230" cy="65" r="10" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path id="r2-petal" d="M225 65 Q230 60 235 65 Q230 70 225 65" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <circle cx="230" cy="65" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+    <path id="rose-leaves" d="M155 70 Q160 75 165 70" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="rose-leaves-2" d="M235 70 Q240 75 245 70" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+  
+  <!-- Face -->
+  <ellipse id="face" cx="200" cy="130" rx="48" ry="55" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Eyes -->
+  <g id="eyes">
+    <ellipse id="eye-l" cx="180" cy="125" rx="10" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="iris-l" cx="180" cy="125" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="lash-l" d="M170 122 Q175 118 180 120 Q185 118 190 122" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    
+    <ellipse id="eye-r" cx="220" cy="125" rx="10" ry="7" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="iris-r" cx="220" cy="125" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="lash-r" d="M210 122 Q215 118 220 120 Q225 118 230 122" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Eyebrows -->
+  <path id="brow-l" d="M168 112 Q180 107 192 114" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="brow-r" d="M232 112 Q220 107 208 114" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M200 128 L197 145 Q200 150 203 145" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  
+  <!-- Rosebud lips -->
+  <path id="lips" d="M190 165 Q197 158 200 162 Q203 158 210 165 Q203 172 200 170 Q197 172 190 165" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Neck with choker -->
+  <path id="neck" d="M175 182 L175 210 L225 210 L225 182" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Choker -->
+  <g id="choker">
+    <rect id="choker-band" x="170" y="190" width="60" height="10" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <ellipse id="cameo" cx="200" cy="195" rx="12" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <ellipse id="cameo-portrait" cx="200" cy="195" rx="7" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+  
+  <!-- Victorian dress bodice -->
+  <g id="bodice">
+    <path id="bodice-outline" d="M100 210 Q130 200 200 205 Q270 200 300 210 L310 310 Q250 320 200 315 Q150 320 90 310 L100 210" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+    
+    <!-- High collar -->
+    <path id="collar" d="M150 200 Q175 195 200 198 Q225 195 250 200 L255 220 Q230 225 200 222 Q170 225 145 220 Z" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="collar-detail" d="M160 210 Q180 207 200 210 Q220 207 240 210" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    
+    <!-- Lace insert at chest -->
+    <g id="lace-panel">
+      <rect id="lace-bg" x="170" y="225" width="60" height="60" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+      <!-- Lace pattern -->
+      <path id="lace-1" d="M175 235 Q185 230 195 235 Q205 230 215 235 Q225 230 230 235" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path id="lace-2" d="M175 250 Q185 245 195 250 Q205 245 215 250 Q225 245 230 250" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path id="lace-3" d="M175 265 Q185 260 195 265 Q205 260 215 265 Q225 260 230 265" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <circle cx="185" cy="242" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.2"/>
+      <circle cx="200" cy="240" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.2"/>
+      <circle cx="215" cy="242" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.2"/>
+      <circle cx="185" cy="257" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.2"/>
+      <circle cx="200" cy="255" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.2"/>
+      <circle cx="215" cy="257" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.2"/>
+    </g>
+    
+    <!-- Bodice pleating -->
+    <path id="pleat-l-1" d="M130 225 Q125 260 120 295" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="pleat-l-2" d="M150 227 Q145 260 140 295" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="pleat-r-1" d="M270 225 Q275 260 280 295" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="pleat-r-2" d="M250 227 Q255 260 260 295" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Puffed sleeves -->
+  <g id="sleeves">
+    <ellipse id="sleeve-l" cx="85" cy="240" rx="25" ry="35" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="sleeve-l-detail" d="M70 225 Q85 220 100 225" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="sleeve-l-detail-2" d="M65 245 Q85 240 105 245" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    
+    <ellipse id="sleeve-r" cx="315" cy="240" rx="25" ry="35" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="sleeve-r-detail" d="M300 225 Q315 220 330 225" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path id="sleeve-r-detail-2" d="M295 245 Q315 240 335 245" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    
+    <!-- Lower sleeves -->
+    <path id="lower-sleeve-l" d="M75 275 L70 330 L100 330 L95 275" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="lower-sleeve-r" d="M325 275 L330 330 L300 330 L305 275" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    
+    <!-- Lace cuffs -->
+    <path id="cuff-l" d="M68 330 Q75 338 82 330 Q89 338 96 330 Q103 338 105 330" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="cuff-r" d="M332 330 Q325 338 318 330 Q311 338 304 330 Q297 338 295 330" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Full skirt -->
+  <g id="skirt">
+    <path id="skirt-outline" d="M90 310 Q60 350 40 400 L360 400 Q340 350 310 310" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+    
+    <!-- Skirt folds -->
+    <path id="skirt-fold-1" d="M110 315 Q90 355 75 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="skirt-fold-2" d="M150 318 Q130 355 120 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="skirt-fold-3" d="M200 315 Q195 355 190 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="skirt-fold-4" d="M250 318 Q270 355 280 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="skirt-fold-5" d="M290 315 Q310 355 325 400" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Decorative trim -->
+    <g id="trim">
+      <path id="trim-1" d="M55 385 Q70 380 85 385 Q100 390 115 385 Q130 380 145 385 Q160 390 175 385 Q190 380 205 385 Q220 390 235 385 Q250 380 265 385 Q280 390 295 385 Q310 380 325 385 Q340 390 350 385" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path id="trim-2" d="M50 395 Q65 390 80 395 Q95 400 110 395 Q125 390 140 395 Q155 400 170 395 Q185 390 200 395 Q215 400 230 395 Q245 390 260 395 Q275 400 290 395 Q305 390 320 395 Q335 400 355 395" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    </g>
+  </g>
+  
+  <!-- Hands holding fan -->
+  <g id="hands-fan">
+    <ellipse id="hand-l" cx="100" cy="345" rx="10" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <ellipse id="hand-r" cx="115" cy="340" rx="10" ry="8" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Fan -->
+    <g id="fan">
+      <path id="fan-fold-1" d="M107 340 L100 380" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <path id="fan-fold-2" d="M107 340 L85 375" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <path id="fan-fold-3" d="M107 340 L70 365" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <path id="fan-fold-4" d="M107 340 L58 350" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <path id="fan-fold-5" d="M107 340 L50 332" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <path id="fan-edge" d="M50 332 Q55 350 70 365 Q80 375 100 380" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+      
+      <!-- Fan decoration -->
+      <circle cx="75" cy="355" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+      <circle cx="87" cy="368" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+  </g>
+  
+  <!-- Brooch at neck -->
+  <g id="brooch">
+    <circle id="brooch-outer" cx="200" cy="295" r="10" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+    <circle id="brooch-inner" cx="200" cy="295" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+</svg>

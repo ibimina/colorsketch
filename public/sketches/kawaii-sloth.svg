@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Kawaii Sloth on Branch -->
+  
+  <!-- Tree branch -->
+  <path id="branch-main" d="M0 200 Q100 210 200 195 Q300 180 400 200" stroke-width="20" fill="none" stroke="white"/>
+  <path id="branch-outline-top" d="M0 190 Q100 200 200 185 Q300 170 400 190" fill="none"/>
+  <path id="branch-outline-bottom" d="M0 210 Q100 220 200 205 Q300 190 400 210" fill="none"/>
+  <path id="branch-texture-1" d="M50 195 Q55 200 50 205" fill="none"/>
+  <path id="branch-texture-2" d="M150 188 Q155 193 150 198" fill="none"/>
+  <path id="branch-texture-3" d="M280 178 Q285 183 280 188" fill="none"/>
+  <path id="branch-texture-4" d="M350 192 Q355 197 350 202" fill="none"/>
+  
+  <!-- Small branch sticking up -->
+  <path id="small-branch" d="M300 180 Q310 150 320 140" stroke-width="6" fill="none"/>
+  
+  <!-- Leaves -->
+  <path id="leaf-1" d="M320 135 Q340 120 350 135 Q340 145 320 140" fill="white"/>
+  <path id="leaf-2" d="M50 190 Q35 175 45 160 Q55 170 50 188" fill="white"/>
+  <path id="leaf-3" d="M370 195 Q385 180 395 190 Q385 200 370 198" fill="white"/>
+  
+  <!-- Sloth body -->
+  <ellipse id="body" cx="200" cy="280" rx="70" ry="80" fill="white"/>
+  
+  <!-- Belly patch -->
+  <ellipse id="belly" cx="200" cy="295" rx="45" ry="50" fill="white" stroke-dasharray="3,3"/>
+  
+  <!-- Arms reaching up to branch -->
+  <path id="arm-left" d="M145 250 Q120 230 110 200 Q105 185 115 180" fill="white"/>
+  <path id="arm-left-stripe-1" d="M130 225 Q125 220 130 215" fill="none"/>
+  <path id="arm-left-stripe-2" d="M120 205 Q115 200 120 195" fill="none"/>
+  
+  <path id="arm-right" d="M255 250 Q280 230 290 200 Q295 185 285 180" fill="white"/>
+  <path id="arm-right-stripe-1" d="M270 225 Q275 220 270 215" fill="none"/>
+  <path id="arm-right-stripe-2" d="M280 205 Q285 200 280 195" fill="none"/>
+  
+  <!-- Claws gripping branch -->
+  <path id="claws-left" d="M115 180 L108 175 M115 180 L110 185 M115 180 L120 175" fill="none" stroke-width="3"/>
+  <path id="claws-right" d="M285 180 L292 175 M285 180 L290 185 M285 180 L280 175" fill="none" stroke-width="3"/>
+  
+  <!-- Back legs -->
+  <ellipse id="leg-left" cx="160" cy="350" rx="25" ry="20" fill="white"/>
+  <ellipse id="leg-right" cx="240" cy="350" rx="25" ry="20" fill="white"/>
+  <path id="leg-stripe-left" d="M150 345 Q155 350 150 355" fill="none"/>
+  <path id="leg-stripe-right" d="M250 345 Q245 350 250 355" fill="none"/>
+  
+  <!-- Feet with claws -->
+  <path id="foot-claws-left" d="M148 360 L142 370 M155 362 L152 372 M162 362 L165 372" fill="none" stroke-width="2"/>
+  <path id="foot-claws-right" d="M252 360 L258 370 M245 362 L248 372 M238 362 L235 372" fill="none" stroke-width="2"/>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="200" cy="160" rx="65" ry="60" fill="white"/>
+  
+  <!-- Face mask (darker area around eyes) -->
+  <path id="face-mask" d="M150 135 Q145 160 160 185 Q200 200 240 185 Q255 160 250 135 Q225 120 200 120 Q175 120 150 135" fill="white"/>
+  <path id="face-mask-inner" d="M160 140 Q155 160 165 180 Q200 192 235 180 Q245 160 240 140 Q220 130 200 130 Q180 130 160 140" fill="none" stroke-dasharray="3,3"/>
+  
+  <!-- Eyes (sleepy) -->
+  <ellipse id="eye-left" cx="175" cy="155" rx="15" ry="18" fill="white"/>
+  <ellipse id="eye-right" cx="225" cy="155" rx="15" ry="18" fill="white"/>
+  <!-- Half-closed eyelids -->
+  <path id="eyelid-left" d="M160 150 Q175 145 190 150 L190 155 Q175 150 160 155" fill="white"/>
+  <path id="eyelid-right" d="M210 150 Q225 145 240 150 L240 155 Q225 150 210 155" fill="white"/>
+  <circle id="pupil-left" cx="177" cy="160" r="8" fill="white"/>
+  <circle id="pupil-right" cx="227" cy="160" r="8" fill="white"/>
+  <circle id="sparkle-left" cx="173" cy="156" r="3" fill="white"/>
+  <circle id="sparkle-right" cx="223" cy="156" r="3" fill="white"/>
+  
+  <!-- Nose -->
+  <ellipse id="nose" cx="200" cy="180" rx="12" ry="8" fill="white"/>
+  
+  <!-- Sleepy smile -->
+  <path id="mouth" d="M188 195 Q200 202 212 195" fill="none"/>
+  
+  <!-- Blush -->
+  <ellipse id="blush-left" cx="155" cy="175" rx="10" ry="5" fill="white" stroke-dasharray="2,2"/>
+  <ellipse id="blush-right" cx="245" cy="175" rx="10" ry="5" fill="white" stroke-dasharray="2,2"/>
+  
+  <!-- Ears -->
+  <ellipse id="ear-left" cx="145" cy="120" rx="15" ry="18" fill="white"/>
+  <ellipse id="ear-right" cx="255" cy="120" rx="15" ry="18" fill="white"/>
+  
+  <!-- Zzz (sleeping) -->
+  <text id="z1" x="270" y="100" font-family="Arial" font-size="20" fill="none" stroke="#1a1a1a" stroke-width="2">z</text>
+  <text id="z2" x="290" y="85" font-family="Arial" font-size="16" fill="none" stroke="#1a1a1a" stroke-width="1.5">z</text>
+  <text id="z3" x="305" y="72" font-family="Arial" font-size="12" fill="none" stroke="#1a1a1a" stroke-width="1">z</text>
+  
+  <!-- Hearts -->
+  <path id="heart-1" d="M80 280 Q85 275 90 280 Q95 275 100 280 Q100 290 90 298 Q80 290 80 280" fill="white"/>
+  <path id="heart-2" d="M310 300 Q313 297 316 300 Q319 297 322 300 Q322 306 316 312 Q310 306 310 300" fill="white"/>
+  
+  <!-- Small butterfly -->
+  <path id="butterfly-wing-l" d="M340 280 Q332 272 335 260 Q343 264 343 275" fill="white"/>
+  <path id="butterfly-wing-r" d="M343 275 Q351 263 359 268 Q356 278 348 280" fill="white"/>
+  <ellipse id="butterfly-body" cx="343" cy="277" rx="2" ry="7" fill="white"/>
+</svg>

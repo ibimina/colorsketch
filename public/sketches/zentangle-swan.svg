@@ -1,0 +1,112 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Zentangle Swan - Adult Coloring -->
+  
+  <!-- Water ripples -->
+  <path id="water-1" d="M 0 320 Q 100 310 200 320 Q 300 330 400 320 L 400 400 L 0 400 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="ripple-1" d="M 0 340 Q 100 330 200 340 Q 300 350 400 340" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="ripple-2" d="M 0 360 Q 100 350 200 360 Q 300 370 400 360" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="ripple-3" d="M 0 380 Q 100 370 200 380 Q 300 390 400 380" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Swan body -->
+  <ellipse id="body" cx="250" cy="280" rx="80" ry="50" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Body zentangle patterns -->
+  <g id="body-patterns">
+    <!-- Scalloped feathers -->
+    <path id="feather-row-1" d="M 190 260 Q 200 250 210 260 Q 220 250 230 260 Q 240 250 250 260 Q 260 250 270 260 Q 280 250 290 260 Q 300 250 310 260" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="feather-row-2" d="M 185 275 Q 195 265 205 275 Q 215 265 225 275 Q 235 265 245 275 Q 255 265 265 275 Q 275 265 285 275 Q 295 265 305 275 Q 315 265 325 275" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="feather-row-3" d="M 180 290 Q 190 280 200 290 Q 210 280 220 290 Q 230 280 240 290 Q 250 280 260 290 Q 270 280 280 290 Q 290 280 300 290 Q 310 280 320 290" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="feather-row-4" d="M 190 305 Q 200 295 210 305 Q 220 295 230 305 Q 240 295 250 305 Q 260 295 270 305 Q 280 295 290 305 Q 300 295 310 305" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    
+    <!-- Feather details -->
+    <path id="feather-detail" d="M 200 265 L 200 300 M 220 265 L 220 300 M 240 265 L 240 300 M 260 265 L 260 300 M 280 265 L 280 300 M 300 265 L 300 300" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+  
+  <!-- Wing raised up -->
+  <g id="wing">
+    <path id="wing-outline" d="M 280 240 Q 350 180 380 120 Q 385 100 370 90 Q 340 80 320 120 Q 300 160 280 200 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <!-- Wing feather layers -->
+    <path id="wing-feather-1" d="M 285 230 Q 330 190 355 150" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="wing-feather-2" d="M 290 220 Q 340 175 365 130" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="wing-feather-3" d="M 295 210 Q 345 165 370 115" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Individual feather patterns -->
+    <g id="feather-patterns">
+      <ellipse cx="320" cy="200" rx="15" ry="25" transform="rotate(-30 320 200)" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 320 175 L 320 225" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path d="M 310 185 Q 320 180 330 185" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path d="M 310 195 Q 320 190 330 195" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path d="M 310 205 Q 320 200 330 205" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path d="M 310 215 Q 320 210 330 215" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <ellipse cx="345" cy="160" rx="12" ry="20" transform="rotate(-35 345 160)" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 345 140 L 345 180" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path d="M 337 148 Q 345 143 353 148" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path d="M 337 156 Q 345 151 353 156" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path d="M 337 164 Q 345 159 353 164" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path d="M 337 172 Q 345 167 353 172" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      
+      <ellipse cx="365" cy="125" rx="10" ry="18" transform="rotate(-40 365 125)" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+      <path d="M 365 107 L 365 143" stroke="#1a1a1a" stroke-width="0.4"/>
+      <path d="M 358 113 Q 365 108 372 113" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path d="M 358 120 Q 365 115 372 120" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path d="M 358 127 Q 365 122 372 127" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <path d="M 358 134 Q 365 129 372 134" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    </g>
+  </g>
+  
+  <!-- Long curved neck -->
+  <path id="neck" d="M 240 250 Q 200 200 180 140 Q 175 100 190 80" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Neck zentangle patterns -->
+  <g id="neck-patterns">
+    <path id="neck-line-1" d="M 232 245 Q 195 195 178 140 Q 173 105 185 85" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    <path id="neck-line-2" d="M 224 240 Q 190 190 176 140 Q 171 110 180 90" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+    
+    <!-- Neck scales -->
+    <path d="M 220 230 Q 210 225 200 235" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 215 215 Q 205 210 195 220" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 210 200 Q 200 195 190 205" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 205 185 Q 195 180 185 190" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 200 170 Q 190 165 180 175" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 195 155 Q 185 150 178 160" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 193 140 Q 183 135 176 145" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 191 125 Q 181 120 175 130" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 190 110 Q 180 105 176 115" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 189 95 Q 182 90 180 100" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="195" cy="70" rx="18" ry="22" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Head zentangle -->
+  <g id="head-pattern">
+    <circle cx="195" cy="65" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="195" cy="65" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 190 75 Q 195 70 200 75" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 190 80 Q 195 75 200 80" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Beak -->
+  <path id="beak" d="M 180 65 L 155 70 Q 150 72 155 75 L 180 72 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="beak-line" d="M 175 68 L 158 71" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Eye -->
+  <circle id="eye" cx="200" cy="65" r="3" fill="#1a1a1a"/>
+  <circle id="eye-highlight" cx="201" cy="64" r="1" fill="white"/>
+  
+  <!-- Tail feathers -->
+  <g id="tail">
+    <path id="tail-1" d="M 170 280 Q 120 270 80 290 Q 70 300 85 310 Q 130 320 170 300 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path id="tail-2" d="M 175 285 Q 130 280 95 295 Q 90 302 100 308 Q 140 318 175 305 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path id="tail-3" d="M 180 290 Q 140 288 110 300 Q 107 305 115 310 Q 150 318 180 308 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    
+    <!-- Tail patterns -->
+    <path d="M 120 295 Q 130 290 140 297" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 110 300 Q 120 295 130 302" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <path d="M 100 302 Q 110 297 120 304" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="125" cy="298" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+    <circle cx="115" cy="303" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.4"/>
+  </g>
+</svg>

@@ -1,0 +1,81 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mermaid - Fantasy Style -->
+  
+  <!-- Hair flowing -->
+  <path id="hair-back-1" d="M140 80 Q100 100 80 150 Q70 200 90 250 Q110 280 100 320" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="hair-back-2" d="M150 75 Q120 95 105 140 Q95 185 110 235 Q125 270 115 310" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="hair-back-3" d="M250 75 Q280 95 295 140 Q305 185 290 235 Q275 270 285 310" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="hair-back-4" d="M260 80 Q300 100 320 150 Q330 200 310 250 Q290 280 300 320" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Face -->
+  <ellipse id="face" cx="200" cy="100" rx="55" ry="65" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Hair front -->
+  <path id="hair-front" d="M150 55 Q170 40 200 38 Q230 40 250 55 Q260 70 258 90 Q250 75 225 70 Q200 68 175 70 Q155 75 148 90 Q145 70 150 55" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Side hair strands -->
+  <path id="hair-strand-left" d="M145 90 Q130 110 125 140 Q122 170 130 200" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="hair-strand-right" d="M255 90 Q270 110 275 140 Q278 170 270 200" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  
+  <!-- Eyes -->
+  <ellipse id="eye-left" cx="175" cy="95" rx="12" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse cx="177" cy="97" rx="6" ry="8" fill="#1a1a1a"/>
+  <circle cx="179" cy="94" r="2.5" fill="white"/>
+  <path d="M168 78 Q180 72 188 80" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <ellipse id="eye-right" cx="225" cy="95" rx="12" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse cx="223" cy="97" rx="6" ry="8" fill="#1a1a1a"/>
+  <circle cx="221" cy="94" r="2.5" fill="white"/>
+  <path d="M212 80 Q220 72 232 78" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Nose -->
+  <path d="M200 105 Q195 115 200 120 Q205 115 200 105" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Smile -->
+  <path d="M185 135 Q200 145 215 135" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Cheeks -->
+  <ellipse id="cheek-left" cx="160" cy="115" rx="8" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <ellipse id="cheek-right" cx="240" cy="115" rx="8" ry="5" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Crown/Tiara -->
+  <path id="tiara" d="M160 55 L170 40 L180 52 L190 35 L200 50 L210 35 L220 52 L230 40 L240 55" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <circle cx="200" cy="38" r="5" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Shell bra -->
+  <path id="shell-left" d="M155 195 Q145 210 155 225 Q170 235 185 225 Q195 210 185 195 Q170 185 155 195" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M160 200 L170 220 M170 195 L175 218 M180 200 L178 220" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <path id="shell-right" d="M245 195 Q255 210 245 225 Q230 235 215 225 Q205 210 215 195 Q230 185 245 195" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M240 200 L230 220 M230 195 L225 218 M220 200 L222 220" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Arms -->
+  <path id="arm-left" d="M150 200 Q120 220 100 250 Q90 270 100 280 Q115 285 130 270 Q150 245 160 220" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="arm-right" d="M250 200 Q280 220 300 250 Q310 270 300 280 Q285 285 270 270 Q250 245 240 220" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Waist -->
+  <path id="waist" d="M160 230 Q200 245 240 230" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Tail -->
+  <path id="tail-body" d="M160 245 Q155 280 160 320 Q170 360 200 375 Q230 360 240 320 Q245 280 240 245" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Tail scales pattern -->
+  <path d="M165 260 Q200 270 235 260" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M163 285 Q200 295 237 285" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M165 310 Q200 320 235 310" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M170 335 Q200 345 230 335" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M180 355 Q200 362 220 355" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Tail fin -->
+  <path id="tail-fin-left" d="M200 375 Q160 380 130 395 Q150 390 170 395 Q190 392 200 385" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="tail-fin-right" d="M200 375 Q240 380 270 395 Q250 390 230 395 Q210 392 200 385" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Fin details -->
+  <path d="M200 378 L180 390 M200 378 L165 392 M200 378 L150 393" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path d="M200 378 L220 390 M200 378 L235 392 M200 378 L250 393" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Bubbles -->
+  <circle id="bubble-1" cx="60" cy="300" r="8" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle id="bubble-2" cx="340" cy="280" r="6" fill="white" stroke="#1a1a1a" stroke-width="0.6"/>
+  <circle id="bubble-3" cx="50" cy="260" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

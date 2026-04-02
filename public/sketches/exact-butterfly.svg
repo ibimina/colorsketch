@@ -1,0 +1,54 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Exact Zentangle Butterfly Approximation -->
+  <g transform="translate(200, 200)">
+    <!-- Back wings -->
+    <path id="wing-bl" d="M -20,30 C -80,100 -180,150 -100,180 C -50,195 -10,120 -5,60 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path id="wing-br" d="M 20,30 C 80,100 180,150 100,180 C 50,195 10,120 5,60 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    
+    <!-- Top wings -->
+    <path id="wing-tl" d="M -15,-10 C -100,-50 -180,-100 -190,-10 C -195,50 -120,40 -20,20 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path id="wing-tr" d="M 15,-10 C 100,-50 180,-100 190,-10 C 195,50 120,40 20,20 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    
+    <!-- Body -->
+    <ellipse cx="0" cy="10" rx="10" ry="40" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <ellipse cx="0" cy="-40" rx="12" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- Eyes -->
+    <circle cx="-5" cy="-43" r="2" fill="#1a1a1a"/>
+    <circle cx="5" cy="-43" r="2" fill="#1a1a1a"/>
+    
+    <!-- Antennas -->
+    <path d="M -5,-50 C -20,-120 -80,-100 -90,-80" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+    <ellipse cx="-90" cy="-80" rx="4" ry="8" transform="rotate(30 -90 -80)" fill="#1a1a1a"/>
+    <path d="M 5,-50 C 20,-120 80,-100 90,-80" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+    <ellipse cx="90" cy="-80" rx="4" ry="8" transform="rotate(-30 90 -80)" fill="#1a1a1a"/>
+
+    <!-- Wing details (Left Top) -->
+    <path d="M -30,0 C -80,-20 -150,-40 -160,0 C -150,20 -80,10 -30,10 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="-100" cy="-10" r="10" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="-100" cy="-10" r="3" fill="#1a1a1a"/>
+    <circle cx="-140" cy="-5" r="5" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="-60" cy="-2" r="6" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <!-- Wing details (Right Top) -->
+    <path d="M 30,0 C 80,-20 150,-40 160,0 C 150,20 80,10 30,10 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="100" cy="-10" r="10" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="100" cy="-10" r="3" fill="#1a1a1a"/>
+    <circle cx="140" cy="-5" r="5" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="60" cy="-2" r="6" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+
+    <!-- Wing details (Left Bottom) -->
+    <path d="M -30,40 C -60,80 -100,120 -70,140 C -50,130 -30,80 -20,50 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="-65" cy="110" r="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="-65" cy="110" r="2" fill="#1a1a1a"/>
+    <!-- Wing details (Right Bottom) -->
+    <path d="M 30,40 C 60,80 100,120 70,140 C 50,130 30,80 20,50 Z" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="65" cy="110" r="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="65" cy="110" r="2" fill="#1a1a1a"/>
+
+    <!-- Veins -->
+    <path d="M -30,10 L -120,-30 M -30,10 L -160, -20 M -30,10 L -170, 0 M -30,20 L -140, 20" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path d="M 30,10 L 120,-30 M 30,10 L 160, -20 M 30,10 L 170, 0 M 30,20 L 140, 20" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path d="M -20,50 L -90, 160 M -20,50 L -130, 120 M -20,50 L -30, 170" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path d="M 20,50 L 90, 160 M 20,50 L 130, 120 M 20,50 L 30, 170" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+</svg>

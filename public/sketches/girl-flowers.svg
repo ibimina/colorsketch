@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Girl Picking Flowers in Meadow -->
+  
+  <!-- Sky - sun -->
+  <circle id="sun" cx="60" cy="50" r="25" fill="white"/>
+  <path id="sun-ray-1" d="M60 15 L60 5" stroke-width="3"/>
+  <path id="sun-ray-2" d="M30 30 L22 22" stroke-width="3"/>
+  <path id="sun-ray-3" d="M25 50 L15 50" stroke-width="3"/>
+  <path id="sun-ray-4" d="M30 70 L22 78" stroke-width="3"/>
+  
+  <!-- Distant hills -->
+  <path id="hill-back" d="M0 250 Q100 200 200 230 Q300 200 400 250" fill="white"/>
+  
+  <!-- Ground -->
+  <path id="ground" d="M0 250 Q100 270 200 260 Q300 270 400 250 L400 400 L0 400 Z" fill="white"/>
+  
+  <!-- Flowers in field - various types -->
+  <!-- Daisy 1 -->
+  <path id="daisy-1-stem" d="M80 290 L80 340" stroke-width="2"/>
+  <circle id="daisy-1-center" cx="80" cy="280" r="8" fill="white"/>
+  <ellipse id="daisy-1-petal-1" cx="80" cy="265" rx="5" ry="10" fill="white"/>
+  <ellipse id="daisy-1-petal-2" cx="70" cy="275" rx="5" ry="10" fill="white" transform="rotate(-60 80 280)"/>
+  <ellipse id="daisy-1-petal-3" cx="68" cy="290" rx="5" ry="10" fill="white" transform="rotate(-120 80 280)"/>
+  <ellipse id="daisy-1-petal-4" cx="80" cy="295" rx="5" ry="10" fill="white" transform="rotate(180 80 280)"/>
+  <ellipse id="daisy-1-petal-5" cx="92" cy="290" rx="5" ry="10" fill="white" transform="rotate(120 80 280)"/>
+  <ellipse id="daisy-1-petal-6" cx="90" cy="275" rx="5" ry="10" fill="white" transform="rotate(60 80 280)"/>
+  
+  <!-- Tulip -->
+  <path id="tulip-stem" d="M300 300 L300 360" stroke-width="2"/>
+  <path id="tulip-leaf" d="M300 330 Q280 320 285 345" fill="white"/>
+  <path id="tulip-flower" d="M285 300 Q300 260 315 300 Q300 310 285 300" fill="white"/>
+  
+  <!-- Small flowers scattered -->
+  <circle id="mini-flower-1" cx="50" cy="350" r="5" fill="white"/>
+  <circle id="mini-flower-2" cx="120" cy="360" r="4" fill="white"/>
+  <circle id="mini-flower-3" cx="280" cy="355" r="5" fill="white"/>
+  <circle id="mini-flower-4" cx="350" cy="340" r="4" fill="white"/>
+  <circle id="mini-flower-5" cx="330" cy="365" r="3" fill="white"/>
+  
+  <!-- Girl bending to pick flower -->
+  <!-- Dress -->
+  <path id="dress" d="M180 220 Q160 270 155 330 L245 330 Q240 270 220 220" fill="white"/>
+  <path id="dress-fold-1" d="M170 250 Q175 290 172 325" fill="none"/>
+  <path id="dress-fold-2" d="M200 240 L200 325" fill="none"/>
+  <path id="dress-fold-3" d="M228 250 Q225 290 228 325" fill="none"/>
+  
+  <!-- Dress pattern - small flowers -->
+  <circle id="dress-pattern-1" cx="175" cy="270" r="3" fill="white"/>
+  <circle id="dress-pattern-2" cx="210" cy="280" r="3" fill="white"/>
+  <circle id="dress-pattern-3" cx="185" cy="300" r="3" fill="white"/>
+  <circle id="dress-pattern-4" cx="220" cy="310" r="3" fill="white"/>
+  
+  <!-- Legs -->
+  <rect id="leg-left" x="168" y="325" width="15" height="40" rx="5" fill="white"/>
+  <rect id="leg-right" x="215" y="325" width="15" height="40" rx="5" fill="white"/>
+  
+  <!-- Feet -->
+  <ellipse id="foot-left" cx="175" cy="368" rx="15" ry="6" fill="white"/>
+  <ellipse id="foot-right" cx="222" cy="368" rx="15" ry="6" fill="white"/>
+  
+  <!-- Body (bending forward) -->
+  <path id="torso" d="M180 160 Q175 190 180 225 Q200 230 220 225 Q225 190 220 160" fill="white"/>
+  
+  <!-- Arms -->
+  <!-- Left arm reaching down for flower -->
+  <path id="arm-left" d="M178 170 Q150 200 140 260 Q135 290 145 320" fill="white"/>
+  <ellipse id="hand-left" cx="148" cy="325" rx="12" ry="10" fill="white"/>
+  
+  <!-- Flower being picked -->
+  <circle id="picked-flower-center" cx="155" cy="335" r="5" fill="white"/>
+  <ellipse id="picked-flower-petal-1" cx="155" cy="325" rx="4" ry="8" fill="white"/>
+  <ellipse id="picked-flower-petal-2" cx="148" cy="332" rx="4" ry="8" fill="white" transform="rotate(-60 155 335)"/>
+  <ellipse id="picked-flower-petal-3" cx="162" cy="332" rx="4" ry="8" fill="white" transform="rotate(60 155 335)"/>
+  
+  <!-- Right arm holding basket -->
+  <path id="arm-right" d="M220 170 Q250 180 265 200" fill="white"/>
+  <ellipse id="hand-right" cx="268" cy="205" rx="10" ry="8" fill="white"/>
+  
+  <!-- Flower basket -->
+  <path id="basket-body" d="M250 200 Q245 230 250 260 L300 260 Q305 230 300 200" fill="white"/>
+  <path id="basket-weave-1" d="M252 210 L298 210" fill="none"/>
+  <path id="basket-weave-2" d="M250 225 L300 225" fill="none"/>
+  <path id="basket-weave-3" d="M248 240 L302 240" fill="none"/>
+  <path id="basket-handle" d="M255 200 Q275 170 295 200" stroke-width="3" fill="none"/>
+  
+  <!-- Flowers in basket -->
+  <circle id="basket-flower-1" cx="265" cy="195" r="8" fill="white"/>
+  <circle id="basket-flower-2" cx="280" cy="190" r="10" fill="white"/>
+  <circle id="basket-flower-3" cx="295" cy="198" r="7" fill="white"/>
+  <path id="basket-leaves" d="M260 200 Q265 195 270 200 Q275 195 280 200 Q285 195 290 200" fill="white"/>
+  
+  <!-- Head (tilted looking at flower) -->
+  <ellipse id="head" cx="200" cy="115" rx="42" ry="48" fill="white" transform="rotate(15 200 115)"/>
+  
+  <!-- Hair - long with headband -->
+  <path id="hair-top" d="M158 115 Q150 70 200 55 Q250 70 242 115" fill="white"/>
+  <path id="hair-bangs" d="M165 95 Q175 85 185 95 Q195 82 205 92 Q215 82 225 95" fill="white"/>
+  <path id="hair-side-left" d="M160 110 Q145 150 150 200 Q148 220 155 240" fill="white"/>
+  <path id="hair-side-right" d="M240 110 Q255 140 250 180" fill="white"/>
+  
+  <!-- Headband with bow -->
+  <path id="headband" d="M160 85 Q200 75 240 85" stroke-width="4" fill="none"/>
+  <path id="bow-left" d="M235 85 Q250 70 255 85 Q250 95 235 90" fill="white"/>
+  <path id="bow-right" d="M235 85 Q245 75 260 82" fill="white"/>
+  <circle id="bow-center" cx="240" cy="85" r="4" fill="white"/>
+  
+  <!-- Face -->
+  <!-- Eyes looking down at flower -->
+  <path id="eye-left" d="M185 115 Q192 125 200 115" fill="none" stroke-width="2.5"/>
+  <path id="eye-right" d="M210 118 Q218 128 225 118" fill="none" stroke-width="2.5"/>
+  
+  <!-- Eyelashes -->
+  <path id="eyelash-left" d="M185 115 L182 110 M190 113 L189 108 M195 112 L195 107" fill="none"/>
+  <path id="eyelash-right" d="M210 118 L207 113 M215 116 L214 111 M220 115 L220 110" fill="none"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M205 125 Q208 132 206 138" fill="none"/>
+  
+  <!-- Mouth - gentle smile -->
+  <path id="mouth" d="M198 148 Q208 155 218 148" fill="none"/>
+  
+  <!-- Blush -->
+  <ellipse id="blush-left" cx="180" cy="135" rx="8" ry="4" fill="white" stroke-dasharray="2,2"/>
+  <ellipse id="blush-right" cx="232" cy="138" rx="8" ry="4" fill="white" stroke-dasharray="2,2"/>
+  
+  <!-- Butterflies -->
+  <path id="butterfly-1-wing-l" d="M340 180 Q330 170 335 155 Q345 160 345 175" fill="white"/>
+  <path id="butterfly-1-wing-r" d="M345 175 Q355 160 365 165 Q360 180 350 180" fill="white"/>
+  <ellipse id="butterfly-1-body" cx="345" cy="177" rx="2" ry="8" fill="white"/>
+  
+  <path id="butterfly-2-wing-l" d="M100 200 Q92 192 95 180 Q103 184 103 195" fill="white"/>
+  <path id="butterfly-2-wing-r" d="M103 195 Q110 182 118 187 Q115 198 108 200" fill="white"/>
+  <ellipse id="butterfly-2-body" cx="103" cy="197" rx="2" ry="6" fill="white"/>
+  
+  <!-- Grass blades -->
+  <path id="grass-1" d="M30 380 Q35 365 40 380" fill="none"/>
+  <path id="grass-2" d="M370 375 Q375 360 380 375" fill="none"/>
+</svg>

@@ -1,0 +1,162 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fashion - Japanese Kimono - Adult Coloring -->
+  
+  <!-- Kimono body -->
+  <path id="kimono-body" d="M 100 200 L 80 500 L 180 500 L 180 420 L 200 420 L 220 420 L 220 500 L 320 500 L 300 200 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Center overlap (ohashori) -->
+  <path id="overlap" d="M 180 220 L 165 500 L 200 500 L 220 220 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Obi (wide belt) -->
+  <rect id="obi" x="140" y="280" width="120" height="60" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <g id="obi-patterns">
+    <line x1="140" y1="295" x2="260" y2="295" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="140" y1="310" x2="260" y2="310" stroke="#1a1a1a" stroke-width="1"/>
+    <line x1="140" y1="325" x2="260" y2="325" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <circle cx="160" cy="303" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="180" cy="290" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="200" cy="303" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="220" cy="290" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="240" cy="303" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <circle cx="170" cy="318" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="190" cy="332" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="210" cy="318" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="230" cy="332" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Obi bow at back -->
+  <g id="obi-bow">
+    <path d="M 260 295 L 300 280 L 320 295 L 300 310 L 260 325" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 300 280 L 340 250 L 360 270 L 330 300 L 300 310" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 300 310 L 340 340 L 360 320 L 330 290 L 300 280" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="330" cy="275" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="330" cy="305" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Kimono sleeve patterns - cherry blossoms -->
+  <g id="sleeve-patterns-l">
+    <!-- Cherry blossom 1 -->
+    <g id="blossom-1">
+      <circle cx="110" cy="360" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <circle cx="105" cy="356" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="115" cy="356" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="108" cy="365" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="112" cy="365" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="110" cy="360" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    <!-- Cherry blossom 2 -->
+    <g id="blossom-2">
+      <circle cx="135" cy="420" r="7" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <circle cx="129" cy="415" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="141" cy="415" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="132" cy="426" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="138" cy="426" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="135" cy="420" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    <!-- Cherry blossom 3 -->
+    <g id="blossom-3">
+      <circle cx="115" cy="470" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <circle cx="110" cy="466" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="120" cy="466" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="113" cy="475" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="117" cy="475" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="115" cy="470" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    <!-- Branch -->
+    <path d="M 110 360 Q 120 380 135 420 Q 125 445 115 470" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  </g>
+  
+  <g id="sleeve-patterns-r">
+    <!-- Cherry blossom 4 -->
+    <g id="blossom-4">
+      <circle cx="290" cy="360" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <circle cx="285" cy="356" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="295" cy="356" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="288" cy="365" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="292" cy="365" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="290" cy="360" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    <!-- Cherry blossom 5 -->
+    <g id="blossom-5">
+      <circle cx="265" cy="420" r="7" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <circle cx="259" cy="415" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="271" cy="415" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="262" cy="426" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="268" cy="426" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="265" cy="420" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    <!-- Cherry blossom 6 -->
+    <g id="blossom-6">
+      <circle cx="285" cy="470" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+      <circle cx="280" cy="466" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="290" cy="466" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="283" cy="475" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="287" cy="475" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="285" cy="470" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </g>
+    <!-- Branch -->
+    <path d="M 290 360 Q 280 380 265 420 Q 275 445 285 470" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Wide sleeves (furisode style) -->
+  <g id="sleeves">
+    <path id="sleeve-l" d="M 100 200 L 40 220 L 30 400 L 80 420 L 80 280" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path id="sleeve-r" d="M 300 200 L 360 220 L 370 400 L 320 420 L 320 280" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  </g>
+  
+  <!-- Collar (eri) -->
+  <path id="collar-l" d="M 150 150 L 130 200 L 140 200 L 160 150 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="collar-r" d="M 250 150 L 270 200 L 260 200 L 240 150 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Neck -->
+  <rect id="neck" x="180" y="130" width="40" height="25" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="200" cy="100" rx="40" ry="45" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Hair in traditional style -->
+  <g id="hair">
+    <ellipse id="hair-top" cx="200" cy="70" rx="42" ry="40" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 165 90 Q 160 110 160 130" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 235 90 Q 240 110 240 130" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <!-- Hair bun with ornamental stick (kanzashi) -->
+    <ellipse id="bun" cx="200" cy="55" rx="25" ry="20" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 175 55 Q 185 50 195 55 Q 205 50 215 55 Q 220 55 225 55" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    
+    <!-- Kanzashi (hair ornament) -->
+    <line x1="185" y1="45" x2="175" y2="20" stroke="#1a1a1a" stroke-width="2"/>
+    <circle cx="175" cy="20" r="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="175" cy="20" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    <circle cx="172" cy="18" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="178" cy="18" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="172" cy="22" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle cx="178" cy="22" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Face features -->
+  <g id="eyes">
+    <path d="M 180 95 Q 185 92 190 95" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="185" cy="94" r="2" fill="#1a1a1a"/>
+    
+    <path d="M 210 95 Q 215 92 220 95" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="215" cy="94" r="2" fill="#1a1a1a"/>
+  </g>
+  
+  <!-- Nose -->
+  <path id="nose" d="M 200 100 L 198 110" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Mouth -->
+  <path id="mouth" d="M 192 120 Q 200 124 208 120" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <!-- Hand holding fan -->
+  <g id="fan">
+    <path d="M 120 350 L 100 345 L 95 350 L 90 355 L 88 360 L 90 365 L 95 368 L 105 370 L 120 368" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    <line x1="120" y1="350" x2="88" y2="360" stroke="#1a1a1a" stroke-width="0.5"/>
+    <line x1="116" y1="355" x2="90" y2="362" stroke="#1a1a1a" stroke-width="0.5"/>
+    <line x1="112" y1="360" x2="92" y2="365" stroke="#1a1a1a" stroke-width="0.5"/>
+    <line x1="115" y1="363" x2="95" y2="367" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+</svg>

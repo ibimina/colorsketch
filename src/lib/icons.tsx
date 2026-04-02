@@ -1,0 +1,72 @@
+import {
+    Home,
+    Search,
+    BookOpen,
+    Palette,
+    Image,
+    Settings,
+    Bell,
+    User,
+    Heart,
+    Bookmark,
+    Download,
+    Save,
+    Undo2,
+    Redo2,
+    Trash2,
+    Sparkles,
+    Grid3x3,
+    List,
+    LayoutGrid,
+    X,
+    ChevronRight,
+    ArrowLeft
+} from 'lucide-react';
+
+export const Icons = {
+    Home,
+    Search,
+    Library: BookOpen,
+    Canvas: Palette,
+    Gallery: Image,
+    Settings,
+    Notification: Bell,
+    Profile: User,
+    Like: Heart,
+    Bookmark,
+    Export: Download,
+    Save,
+    Undo: Undo2,
+    Redo: Redo2,
+    Reset: Trash2,
+    New: Sparkles,
+    Grid: Grid3x3,
+    List,
+    Masonry: LayoutGrid,
+    Close: X,
+    ChevronRight,
+    Back: ArrowLeft
+};
+
+// Keep emojis for decorative/fun elements
+export const Emojis = {
+    achievement: '🏆',
+    streak: '🔥',
+    star: '⭐',
+    sparkle: '✨',
+    target: '🎯',
+    artist: '👩‍🎨',
+    paintbrush: '🎨',
+    categories: {
+        animals: '🦋',
+        botanical: '🌸',
+        fantasy: '🐉',
+        geometric: '🔷',
+        mandalas: '✨',
+        landscape: '🏔️',
+        zentangle: '🎨',
+        fashion: '👗',
+        abstract: '🌀',
+        people: '👧',
+    }
+};

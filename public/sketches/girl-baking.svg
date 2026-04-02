@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Girl Baking Cupcakes -->
+  
+  <!-- Kitchen background -->
+  <!-- Counter -->
+  <rect id="counter" x="0" y="300" width="400" height="100" fill="white"/>
+  <path id="counter-edge" d="M0 300 L400 300" stroke-width="3"/>
+  
+  <!-- Tile pattern on wall -->
+  <rect id="tile-1" x="20" y="50" width="40" height="40" fill="white"/>
+  <rect id="tile-2" x="70" y="50" width="40" height="40" fill="white"/>
+  <rect id="tile-3" x="20" y="100" width="40" height="40" fill="white"/>
+  <rect id="tile-4" x="70" y="100" width="40" height="40" fill="white"/>
+  <rect id="tile-5" x="290" y="50" width="40" height="40" fill="white"/>
+  <rect id="tile-6" x="340" y="50" width="40" height="40" fill="white"/>
+  <rect id="tile-7" x="290" y="100" width="40" height="40" fill="white"/>
+  <rect id="tile-8" x="340" y="100" width="40" height="40" fill="white"/>
+  
+  <!-- Cupcakes on counter -->
+  <path id="cupcake-1-wrapper" d="M50 290 L45 265 L75 265 L70 290" fill="white"/>
+  <path id="cupcake-1-wrapper-lines" d="M50 285 L48 268 M55 285 L54 268 M60 285 L60 268 M65 285 L66 268" fill="none"/>
+  <path id="cupcake-1-frosting" d="M42 265 Q45 240 58 235 Q70 230 75 245 Q82 235 78 265" fill="white"/>
+  <circle id="cupcake-1-cherry" cx="60" cy="235" r="6" fill="white"/>
+  <path id="cupcake-1-cherry-stem" d="M60 229 Q65 220 68 222" fill="none"/>
+  
+  <path id="cupcake-2-wrapper" d="M320 290 L315 265 L345 265 L340 290" fill="white"/>
+  <path id="cupcake-2-wrapper-lines" d="M320 285 L318 268 M325 285 L324 268 M330 285 L330 268 M335 285 L336 268" fill="none"/>
+  <path id="cupcake-2-frosting" d="M312 265 Q315 240 328 235 Q340 230 345 245 Q352 235 348 265" fill="white"/>
+  <circle id="cupcake-2-cherry" cx="330" cy="235" r="6" fill="white"/>
+  
+  <!-- Mixing bowl -->
+  <ellipse id="bowl" cx="200" cy="280" rx="60" ry="30" fill="white"/>
+  <ellipse id="bowl-rim" cx="200" cy="265" rx="55" ry="20" fill="white"/>
+  <ellipse id="bowl-inner" cx="200" cy="268" rx="45" ry="15" fill="white" stroke-dasharray="3,3"/>
+  
+  <!-- Batter in bowl -->
+  <path id="batter" d="M160 268 Q180 260 200 265 Q220 258 240 268" fill="white"/>
+  
+  <!-- Wooden spoon -->
+  <path id="spoon-handle" d="M220 270 L280 200 L290 205 L230 275" fill="white"/>
+  <ellipse id="spoon-head" cx="288" cy="195" rx="12" ry="18" fill="white" transform="rotate(35 288 195)"/>
+  
+  <!-- Girl -->
+  <!-- Apron -->
+  <path id="apron" d="M160 200 Q155 250 160 295 Q200 305 240 295 Q245 250 240 200" fill="white"/>
+  <path id="apron-pocket" d="M180 250 L220 250 L218 280 L182 280 Z" fill="white"/>
+  <path id="apron-tie-left" d="M160 210 Q140 205 135 215 Q140 225 160 218" fill="white"/>
+  <path id="apron-tie-right" d="M240 210 Q260 205 265 215 Q260 225 240 218" fill="white"/>
+  <path id="apron-neck" d="M175 160 L180 200 M225 160 L220 200" fill="none" stroke-width="3"/>
+  
+  <!-- Dress behind apron -->
+  <path id="dress-edge-left" d="M155 200 Q148 250 150 295" fill="none"/>
+  <path id="dress-edge-right" d="M245 200 Q252 250 250 295" fill="none"/>
+  
+  <!-- Arms -->
+  <path id="arm-left" d="M155 175 Q130 200 140 250 Q145 270 160 280" fill="white"/>
+  <path id="arm-right" d="M245 175 Q270 190 280 210 Q285 225 280 240" fill="white"/>
+  
+  <!-- Hand on bowl -->
+  <ellipse id="hand-left" cx="162" cy="278" rx="12" ry="10" fill="white"/>
+  
+  <!-- Hand on spoon -->
+  <ellipse id="hand-right" cx="265" cy="225" rx="12" ry="10" fill="white"/>
+  <path id="fingers-right" d="M270 218 L275 212 M265 216 L268 208" fill="none"/>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="200" cy="115" rx="45" ry="50" fill="white"/>
+  
+  <!-- Hair - bun with chef hat -->
+  <path id="chef-hat-base" d="M150 105 Q145 80 155 60 Q175 45 200 42 Q225 45 245 60 Q255 80 250 105" fill="white"/>
+  <path id="chef-hat-top" d="M160 60 Q165 30 200 25 Q235 30 240 60" fill="white"/>
+  <path id="chef-hat-band" d="M150 105 Q200 115 250 105" fill="none" stroke-width="4"/>
+  <path id="chef-hat-pleat-1" d="M170 40 Q175 30 180 40" fill="none"/>
+  <path id="chef-hat-pleat-2" d="M195 35 Q200 25 205 35" fill="none"/>
+  <path id="chef-hat-pleat-3" d="M220 40 Q225 30 230 40" fill="none"/>
+  
+  <!-- Hair showing -->
+  <path id="hair-bangs" d="M160 110 Q170 100 180 108 Q190 98 200 105 Q210 98 220 108 Q230 100 240 110" fill="white"/>
+  
+  <!-- Face -->
+  <!-- Eyes - focused on baking -->
+  <ellipse id="eye-left" cx="180" cy="115" rx="10" ry="12" fill="white"/>
+  <ellipse id="eye-right" cx="220" cy="115" rx="10" ry="12" fill="white"/>
+  <circle id="pupil-left" cx="182" cy="118" r="6" fill="white"/>
+  <circle id="pupil-right" cx="222" cy="118" r="6" fill="white"/>
+  <circle id="sparkle-left" cx="178" cy="112" r="3" fill="white"/>
+  <circle id="sparkle-right" cx="218" cy="112" r="3" fill="white"/>
+  
+  <!-- Eyebrows -->
+  <path id="eyebrow-left" d="M168 102 Q180 98 192 102" fill="none"/>
+  <path id="eyebrow-right" d="M208 102 Q220 98 232 102" fill="none"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M200 120 Q203 128 200 135" fill="none"/>
+  
+  <!-- Mouth - concentrating -->
+  <path id="mouth" d="M190 145 Q200 150 210 145" fill="none"/>
+  
+  <!-- Blush -->
+  <ellipse id="blush-left" cx="165" cy="130" rx="8" ry="4" fill="white" stroke-dasharray="2,2"/>
+  <ellipse id="blush-right" cx="235" cy="130" rx="8" ry="4" fill="white" stroke-dasharray="2,2"/>
+  
+  <!-- Steam/aroma lines -->
+  <path id="steam-1" d="M185 255 Q180 245 185 235" fill="none" stroke-dasharray="3,3"/>
+  <path id="steam-2" d="M200 252 Q205 242 200 232" fill="none" stroke-dasharray="3,3"/>
+  <path id="steam-3" d="M215 255 Q220 245 215 235" fill="none" stroke-dasharray="3,3"/>
+  
+  <!-- Hearts (love for baking) -->
+  <path id="heart-1" d="M280 150 Q284 146 288 150 Q292 146 296 150 Q296 158 288 165 Q280 158 280 150" fill="white"/>
+  <path id="heart-2" d="M100 160 Q103 157 106 160 Q109 157 112 160 Q112 166 106 172 Q100 166 100 160" fill="white"/>
+  
+  <!-- Sprinkles on counter -->
+  <circle id="sprinkle-1" cx="120" cy="310" r="2" fill="white"/>
+  <ellipse id="sprinkle-2" cx="135" cy="305" rx="3" ry="1" fill="white" transform="rotate(45 135 305)"/>
+  <circle id="sprinkle-3" cx="260" cy="308" r="2" fill="white"/>
+  <ellipse id="sprinkle-4" cx="275" cy="312" rx="3" ry="1" fill="white" transform="rotate(-30 275 312)"/>
+</svg>

@@ -1,0 +1,108 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mountain Lake Landscape - Adult Coloring -->
+  
+  <!-- Sky background -->
+  <rect id="sky" x="0" y="0" width="400" height="200" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Sun with rays -->
+  <circle id="sun" cx="320" cy="60" r="30" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <g id="sun-rays">
+    <line x1="320" y1="20" x2="320" y2="5" stroke="#1a1a1a" stroke-width="0.8"/>
+    <line x1="340" y1="25" x2="350" y2="15" stroke="#1a1a1a" stroke-width="0.8"/>
+    <line x1="355" y1="45" x2="370" y2="40" stroke="#1a1a1a" stroke-width="0.8"/>
+    <line x1="355" y1="75" x2="370" y2="80" stroke="#1a1a1a" stroke-width="0.8"/>
+    <line x1="340" y1="95" x2="350" y2="105" stroke="#1a1a1a" stroke-width="0.8"/>
+    <line x1="300" y1="95" x2="290" y2="105" stroke="#1a1a1a" stroke-width="0.8"/>
+    <line x1="285" y1="75" x2="270" y2="80" stroke="#1a1a1a" stroke-width="0.8"/>
+    <line x1="285" y1="45" x2="270" y2="40" stroke="#1a1a1a" stroke-width="0.8"/>
+    <line x1="300" y1="25" x2="290" y2="15" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Clouds -->
+  <g id="cloud-1">
+    <ellipse id="cloud-1a" cx="80" cy="50" rx="30" ry="20" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="cloud-1b" cx="105" cy="45" rx="25" ry="18" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="cloud-1c" cx="130" cy="52" rx="28" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  <g id="cloud-2">
+    <ellipse id="cloud-2a" cx="200" cy="35" rx="25" ry="15" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="cloud-2b" cx="220" cy="30" rx="20" ry="12" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <ellipse id="cloud-2c" cx="240" cy="37" rx="22" ry="13" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Distant mountains (back) -->
+  <path id="mountain-far-1" d="M0 180 L60 100 L120 160 L180 90 L240 150 L300 80 L360 140 L400 100 L400 200 L0 200 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Snow caps on distant mountains -->
+  <path id="snow-1" d="M180 90 L165 115 L180 110 L195 115 Z" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  <path id="snow-2" d="M300 80 L285 105 L300 100 L315 105 Z" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Closer mountains -->
+  <path id="mountain-mid" d="M0 250 L80 140 L160 220 L250 120 L340 200 L400 150 L400 250 L0 250 Z" fill="white" stroke="#1a1a1a" stroke-width="1.2"/>
+  <path id="snow-mid" d="M250 120 L230 155 L250 148 L270 155 Z" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Tree line on mountains -->
+  <g id="distant-trees">
+    <path id="dtree-1" d="M30 220 L35 200 L40 220" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="dtree-2" d="M50 215 L55 195 L60 215" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="dtree-3" d="M70 210 L75 190 L80 210" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="dtree-4" d="M310 185 L315 165 L320 185" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="dtree-5" d="M330 180 L335 160 L340 180" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Lake -->
+  <path id="lake" d="M20 280 Q100 270 200 275 Q300 280 380 270 L380 320 Q300 330 200 325 Q100 320 20 330 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Lake reflections -->
+  <g id="reflections">
+    <path id="reflect-1" d="M100 285 Q150 288 200 285" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="reflect-2" d="M120 295 Q180 298 240 295" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="reflect-3" d="M80 305 Q160 310 260 305" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+    <path id="reflect-4" d="M150 315 Q200 318 280 315" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+  
+  <!-- Foreground shoreline -->
+  <path id="shore-left" d="M0 280 L20 280 Q10 290 0 300 Z" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="shore-right" d="M400 270 L380 270 Q390 285 400 300 Z" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Pine trees (foreground) -->
+  <g id="pine-1">
+    <path id="pine-1-trunk" d="M50 400 L50 340 L55 340 L55 400 Z" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="pine-1-top" d="M52.5 340 L30 380 L40 378 L25 400 L80 400 L65 378 L75 380 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="pine-1-mid" d="M52.5 355 L35 385 L70 385 Z" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <g id="pine-2">
+    <path id="pine-2-trunk" d="M355 400 L355 355 L360 355 L360 400 Z" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+    <path id="pine-2-top" d="M357.5 355 L335 390 L345 388 L330 400 L385 400 L370 388 L380 390 Z" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <path id="pine-2-mid" d="M357.5 368 L342 395 L373 395 Z" fill="white" stroke="#1a1a1a" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Rocks -->
+  <ellipse id="rock-1" cx="120" cy="350" rx="25" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse id="rock-2" cx="140" cy="360" rx="18" ry="12" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <ellipse id="rock-3" cx="300" cy="355" rx="20" ry="14" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Grass tufts -->
+  <g id="grass">
+    <path id="grass-1" d="M160 400 Q165 385 170 400" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="grass-2" d="M170 400 Q175 388 180 400" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="grass-3" d="M180 400 Q185 390 190 400" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="grass-4" d="M230 400 Q235 385 240 400" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    <path id="grass-5" d="M240 400 Q245 388 250 400" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Small flowers -->
+  <g id="flowers">
+    <circle id="flower-1" cx="200" cy="385" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="flower-1-c" cx="200" cy="385" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+    <circle id="flower-2" cx="210" cy="390" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="flower-3" cx="280" cy="380" r="4" fill="white" stroke="#1a1a1a" stroke-width="0.5"/>
+    <circle id="flower-3-c" cx="280" cy="380" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.3"/>
+  </g>
+  
+  <!-- Birds in sky -->
+  <path id="bird-1" d="M150 80 Q155 75 160 80 Q165 75 170 80" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path id="bird-2" d="M180 95 Q184 91 188 95 Q192 91 196 95" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  <path id="bird-3" d="M130 100 Q133 97 136 100 Q139 97 142 100" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+</svg>

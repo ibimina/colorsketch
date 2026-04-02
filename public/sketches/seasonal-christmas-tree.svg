@@ -1,0 +1,221 @@
+<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Christmas Tree - Seasonal Themed - Adult Coloring -->
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="500" height="400" fill="white" stroke="none"/>
+  
+  <!-- Christmas tree shape -->
+  <g id="tree">
+    <!-- Tree layers - triangular sections -->
+    <path d="M 250 50 L 200 120 L 220 120 L 170 190 L 195 190 L 145 260 L 170 260 L 120 330 L 380 330 L 330 260 L 355 260 L 305 190 L 330 190 L 280 120 L 300 120 Z" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+    
+    <!-- Tree trunk -->
+    <rect x="225" y="330" width="50" height="50" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M 230 345 L 270 345 M 230 360 L 270 360" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Star on top -->
+  <g id="star-top" transform="translate(250, 40)">
+    <path d="M 0 -15 L 4 -5 L 15 -3 L 7 4 L 9 15 L 0 9 L -9 15 L -7 4 L -15 -3 L -4 -5 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <line x1="0" y1="-10" x2="0" y2="10" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="-10" y1="0" x2="10" y2="0" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="-7" y1="-7" x2="7" y2="7" stroke="#1a1a1a" stroke-width="0.7"/>
+    <line x1="7" y1="-7" x2="-7" y2="7" stroke="#1a1a1a" stroke-width="0.7"/>
+  </g>
+  
+  <!-- Ornaments -->
+  <g id="ornaments">
+    <!-- Large ball ornament top left -->
+    <g transform="translate(220, 100)">
+      <circle cx="0" cy="0" r="12" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M -8 -6 Q 0 -4 8 -6" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <path d="M -8 0 Q 0 2 8 0" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <path d="M -8 6 Q 0 8 8 6" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="0" r="6" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <rect x="-3" y="-15" width="6" height="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="-12" x2="0" y2="-8" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <!-- Large ball ornament top right -->
+    <g transform="translate(280, 100)">
+      <circle cx="0" cy="0" r="12" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M -6 -8 L 6 8 M 6 -8 L -6 8" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="-5" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="-5" cy="3" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="5" cy="3" r="2" fill="white" stroke="#1a1a1a" stroke-width="0.7"/>
+      <rect x="-3" y="-15" width="6" height="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="-12" x2="0" y2="-8" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <!-- Medium ornaments second layer -->
+    <g transform="translate(190, 165)">
+      <circle cx="0" cy="0" r="10" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <circle cx="0" cy="0" r="7" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="0" r="4" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <rect x="-2.5" y="-13" width="5" height="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="-10" x2="0" y2="-7" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <g transform="translate(250, 175)">
+      <circle cx="0" cy="0" r="10" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M 0 -7 L 6 0 L 0 7 L -6 0 Z" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="0" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.7"/>
+      <rect x="-2.5" y="-13" width="5" height="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="-10" x2="0" y2="-7" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <g transform="translate(310, 165)">
+      <circle cx="0" cy="0" r="10" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <line x1="0" y1="-7" x2="0" y2="7" stroke="#1a1a1a" stroke-width="0.7"/>
+      <line x1="-7" y1="0" x2="7" y2="0" stroke="#1a1a1a" stroke-width="0.7"/>
+      <line x1="-5" y1="-5" x2="5" y2="5" stroke="#1a1a1a" stroke-width="0.7"/>
+      <line x1="5" y1="-5" x2="-5" y2="5" stroke="#1a1a1a" stroke-width="0.7"/>
+      <rect x="-2.5" y="-13" width="5" height="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="-10" x2="0" y2="-7" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <!-- Third layer ornaments -->
+    <g transform="translate(210, 240)">
+      <circle cx="0" cy="0" r="10" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M -5 0 L 0 -6 L 5 0 L 0 6 Z" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <rect x="-2.5" y="-13" width="5" height="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="-10" x2="0" y2="-7" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <g transform="translate(290, 240)">
+      <circle cx="0" cy="0" r="10" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M -6 -4 Q 0 -2 6 -4 M -6 0 Q 0 2 6 0 M -6 4 Q 0 6 6 4" stroke="#1a1a1a" stroke-width="0.7"/>
+      <rect x="-2.5" y="-13" width="5" height="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="-10" x2="0" y2="-7" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <!-- Bottom layer ornaments -->
+    <g transform="translate(160, 305)">
+      <circle cx="0" cy="0" r="9" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="-3" r="1.5" fill="#1a1a1a"/>
+      <circle cx="-3" cy="2" r="1.5" fill="#1a1a1a"/>
+      <circle cx="3" cy="2" r="1.5" fill="#1a1a1a"/>
+      <rect x="-2" y="-12" width="4" height="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="-9" x2="0" y2="-6" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <g transform="translate(250, 310)">
+      <circle cx="0" cy="0" r="9" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M 0 -6 L 6 0 L 0 6 L -6 0 Z M 0 -4 L 4 0 L 0 4 L -4 0 Z" stroke="#1a1a1a" stroke-width="0.7"/>
+      <rect x="-2" y="-12" width="4" height="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="-9" x2="0" y2="-6" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <g transform="translate(340, 305)">
+      <circle cx="0" cy="0" r="9" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <line x1="-6" y1="-6" x2="6" y2="6" stroke="#1a1a1a" stroke-width="0.7"/>
+      <line x1="6" y1="-6" x2="-6" y2="6" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="0" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+      <rect x="-2" y="-12" width="4" height="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="0" y1="-9" x2="0" y2="-6" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- Garland/beads -->
+  <g id="garland">
+    <path d="M 200 140 Q 220 150 250 145 Q 280 150 300 140" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="210" cy="145" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="230" cy="148" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="250" cy="145" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="270" cy="148" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="290" cy="145" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M 170 210 Q 200 225 250 215 Q 300 225 330 210" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="185" cy="218" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="210" cy="223" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="235" cy="219" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="265" cy="219" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="290" cy="223" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="315" cy="218" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    
+    <path d="M 145 280 Q 190 300 250 285 Q 310 300 355 280" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="165" cy="292" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="195" cy="298" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="225" cy="292" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="250" cy="285" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="275" cy="292" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="305" cy="298" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="335" cy="292" r="3" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  </g>
+  
+  <!-- Candy canes on sides -->
+  <g id="candy-cane-left" transform="translate(50, 200)">
+    <path d="M 10 0 Q 10 -15 0 -20 Q -10 -15 -10 0 L -10 60 Q -10 70 0 70 Q 10 70 10 60 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M -8 5 L 8 5 M -8 15 L 8 15 M -8 25 L 8 25 M -8 35 L 8 35 M -8 45 L 8 45 M -8 55 L 8 55 M -8 65 L 8 65" stroke="#1a1a1a" stroke-width="3" stroke-dasharray="4,4"/>
+  </g>
+  
+  <g id="candy-cane-right" transform="translate(450, 200) scale(-1,1)">
+    <path d="M 10 0 Q 10 -15 0 -20 Q -10 -15 -10 0 L -10 60 Q -10 70 0 70 Q 10 70 10 60 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M -8 5 L 8 5 M -8 15 L 8 15 M -8 25 L 8 25 M -8 35 L 8 35 M -8 45 L 8 45 M -8 55 L 8 55 M -8 65 L 8 65" stroke="#1a1a1a" stroke-width="3" stroke-dasharray="4,4"/>
+  </g>
+  
+  <!-- Presents under tree -->
+  <g id="presents">
+    <!-- Gift 1 -->
+    <g transform="translate(180, 350)">
+      <rect x="-20" y="-15" width="40" height="30" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <rect x="-4" y="-15" width="8" height="30" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M -20 -5 L 20 -5 M -20 5 L 20 5" stroke="#1a1a1a" stroke-width="0.7"/>
+      <path d="M 0 -15 Q -8 -20 -12 -22 Q -8 -24 0 -20 Q 8 -24 12 -22 Q 8 -20 0 -15" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    </g>
+    
+    <!-- Gift 2 -->
+    <g transform="translate(320, 350)">
+      <rect x="-18" y="-18" width="36" height="36" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <line x1="0" y1="-18" x2="0" y2="18" stroke="#1a1a1a" stroke-width="1.5"/>
+      <line x1="-18" y1="0" x2="18" y2="0" stroke="#1a1a1a" stroke-width="1.5"/>
+      <circle cx="-9" cy="-9" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="9" cy="-9" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="-9" cy="9" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.7"/>
+      <circle cx="9" cy="9" r="3" fill="white" stroke="#1a1a1a" stroke-width="0.7"/>
+      <path d="M 0 -18 Q -6 -24 -10 -26 Q -6 -28 0 -24 Q 6 -28 10 -26 Q 6 -24 0 -18" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    </g>
+    
+    <!-- Gift 3 (small) -->
+    <g transform="translate(250, 365)">
+      <rect x="-12" y="-12" width="24" height="24" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+      <rect x="-3" y="-12" width="6" height="24" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M -12 -3 L 12 -3 M -12 3 L 12 3" stroke="#1a1a1a" stroke-width="0.7"/>
+      <path d="M 0 -12 Q -5 -16 -8 -18 Q -5 -20 0 -16 Q 5 -20 8 -18 Q 5 -16 0 -12" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+    </g>
+  </g>
+  
+  <!-- Snowflakes decorative -->
+  <g id="snowflakes">
+    <g transform="translate(80, 80)">
+      <line x1="0" y1="-10" x2="0" y2="10" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="-10" y1="0" x2="10" y2="0" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="-7" y1="-7" x2="7" y2="7" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="7" y1="-7" x2="-7" y2="7" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="0" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+    
+    <g transform="translate(420, 120)">
+      <line x1="0" y1="-10" x2="0" y2="10" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="-10" y1="0" x2="10" y2="0" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="-7" y1="-7" x2="7" y2="7" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="7" y1="-7" x2="-7" y2="7" stroke="#1a1a1a" stroke-width="1"/>
+      <circle cx="0" cy="0" r="3" fill="none" stroke="#1a1a1a" stroke-width="0.7"/>
+    </g>
+    
+    <g transform="translate(100, 350)">
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="-6" y1="-6" x2="6" y2="6" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="6" y1="-6" x2="-6" y2="6" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+    
+    <g transform="translate(400, 350)">
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="-6" y1="-6" x2="6" y2="6" stroke="#1a1a1a" stroke-width="1"/>
+      <line x1="6" y1="-6" x2="-6" y2="6" stroke="#1a1a1a" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

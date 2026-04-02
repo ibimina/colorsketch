@@ -1,0 +1,56 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Flamingo - Tropical Bird -->
+  
+  <!-- Body -->
+  <ellipse id="body" cx="200" cy="250" rx="65" ry="50" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Wing -->
+  <path id="wing" d="M150 230 Q120 250 130 290 Q145 320 180 310 Q210 295 215 260 Q210 235 185 225 Q165 220 150 230" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M155 250 Q145 270 155 290" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M170 245 Q165 270 175 295" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M190 245 Q185 270 190 290" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Neck (S-shaped) -->
+  <path id="neck" d="M220 220 Q280 200 290 140 Q295 100 270 70 Q245 50 220 65 Q200 80 195 110" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Head -->
+  <circle id="head" cx="200" cy="100" r="35" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Eye -->
+  <circle id="eye-outer" cx="195" cy="90" r="10" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="196" cy="90" r="5" fill="#1a1a1a"/>
+  <circle cx="198" cy="88" r="2" fill="white"/>
+  
+  <!-- Eyelashes -->
+  <path d="M188 82 Q185 78 182 75" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M193 80 Q192 75 190 70" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <path d="M200 80 Q200 74 202 68" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  
+  <!-- Beak -->
+  <path id="beak-upper" d="M165 100 Q145 95 130 100 Q120 105 125 115 Q140 120 165 115" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path id="beak-lower" d="M165 115 Q145 118 135 120 Q130 125 140 130 Q155 128 165 120" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M165 107 L130 108" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Beak tip (black part) -->
+  <path id="beak-tip" d="M130 100 Q120 105 125 115 Q130 120 135 120 Q128 110 130 100" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Tail feathers -->
+  <path id="tail-1" d="M135 255 Q100 260 80 250 Q90 265 135 260" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="tail-2" d="M135 265 Q95 275 70 270 Q85 285 135 275" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <path id="tail-3" d="M140 275 Q100 290 80 295 Q100 305 145 285" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Legs -->
+  <path id="leg-left" d="M170 295 L155 380 M155 380 L145 390 M155 380 L155 395 M155 380 L165 390" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+  
+  <path id="leg-right-bent" d="M210 295 Q230 320 225 340 Q218 355 225 365 M225 365 L215 375 M225 365 L225 380 M225 365 L235 375" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+  
+  <!-- Water ripples -->
+  <ellipse id="water-1" cx="160" cy="395" rx="25" ry="5" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <ellipse id="water-2" cx="225" cy="385" rx="20" ry="4" fill="none" stroke="#1a1a1a" stroke-width="0.6"/>
+  
+  <!-- Decorative elements -->
+  <circle id="deco-1" cx="60" cy="150" r="3" fill="#1a1a1a"/>
+  <circle id="deco-2" cx="340" cy="200" r="3" fill="#1a1a1a"/>
+  <path id="reed-1" d="M320 390 Q330 350 325 310" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <ellipse id="reed-top-1" cx="325" cy="305" rx="8" ry="15" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+</svg>

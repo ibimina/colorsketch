@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Girl Reading a Book - Cozy Scene -->
+  
+  <!-- Bean bag / cushion -->
+  <path id="beanbag" d="M100 380 Q80 340 100 300 Q150 270 200 270 Q250 270 300 300 Q320 340 300 380 Z" fill="white"/>
+  <path id="beanbag-detail" d="M120 350 Q200 340 280 350" fill="none" stroke-dasharray="4,4"/>
+  
+  <!-- Legs (sitting cross-legged) -->
+  <path id="leg-left" d="M150 340 Q130 350 140 370 Q160 385 190 375" fill="white"/>
+  <path id="leg-right" d="M250 340 Q270 350 260 370 Q240 385 210 375" fill="white"/>
+  
+  <!-- Feet -->
+  <ellipse id="foot-left" cx="145" cy="375" rx="15" ry="8" fill="white"/>
+  <ellipse id="foot-right" cx="255" cy="375" rx="15" ry="8" fill="white"/>
+  
+  <!-- Dress/Skirt -->
+  <path id="dress-bottom" d="M140 290 Q130 330 150 360 Q200 380 250 360 Q270 330 260 290" fill="white"/>
+  <path id="dress-fold-1" d="M160 310 Q165 340 170 360" fill="none"/>
+  <path id="dress-fold-2" d="M230 310 Q228 340 225 360" fill="none"/>
+  
+  <!-- Body/Torso -->
+  <path id="torso" d="M160 200 L155 290 Q200 300 245 290 L240 200" fill="white"/>
+  
+  <!-- Collar -->
+  <path id="collar-left" d="M175 200 L165 220 L185 225" fill="white"/>
+  <path id="collar-right" d="M225 200 L235 220 L215 225" fill="white"/>
+  
+  <!-- Arms holding book -->
+  <path id="arm-left" d="M160 220 Q140 240 130 270 Q135 285 150 290 L170 280" fill="white"/>
+  <path id="arm-right" d="M240 220 Q260 240 270 270 Q265 285 250 290 L230 280" fill="white"/>
+  
+  <!-- Hands -->
+  <ellipse id="hand-left" cx="150" cy="292" rx="12" ry="10" fill="white"/>
+  <ellipse id="hand-right" cx="250" cy="292" rx="12" ry="10" fill="white"/>
+  
+  <!-- Book -->
+  <rect id="book-cover-left" x="140" y="265" width="55" height="75" rx="2" fill="white"/>
+  <rect id="book-cover-right" x="205" y="265" width="55" height="75" rx="2" fill="white"/>
+  <line id="book-spine" x1="200" y1="265" x2="200" y2="340"/>
+  <path id="book-pages-left" d="M145 270 L145 335" fill="none" stroke-dasharray="2,3"/>
+  <path id="book-pages-right" d="M255 270 L255 335" fill="none" stroke-dasharray="2,3"/>
+  <!-- Book text lines -->
+  <line id="text-1" x1="150" y1="280" x2="190" y2="280" stroke-width="1"/>
+  <line id="text-2" x1="150" y1="290" x2="185" y2="290" stroke-width="1"/>
+  <line id="text-3" x1="150" y1="300" x2="188" y2="300" stroke-width="1"/>
+  <line id="text-4" x1="210" y1="280" x2="250" y2="280" stroke-width="1"/>
+  <line id="text-5" x1="210" y1="290" x2="248" y2="290" stroke-width="1"/>
+  <line id="text-6" x1="210" y1="300" x2="245" y2="300" stroke-width="1"/>
+  
+  <!-- Head -->
+  <ellipse id="head" cx="200" cy="140" rx="50" ry="55" fill="white"/>
+  
+  <!-- Hair - long with bangs -->
+  <path id="hair-top" d="M150 140 Q145 80 200 70 Q255 80 250 140" fill="white"/>
+  <path id="hair-bangs" d="M155 115 Q165 130 175 115 Q185 130 195 115 Q205 130 215 115 Q225 130 235 115 Q245 130 250 120" fill="white"/>
+  <path id="hair-left" d="M150 140 Q140 180 145 240 Q148 260 155 280" fill="white"/>
+  <path id="hair-right" d="M250 140 Q260 180 255 240 Q252 260 245 280" fill="white"/>
+  <path id="hair-strand-left" d="M145 160 Q135 200 140 250" fill="none"/>
+  <path id="hair-strand-right" d="M255 160 Q265 200 260 250" fill="none"/>
+  
+  <!-- Hair accessories - bow -->
+  <path id="bow-left" d="M160 90 Q145 80 150 70 Q160 75 165 85" fill="white"/>
+  <path id="bow-right" d="M165 85 Q175 75 180 80 Q175 90 165 95" fill="white"/>
+  <circle id="bow-center" cx="165" cy="87" r="5" fill="white"/>
+  
+  <!-- Face -->
+  <!-- Eyes (looking down at book) -->
+  <path id="eye-left" d="M175 135 Q185 145 195 135" fill="none" stroke-width="2.5"/>
+  <path id="eyelash-left-1" d="M175 135 L172 130" fill="none"/>
+  <path id="eyelash-left-2" d="M180 133 L178 128" fill="none"/>
+  <path id="eyelash-left-3" d="M185 132 L185 127" fill="none"/>
+  
+  <path id="eye-right" d="M205 135 Q215 145 225 135" fill="none" stroke-width="2.5"/>
+  <path id="eyelash-right-1" d="M225 135 L228 130" fill="none"/>
+  <path id="eyelash-right-2" d="M220 133 L222 128" fill="none"/>
+  <path id="eyelash-right-3" d="M215 132 L215 127" fill="none"/>
+  
+  <!-- Eyebrows -->
+  <path id="eyebrow-left" d="M172 125 Q183 120 195 125" fill="none"/>
+  <path id="eyebrow-right" d="M205 125 Q217 120 228 125" fill="none"/>
+  
+  <!-- Nose -->
+  <path id="nose" d="M200 145 Q203 152 200 158" fill="none"/>
+  
+  <!-- Mouth - gentle smile -->
+  <path id="mouth" d="M190 168 Q200 175 210 168" fill="none"/>
+  
+  <!-- Blush -->
+  <ellipse id="blush-left" cx="170" cy="155" rx="10" ry="5" fill="white" stroke-dasharray="2,2"/>
+  <ellipse id="blush-right" cx="230" cy="155" rx="10" ry="5" fill="white" stroke-dasharray="2,2"/>
+  
+  <!-- Decorative elements -->
+  <!-- Stars/sparkles around -->
+  <path id="star-1" d="M80 150 L83 158 L75 153 L85 153 L77 158 Z" fill="white"/>
+  <path id="star-2" d="M320 180 L323 188 L315 183 L325 183 L317 188 Z" fill="white"/>
+  <circle id="sparkle-1" cx="90" cy="200" r="3" fill="white"/>
+  <circle id="sparkle-2" cx="310" cy="240" r="3" fill="white"/>
+  
+  <!-- Small hearts -->
+  <path id="heart-1" d="M330 130 Q335 125 340 130 Q345 125 350 130 Q350 140 340 150 Q330 140 330 130" fill="white"/>
+  <path id="heart-2" d="M60 200 Q63 197 66 200 Q69 197 72 200 Q72 206 66 212 Q60 206 60 200" fill="white"/>
+</svg>

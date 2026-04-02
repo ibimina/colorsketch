@@ -1,0 +1,71 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Exact Zentangle Heart Approximation -->
+  <defs>
+    <!-- Pattern Grids -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+      <rect x="0" y="0" width="10" height="10" fill="#f0f0f0"/>
+      <rect x="10" y="10" width="10" height="10" fill="#f0f0f0"/>
+    </pattern>
+    <pattern id="lines" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M 0,0 L 0,10" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </pattern>
+    <pattern id="dots" width="15" height="15" patternUnits="userSpaceOnUse">
+      <circle cx="7.5" cy="7.5" r="2" fill="#1a1a1a"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="600" fill="white"/>
+
+  <!-- Background sections flowing around heart -->
+  <path d="M 0 0 Q 150 100 200 300 Q 250 500 400 600 L 400 0 Z" fill="url(#grid)" opacity="0.3"/>
+  <path d="M 0 600 Q 100 400 200 300 Q 300 200 0 0 Z" fill="url(#lines)" opacity="0.3"/>
+
+  <!-- Swirls and patterns (representative density) -->
+  <path d="M 50 100 Q 100 50 150 150 T 100 250 T 50 150" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <path d="M 60 110 Q 110 60 140 150 T 110 240 T 60 150" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <path d="M 350 450 Q 300 500 250 400 T 300 300 T 350 400" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <path d="M 340 440 Q 290 490 260 400 T 290 310 T 340 400" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+
+  <path d="M 100 500 Q 150 550 200 450 T 250 550 T 300 450" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M 100 520 Q 150 570 200 470 T 250 570 T 300 470" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  
+  <path d="M 300 100 Q 350 50 400 150 T 350 250 T 300 150" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Botanical leaves -->
+  <path d="M 250 50 C 270 20 320 20 350 50 C 320 70 270 70 250 50 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="250" y1="50" x2="350" y2="50" stroke="#1a1a1a" stroke-width="1"/>
+  <path d="M 50 450 C 70 420 120 420 150 450 C 120 470 70 470 50 450 Z" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="50" y1="450" x2="150" y2="450" stroke="#1a1a1a" stroke-width="1"/>
+
+  <!-- Scallops under heart -->
+  <path d="M 100 200 Q 130 180 150 220 Q 180 180 200 220 Q 220 180 250 220 Q 280 180 300 200" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <path d="M 90 220 Q 130 190 150 240 Q 180 190 200 240 Q 220 190 250 240 Q 280 190 310 220" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Focus: Central Zentangle Hearts -->
+  <g transform="translate(0, -30)">
+    <!-- Base Heart Halo -->
+    <path d="M 200 200 C 200 200 130 120 80 170 C 20 230 150 330 200 380 C 250 330 380 230 320 170 C 270 120 200 200 200 200 Z" fill="white" stroke="#1a1a1a" stroke-width="5"/>
+    
+    <!-- Concentric Hearts -->
+    <path d="M 200 215 C 200 215 145 145 105 185 C 60 235 150 310 200 355 C 250 310 340 235 295 185 C 255 145 200 215 200 215 Z" fill="white" stroke="#1a1a1a" stroke-width="3"/>
+    
+    <path d="M 200 230 C 200 230 160 170 130 200 C 95 240 160 295 200 330 C 240 295 305 240 270 200 C 240 170 200 230 200 230 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+    
+    <path d="M 200 245 C 200 245 175 195 155 215 C 130 245 170 280 200 305 C 230 280 270 245 245 215 C 225 195 200 245 200 245 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+
+    <path d="M 200 260 C 200 260 185 220 175 230 C 160 250 180 265 200 280 C 220 265 240 250 225 230 C 215 220 200 260 200 260 Z" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+
+    <!-- Radiating patterns from heart edges -->
+    <path d="M 80 170 Q 50 150 20 180" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 130 140 Q 100 100 120 70" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 270 140 Q 300 100 280 70" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <path d="M 320 170 Q 350 150 380 180" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    
+    <circle cx="100" cy="120" r="10" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="100" cy="120" r="3" fill="#1a1a1a"/>
+    <circle cx="300" cy="120" r="10" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="300" cy="120" r="3" fill="#1a1a1a"/>
+  </g>
+</svg>
