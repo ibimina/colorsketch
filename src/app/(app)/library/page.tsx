@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { useState, Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +8,9 @@ import { Card, Button, ColoredSketchPreview } from "@/components/ui";
 import { Category, Sketch } from "@/types";
 import { Icons } from "@/lib/icons";
 import { useSketchProgress } from "@/hooks";
+import { useFavoritesStore } from "@/stores/favoritesStore";
+import { notify } from "@/stores/notificationsStore";
+import { Heart } from "lucide-react";
 
 // Real sketch data with SVG files
 const sampleSketches: Sketch[] = [
@@ -1453,6 +1456,26 @@ function LibraryContent() {
     // Fetch user's sketch progress
     const { progressMap } = useSketchProgress();
 
+    // Favorites store
+    const { loadFavorites, toggle: toggleFavorite, isFavorite } = useFavoritesStore();
+
+    // Load favorites on mount
+    useEffect(() => {
+        loadFavorites();
+    }, [loadFavorites]);
+
+    // Handle favorite toggle
+    const handleFavoriteClick = (e: React.MouseEvent, sketchId: string, sketchTitle: string) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const wasFavorited = isFavorite(sketchId);
+        toggleFavorite(sketchId);
+        notify.success(
+            wasFavorited ? "Removed from favorites" : "Added to favorites",
+            sketchTitle
+        );
+    };
+
     // Derive effective category from URL param or local state
     const effectiveCategory = categoryParam || selectedCategory;
 
@@ -1561,6 +1584,7 @@ function LibraryContent() {
                     const progress = progressMap[sketch.id];
                     const status = getProgressStatus(sketch.id);
                     const hasProgress = progress && Object.keys(progress.fills || {}).length > 0;
+                    const favorited = isFavorite(sketch.id);
 
                     return (
                         <Card
@@ -1588,6 +1612,18 @@ function LibraryContent() {
                                             className="object-contain p-4"
                                         />
                                     )}
+                                    {/* Favorite Button */}
+                                    <button
+                                        onClick={(e) => handleFavoriteClick(e, sketch.id, sketch.title)}
+                                        className={`absolute top-1 sm:top-2 left-1 sm:left-2 w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 ${
+                                            favorited
+                                                ? "bg-red-500 text-white shadow-lg"
+                                                : "bg-white/80 dark:bg-gray-800/80 text-gray-500 hover:text-red-500 hover:bg-white shadow-md"
+                                        }`}
+                                        aria-label={favorited ? "Remove from favorites" : "Add to favorites"}
+                                    >
+                                        <Heart className={`w-4 h-4 ${favorited ? "fill-current" : ""}`} />
+                                    </button>
                                     {/* Badges */}
                                     <div className="absolute top-1 sm:top-2 right-1 sm:right-2 flex gap-1 flex-wrap justify-end max-w-[calc(100%-2rem)]">
                                         {/* Progress Badge */}

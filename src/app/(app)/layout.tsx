@@ -7,6 +7,7 @@ import { Icons } from "@/lib/icons";
 import { SyncProvider } from "@/components/providers/SyncProvider";
 import { createClient } from "@/lib/supabase/client";
 import { useProgressStore } from "@/stores/progressStore";
+import { ToastContainer } from "@/components/Toast";
 
 const navItems = [
     { href: "/home", label: "Home", Icon: Icons.Home },
@@ -167,6 +168,9 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                         })}
                     </div>
                 </nav>
+
+                {/* Toast Notifications */}
+                <ToastContainer />
             </div>
         </SyncProvider>
     );

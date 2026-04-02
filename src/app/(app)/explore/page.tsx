@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Card, Button } from "@/components/ui";
 import { Icons } from "@/lib/icons";
+import { Leaderboard } from "@/components/Leaderboard";
 
 const categories = [
     { id: "animals", label: "Animals", emoji: "🦋", href: "/library?category=animals" },
@@ -73,6 +74,27 @@ export default function ExplorePage() {
                             </Link>
                         ))}
                     </div>
+                </section>
+
+                {/* Top Artists This Week */}
+                <section>
+                    <div className="flex items-center justify-between mb-4">
+                        <h2 className="text-xl sm:text-2xl font-headline font-bold">
+                            🏆 Top Artists This Week
+                        </h2>
+                        <Link
+                            href="/leaderboard"
+                            className="text-primary font-headline font-medium text-sm hover:underline"
+                        >
+                            View All →
+                        </Link>
+                    </div>
+                    <Leaderboard
+                        limit={5}
+                        showPeriodToggle={false}
+                        defaultPeriod="weekly"
+                        title="Top Artists This Week"
+                    />
                 </section>
 
                 {/* Coming Soon Banner */}

@@ -6,6 +6,7 @@ import { useProgressStore } from "@/stores/progressStore";
 import { Emojis } from "@/lib/icons";
 import { ACHIEVEMENTS } from "@/lib/achievements";
 import { useEffect, useMemo } from "react";
+import { Leaderboard } from "@/components/Leaderboard";
 
 export default function HomePage() {
     // No dummy data - ready for real data integration
@@ -181,6 +182,11 @@ export default function HomePage() {
                     </div>
                 </section>
             )}
+
+            {/* Leaderboard Section */}
+            <section>
+                <Leaderboard limit={5} showPeriodToggle={true} />
+            </section>
 
             {/* Continue Coloring */}
             {recentSketches.length > 0 && (

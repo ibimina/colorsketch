@@ -409,3 +409,211 @@ export async function updateProfile(updates: {
   revalidatePath("/profile");
   return { success: true };
 }
+
+// ============================================
+// Favorites Actions
+// ============================================
+
+export async function getFavorites() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return [];
+
+  const { data, error } = await supabase
+    .from("user_favorites")
+    .select("sketch_id")
+    .eq("user_id", user.id);
+
+  if (error) {
+    console.error("Error fetching favorites:", error);
+    return [];
+  }
+
+  return data.map((f) => f.sketch_id);
+}
+
+export async function addFavorite(sketchId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase.from("user_favorites").insert({
+    user_id: user.id,
+    sketch_id: sketchId,
+  });
+
+  if (error) {
+    // Ignore duplicate key errors
+    if (error.code === "23505") {
+      return { success: true };
+    }
+    console.error("Error adding favorite:", error);
+    return { error: error.message };
+  }
+
+  return { success: true };
+}
+
+export async function removeFavorite(sketchId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase
+    .from("user_favorites")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("sketch_id", sketchId);
+
+  if (error) {
+    console.error("Error removing favorite:", error);
+    return { error: error.message };
+  }
+
+  return { success: true };
+}
+
+export async function toggleFavorite(sketchId: string, isFavorited: boolean) {
+  if (isFavorited) {
+    return removeFavorite(sketchId);
+  } else {
+    return addFavorite(sketchId);
+  }
+}
+
+// ============================================
+// Leaderboard Actions
+// ============================================
+
+export interface LeaderboardEntry {
+  rank: number;
+  userId: string;
+  name: string | null;
+  avatarUrl: string | null;
+  level: number;
+  totalXP: number;
+  streak: number;
+  totalSketches: number;
+  isCurrentUser: boolean;
+}
+
+export async function getLeaderboard(
+  limit: number = 10,
+  period: "daily" | "weekly" | "all-time" = "all-time",
+): Promise<LeaderboardEntry[]> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let query = supabase
+    .from("user_progress")
+    .select(
+      `
+      user_id,
+      level,
+      total_xp_earned,
+      streak,
+      total_sketches,
+      last_active_date,
+      user_profiles!inner(name, avatar_url)
+    `,
+    )
+    .order("total_xp_earned", { ascending: false })
+    .limit(limit);
+
+  // Filter by period
+  if (period === "daily") {
+    const today = new Date().toISOString().split("T")[0];
+    query = query.eq("last_active_date", today);
+  } else if (period === "weekly") {
+    const weekAgo = new Date();
+    weekAgo.setDate(weekAgo.getDate() - 7);
+    query = query.gte("last_active_date", weekAgo.toISOString().split("T")[0]);
+  }
+
+  const { data, error } = await query;
+
+  if (error) {
+    console.error("Error fetching leaderboard:", error);
+    return [];
+  }
+
+  return data.map((entry, index) => {
+    // Handle both array and object cases for the join
+    const profile = Array.isArray(entry.user_profiles)
+      ? entry.user_profiles[0]
+      : entry.user_profiles;
+
+    return {
+      rank: index + 1,
+      userId: entry.user_id,
+      name: profile?.name || "Anonymous Artist",
+      avatarUrl: profile?.avatar_url || null,
+      level: entry.level,
+      totalXP: entry.total_xp_earned,
+      streak: entry.streak,
+      totalSketches: entry.total_sketches,
+      isCurrentUser: user?.id === entry.user_id,
+    };
+  });
+}
+
+export async function getUserRank(): Promise<{
+  rank: number;
+  totalUsers: number;
+} | null> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return null;
+
+  // Get user's XP
+  const { data: userProgress, error: progressError } = await supabase
+    .from("user_progress")
+    .select("total_xp_earned")
+    .eq("user_id", user.id)
+    .single();
+
+  if (progressError || !userProgress) {
+    return null;
+  }
+
+  // Count users with more XP
+  const { count: higherCount, error: countError } = await supabase
+    .from("user_progress")
+    .select("*", { count: "exact", head: true })
+    .gt("total_xp_earned", userProgress.total_xp_earned);
+
+  if (countError) {
+    console.error("Error getting user rank:", countError);
+    return null;
+  }
+
+  // Get total users
+  const { count: totalUsers, error: totalError } = await supabase
+    .from("user_progress")
+    .select("*", { count: "exact", head: true });
+
+  if (totalError) {
+    console.error("Error getting total users:", totalError);
+    return null;
+  }
+
+  return {
+    rank: (higherCount || 0) + 1,
+    totalUsers: totalUsers || 0,
+  };
+}
+
