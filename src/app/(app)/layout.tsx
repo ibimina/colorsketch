@@ -61,7 +61,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
         <SyncProvider>
             <div className="min-h-screen flex bg-surface overflow-x-hidden">
                 {/* Sidebar - Desktop */}
-                <aside className="hidden lg:flex flex-col w-64 bg-surface-container-low p-6 gap-6">
+                <aside className="hidden lg:flex flex-col w-64 h-screen sticky top-0 bg-surface-container-low p-6 gap-6 overflow-y-auto">
                     {/* Logo */}
                     <div className="mb-4">
                         <Link href="/explore" className="block">
@@ -101,16 +101,6 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                             );
                         })}
                     </nav>
-
-                    {/* New Sketch CTA */}
-                    <Link
-                        href="/library"
-                        aria-label="Browse sketch library"
-                        className="flex items-center justify-center gap-2 px-6 py-4 rounded-2xl btn-primary-gradient text-white font-headline font-bold soft-touch shadow-lg shadow-primary/20"
-                    >
-                        <Icons.New className="w-5 h-5" aria-hidden="true" />
-                        Browse Sketches
-                    </Link>
 
                     {/* User Profile */}
                     <div className="flex items-center gap-3 pt-4 border-t border-surface-variant/30">
