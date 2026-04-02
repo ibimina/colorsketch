@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Icons } from "@/lib/icons";
 import { SyncProvider } from "@/components/providers/SyncProvider";
+import { createClient } from "@/lib/supabase/client";
+import { useProgressStore } from "@/stores/progressStore";
 
 const navItems = [
     { href: "/home", label: "Home", Icon: Icons.Home },
@@ -14,8 +16,46 @@ const navItems = [
     { href: "/settings", label: "Settings", Icon: Icons.Settings },
 ];
 
+// Helper to get level title
+function getLevelTitle(level: number): string {
+    if (level >= 50) return "Master Artist";
+    if (level >= 30) return "Expert Artist";
+    if (level >= 20) return "Advanced Artist";
+    if (level >= 10) return "Skilled Artist";
+    if (level >= 5) return "Apprentice Artist";
+    return "Beginner Artist";
+}
+
 export default function AppLayout({ children }: { children: ReactNode }) {
     const pathname = usePathname();
+    const [userName, setUserName] = useState<string | null>(null);
+    const { level } = useProgressStore();
+
+    // Fetch user data from Supabase
+    useEffect(() => {
+        async function loadUserData() {
+            const supabase = createClient();
+            const { data: { user } } = await supabase.auth.getUser();
+            
+            if (user) {
+                // Try to get name from user_profiles first
+                const { data: profile } = await supabase
+                    .from("user_profiles")
+                    .select("name")
+                    .eq("id", user.id)
+                    .single();
+                
+                if (profile?.name) {
+                    setUserName(profile.name);
+                } else {
+                    // Fallback to email username
+                    setUserName(user.email?.split("@")[0] ?? "Artist");
+                }
+            }
+        }
+
+        loadUserData();
+    }, []);
 
     return (
         <SyncProvider>
@@ -79,9 +119,11 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                         </div>
                         <div className="flex-1 min-w-0">
                             <p className="font-headline font-bold text-sm truncate">
-                                Alex Rivera
+                                {userName ?? "Guest"}
                             </p>
-                            <p className="text-xs text-on-surface-variant">Master Artist</p>
+                            <p className="text-xs text-on-surface-variant">
+                                Level {level} • {getLevelTitle(level)}
+                            </p>
                         </div>
                     </div>
                 </aside>
