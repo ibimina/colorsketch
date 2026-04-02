@@ -1,30 +1,98 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
-import { Card, Button } from "@/components/ui";
+import { Card, Button, ColoredSketchPreview } from "@/components/ui";
 import { useProgressStore } from "@/stores/progressStore";
+import { useSketchProgress, SketchProgressData } from "@/hooks";
 
-// TODO: Connect to actual saved artworks store when save functionality is implemented
-const savedArtworks: any[] = [];
+// Sketch titles mapping (same as used in library and canvas)
+const sketchTitles: Record<string, string> = {
+    butterfly: "Monarch Butterfly",
+    rose: "Elegant Rose",
+    mandala: "Sacred Mandala",
+    hummingbird: "Hummingbird Garden",
+    "koi-fish": "Japanese Koi",
+    owl: "Wise Owl",
+    lotus: "Lotus Bloom",
+    fox: "Woodland Fox",
+    elephant: "Baby Elephant",
+    peacock: "Majestic Peacock",
+    dolphin: "Playful Dolphin",
+    "sea-turtle": "Sea Turtle",
+    dinosaur: "T-Rex Adventure",
+    puppy: "Adorable Puppy",
+    lion: "Baby Lion",
+    cat: "Kawaii Cat",
+    bunny: "Fluffy Bunny",
+    "teddy-bear": "Teddy Bear",
+    flamingo: "Tropical Flamingo",
+    octopus: "Cute Octopus",
+    sunflower: "Sunny Sunflower",
+    "cherry-blossom": "Cherry Blossom Branch",
+    unicorn: "Magical Unicorn",
+    dragon: "Friendly Dragon",
+    mermaid: "Beautiful Mermaid",
+    "mushroom-house": "Fairy Mushroom House",
+    castle: "Princess Castle",
+    rainbow: "Rainbow Dreams",
+    astronaut: "Space Explorer",
+    cupcake: "Sweet Cupcake",
+    "ice-cream": "Ice Cream Cone",
+};
+
+// Helper to get sketch title
+function getSketchTitle(sketchId: string): string {
+    return sketchTitles[sketchId] || sketchId.split('-').map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+}
 
 export default function GalleryPage() {
     const [filter, setFilter] = useState<"all" | "completed" | "in-progress">("all");
     const { totalSketches } = useProgressStore();
+    const { progressMap, isLoading } = useSketchProgress();
 
-    const filteredArtworks = savedArtworks.filter((artwork) => {
-        if (filter === "completed") return artwork.completedAt !== null;
-        if (filter === "in-progress") return artwork.completedAt === null;
+    // Convert progress map to array and filter
+    const artworks = useMemo(() => {
+        return Object.values(progressMap)
+            .filter((p): p is SketchProgressData => {
+                // Only include sketches that have been started (have fills)
+                const fillCount = Object.keys(p.fills || {}).filter(k => k !== "background").length;
+                return fillCount > 0;
+            })
+            .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
+    }, [progressMap]);
+
+    const filteredArtworks = artworks.filter((artwork) => {
+        if (filter === "completed") return artwork.completed_at !== null;
+        if (filter === "in-progress") return artwork.completed_at === null;
         return true;
     });
 
-    const formatDate = (date: Date) => {
+    const formatDate = (dateStr: string) => {
         return new Intl.DateTimeFormat("en-US", {
             month: "short",
             day: "numeric",
             year: "numeric",
-        }).format(date);
+        }).format(new Date(dateStr));
     };
+
+    if (isLoading) {
+        return (
+            <div className="space-y-6 pb-20 lg:pb-0">
+                <div>
+                    <h1 className="text-2xl sm:text-3xl font-headline font-bold">My Gallery</h1>
+                    <p className="text-on-surface-variant mt-1">Loading your artworks...</p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {[1, 2, 3, 4].map(i => (
+                        <div key={i} className="bg-surface-container rounded-2xl aspect-square animate-pulse" />
+                    ))}
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="space-y-6 pb-20 lg:pb-0">
@@ -33,9 +101,9 @@ export default function GalleryPage() {
                 <div>
                     <h1 className="text-2xl sm:text-3xl font-headline font-bold">My Gallery</h1>
                     <p className="text-on-surface-variant mt-1">
-                        {savedArtworks.length > 0
-                            ? `${savedArtworks.length} saved ${savedArtworks.length === 1 ? 'artwork' : 'artworks'}`
-                            : 'Your saved artworks will appear here'
+                        {artworks.length > 0
+                            ? `${artworks.length} ${artworks.length === 1 ? 'artwork' : 'artworks'} in progress or completed`
+                            : 'Your artworks will appear here'
                         }
                     </p>
                 </div>
@@ -46,7 +114,7 @@ export default function GalleryPage() {
             </div>
 
             {/* Filter Tabs - Only show when there are artworks */}
-            {savedArtworks.length > 0 && (
+            {artworks.length > 0 && (
                 <div className="flex gap-2">
                     {[
                         { id: "all", label: "All" },
@@ -76,25 +144,27 @@ export default function GalleryPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {filteredArtworks.map((artwork) => (
                         <Card
-                            key={artwork.id}
+                            key={artwork.sketch_id}
                             variant="elevated"
                             padding="none"
                             className="overflow-hidden group hover:scale-[1.02] transition-transform duration-200"
                         >
-                            {/* Thumbnail */}
+                            {/* Thumbnail with colored preview */}
                             <div className="relative aspect-square bg-surface-container">
-                                <div className="absolute inset-0 flex items-center justify-center text-5xl opacity-40">
-                                    🎨
-                                </div>
+                                <ColoredSketchPreview
+                                    sketchPath={`/sketches/${artwork.sketch_id}.svg`}
+                                    fills={artwork.fills}
+                                    className="absolute inset-0 p-4"
+                                />
 
                                 {/* Status Badge */}
                                 <div className="absolute top-3 left-3">
-                                    {artwork.completedAt ? (
-                                        <span className="px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-headline font-bold">
+                                    {artwork.completed_at ? (
+                                        <span className="px-2 py-1 rounded-full bg-green-500 text-white text-xs font-headline font-bold">
                                             ✓ Completed
                                         </span>
                                     ) : (
-                                        <span className="px-2 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-headline font-bold">
+                                        <span className="px-2 py-1 rounded-full bg-yellow-500 text-white text-xs font-headline font-bold">
                                             In Progress
                                         </span>
                                     )}
@@ -102,9 +172,9 @@ export default function GalleryPage() {
 
                                 {/* Actions Overlay */}
                                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-                                    <Link href={`/canvas/${artwork.sketchId}`}>
+                                    <Link href={`/canvas/${artwork.sketch_id}`}>
                                         <Button variant="primary" size="sm">
-                                            {artwork.completedAt ? "View" : "Continue"}
+                                            {artwork.completed_at ? "View" : "Continue"}
                                         </Button>
                                     </Link>
                                 </div>
@@ -112,12 +182,14 @@ export default function GalleryPage() {
 
                             {/* Info */}
                             <div className="p-4 space-y-2">
-                                <h3 className="font-headline font-bold text-lg">{artwork.title}</h3>
+                                <h3 className="font-headline font-bold text-lg">
+                                    {getSketchTitle(artwork.sketch_id)}
+                                </h3>
                                 <div className="flex items-center justify-between text-sm text-on-surface-variant">
-                                    <span>Started {formatDate(artwork.createdAt)}</span>
-                                    {artwork.completedAt && (
+                                    <span>Started {formatDate(artwork.created_at)}</span>
+                                    {artwork.completed_at && (
                                         <span className="text-green-600">
-                                            Done {formatDate(artwork.completedAt)}
+                                            Done {formatDate(artwork.completed_at)}
                                         </span>
                                     )}
                                 </div>
@@ -133,7 +205,7 @@ export default function GalleryPage() {
                         Your gallery is empty
                     </h3>
                     <p className="text-on-surface-variant mb-2">
-                        Saved artworks will appear here when you color and save sketches.
+                        Start coloring sketches and they will appear here automatically.
                     </p>
                     <p className="text-sm text-on-surface-variant mb-6">
                         You've completed {totalSketches} {totalSketches === 1 ? 'sketch' : 'sketches'} so far!
@@ -145,23 +217,23 @@ export default function GalleryPage() {
             )}
 
             {/* Stats - Only show when there are artworks */}
-            {savedArtworks.length > 0 && (
+            {artworks.length > 0 && (
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
                     <Card variant="filled" className="text-center">
                         <p className="text-2xl sm:text-3xl font-headline font-bold text-primary">
-                            {savedArtworks.length}
+                            {artworks.length}
                         </p>
-                        <p className="text-sm text-on-surface-variant">Saved Artworks</p>
+                        <p className="text-sm text-on-surface-variant">Total Artworks</p>
                     </Card>
                     <Card variant="filled" className="text-center">
                         <p className="text-2xl sm:text-3xl font-headline font-bold text-green-600">
-                            {savedArtworks.filter((a) => a.completedAt).length}
+                            {artworks.filter((a) => a.completed_at).length}
                         </p>
                         <p className="text-sm text-on-surface-variant">Completed</p>
                     </Card>
                     <Card variant="filled" className="text-center">
                         <p className="text-2xl sm:text-3xl font-headline font-bold text-yellow-600">
-                            {savedArtworks.filter((a) => !a.completedAt).length}
+                            {artworks.filter((a) => !a.completed_at).length}
                         </p>
                         <p className="text-sm text-on-surface-variant">In Progress</p>
                     </Card>

@@ -4,9 +4,10 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Card, Button } from "@/components/ui";
+import { Card, Button, ColoredSketchPreview, calculateProgress } from "@/components/ui";
 import { Category, Difficulty, Sketch } from "@/types";
 import { Icons } from "@/lib/icons";
+import { useSketchProgress } from "@/hooks";
 
 // Real sketch data with SVG files
 const sampleSketches: Sketch[] = [
@@ -1466,6 +1467,9 @@ function LibraryContent() {
     const [selectedCategory, setSelectedCategory] = useState<Category | "all">(categoryParam || "all");
     const [sortBy, setSortBy] = useState<"popularity" | "newest" | "difficulty">("popularity");
     const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+    
+    // Fetch user's sketch progress
+    const { progressMap, isLoading: progressLoading } = useSketchProgress();
 
     // Update selected category when URL parameter changes
     useEffect(() => {
@@ -1477,6 +1481,23 @@ function LibraryContent() {
     const filteredSketches = sampleSketches.filter(
         (sketch) => selectedCategory === "all" || sketch.category === selectedCategory
     );
+
+    // Helper to get progress status for a sketch
+    const getProgressStatus = (sketchId: string) => {
+        const progress = progressMap[sketchId];
+        if (!progress) return "not-started";
+        if (progress.completed_at) return "completed";
+        const fillCount = Object.keys(progress.fills || {}).filter(k => k !== "background").length;
+        return fillCount > 0 ? "in-progress" : "not-started";
+    };
+
+    // Helper to get button text based on progress
+    const getButtonText = (sketchId: string) => {
+        const status = getProgressStatus(sketchId);
+        if (status === "completed") return "View Artwork";
+        if (status === "in-progress") return "Continue";
+        return "Start Coloring";
+    };
 
     return (
         <div className="space-y-6 pb-20 lg:pb-0">
@@ -1558,7 +1579,12 @@ function LibraryContent() {
                     ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
                     : "flex flex-col gap-4"
             }>
-                {filteredSketches.map((sketch) => (
+                {filteredSketches.map((sketch) => {
+                    const progress = progressMap[sketch.id];
+                    const status = getProgressStatus(sketch.id);
+                    const hasProgress = progress && Object.keys(progress.fills || {}).length > 0;
+                    
+                    return (
                     <Card
                         key={sketch.id}
                         variant="elevated"
@@ -1570,15 +1596,34 @@ function LibraryContent() {
                             {/* Thumbnail */}
                             <div className={`relative bg-surface-container-low flex items-center justify-center ${viewMode === "list" ? "w-32 sm:w-48 shrink-0" : "aspect-square"
                                 }`}>
-                                <Image
-                                    src={sketch.thumbnail}
-                                    alt={sketch.title}
-                                    fill
-                                    className="object-contain p-4"
-                                />
+                                {hasProgress ? (
+                                    <ColoredSketchPreview
+                                        sketchPath={sketch.thumbnail}
+                                        fills={progress.fills}
+                                        className="absolute inset-0 p-4"
+                                    />
+                                ) : (
+                                    <Image
+                                        src={sketch.thumbnail}
+                                        alt={sketch.title}
+                                        fill
+                                        className="object-contain p-4"
+                                    />
+                                )}
                                 {/* Badges */}
                                 <div className="absolute top-1 sm:top-2 right-1 sm:right-2 flex gap-1 flex-wrap justify-end max-w-[calc(100%-2rem)]">
-                                    {sketch.isNew && (
+                                    {/* Progress Badge */}
+                                    {status === "completed" && (
+                                        <span className="bg-green-500 text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
+                                            ✓ Done
+                                        </span>
+                                    )}
+                                    {status === "in-progress" && (
+                                        <span className="bg-yellow-500 text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
+                                            In Progress
+                                        </span>
+                                    )}
+                                    {status === "not-started" && sketch.isNew && (
                                         <span className="bg-primary text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
                                             NEW
                                         </span>
@@ -1616,13 +1661,18 @@ function LibraryContent() {
                                         ))}
                                     </div>
                                 )}
-                                <Button variant="primary" size="sm" className="w-full text-xs sm:text-sm">
-                                    Start Coloring
+                                <Button 
+                                    variant={status === "completed" ? "secondary" : "primary"} 
+                                    size="sm" 
+                                    className="w-full text-xs sm:text-sm"
+                                >
+                                    {getButtonText(sketch.id)}
                                 </Button>
                             </div>
                         </Link>
                     </Card>
-                ))}
+                    );
+                })}
             </div>
 
             {/* Pagination */}
