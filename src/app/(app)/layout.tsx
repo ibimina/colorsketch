@@ -17,6 +17,7 @@ const navItems = [
     { href: "/library", label: "Library", Icon: Icons.Library },
     { href: "/favorites", label: "Favorites", Icon: Icons.Heart },
     { href: "/gallery", label: "Gallery", Icon: Icons.Gallery },
+    { href: "/leaderboard", label: "Leaderboard", Icon: Icons.Trophy, desktopOnly: true },
     { href: "/settings", label: "Settings", Icon: Icons.Settings },
 ];
 
@@ -167,7 +168,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                 {/* Mobile Bottom Nav */}
                 <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-surface glass border-t border-surface-variant/30 px-4 py-2 z-50">
                     <div className="flex justify-around">
-                        {navItems.slice(0, 5).map((item) => {
+                        {navItems.filter(item => !item.desktopOnly).slice(0, 5).map((item) => {
                             const isActive = pathname === item.href ||
                                 (item.href !== "/explore" && pathname.startsWith(item.href));
 

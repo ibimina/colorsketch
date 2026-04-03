@@ -21,7 +21,8 @@ import {
     X,
     ChevronRight,
     ArrowLeft,
-    Share2
+    Share2,
+    Trophy
 } from 'lucide-react';
 
 export const Icons = {
@@ -48,6 +49,7 @@ export const Icons = {
     Close: X,
     ChevronRight,
     Back: ArrowLeft,
+    Trophy,
     Share: Share2
 };
 
