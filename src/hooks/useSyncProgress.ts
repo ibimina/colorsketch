@@ -4,6 +4,35 @@ import { useEffect, useRef, useCallback, useState } from "react";
 import { useProgressStore } from "@/stores/progressStore";
 import { createClient } from "@/lib/supabase/client";
 
+// Helper to get local date in ISO format (YYYY-MM-DD)
+const getLocalISODate = () => {
+  const date = new Date();
+  return date.getFullYear() + '-' + 
+    String(date.getMonth() + 1).padStart(2, '0') + '-' + 
+    String(date.getDate()).padStart(2, '0');
+};
+
+// Helper to convert old date formats to ISO format
+const migrateToISODate = (dateStr: string): string => {
+  // Already in ISO format (YYYY-MM-DD)
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    return dateStr;
+  }
+  // Try to parse old format like "Thu Apr 03 2026"
+  try {
+    const parsed = new Date(dateStr);
+    if (!isNaN(parsed.getTime())) {
+      return parsed.getFullYear() + '-' + 
+        String(parsed.getMonth() + 1).padStart(2, '0') + '-' + 
+        String(parsed.getDate()).padStart(2, '0');
+    }
+  } catch {
+    // Fall through to default
+  }
+  // Fallback to today
+  return getLocalISODate();
+};
+
 // Inline debounce hook to avoid import issues
 function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = useState<T>(value);
@@ -85,6 +114,11 @@ export function useSyncProgress() {
             progress.total_xp_earned > store.totalXPEarned ||
             progress.level > store.level;
 
+          // Migrate server date to ISO format if needed
+          const serverDate = progress.last_active_date || '';
+          const migratedDate = migrateToISODate(serverDate);
+          const needsDateMigration = serverDate !== migratedDate;
+
           if (shouldUpdate) {
             useProgressStore.setState({
               level: Math.max(progress.level, store.level),
@@ -102,8 +136,26 @@ export function useSyncProgress() {
                 progress.total_sketches,
                 store.totalSketches,
               ),
-              lastActiveDate: progress.last_active_date || store.lastActiveDate,
+              lastActiveDate: migratedDate || store.lastActiveDate,
             });
+          }
+
+          // Force sync if date format needs migration in database
+          if (needsDateMigration) {
+            const currentStore = useProgressStore.getState();
+            await supabase.from("user_progress").upsert(
+              {
+                user_id: user.id,
+                level: currentStore.level,
+                xp: currentStore.xp,
+                xp_to_next_level: currentStore.xpToNextLevel,
+                total_xp_earned: currentStore.totalXPEarned,
+                streak: currentStore.streak,
+                last_active_date: migratedDate,
+                total_sketches: currentStore.totalSketches,
+              },
+              { onConflict: "user_id" }
+            );
           }
         }
 
