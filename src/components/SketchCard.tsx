@@ -8,7 +8,7 @@ import { Sketch } from "@/types";
 import { SketchProgressData } from "@/hooks/useSketchProgress";
 import { notify } from "@/stores/notificationsStore";
 import {
-    PREMIUM_UNLOCK_LEVEL,
+    getSketchUnlockLevel,
     getProgressStatus,
     hasSketchProgress,
     isSketchLocked,
@@ -48,7 +48,8 @@ export function SketchCard({
     const status = getProgressStatus(sketch.id, progressMap);
     const hasProgress = hasSketchProgress(sketch.id, progressMap);
     const isLocked = isSketchLocked(sketch, userLevel);
-    const buttonText = getButtonText(sketch.id, isLocked, progressMap);
+    const buttonText = getButtonText(sketch, isLocked, progressMap);
+    const unlockLevel = getSketchUnlockLevel(sketch);
 
     const handleFavoriteClick = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -59,7 +60,7 @@ export function SketchCard({
     const handleLinkClick = (e: React.MouseEvent) => {
         if (isLocked) {
             e.preventDefault();
-            notify.info("Premium Sketch", `Reach Level ${PREMIUM_UNLOCK_LEVEL} to unlock this sketch!`);
+            notify.info("Premium Sketch", `Reach Level ${unlockLevel} to unlock this sketch!`);
         }
     };
 
@@ -119,7 +120,7 @@ export function SketchCard({
                         <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-10 rounded-lg">
                             <div className="text-center text-white">
                                 <Lock className="w-8 h-8 mx-auto mb-1" />
-                                <p className="text-xs font-medium">Level {PREMIUM_UNLOCK_LEVEL}</p>
+                                <p className="text-xs font-medium">Level {unlockLevel}</p>
                             </div>
                         </div>
                     )}

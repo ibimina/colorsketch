@@ -6,8 +6,18 @@ import { SketchProgressData } from "@/hooks/useSketchProgress";
 // ============================================
 
 /**
- * Level required to unlock premium (Featured/Editor's Choice) sketches
+ * Base unlock levels for premium sketches
+ * - Featured (⭐): Level 3
+ * - Editor's Choice (👑): Level 5  
+ * - Both (⭐👑): Level 8
  */
+export const UNLOCK_LEVELS = {
+    FEATURED: 3,
+    EDITOR_CHOICE: 5,
+    BOTH: 8,
+} as const;
+
+/** @deprecated Use getSketchUnlockLevel() instead */
 export const PREMIUM_UNLOCK_LEVEL = 5;
 
 // ============================================
@@ -53,10 +63,36 @@ export function isPremiumSketch(sketch: Sketch): boolean {
 }
 
 /**
+ * Get the unlock level required for a sketch
+ * Returns 0 for non-premium sketches (always unlocked)
+ */
+export function getSketchUnlockLevel(sketch: Sketch): number {
+    // If sketch has explicit unlock level, use it
+    if (sketch.unlockLevel !== undefined) {
+        return sketch.unlockLevel;
+    }
+    
+    // Calculate based on premium status
+    const isFeatured = Boolean(sketch.isFeatured);
+    const isEditorChoice = Boolean(sketch.isEditorChoice);
+    
+    if (isFeatured && isEditorChoice) {
+        return UNLOCK_LEVELS.BOTH; // Level 8
+    } else if (isEditorChoice) {
+        return UNLOCK_LEVELS.EDITOR_CHOICE; // Level 5
+    } else if (isFeatured) {
+        return UNLOCK_LEVELS.FEATURED; // Level 3
+    }
+    
+    return 0; // Not premium, always unlocked
+}
+
+/**
  * Check if a sketch is locked for a user based on their level
  */
 export function isSketchLocked(sketch: Sketch, userLevel: number): boolean {
-    return isPremiumSketch(sketch) && userLevel < PREMIUM_UNLOCK_LEVEL;
+    const requiredLevel = getSketchUnlockLevel(sketch);
+    return requiredLevel > 0 && userLevel < requiredLevel;
 }
 
 // ============================================
@@ -67,13 +103,16 @@ export function isSketchLocked(sketch: Sketch, userLevel: number): boolean {
  * Get appropriate button text based on sketch status
  */
 export function getButtonText(
-    sketchId: string,
+    sketch: Sketch,
     isLocked: boolean,
     progressMap: Record<string, SketchProgressData>
 ): string {
-    if (isLocked) return `🔒 Unlock at Level ${PREMIUM_UNLOCK_LEVEL}`;
+    if (isLocked) {
+        const unlockLevel = getSketchUnlockLevel(sketch);
+        return `🔒 Unlock at Level ${unlockLevel}`;
+    }
     
-    const status = getProgressStatus(sketchId, progressMap);
+    const status = getProgressStatus(sketch.id, progressMap);
     switch (status) {
         case "completed":
             return "View Artwork";

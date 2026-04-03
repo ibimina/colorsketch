@@ -37,6 +37,8 @@ export interface Sketch {
   isFeatured?: boolean;
   isNew?: boolean;
   isEditorChoice?: boolean;
+  /** Level required to unlock (for premium sketches). Auto-calculated if not set. */
+  unlockLevel?: number;
   artist?: Artist;
   createdAt: Date;
   remixCount?: number;
