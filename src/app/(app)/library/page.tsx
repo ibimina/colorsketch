@@ -9,8 +9,11 @@ import { Category, Sketch } from "@/types";
 import { Icons } from "@/lib/icons";
 import { useSketchProgress } from "@/hooks";
 import { useFavoritesStore } from "@/stores/favoritesStore";
+import { useProgressStore } from "@/stores/progressStore";
 import { notify } from "@/stores/notificationsStore";
-import { Heart } from "lucide-react";
+import { Heart, Lock } from "lucide-react";
+
+const PREMIUM_UNLOCK_LEVEL = 5;
 
 // Real sketch data with SVG files
 const sampleSketches: Sketch[] = [
@@ -1459,6 +1462,9 @@ function LibraryContent() {
     // Favorites store
     const { loadFavorites, toggle: toggleFavorite, isFavorite } = useFavoritesStore();
 
+    // User level for unlock conditions
+    const { level } = useProgressStore();
+
     // Load favorites on mount
     useEffect(() => {
         loadFavorites();
@@ -1492,8 +1498,15 @@ function LibraryContent() {
         return fillCount > 0 ? "in-progress" : "not-started";
     };
 
+    // Helper to check if sketch is locked (premium content)
+    const isSketchLocked = (sketch: Sketch): boolean => {
+        const isPremium = Boolean(sketch.isFeatured || sketch.isEditorChoice);
+        return isPremium && level < PREMIUM_UNLOCK_LEVEL;
+    };
+
     // Helper to get button text based on progress
-    const getButtonText = (sketchId: string) => {
+    const getButtonText = (sketchId: string, isLocked: boolean) => {
+        if (isLocked) return `🔒 Unlock at Level ${PREMIUM_UNLOCK_LEVEL}`;
         const status = getProgressStatus(sketchId);
         if (status === "completed") return "View Artwork";
         if (status === "in-progress") return "Continue";
@@ -1585,6 +1598,7 @@ function LibraryContent() {
                     const status = getProgressStatus(sketch.id);
                     const hasProgress = progress && Object.keys(progress.fills || {}).length > 0;
                     const favorited = isFavorite(sketch.id);
+                    const isLocked = isSketchLocked(sketch);
 
                     return (
                         <Card
@@ -1594,7 +1608,16 @@ function LibraryContent() {
                             className={`overflow-hidden transition-transform ${viewMode === "list" ? "flex flex-row" : ""
                                 }`}
                         >
-                            <Link href={`/canvas/${sketch.id}`} className={`${viewMode === "list" ? "flex w-full min-w-0" : "block"} hover:scale-[1.01] transition-transform`}>
+                            <Link 
+                                href={isLocked ? "#" : `/canvas/${sketch.id}`} 
+                                onClick={(e) => {
+                                    if (isLocked) {
+                                        e.preventDefault();
+                                        notify.info("Premium Sketch", `Reach Level ${PREMIUM_UNLOCK_LEVEL} to unlock this sketch!`);
+                                    }
+                                }}
+                                className={`${viewMode === "list" ? "flex w-full min-w-0" : "block"} hover:scale-[1.01] transition-transform ${isLocked ? "cursor-not-allowed" : ""}`}
+                            >
                                 {/* Thumbnail */}
                                 <div className={`relative bg-surface-container-low flex items-center justify-center ${viewMode === "list" ? "w-32 sm:w-48 shrink-0" : "aspect-square"
                                     }`}>
@@ -1624,14 +1647,17 @@ function LibraryContent() {
                                     >
                                         <Heart className={`w-4 h-4 ${favorited ? "fill-current" : ""}`} />
                                     </button>
+                                    {/* Lock Overlay for Premium Sketches */}
+                                    {isLocked && (
+                                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-10 rounded-lg">
+                                            <div className="text-center text-white">
+                                                <Lock className="w-8 h-8 mx-auto mb-1" />
+                                                <p className="text-xs font-medium">Level {PREMIUM_UNLOCK_LEVEL}</p>
+                                            </div>
+                                        </div>
+                                    )}
                                     {/* Badges */}
                                     <div className="absolute top-1 sm:top-2 right-1 sm:right-2 flex gap-1 flex-wrap justify-end max-w-[calc(100%-2rem)]">
-                                        {/* Progress Badge */}
-                                        {status === "completed" && (
-                                            <span className="bg-green-500 text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
-                                                ✓ Done
-                                            </span>
-                                        )}
                                         {status === "in-progress" && (
                                             <span className="bg-yellow-500 text-white text-xs font-headline font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
                                                 In Progress
@@ -1680,11 +1706,11 @@ function LibraryContent() {
                                         </div>
                                     )}
                                     <Button
-                                        variant={status === "completed" ? "secondary" : "primary"}
+                                        variant={isLocked ? "secondary" : status === "completed" ? "secondary" : "primary"}
                                         size="sm"
-                                        className="w-full text-xs sm:text-sm"
+                                        className={`w-full text-xs sm:text-sm ${isLocked ? "opacity-70" : ""}`}
                                     >
-                                        {getButtonText(sketch.id)}
+                                        {getButtonText(sketch.id, isLocked)}
                                     </Button>
                                 </div>
                             </Link>
