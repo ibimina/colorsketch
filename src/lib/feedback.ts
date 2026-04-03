@@ -27,6 +27,127 @@ function getAudioContext(): AudioContext | null {
 }
 
 /**
+ * Ambient Music Player - Generates relaxing continuous soundscape
+ */
+class AmbientMusicPlayer {
+  private ctx: AudioContext | null = null;
+  private masterGain: GainNode | null = null;
+  private oscillators: OscillatorNode[] = [];
+  private isPlaying = false;
+  private volume = 0.15;
+
+  start() {
+    if (this.isPlaying) return;
+    
+    this.ctx = getAudioContext();
+    if (!this.ctx) return;
+
+    // Resume context if suspended
+    if (this.ctx.state === "suspended") {
+      this.ctx.resume();
+    }
+
+    this.masterGain = this.ctx.createGain();
+    this.masterGain.gain.setValueAtTime(0, this.ctx.currentTime);
+    this.masterGain.gain.linearRampToValueAtTime(this.volume, this.ctx.currentTime + 2);
+    this.masterGain.connect(this.ctx.destination);
+
+    // Create layered ambient pads - peaceful drone
+    const baseFreqs = [
+      130.81, // C3
+      196.00, // G3
+      261.63, // C4
+      329.63, // E4
+    ];
+
+    baseFreqs.forEach((freq, i) => {
+      // Main oscillator
+      const osc = this.ctx!.createOscillator();
+      const oscGain = this.ctx!.createGain();
+      
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, this.ctx!.currentTime);
+      
+      // Gentle LFO for subtle movement
+      const lfo = this.ctx!.createOscillator();
+      const lfoGain = this.ctx!.createGain();
+      lfo.type = "sine";
+      lfo.frequency.setValueAtTime(0.1 + i * 0.05, this.ctx!.currentTime); // Very slow
+      lfoGain.gain.setValueAtTime(2, this.ctx!.currentTime); // Subtle pitch variation
+      lfo.connect(lfoGain);
+      lfoGain.connect(osc.frequency);
+      
+      // Volume varies by layer
+      oscGain.gain.setValueAtTime(0.25 - i * 0.05, this.ctx!.currentTime);
+      
+      osc.connect(oscGain);
+      oscGain.connect(this.masterGain!);
+      
+      osc.start();
+      lfo.start();
+      
+      this.oscillators.push(osc, lfo);
+    });
+
+    // Add soft filtered noise for texture
+    const bufferSize = 2 * this.ctx.sampleRate;
+    const noiseBuffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+    const output = noiseBuffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      output[i] = Math.random() * 2 - 1;
+    }
+    
+    const noise = this.ctx.createBufferSource();
+    noise.buffer = noiseBuffer;
+    noise.loop = true;
+    
+    const noiseFilter = this.ctx.createBiquadFilter();
+    noiseFilter.type = "lowpass";
+    noiseFilter.frequency.setValueAtTime(200, this.ctx.currentTime);
+    
+    const noiseGain = this.ctx.createGain();
+    noiseGain.gain.setValueAtTime(0.03, this.ctx.currentTime);
+    
+    noise.connect(noiseFilter);
+    noiseFilter.connect(noiseGain);
+    noiseGain.connect(this.masterGain);
+    noise.start();
+
+    this.isPlaying = true;
+  }
+
+  stop() {
+    if (!this.isPlaying || !this.masterGain || !this.ctx) return;
+
+    // Fade out
+    this.masterGain.gain.linearRampToValueAtTime(0, this.ctx.currentTime + 1);
+
+    // Stop oscillators after fade
+    setTimeout(() => {
+      this.oscillators.forEach(osc => {
+        try { osc.stop(); } catch {}
+      });
+      this.oscillators = [];
+      this.isPlaying = false;
+    }, 1100);
+  }
+
+  setVolume(vol: number) {
+    this.volume = Math.max(0, Math.min(1, vol));
+    if (this.masterGain && this.ctx) {
+      this.masterGain.gain.linearRampToValueAtTime(this.volume, this.ctx.currentTime + 0.1);
+    }
+  }
+
+  getIsPlaying() {
+    return this.isPlaying;
+  }
+}
+
+// Singleton instance
+export const ambientMusic = new AmbientMusicPlayer();
+
+/**
  * Play a synthesized sound effect using Web Audio API
  * @param soundName - The name of the sound to play
  */

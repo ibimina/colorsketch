@@ -22,7 +22,9 @@ import {
     ChevronRight,
     ArrowLeft,
     Share2,
-    Trophy
+    Trophy,
+    Music,
+    VolumeX
 } from 'lucide-react';
 
 export const Icons = {
@@ -50,7 +52,9 @@ export const Icons = {
     ChevronRight,
     Back: ArrowLeft,
     Trophy,
-    Share: Share2
+    Share: Share2,
+    Music,
+    MusicOff: VolumeX
 };
 
 // Keep emojis for decorative/fun elements

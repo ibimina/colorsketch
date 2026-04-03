@@ -10,7 +10,7 @@ import { usePreferencesStore } from "@/stores/preferencesStore";
 import { useSyncSketch } from "@/hooks/useSyncSketch";
 import { DEFAULT_PALETTE } from "@/types";
 import { Icons } from "@/lib/icons";
-import { provideFeedback } from "@/lib/feedback";
+import { provideFeedback, ambientMusic } from "@/lib/feedback";
 import html2canvas from "html2canvas";
 
 // Sketch metadata
@@ -40,6 +40,7 @@ export default function CanvasPage({ params }: CanvasPageProps) {
     const [isSaving, setIsSaving] = useState(false);
     const [isSharing, setIsSharing] = useState(false);
     const [isDrawing, setIsDrawing] = useState(false);
+    const [isMusicPlaying, setIsMusicPlaying] = useState(false);
     const lastPos = useRef<{ x: number; y: number } | null>(null);
 
     const { addToast } = useToastStore();
@@ -571,6 +572,24 @@ export default function CanvasPage({ params }: CanvasPageProps) {
         addToast('Canvas reset!', 'info');
     };
 
+    // Toggle ambient music
+    const toggleMusic = () => {
+        if (isMusicPlaying) {
+            ambientMusic.stop();
+            setIsMusicPlaying(false);
+        } else {
+            ambientMusic.start();
+            setIsMusicPlaying(true);
+        }
+    };
+
+    // Stop music when leaving the page
+    useEffect(() => {
+        return () => {
+            ambientMusic.stop();
+        };
+    }, []);
+
     // Get sketch title based on ID (mock data)
     const sketchTitle = sketch.title;
 
@@ -592,6 +611,15 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                 </div>
 
                 <div className="flex items-center gap-2 sm:gap-3">
+                    <IconButton
+                        icon={isMusicPlaying 
+                            ? <Icons.Music className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                            : <Icons.MusicOff className="w-4 h-4 sm:w-5 sm:h-5" />
+                        }
+                        variant="ghost"
+                        label={isMusicPlaying ? "Stop music" : "Play ambient music"}
+                        onClick={toggleMusic}
+                    />
                     <IconButton
                         icon={<Icons.Export className="w-4 h-4 sm:w-5 sm:h-5" />}
                         variant="ghost"
