@@ -34,6 +34,7 @@ export const Icons = {
     Notification: Bell,
     Profile: User,
     Like: Heart,
+    Heart,
     Bookmark,
     Export: Download,
     Save,

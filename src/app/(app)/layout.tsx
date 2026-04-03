@@ -15,6 +15,7 @@ const navItems = [
     { href: "/home", label: "Home", Icon: Icons.Home },
     { href: "/explore", label: "Explore", Icon: Icons.Search },
     { href: "/library", label: "Library", Icon: Icons.Library },
+    { href: "/favorites", label: "Favorites", Icon: Icons.Heart },
     { href: "/gallery", label: "Gallery", Icon: Icons.Gallery },
     { href: "/settings", label: "Settings", Icon: Icons.Settings },
 ];
