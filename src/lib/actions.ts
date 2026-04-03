@@ -524,8 +524,7 @@ export async function getLeaderboard(
       total_xp_earned,
       streak,
       total_sketches,
-      last_active_date,
-      user_profiles(name, avatar_url)
+      last_active_date
     `,
     )
     .order("total_xp_earned", { ascending: false })
@@ -554,11 +553,23 @@ export async function getLeaderboard(
     return [];
   }
 
+  if (!data || data.length === 0) {
+    return [];
+  }
+
+  // Fetch profiles separately for all users in the leaderboard
+  const userIds = data.map(entry => entry.user_id);
+  const { data: profiles } = await supabase
+    .from("user_profiles")
+    .select("id, name, avatar_url")
+    .in("id", userIds);
+
+  const profileMap = new Map(
+    profiles?.map(p => [p.id, { name: p.name, avatar_url: p.avatar_url }]) || []
+  );
+
   return data.map((entry, index) => {
-    // Handle both array and object cases for the join
-    const profile = Array.isArray(entry.user_profiles)
-      ? entry.user_profiles[0]
-      : entry.user_profiles;
+    const profile = profileMap.get(entry.user_id);
 
     return {
       rank: index + 1,
