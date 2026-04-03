@@ -1459,8 +1459,11 @@ function LibraryContent() {
     // Fetch user's sketch progress
     const { progressMap } = useSketchProgress();
 
-    // Favorites store
-    const { loadFavorites, toggle: toggleFavorite, isFavorite } = useFavoritesStore();
+    // Favorites store - subscribe to favorites array for reactivity
+    const { favorites, loadFavorites, toggle: toggleFavorite } = useFavoritesStore();
+    
+    // Check if sketch is favorited (reactive)
+    const isFavorited = (sketchId: string) => favorites.includes(sketchId);
 
     // User level for unlock conditions
     const { level } = useProgressStore();
@@ -1474,7 +1477,7 @@ function LibraryContent() {
     const handleFavoriteClick = (e: React.MouseEvent, sketchId: string, sketchTitle: string) => {
         e.preventDefault();
         e.stopPropagation();
-        const wasFavorited = isFavorite(sketchId);
+        const wasFavorited = isFavorited(sketchId);
         toggleFavorite(sketchId);
         notify.success(
             wasFavorited ? "Removed from favorites" : "Added to favorites",
@@ -1597,7 +1600,7 @@ function LibraryContent() {
                     const progress = progressMap[sketch.id];
                     const status = getProgressStatus(sketch.id);
                     const hasProgress = progress && Object.keys(progress.fills || {}).length > 0;
-                    const favorited = isFavorite(sketch.id);
+                    const favorited = isFavorited(sketch.id);
                     const isLocked = isSketchLocked(sketch);
 
                     return (

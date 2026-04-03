@@ -8,6 +8,8 @@ import { SyncProvider } from "@/components/providers/SyncProvider";
 import { createClient } from "@/lib/supabase/client";
 import { useProgressStore } from "@/stores/progressStore";
 import { ToastContainer } from "@/components/Toast";
+import { useRouter } from "next/navigation";
+import { LogOut } from "lucide-react";
 
 const navItems = [
     { href: "/home", label: "Home", Icon: Icons.Home },
@@ -29,8 +31,16 @@ function getLevelTitle(level: number): string {
 
 export default function AppLayout({ children }: { children: ReactNode }) {
     const pathname = usePathname();
+    const router = useRouter();
     const [userName, setUserName] = useState<string | null>(null);
     const { level } = useProgressStore();
+
+    // Logout handler
+    const handleLogout = async () => {
+        const supabase = createClient();
+        await supabase.auth.signOut();
+        router.push("/login");
+    };
 
     // Fetch user data from Supabase
     useEffect(() => {
@@ -62,9 +72,9 @@ export default function AppLayout({ children }: { children: ReactNode }) {
         <SyncProvider>
             <div className="min-h-screen flex bg-surface overflow-x-hidden">
                 {/* Sidebar - Desktop */}
-                <aside className="hidden lg:flex flex-col w-64 h-screen sticky top-0 bg-surface-container-low p-6 gap-6 overflow-y-auto">
+                <aside className="hidden lg:flex flex-col w-64 h-screen sticky top-0 bg-surface-container-low p-6 gap-6">
                     {/* Logo */}
-                    <div className="mb-4">
+                    <div className="shrink-0 mb-4">
                         <Link href="/explore" className="block">
                             <span className="text-2xl font-bold text-primary font-headline">
                                 ColorSketch
@@ -76,7 +86,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                     </div>
 
                     {/* Navigation */}
-                    <nav className="flex-1 space-y-2">
+                    <nav className="flex-1 space-y-2 overflow-y-auto">
                         {navItems.map((item) => {
                             const isActive = pathname === item.href ||
                                 (item.href !== "/explore" && pathname.startsWith(item.href));
@@ -104,18 +114,27 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                     </nav>
 
                     {/* User Profile */}
-                    <div className="flex items-center gap-3 pt-4 border-t border-surface-variant/30">
-                        <div className="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
-                            <Icons.Profile className="w-5 h-5 text-primary" />
+                    <div className="shrink-0 pt-4 border-t border-surface-variant/30">
+                        <div className="flex items-center gap-3 mb-3">
+                            <div className="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                <Icons.Profile className="w-5 h-5 text-primary" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                                <p className="font-headline font-bold text-sm truncate">
+                                    {userName ?? "Guest"}
+                                </p>
+                                <p className="text-xs text-on-surface-variant">
+                                    Level {level} • {getLevelTitle(level)}
+                                </p>
+                            </div>
                         </div>
-                        <div className="flex-1 min-w-0">
-                            <p className="font-headline font-bold text-sm truncate">
-                                {userName ?? "Guest"}
-                            </p>
-                            <p className="text-xs text-on-surface-variant">
-                                Level {level} • {getLevelTitle(level)}
-                            </p>
-                        </div>
+                        <button
+                            onClick={handleLogout}
+                            className="flex items-center gap-2 w-full px-4 py-2 text-sm text-on-surface-variant hover:text-error hover:bg-error/10 rounded-lg transition-colors"
+                        >
+                            <LogOut className="w-4 h-4" />
+                            <span>Sign Out</span>
+                        </button>
                     </div>
                 </aside>
 
