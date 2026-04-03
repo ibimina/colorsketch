@@ -11,6 +11,8 @@ import { useSyncSketch } from "@/hooks/useSyncSketch";
 import { DEFAULT_PALETTE } from "@/types";
 import { Icons } from "@/lib/icons";
 import { provideFeedback, ambientMusic } from "@/lib/feedback";
+import { PublishModal } from "@/components/PublishModal";
+import { saveArtwork } from "@/lib/actions";
 import html2canvas from "html2canvas";
 
 // Sketch metadata
@@ -41,6 +43,8 @@ export default function CanvasPage({ params }: CanvasPageProps) {
     const [isSharing, setIsSharing] = useState(false);
     const [isDrawing, setIsDrawing] = useState(false);
     const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+    const [showPublishModal, setShowPublishModal] = useState(false);
+    const [isPublishing, setIsPublishing] = useState(false);
     const lastPos = useRef<{ x: number; y: number } | null>(null);
 
     const { addToast } = useToastStore();
@@ -562,6 +566,88 @@ export default function CanvasPage({ params }: CanvasPageProps) {
         }
     };
 
+    const handlePublishToGallery = async (isPublic: boolean) => {
+        if (!artworkRef.current || isPublishing) return;
+
+        setIsPublishing(true);
+
+        // Temporarily reset zoom for consistent image
+        const originalZoom = zoom;
+        setZoom(100);
+        await new Promise(resolve => setTimeout(resolve, 250));
+
+        try {
+            const canvas = await html2canvas(artworkRef.current, {
+                backgroundColor: '#ffffff',
+                scale: 2,
+                logging: false,
+            });
+
+            // Convert to base64 data URL
+            const imageDataUrl = canvas.toDataURL('image/png');
+            
+            // Create thumbnail (smaller size)
+            const thumbnailCanvas = document.createElement('canvas');
+            thumbnailCanvas.width = 200;
+            thumbnailCanvas.height = 200;
+            const thumbCtx = thumbnailCanvas.getContext('2d');
+            if (thumbCtx) {
+                thumbCtx.drawImage(canvas, 0, 0, 200, 200);
+            }
+            const thumbnailDataUrl = thumbnailCanvas.toDataURL('image/jpeg', 0.8);
+
+            // Save to database
+            const result = await saveArtwork(id, imageDataUrl, thumbnailDataUrl, isPublic);
+
+            if (result.error) {
+                throw new Error(result.error);
+            }
+
+            // Mark as complete
+            await markComplete();
+
+            addToast(
+                isPublic 
+                    ? '🎨 Artwork published to community!' 
+                    : '💾 Artwork saved to your gallery!', 
+                'success'
+            );
+
+            addXP(isPublic ? 75 : 50); // More XP for sharing publicly
+            incrementSketches();
+
+            // Check for new achievements
+            const newAchievements = checkAndUnlockAchievements();
+            newAchievements.forEach((achievement) => {
+                setTimeout(() => {
+                    addToast(`🏆 Achievement Unlocked: ${achievement.title}!`, 'success');
+                }, 500);
+            });
+
+            provideFeedback({
+                haptic: hapticFeedback,
+                hapticType: 'heavy',
+                sound: soundEffects,
+                soundName: 'success',
+            });
+
+            setShowPublishModal(false);
+        } catch (error) {
+            console.error('Publish failed:', error);
+            addToast('Failed to save artwork. Please try again.', 'error');
+
+            provideFeedback({
+                haptic: hapticFeedback,
+                hapticType: 'medium',
+                sound: soundEffects,
+                soundName: 'error',
+            });
+        } finally {
+            setIsPublishing(false);
+            setZoom(originalZoom);
+        }
+    };
+
     const handleReset = () => {
         // Reset fills from store
         reset();
@@ -635,14 +721,23 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                         disabled={isSharing}
                     />
                     <Button
-                        variant="primary"
+                        variant="secondary"
                         size="sm"
                         onClick={handleSave}
                         disabled={isSaving}
                         className="px-3 sm:px-4 flex items-center whitespace-nowrap"
                     >
                         <Icons.Save className="w-4 h-4 mr-1.5 sm:mr-2 shrink-0" />
-                        <span>{isSaving ? 'Saving...' : 'Save'}</span>
+                        <span className="hidden sm:inline">{isSaving ? 'Saving...' : 'Save'}</span>
+                    </Button>
+                    <Button
+                        variant="primary"
+                        size="sm"
+                        onClick={() => setShowPublishModal(true)}
+                        className="px-3 sm:px-4 flex items-center whitespace-nowrap"
+                    >
+                        <Icons.Gallery className="w-4 h-4 mr-1.5 sm:mr-2 shrink-0" />
+                        <span className="hidden sm:inline">Gallery</span>
                     </Button>
                 </div>
             </div>
@@ -927,6 +1022,15 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                     </div>
                 </div>
             </div>
+
+            {/* Publish Modal */}
+            <PublishModal
+                isOpen={showPublishModal}
+                onClose={() => setShowPublishModal(false)}
+                onPublish={handlePublishToGallery}
+                sketchTitle={sketchTitle}
+                isPublishing={isPublishing}
+            />
         </div>
     );
 }

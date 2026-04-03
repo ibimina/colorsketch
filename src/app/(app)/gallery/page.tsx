@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Card, Button, ColoredSketchPreview } from "@/components/ui";
-import { useProgressStore } from "@/stores/progressStore";
-import { useSketchProgress, SketchProgressData } from "@/hooks";
+import Image from "next/image";
+import { Card, Button } from "@/components/ui";
+import { getSavedArtworks, toggleArtworkVisibility, deleteArtwork } from "@/lib/actions";
+import { Globe, Lock, Trash2, Eye, Loader2 } from "lucide-react";
 
-// Sketch titles mapping (same as used in library and canvas)
+// Sketch titles mapping
 const sketchTitles: Record<string, string> = {
     butterfly: "Monarch Butterfly",
     rose: "Elegant Rose",
@@ -41,32 +42,64 @@ const sketchTitles: Record<string, string> = {
     "ice-cream": "Ice Cream Cone",
 };
 
-// Helper to get sketch title
 function getSketchTitle(sketchId: string): string {
     return sketchTitles[sketchId] || sketchId.split('-').map(word =>
         word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
 }
 
-export default function GalleryPage() {
-    const [filter, setFilter] = useState<"all" | "completed" | "in-progress">("all");
-    const { totalSketches } = useProgressStore();
-    const { progressMap, isLoading } = useSketchProgress();
+interface SavedArtwork {
+    id: string;
+    sketch_id: string;
+    image_url: string;
+    thumbnail_url: string | null;
+    is_public: boolean;
+    created_at: string;
+}
 
-    // Convert progress map to array and filter
-    const artworks = useMemo(() => {
-        return Object.values(progressMap)
-            .filter((p): p is SketchProgressData => {
-                // Only include sketches that have been started (have fills)
-                const fillCount = Object.keys(p.fills || {}).filter(k => k !== "background").length;
-                return fillCount > 0;
-            })
-            .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
-    }, [progressMap]);
+export default function GalleryPage() {
+    const [artworks, setArtworks] = useState<SavedArtwork[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [filter, setFilter] = useState<"all" | "public" | "private">("all");
+    const [updatingId, setUpdatingId] = useState<string | null>(null);
+    const [deletingId, setDeletingId] = useState<string | null>(null);
+
+    useEffect(() => {
+        loadArtworks();
+    }, []);
+
+    async function loadArtworks() {
+        setIsLoading(true);
+        const data = await getSavedArtworks();
+        setArtworks(data as SavedArtwork[]);
+        setIsLoading(false);
+    }
+
+    async function handleToggleVisibility(artwork: SavedArtwork) {
+        setUpdatingId(artwork.id);
+        const result = await toggleArtworkVisibility(artwork.id, !artwork.is_public);
+        if (result.success) {
+            setArtworks(prev => prev.map(a => 
+                a.id === artwork.id ? { ...a, is_public: !a.is_public } : a
+            ));
+        }
+        setUpdatingId(null);
+    }
+
+    async function handleDelete(artworkId: string) {
+        if (!confirm("Are you sure you want to delete this artwork?")) return;
+        
+        setDeletingId(artworkId);
+        const result = await deleteArtwork(artworkId);
+        if (result.success) {
+            setArtworks(prev => prev.filter(a => a.id !== artworkId));
+        }
+        setDeletingId(null);
+    }
 
     const filteredArtworks = artworks.filter((artwork) => {
-        if (filter === "completed") return artwork.completed_at !== null;
-        if (filter === "in-progress") return artwork.completed_at === null;
+        if (filter === "public") return artwork.is_public;
+        if (filter === "private") return !artwork.is_public;
         return true;
     });
 
@@ -79,7 +112,6 @@ export default function GalleryPage() {
         if (diffDays === 0) return "today";
         if (diffDays === 1) return "yesterday";
         if (diffDays < 7) return `${diffDays} days ago`;
-        if (diffDays < 30) return `${Math.floor(diffDays / 7)} week${diffDays >= 14 ? 's' : ''} ago`;
         
         return new Intl.DateTimeFormat("en-US", {
             month: "short",
@@ -111,8 +143,8 @@ export default function GalleryPage() {
                     <h1 className="text-2xl sm:text-3xl font-headline font-bold">My Gallery</h1>
                     <p className="text-on-surface-variant mt-1">
                         {artworks.length > 0
-                            ? `${artworks.length} ${artworks.length === 1 ? 'artwork' : 'artworks'} in progress or completed`
-                            : 'Your artworks will appear here'
+                            ? `${artworks.length} saved ${artworks.length === 1 ? 'artwork' : 'artworks'}`
+                            : 'Save artworks from the canvas to see them here'
                         }
                     </p>
                 </div>
@@ -122,25 +154,25 @@ export default function GalleryPage() {
                 </Link>
             </div>
 
-            {/* Filter Tabs - Only show when there are artworks */}
+            {/* Filter Tabs */}
             {artworks.length > 0 && (
                 <div className="flex gap-2">
                     {[
                         { id: "all", label: "All" },
-                        { id: "completed", label: "Completed" },
-                        { id: "in-progress", label: "In Progress" },
+                        { id: "public", label: "Public" },
+                        { id: "private", label: "Private" },
                     ].map((tab) => (
                         <button
                             key={tab.id}
                             onClick={() => setFilter(tab.id as typeof filter)}
                             className={`
-              px-4 py-2 rounded-full font-headline font-medium text-sm
-              transition-all duration-150 soft-touch
-              ${filter === tab.id
+                                px-4 py-2 rounded-full font-headline font-medium text-sm
+                                transition-all duration-150
+                                ${filter === tab.id
                                     ? "bg-primary text-white"
                                     : "bg-surface-container-low text-on-surface-variant hover:bg-surface-container"
                                 }
-            `}
+                            `}
                         >
                             {tab.label}
                         </button>
@@ -153,52 +185,79 @@ export default function GalleryPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {filteredArtworks.map((artwork) => (
                         <Card
-                            key={artwork.sketch_id}
+                            key={artwork.id}
                             variant="elevated"
                             padding="none"
-                            className="overflow-hidden group hover:scale-[1.02] transition-transform duration-200"
+                            className="overflow-hidden group"
                         >
-                            {/* Thumbnail with colored preview */}
+                            {/* Thumbnail */}
                             <div className="relative aspect-square bg-surface-container">
-                                <ColoredSketchPreview
-                                    sketchPath={`/sketches/${artwork.sketch_id}.svg`}
-                                    fills={artwork.fills}
-                                    className="absolute inset-0"
+                                <Image
+                                    src={artwork.thumbnail_url || artwork.image_url}
+                                    alt={getSketchTitle(artwork.sketch_id)}
+                                    fill
+                                    className="object-cover"
+                                    unoptimized
                                 />
 
-                                {/* Status Badge */}
+                                {/* Visibility Badge */}
                                 <div className="absolute top-3 left-3">
-                                    {artwork.completed_at ? (
-                                        <span className="px-2 py-1 rounded-full bg-green-500 text-white text-xs font-headline font-bold">
-                                            ✓ Completed
+                                    {artwork.is_public ? (
+                                        <span className="px-2 py-1 rounded-full bg-green-500 text-white text-xs font-headline font-bold flex items-center gap-1">
+                                            <Globe className="w-3 h-3" /> Public
                                         </span>
                                     ) : (
-                                        <span className="px-2 py-1 rounded-full bg-yellow-500 text-white text-xs font-headline font-bold">
-                                            In Progress
+                                        <span className="px-2 py-1 rounded-full bg-gray-500 text-white text-xs font-headline font-bold flex items-center gap-1">
+                                            <Lock className="w-3 h-3" /> Private
                                         </span>
                                     )}
                                 </div>
 
                                 {/* Actions Overlay */}
                                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-                                    <Link href={`/canvas/${artwork.sketch_id}`}>
-                                        <Button variant="primary" size="sm">
-                                            {artwork.completed_at ? "View" : "Continue"}
-                                        </Button>
-                                    </Link>
+                                    <button
+                                        onClick={() => handleToggleVisibility(artwork)}
+                                        disabled={updatingId === artwork.id}
+                                        className="p-2 rounded-full bg-white/90 hover:bg-white transition-colors"
+                                        title={artwork.is_public ? "Make private" : "Make public"}
+                                    >
+                                        {updatingId === artwork.id ? (
+                                            <Loader2 className="w-5 h-5 animate-spin text-gray-600" />
+                                        ) : artwork.is_public ? (
+                                            <Lock className="w-5 h-5 text-gray-600" />
+                                        ) : (
+                                            <Globe className="w-5 h-5 text-gray-600" />
+                                        )}
+                                    </button>
+                                    <button
+                                        onClick={() => window.open(artwork.image_url, '_blank')}
+                                        className="p-2 rounded-full bg-white/90 hover:bg-white transition-colors"
+                                        title="View full size"
+                                    >
+                                        <Eye className="w-5 h-5 text-gray-600" />
+                                    </button>
+                                    <button
+                                        onClick={() => handleDelete(artwork.id)}
+                                        disabled={deletingId === artwork.id}
+                                        className="p-2 rounded-full bg-red-500/90 hover:bg-red-500 transition-colors"
+                                        title="Delete artwork"
+                                    >
+                                        {deletingId === artwork.id ? (
+                                            <Loader2 className="w-5 h-5 animate-spin text-white" />
+                                        ) : (
+                                            <Trash2 className="w-5 h-5 text-white" />
+                                        )}
+                                    </button>
                                 </div>
                             </div>
 
                             {/* Info */}
-                            <div className="p-4 space-y-2">
+                            <div className="p-4 space-y-1">
                                 <h3 className="font-headline font-bold text-lg">
                                     {getSketchTitle(artwork.sketch_id)}
                                 </h3>
                                 <p className="text-sm text-on-surface-variant">
-                                    {artwork.completed_at 
-                                        ? `Finished ${formatDate(artwork.completed_at)}`
-                                        : `Edited ${formatDate(artwork.updated_at)}`
-                                    }
+                                    Saved {formatDate(artwork.created_at)}
                                 </p>
                             </div>
                         </Card>
@@ -207,15 +266,13 @@ export default function GalleryPage() {
             ) : (
                 /* Empty State */
                 <Card variant="filled" className="text-center py-12 sm:py-16">
-                    <div className="text-5xl sm:text-6xl mb-4">🎨</div>
+                    <div className="text-5xl sm:text-6xl mb-4">🖼️</div>
                     <h3 className="text-lg sm:text-xl font-headline font-bold mb-2">
                         Your gallery is empty
                     </h3>
-                    <p className="text-on-surface-variant mb-2">
-                        Start coloring sketches and they will appear here automatically.
-                    </p>
-                    <p className="text-sm text-on-surface-variant mb-6">
-                        You&apos;ve completed {totalSketches} {totalSketches === 1 ? 'sketch' : 'sketches'} so far!
+                    <p className="text-on-surface-variant mb-6 max-w-md mx-auto">
+                        Complete a sketch and tap &quot;Gallery&quot; to save it here. 
+                        You can choose to keep it private or share it with the community!
                     </p>
                     <Link href="/library">
                         <Button variant="primary">Browse Sketches</Button>
@@ -223,26 +280,26 @@ export default function GalleryPage() {
                 </Card>
             )}
 
-            {/* Stats - Only show when there are artworks */}
+            {/* Stats */}
             {artworks.length > 0 && (
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
                     <Card variant="filled" className="text-center">
                         <p className="text-2xl sm:text-3xl font-headline font-bold text-primary">
                             {artworks.length}
                         </p>
-                        <p className="text-sm text-on-surface-variant">Total Artworks</p>
+                        <p className="text-sm text-on-surface-variant">Total Saved</p>
                     </Card>
                     <Card variant="filled" className="text-center">
                         <p className="text-2xl sm:text-3xl font-headline font-bold text-green-600">
-                            {artworks.filter((a) => a.completed_at).length}
+                            {artworks.filter((a) => a.is_public).length}
                         </p>
-                        <p className="text-sm text-on-surface-variant">Completed</p>
+                        <p className="text-sm text-on-surface-variant">Public</p>
                     </Card>
                     <Card variant="filled" className="text-center">
-                        <p className="text-2xl sm:text-3xl font-headline font-bold text-yellow-600">
-                            {artworks.filter((a) => !a.completed_at).length}
+                        <p className="text-2xl sm:text-3xl font-headline font-bold text-gray-600">
+                            {artworks.filter((a) => !a.is_public).length}
                         </p>
-                        <p className="text-sm text-on-surface-variant">In Progress</p>
+                        <p className="text-sm text-on-surface-variant">Private</p>
                     </Card>
                 </div>
             )}
