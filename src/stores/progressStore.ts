@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { checkAchievements, type Achievement } from "@/lib/achievements";
+import { useLevelUpStore } from "./levelUpStore";
+import { playSound } from "@/lib/feedback";
 
 interface ProgressStore {
   level: number;
@@ -36,12 +38,17 @@ export const useProgressStore = create<ProgressStore>()(
         const newTotalXP = totalXPEarned + amount;
 
         if (newXP >= xpToNextLevel) {
+          const newLevel = level + 1;
           set({
-            level: level + 1,
+            level: newLevel,
             xp: newXP - xpToNextLevel,
             xpToNextLevel: Math.floor(xpToNextLevel * 1.5),
             totalXPEarned: newTotalXP,
           });
+
+          // Trigger level-up celebration!
+          playSound("level-up");
+          useLevelUpStore.getState().triggerLevelUp(newLevel);
         } else {
           set({ xp: newXP, totalXPEarned: newTotalXP });
         }

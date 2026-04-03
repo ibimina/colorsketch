@@ -8,6 +8,7 @@ import { SyncProvider } from "@/components/providers/SyncProvider";
 import { createClient } from "@/lib/supabase/client";
 import { useProgressStore } from "@/stores/progressStore";
 import { ToastContainer } from "@/components/Toast";
+import { LevelUpCelebration } from "@/components/LevelUpCelebration";
 import { useRouter } from "next/navigation";
 import { LogOut } from "lucide-react";
 
@@ -192,6 +193,9 @@ export default function AppLayout({ children }: { children: ReactNode }) {
 
                 {/* Toast Notifications */}
                 <ToastContainer />
+                
+                {/* Level Up Celebration */}
+                <LevelUpCelebration />
             </div>
         </SyncProvider>
     );
