@@ -525,7 +525,7 @@ export async function getLeaderboard(
       streak,
       total_sketches,
       last_active_date,
-      user_profiles!inner(name, avatar_url)
+      user_profiles(name, avatar_url)
     `,
     )
     .order("total_xp_earned", { ascending: false })
