@@ -7,9 +7,38 @@ import { playSound } from "@/lib/feedback";
 // Helper to get local date in ISO format (YYYY-MM-DD)
 const getLocalISODate = () => {
   const date = new Date();
-  return date.getFullYear() + '-' + 
-    String(date.getMonth() + 1).padStart(2, '0') + '-' + 
-    String(date.getDate()).padStart(2, '0');
+  return (
+    date.getFullYear() +
+    "-" +
+    String(date.getMonth() + 1).padStart(2, "0") +
+    "-" +
+    String(date.getDate()).padStart(2, "0")
+  );
+};
+
+// Helper to convert old date formats to ISO format
+const migrateToISODate = (dateStr: string): string => {
+  // Already in ISO format (YYYY-MM-DD)
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    return dateStr;
+  }
+  // Try to parse old format like "Thu Apr 03 2026"
+  try {
+    const parsed = new Date(dateStr);
+    if (!isNaN(parsed.getTime())) {
+      return (
+        parsed.getFullYear() +
+        "-" +
+        String(parsed.getMonth() + 1).padStart(2, "0") +
+        "-" +
+        String(parsed.getDate()).padStart(2, "0")
+      );
+    }
+  } catch {
+    // Fall through to default
+  }
+  // Fallback to today
+  return getLocalISODate();
 };
 
 interface ProgressStore {
@@ -73,9 +102,12 @@ export const useProgressStore = create<ProgressStore>()(
           // Get yesterday's date in ISO format
           const yesterdayDate = new Date();
           yesterdayDate.setDate(yesterdayDate.getDate() - 1);
-          const yesterday = yesterdayDate.getFullYear() + '-' + 
-            String(yesterdayDate.getMonth() + 1).padStart(2, '0') + '-' + 
-            String(yesterdayDate.getDate()).padStart(2, '0');
+          const yesterday =
+            yesterdayDate.getFullYear() +
+            "-" +
+            String(yesterdayDate.getMonth() + 1).padStart(2, "0") +
+            "-" +
+            String(yesterdayDate.getDate()).padStart(2, "0");
           const newStreak = lastActiveDate === yesterday ? streak + 1 : 1;
           set({ streak: newStreak, lastActiveDate: today });
 
@@ -120,6 +152,22 @@ export const useProgressStore = create<ProgressStore>()(
         get().checkAndUnlockAchievements();
       },
     }),
-    { name: "colorsketch-progress" },
+    {
+      name: "colorsketch-progress",
+      version: 1,
+      migrate: (persistedState: unknown, version: number) => {
+        const state = persistedState as Record<string, unknown>;
+        if (version === 0 || !version) {
+          // Migrate lastActiveDate to ISO format
+          if (
+            state.lastActiveDate &&
+            typeof state.lastActiveDate === "string"
+          ) {
+            state.lastActiveDate = migrateToISODate(state.lastActiveDate);
+          }
+        }
+        return state as unknown as ProgressStore;
+      },
+    },
   ),
 );
