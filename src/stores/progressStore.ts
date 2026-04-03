@@ -4,6 +4,14 @@ import { checkAchievements, type Achievement } from "@/lib/achievements";
 import { useLevelUpStore } from "./levelUpStore";
 import { playSound } from "@/lib/feedback";
 
+// Helper to get local date in ISO format (YYYY-MM-DD)
+const getLocalISODate = () => {
+  const date = new Date();
+  return date.getFullYear() + '-' + 
+    String(date.getMonth() + 1).padStart(2, '0') + '-' + 
+    String(date.getDate()).padStart(2, '0');
+};
+
 interface ProgressStore {
   level: number;
   xp: number;
@@ -28,7 +36,7 @@ export const useProgressStore = create<ProgressStore>()(
       xpToNextLevel: 100,
       totalXPEarned: 0,
       streak: 0,
-      lastActiveDate: new Date().toDateString(),
+      lastActiveDate: getLocalISODate(),
       totalSketches: 0,
       achievements: [],
 
@@ -58,11 +66,16 @@ export const useProgressStore = create<ProgressStore>()(
       },
 
       checkStreak: () => {
-        const today = new Date().toDateString();
+        const today = getLocalISODate();
         const { lastActiveDate, streak } = get();
 
         if (lastActiveDate !== today) {
-          const yesterday = new Date(Date.now() - 86400000).toDateString();
+          // Get yesterday's date in ISO format
+          const yesterdayDate = new Date();
+          yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+          const yesterday = yesterdayDate.getFullYear() + '-' + 
+            String(yesterdayDate.getMonth() + 1).padStart(2, '0') + '-' + 
+            String(yesterdayDate.getDate()).padStart(2, '0');
           const newStreak = lastActiveDate === yesterday ? streak + 1 : 1;
           set({ streak: newStreak, lastActiveDate: today });
 

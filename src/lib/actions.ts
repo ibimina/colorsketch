@@ -531,14 +531,20 @@ export async function getLeaderboard(
     .order("total_xp_earned", { ascending: false })
     .limit(limit);
 
-  // Filter by period
+  // Filter by period - use local date to match client-stored dates
+  const getLocalISODate = (date: Date) => {
+    return date.getFullYear() + '-' + 
+      String(date.getMonth() + 1).padStart(2, '0') + '-' + 
+      String(date.getDate()).padStart(2, '0');
+  };
+
   if (period === "daily") {
-    const today = new Date().toISOString().split("T")[0];
+    const today = getLocalISODate(new Date());
     query = query.eq("last_active_date", today);
   } else if (period === "weekly") {
     const weekAgo = new Date();
     weekAgo.setDate(weekAgo.getDate() - 7);
-    query = query.gte("last_active_date", weekAgo.toISOString().split("T")[0]);
+    query = query.gte("last_active_date", getLocalISODate(weekAgo));
   }
 
   const { data, error } = await query;
