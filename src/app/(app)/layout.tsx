@@ -18,6 +18,7 @@ const navItems = [
     { href: "/library", label: "Library", Icon: Icons.Library },
     { href: "/favorites", label: "Favorites", Icon: Icons.Heart },
     { href: "/gallery", label: "Gallery", Icon: Icons.Gallery },
+    { href: "/profile", label: "Profile", Icon: Icons.Profile },
     { href: "/leaderboard", label: "Leaderboard", Icon: Icons.Trophy, desktopOnly: true },
     { href: "/settings", label: "Settings", Icon: Icons.Settings },
 ];
@@ -193,7 +194,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
 
                 {/* Toast Notifications */}
                 <ToastContainer />
-                
+
                 {/* Level Up Celebration */}
                 <LevelUpCelebration />
             </div>

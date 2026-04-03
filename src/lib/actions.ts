@@ -269,7 +269,30 @@ export async function getPublicArtworks(limit: number = 20) {
     return [];
   }
 
-  return data;
+  if (!data || data.length === 0) {
+    return [];
+  }
+
+  // Fetch artist profiles
+  const userIds = [...new Set(data.map((artwork) => artwork.user_id))];
+  const { data: profiles } = await supabase
+    .from("user_profiles")
+    .select("id, name, avatar_url")
+    .in("id", userIds);
+
+  const profileMap = new Map(
+    profiles?.map((p) => [p.id, { name: p.name, avatar_url: p.avatar_url }]) ||
+      [],
+  );
+
+  return data.map((artwork) => {
+    const artistProfile = profileMap.get(artwork.user_id);
+    return {
+      ...artwork,
+      artist_name: artistProfile?.name || "Anonymous Artist",
+      artist_avatar: artistProfile?.avatar_url || null,
+    };
+  });
 }
 
 export async function saveArtwork(
@@ -387,6 +410,7 @@ export async function getProfile() {
 export async function updateProfile(updates: {
   name?: string;
   avatar_url?: string;
+  bio?: string;
 }) {
   const supabase = await createClient();
   const {
@@ -394,6 +418,11 @@ export async function updateProfile(updates: {
   } = await supabase.auth.getUser();
 
   if (!user) return { error: "Not authenticated" };
+
+  // Validate bio length
+  if (updates.bio && updates.bio.length > 160) {
+    return { error: "Bio must be 160 characters or less" };
+  }
 
   const { error } = await supabase
     .from("user_profiles")
@@ -407,6 +436,7 @@ export async function updateProfile(updates: {
 
   revalidatePath("/settings");
   revalidatePath("/profile");
+  revalidatePath(`/profile/${user.id}`);
   return { success: true };
 }
 
@@ -532,9 +562,13 @@ export async function getLeaderboard(
 
   // Filter by period - use local date to match client-stored dates
   const getLocalISODate = (date: Date) => {
-    return date.getFullYear() + '-' + 
-      String(date.getMonth() + 1).padStart(2, '0') + '-' + 
-      String(date.getDate()).padStart(2, '0');
+    return (
+      date.getFullYear() +
+      "-" +
+      String(date.getMonth() + 1).padStart(2, "0") +
+      "-" +
+      String(date.getDate()).padStart(2, "0")
+    );
   };
 
   if (period === "daily") {
@@ -558,14 +592,15 @@ export async function getLeaderboard(
   }
 
   // Fetch profiles separately for all users in the leaderboard
-  const userIds = data.map(entry => entry.user_id);
+  const userIds = data.map((entry) => entry.user_id);
   const { data: profiles } = await supabase
     .from("user_profiles")
     .select("id, name, avatar_url")
     .in("id", userIds);
 
   const profileMap = new Map(
-    profiles?.map(p => [p.id, { name: p.name, avatar_url: p.avatar_url }]) || []
+    profiles?.map((p) => [p.id, { name: p.name, avatar_url: p.avatar_url }]) ||
+      [],
   );
 
   return data.map((entry, index) => {
@@ -634,3 +669,361 @@ export async function getUserRank(): Promise<{
   };
 }
 
+// ============================================
+// Artwork Likes Actions
+// ============================================
+
+export async function likeArtwork(artworkId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase.from("artwork_likes").insert({
+    user_id: user.id,
+    artwork_id: artworkId,
+  });
+
+  if (error) {
+    // Ignore duplicate key errors (already liked)
+    if (error.code === "23505") {
+      return { success: true };
+    }
+    console.error("Error liking artwork:", error);
+    return { error: error.message };
+  }
+
+  return { success: true };
+}
+
+export async function unlikeArtwork(artworkId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase
+    .from("artwork_likes")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("artwork_id", artworkId);
+
+  if (error) {
+    console.error("Error unliking artwork:", error);
+    return { error: error.message };
+  }
+
+  return { success: true };
+}
+
+export async function toggleArtworkLike(artworkId: string, isLiked: boolean) {
+  if (isLiked) {
+    return unlikeArtwork(artworkId);
+  } else {
+    return likeArtwork(artworkId);
+  }
+}
+
+export async function getUserLikedArtworks() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return [];
+
+  const { data, error } = await supabase
+    .from("artwork_likes")
+    .select(
+      `
+      artwork_id,
+      created_at,
+      saved_artworks!inner (
+        id,
+        user_id,
+        sketch_id,
+        image_url,
+        thumbnail_url,
+        likes_count,
+        saves_count,
+        created_at
+      )
+    `,
+    )
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Error fetching liked artworks:", error);
+    return [];
+  }
+
+  return data.map((item) => ({
+    ...item.saved_artworks,
+    liked_at: item.created_at,
+  }));
+}
+
+// ============================================
+// Artwork Saves/Bookmarks Actions
+// ============================================
+
+export async function bookmarkArtwork(artworkId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase.from("artwork_saves").insert({
+    user_id: user.id,
+    artwork_id: artworkId,
+  });
+
+  if (error) {
+    // Ignore duplicate key errors (already saved)
+    if (error.code === "23505") {
+      return { success: true };
+    }
+    console.error("Error bookmarking artwork:", error);
+    return { error: error.message };
+  }
+
+  return { success: true };
+}
+
+export async function unbookmarkArtwork(artworkId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase
+    .from("artwork_saves")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("artwork_id", artworkId);
+
+  if (error) {
+    console.error("Error unbookmarking artwork:", error);
+    return { error: error.message };
+  }
+
+  return { success: true };
+}
+
+export async function toggleArtworkBookmark(
+  artworkId: string,
+  isBookmarked: boolean,
+) {
+  if (isBookmarked) {
+    return unbookmarkArtwork(artworkId);
+  } else {
+    return bookmarkArtwork(artworkId);
+  }
+}
+
+export async function getUserBookmarkedArtworks() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return [];
+
+  const { data, error } = await supabase
+    .from("artwork_saves")
+    .select(
+      `
+      artwork_id,
+      created_at,
+      saved_artworks!inner (
+        id,
+        user_id,
+        sketch_id,
+        image_url,
+        thumbnail_url,
+        likes_count,
+        saves_count,
+        created_at
+      )
+    `,
+    )
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Error fetching bookmarked artworks:", error);
+    return [];
+  }
+
+  return data.map((item) => ({
+    ...item.saved_artworks,
+    bookmarked_at: item.created_at,
+  }));
+}
+
+// ============================================
+// Artwork Interactions (for UI state)
+// ============================================
+
+export async function getArtworkInteractions(artworkIds: string[]) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user || artworkIds.length === 0) {
+    return { liked: [], bookmarked: [] };
+  }
+
+  const [likesResult, savesResult] = await Promise.all([
+    supabase
+      .from("artwork_likes")
+      .select("artwork_id")
+      .eq("user_id", user.id)
+      .in("artwork_id", artworkIds),
+    supabase
+      .from("artwork_saves")
+      .select("artwork_id")
+      .eq("user_id", user.id)
+      .in("artwork_id", artworkIds),
+  ]);
+
+  return {
+    liked: likesResult.data?.map((l) => l.artwork_id) || [],
+    bookmarked: savesResult.data?.map((s) => s.artwork_id) || [],
+  };
+}
+
+// ============================================
+// Public Profile Actions
+// ============================================
+
+export async function getProfileData(userId: string) {
+  const supabase = await createClient();
+
+  // Check if viewing own profile
+  const {
+    data: { user: currentUser },
+  } = await supabase.auth.getUser();
+  const isOwnProfile = currentUser?.id === userId;
+
+  const { data: profile, error: profileError } = await supabase
+    .from("user_profiles")
+    .select("id, name, avatar_url, bio")
+    .eq("id", userId)
+    .single();
+
+  if (profileError) {
+    console.error("Error fetching profile:", profileError);
+    return null;
+  }
+
+  const { data: progress } = await supabase
+    .from("user_progress")
+    .select("level, total_xp_earned, total_sketches")
+    .eq("user_id", userId)
+    .single();
+
+  // If own profile, get ALL artworks (public + private)
+  // If viewing someone else, only get public artworks
+  let artworksQuery = supabase
+    .from("saved_artworks")
+    .select("*")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false });
+
+  if (!isOwnProfile) {
+    artworksQuery = artworksQuery.eq("is_public", true);
+  }
+
+  const { data: artworks, error: artworksError } = await artworksQuery;
+
+  if (artworksError) {
+    console.error("Error fetching artworks:", artworksError);
+  }
+
+  return {
+    profile,
+    progress: progress || { level: 1, total_xp_earned: 0, total_sketches: 0 },
+    artworks: artworks || [],
+    isOwnProfile,
+  };
+}
+
+// Alias for backward compatibility
+export async function getPublicProfile(userId: string) {
+  return getProfileData(userId);
+}
+
+export async function getProfileLikedArtworks(userId: string) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("artwork_likes")
+    .select(
+      `
+      artwork_id,
+      created_at,
+      saved_artworks!inner (
+        id,
+        user_id,
+        sketch_id,
+        image_url,
+        thumbnail_url,
+        likes_count,
+        saves_count,
+        is_public,
+        created_at
+      )
+    `,
+    )
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Error fetching liked artworks for profile:", error);
+    return [];
+  }
+
+  // Only return public artworks that the user liked
+  // Type assertion needed because Supabase types inner joins as arrays
+  return data
+    .filter((item) => {
+      const artwork = item.saved_artworks as unknown as { is_public: boolean };
+      return artwork.is_public;
+    })
+    .map((item) => {
+      const artwork = item.saved_artworks as unknown as {
+        id: string;
+        user_id: string;
+        sketch_id: string;
+        image_url: string;
+        thumbnail_url: string | null;
+        likes_count: number;
+        saves_count: number;
+        is_public: boolean;
+        created_at: string;
+      };
+      return {
+        ...artwork,
+        liked_at: item.created_at,
+      };
+    });
+}
+
+export async function getCurrentUserId() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  return user?.id || null;
+}

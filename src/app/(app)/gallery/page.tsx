@@ -79,7 +79,7 @@ export default function GalleryPage() {
         setUpdatingId(artwork.id);
         const result = await toggleArtworkVisibility(artwork.id, !artwork.is_public);
         if (result.success) {
-            setArtworks(prev => prev.map(a => 
+            setArtworks(prev => prev.map(a =>
                 a.id === artwork.id ? { ...a, is_public: !a.is_public } : a
             ));
         }
@@ -88,7 +88,7 @@ export default function GalleryPage() {
 
     async function handleDelete(artworkId: string) {
         if (!confirm("Are you sure you want to delete this artwork?")) return;
-        
+
         setDeletingId(artworkId);
         const result = await deleteArtwork(artworkId);
         if (result.success) {
@@ -108,11 +108,11 @@ export default function GalleryPage() {
         const now = new Date();
         const diffMs = now.getTime() - date.getTime();
         const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-        
+
         if (diffDays === 0) return "today";
         if (diffDays === 1) return "yesterday";
         if (diffDays < 7) return `${diffDays} days ago`;
-        
+
         return new Intl.DateTimeFormat("en-US", {
             month: "short",
             day: "numeric",
@@ -271,7 +271,7 @@ export default function GalleryPage() {
                         Your gallery is empty
                     </h3>
                     <p className="text-on-surface-variant mb-6 max-w-md mx-auto">
-                        Complete a sketch and tap &quot;Gallery&quot; to save it here. 
+                        Complete a sketch and tap &quot;Gallery&quot; to save it here.
                         You can choose to keep it private or share it with the community!
                     </p>
                     <Link href="/library">

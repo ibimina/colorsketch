@@ -585,7 +585,7 @@ export default function CanvasPage({ params }: CanvasPageProps) {
 
             // Convert to base64 data URL
             const imageDataUrl = canvas.toDataURL('image/png');
-            
+
             // Create thumbnail (smaller size)
             const thumbnailCanvas = document.createElement('canvas');
             thumbnailCanvas.width = 200;
@@ -607,9 +607,9 @@ export default function CanvasPage({ params }: CanvasPageProps) {
             await markComplete();
 
             addToast(
-                isPublic 
-                    ? '🎨 Artwork published to community!' 
-                    : '💾 Artwork saved to your gallery!', 
+                isPublic
+                    ? '🎨 Artwork published to community!'
+                    : '💾 Artwork saved to your gallery!',
                 'success'
             );
 
@@ -698,7 +698,7 @@ export default function CanvasPage({ params }: CanvasPageProps) {
 
                 <div className="flex items-center gap-2 sm:gap-3">
                     <IconButton
-                        icon={isMusicPlaying 
+                        icon={isMusicPlaying
                             ? <Icons.Music className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                             : <Icons.MusicOff className="w-4 h-4 sm:w-5 sm:h-5" />
                         }
@@ -736,8 +736,8 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                         onClick={() => setShowPublishModal(true)}
                         className="px-3 sm:px-4 flex items-center whitespace-nowrap"
                     >
-                        <Icons.Gallery className="w-4 h-4 mr-1.5 sm:mr-2 shrink-0" />
-                        <span className="hidden sm:inline">Gallery</span>
+                        <span className="mr-1.5 sm:mr-2 shrink-0">✓</span>
+                        <span className="hidden sm:inline">Done</span>
                     </Button>
                 </div>
             </div>
@@ -887,8 +887,8 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                             <button
                                 onClick={() => setMode("fill")}
                                 className={`w-7 h-7 rounded-md flex items-center justify-center transition-all ${mode === "fill"
-                                        ? "bg-primary text-on-primary"
-                                        : "hover:bg-surface-container-high active:scale-95"
+                                    ? "bg-primary text-on-primary"
+                                    : "hover:bg-surface-container-high active:scale-95"
                                     }`}
                                 title="Fill Mode"
                             >
@@ -898,8 +898,8 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                             <button
                                 onClick={() => setMode("draw")}
                                 className={`w-7 h-7 rounded-md flex items-center justify-center transition-all ${mode === "draw"
-                                        ? "bg-primary text-on-primary"
-                                        : "hover:bg-surface-container-high active:scale-95"
+                                    ? "bg-primary text-on-primary"
+                                    : "hover:bg-surface-container-high active:scale-95"
                                     }`}
                                 title="Draw Mode"
                             >
@@ -917,8 +917,8 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                                             key={name}
                                             onClick={() => setBrushSize(size)}
                                             className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${brushSize === size
-                                                    ? "bg-secondary text-on-secondary"
-                                                    : "hover:bg-surface-container-high"
+                                                ? "bg-secondary text-on-secondary"
+                                                : "hover:bg-surface-container-high"
                                                 }`}
                                             title={`Brush ${name}`}
                                         >
@@ -947,8 +947,8 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                                 onClick={undo}
                                 disabled={history.length === 0}
                                 className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${history.length === 0
-                                        ? "opacity-30 cursor-not-allowed"
-                                        : "hover:bg-surface-container-high active:scale-95"
+                                    ? "opacity-30 cursor-not-allowed"
+                                    : "hover:bg-surface-container-high active:scale-95"
                                     }`}
                                 title="Undo"
                             >
@@ -959,8 +959,8 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                                 onClick={redo}
                                 disabled={redoStack.length === 0}
                                 className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${redoStack.length === 0
-                                        ? "opacity-30 cursor-not-allowed"
-                                        : "hover:bg-surface-container-high active:scale-95"
+                                    ? "opacity-30 cursor-not-allowed"
+                                    : "hover:bg-surface-container-high active:scale-95"
                                     }`}
                                 title="Redo"
                             >
@@ -976,8 +976,8 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                                 onClick={() => setZoom(Math.max(25, zoom - 25))}
                                 disabled={zoom <= 25}
                                 className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${zoom <= 25
-                                        ? "opacity-30 cursor-not-allowed"
-                                        : "hover:bg-surface-container-high active:scale-95"
+                                    ? "opacity-30 cursor-not-allowed"
+                                    : "hover:bg-surface-container-high active:scale-95"
                                     }`}
                                 title="Zoom Out"
                             >
@@ -988,8 +988,8 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                                 onClick={() => setZoom(Math.min(200, zoom + 25))}
                                 disabled={zoom >= 200}
                                 className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all ${zoom >= 200
-                                        ? "opacity-30 cursor-not-allowed"
-                                        : "hover:bg-surface-container-high active:scale-95"
+                                    ? "opacity-30 cursor-not-allowed"
+                                    : "hover:bg-surface-container-high active:scale-95"
                                     }`}
                                 title="Zoom In"
                             >
@@ -1001,8 +1001,8 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                             onClick={() => setZoom(100)}
                             disabled={zoom === 100}
                             className={`w-full h-6 rounded-lg flex items-center justify-center text-xs font-medium transition-all ${zoom === 100
-                                    ? "opacity-50"
-                                    : "hover:bg-surface-container-high active:scale-95"
+                                ? "opacity-50"
+                                : "hover:bg-surface-container-high active:scale-95"
                                 }`}
                             title="Reset Zoom"
                         >

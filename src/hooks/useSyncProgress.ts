@@ -7,9 +7,13 @@ import { createClient } from "@/lib/supabase/client";
 // Helper to get local date in ISO format (YYYY-MM-DD)
 const getLocalISODate = () => {
   const date = new Date();
-  return date.getFullYear() + '-' + 
-    String(date.getMonth() + 1).padStart(2, '0') + '-' + 
-    String(date.getDate()).padStart(2, '0');
+  return (
+    date.getFullYear() +
+    "-" +
+    String(date.getMonth() + 1).padStart(2, "0") +
+    "-" +
+    String(date.getDate()).padStart(2, "0")
+  );
 };
 
 // Helper to convert old date formats to ISO format
@@ -22,9 +26,13 @@ const migrateToISODate = (dateStr: string): string => {
   try {
     const parsed = new Date(dateStr);
     if (!isNaN(parsed.getTime())) {
-      return parsed.getFullYear() + '-' + 
-        String(parsed.getMonth() + 1).padStart(2, '0') + '-' + 
-        String(parsed.getDate()).padStart(2, '0');
+      return (
+        parsed.getFullYear() +
+        "-" +
+        String(parsed.getMonth() + 1).padStart(2, "0") +
+        "-" +
+        String(parsed.getDate()).padStart(2, "0")
+      );
     }
   } catch {
     // Fall through to default
@@ -115,7 +123,7 @@ export function useSyncProgress() {
             progress.level > store.level;
 
           // Migrate server date to ISO format if needed
-          const serverDate = progress.last_active_date || '';
+          const serverDate = progress.last_active_date || "";
           const migratedDate = migrateToISODate(serverDate);
           const needsDateMigration = serverDate !== migratedDate;
 
@@ -154,7 +162,7 @@ export function useSyncProgress() {
                 last_active_date: migratedDate,
                 total_sketches: currentStore.totalSketches,
               },
-              { onConflict: "user_id" }
+              { onConflict: "user_id" },
             );
           }
         }
