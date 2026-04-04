@@ -18,7 +18,8 @@ import {
     deleteArtwork
 } from "@/lib/actions";
 import { sketches } from "@/data/sketches";
-import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit, Palette, CheckCircle } from "lucide-react";
+import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit, Palette, CheckCircle, Download } from "lucide-react";
+import { AlbumCreatorModal } from "@/components/AlbumCreatorModal";
 
 // Sketch titles mapping
 const sketchTitles: Record<string, string> = {
@@ -444,6 +445,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                         sketches={completedSketches}
                         isLoading={sketchesLoadState === "loading"}
                         isOwnProfile={isOwnProfile}
+                        artistName={profile.name || "Anonymous Artist"}
                     />
                 )}
 
@@ -936,12 +938,16 @@ function LikedTab({
 function SketchesTab({
     sketches: completedSketches,
     isLoading,
-    isOwnProfile
+    isOwnProfile,
+    artistName
 }: {
     sketches: CompletedSketch[];
     isLoading: boolean;
     isOwnProfile: boolean;
+    artistName: string;
 }) {
+    const [showAlbumModal, setShowAlbumModal] = useState(false);
+
     if (isLoading) {
         return (
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -976,7 +982,18 @@ function SketchesTab({
     }
 
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <>
+            {/* Download Album Header */}
+            {isOwnProfile && completedSketches.length > 0 && (
+                <div className="flex justify-end mb-4">
+                    <Button variant="secondary" onClick={() => setShowAlbumModal(true)}>
+                        <Download className="w-4 h-4 mr-2" />
+                        Download Album
+                    </Button>
+                </div>
+            )}
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {completedSketches.map((progress) => {
                 // Find the sketch data
                 const sketchData = sketches.find(s => s.id === progress.sketch_id);
@@ -1038,7 +1055,17 @@ function SketchesTab({
                     </Card>
                 );
             })}
-        </div>
+            </div>
+
+            {/* Album Creator Modal */}
+            {showAlbumModal && (
+                <AlbumCreatorModal
+                    completedSketches={completedSketches}
+                    artistName={artistName}
+                    onClose={() => setShowAlbumModal(false)}
+                />
+            )}
+        </>
     );
 }
 
