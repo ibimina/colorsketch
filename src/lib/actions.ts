@@ -933,6 +933,13 @@ export async function getProfileData(userId: string) {
     .eq("user_id", userId)
     .single();
 
+  // Get actual count of completed sketches from sketch_progress table
+  const { count: completedSketchesCount } = await supabase
+    .from("sketch_progress")
+    .select("*", { count: "exact", head: true })
+    .eq("user_id", userId)
+    .not("completed_at", "is", null);
+
   // If own profile, get ALL artworks (public + private)
   // If viewing someone else, only get public artworks
   let artworksQuery = supabase
@@ -953,7 +960,12 @@ export async function getProfileData(userId: string) {
 
   return {
     profile,
-    progress: progress || { level: 1, total_xp_earned: 0, total_sketches: 0 },
+    progress: {
+      level: progress?.level || 1,
+      total_xp_earned: progress?.total_xp_earned || 0,
+      // Use actual count of completed sketches instead of incrementing counter
+      total_sketches: completedSketchesCount || 0,
+    },
     artworks: artworks || [],
     isOwnProfile,
   };
@@ -1048,4 +1060,15 @@ export async function getCurrentUserId() {
     data: { user },
   } = await supabase.auth.getUser();
   return user?.id || null;
+}
+
+export async function getProfileCompletedSketches(userId: string) {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("sketch_progress")
+    .select("sketch_id, fills, completed_at, updated_at")
+    .eq("user_id", userId)
+    .not("completed_at", "is", null)
+    .order("completed_at", { ascending: false });
+  return data || [];
 }

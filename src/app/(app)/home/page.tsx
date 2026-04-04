@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Card, Button } from "@/components/ui";
 import { useProgressStore } from "@/stores/progressStore";
 import { useColoringStore } from "@/stores/coloringStore";
+import { useSketchProgress } from "@/hooks/useSketchProgress";
 import { Icons } from "@/lib/icons";
 import { ACHIEVEMENTS } from "@/lib/achievements";
 import { sketches } from "@/data/sketches";
@@ -50,6 +51,7 @@ function getSketchTitle(sketchId: string): string {
 export default function HomePage() {
     const { level, xp, xpToNextLevel, streak, totalSketches, achievements, checkStreak } = useProgressStore();
     const { savedProgress } = useColoringStore();
+    const { progressMap } = useSketchProgress();
     const mountedRef = useRef(false);
     const [mounted, setMounted] = useState(false);
 
@@ -129,10 +131,23 @@ export default function HomePage() {
         return sketches[seed % sketches.length];
     }, []);
 
-    // Get in-progress sketches
+    // Get in-progress sketches (exclude completed ones)
     const inProgressSketches = useMemo(() => {
+        // Get IDs of completed sketches from database
+        const completedIds = new Set(
+            Object.entries(progressMap)
+                .filter(([, progress]) => progress.completed_at)
+                .map(([sketchId]) => sketchId)
+        );
+
         const progressList = Object.entries(savedProgress)
-            .filter(([, progress]) => Object.keys(progress.fills).length > 0)
+            .filter(([sketchId, progress]) => {
+                // Must have some fills
+                if (Object.keys(progress.fills).length === 0) return false;
+                // Must NOT be completed
+                if (completedIds.has(sketchId)) return false;
+                return true;
+            })
             .map(([sketchId, progress]) => ({ sketchId, progress }))
             .sort((a, b) => b.progress.lastModified - a.progress.lastModified);
 
@@ -156,7 +171,7 @@ export default function HomePage() {
             })
             .filter((s): s is NonNullable<typeof s> => s !== null)
             .slice(0, 4);
-    }, [savedProgress]);
+    }, [savedProgress, progressMap]);
 
     const unlockedAchievements = useMemo(() => {
         return achievements

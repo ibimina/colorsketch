@@ -9,6 +9,7 @@ import { createClient } from "@/lib/supabase/client";
 import {
     getProfileData,
     getProfileLikedArtworks,
+    getProfileCompletedSketches,
     getArtworkInteractions,
     toggleArtworkLike,
     toggleArtworkBookmark,
@@ -16,7 +17,8 @@ import {
     updateProfile,
     deleteArtwork
 } from "@/lib/actions";
-import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit } from "lucide-react";
+import { sketches } from "@/data/sketches";
+import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit, Palette, CheckCircle } from "lucide-react";
 
 // Sketch titles mapping
 const sketchTitles: Record<string, string> = {
@@ -79,13 +81,22 @@ interface Interactions {
     bookmarked: string[];
 }
 
-type TabType = "gallery" | "liked" | "reposts";
+interface CompletedSketch {
+    sketch_id: string;
+    fills: Record<string, string>;
+    completed_at: string;
+    updated_at: string;
+}
+
+type TabType = "gallery" | "sketches" | "liked" | "reposts";
 
 export default function ProfilePage({ params }: { params: Promise<{ userId: string }> }) {
     const { userId } = use(params);
     const [profileData, setProfileData] = useState<ProfileData | null>(null);
     const [likedLoadState, setLikedLoadState] = useState<"idle" | "loading" | "loaded">("idle");
     const [likedArtworks, setLikedArtworks] = useState<LikedArtwork[]>([]);
+    const [sketchesLoadState, setSketchesLoadState] = useState<"idle" | "loading" | "loaded">("idle");
+    const [completedSketches, setCompletedSketches] = useState<CompletedSketch[]>([]);
     const [interactions, setInteractions] = useState<Interactions>({ liked: [], bookmarked: [] });
     const [isLoading, setIsLoading] = useState(true);
     const [notFound, setNotFound] = useState(false);
@@ -127,7 +138,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
         loadProfile();
     }, [userId]);
 
-    // Load liked artworks when tab changes to liked
+    // Load tab data when tab changes
     const handleTabChange = (tab: TabType) => {
         setActiveTab(tab);
         if (tab === "liked" && likedLoadState === "idle") {
@@ -135,6 +146,13 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
             getProfileLikedArtworks(userId).then(data => {
                 setLikedArtworks(data as unknown as LikedArtwork[]);
                 setLikedLoadState("loaded");
+            });
+        }
+        if (tab === "sketches" && sketchesLoadState === "idle") {
+            setSketchesLoadState("loading");
+            getProfileCompletedSketches(userId).then(data => {
+                setCompletedSketches(data as CompletedSketch[]);
+                setSketchesLoadState("loaded");
             });
         }
     };
@@ -291,6 +309,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
 
     const tabs = [
         { id: "gallery" as TabType, label: "Gallery", icon: ImageIcon, count: artworks.length },
+        { id: "sketches" as TabType, label: "Sketches", icon: Palette, count: progress.total_sketches },
         { id: "liked" as TabType, label: "Liked", icon: Heart, count: likedArtworks.length },
         { id: "reposts" as TabType, label: "Reposts", icon: RefreshCw, count: 0 },
     ];
@@ -417,6 +436,14 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                         onDelete={handleDelete}
                         onView={setViewingArtwork}
                         deletingId={deletingId}
+                    />
+                )}
+
+                {activeTab === "sketches" && (
+                    <SketchesTab
+                        sketches={completedSketches}
+                        isLoading={sketchesLoadState === "loading"}
+                        isOwnProfile={isOwnProfile}
                     />
                 )}
 
@@ -898,6 +925,119 @@ function LikedTab({
                     </div>
                 </Card>
             ))}
+        </div>
+    );
+}
+
+// ============================================
+// Sketches Tab Component
+// ============================================
+
+function SketchesTab({
+    sketches: completedSketches,
+    isLoading,
+    isOwnProfile
+}: {
+    sketches: CompletedSketch[];
+    isLoading: boolean;
+    isOwnProfile: boolean;
+}) {
+    if (isLoading) {
+        return (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {[1, 2, 3, 4].map(i => (
+                    <div key={i} className="aspect-square bg-surface-container rounded-xl animate-pulse" />
+                ))}
+            </div>
+        );
+    }
+
+    if (completedSketches.length === 0) {
+        return (
+            <Card variant="filled" className="text-center py-12">
+                <div className="text-5xl mb-4">🎨</div>
+                <h3 className="text-lg font-headline font-bold mb-2">
+                    No completed sketches yet
+                </h3>
+                <p className="text-on-surface-variant mb-4">
+                    {isOwnProfile
+                        ? "Start coloring and complete some sketches!"
+                        : "This artist hasn't completed any sketches yet."}
+                </p>
+                {isOwnProfile && (
+                    <Link href="/library">
+                        <Button variant="primary">
+                            Browse Sketches
+                        </Button>
+                    </Link>
+                )}
+            </Card>
+        );
+    }
+
+    return (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {completedSketches.map((progress) => {
+                // Find the sketch data
+                const sketchData = sketches.find(s => s.id === progress.sketch_id);
+                const title = getSketchTitle(progress.sketch_id);
+                const completedDate = new Date(progress.completed_at).toLocaleDateString();
+                const fillCount = Object.keys(progress.fills || {}).length;
+
+                return (
+                    <Card
+                        key={progress.sketch_id}
+                        variant="elevated"
+                        padding="none"
+                        className="overflow-hidden group rounded-lg"
+                    >
+                        <Link href={`/canvas/${progress.sketch_id}`}>
+                            <div className="relative aspect-square bg-surface-container">
+                                {/* Sketch thumbnail */}
+                                {sketchData?.thumbnail ? (
+                                    <Image
+                                        src={sketchData.thumbnail}
+                                        alt={title}
+                                        fill
+                                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                                        className="object-contain p-4"
+                                    />
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center">
+                                        <Palette className="w-12 h-12 text-on-surface-variant/30" />
+                                    </div>
+                                )}
+
+                                {/* Completed Badge */}
+                                <div className="absolute top-2 left-2 px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1 bg-green-500/90 text-white">
+                                    <CheckCircle className="w-3 h-3" />
+                                    Complete
+                                </div>
+
+                                {/* Hover Overlay */}
+                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <div className="p-2 rounded-full bg-white/20 text-white">
+                                        <Edit className="w-5 h-5" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="p-3">
+                                <p className="font-headline font-medium text-sm truncate mb-1">
+                                    {title}
+                                </p>
+                                <div className="flex items-center justify-between text-xs text-on-surface-variant">
+                                    <span className="flex items-center gap-1">
+                                        <Palette className="w-3 h-3" />
+                                        {fillCount} fills
+                                    </span>
+                                    <span>{completedDate}</span>
+                                </div>
+                            </div>
+                        </Link>
+                    </Card>
+                );
+            })}
         </div>
     );
 }
