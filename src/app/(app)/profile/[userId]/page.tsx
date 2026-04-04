@@ -103,7 +103,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                 setIsLoading(false);
                 return;
             }
-            
+
             // If own profile and no avatar_url, try to get from auth metadata
             if (data.isOwnProfile && !data.profile.avatar_url) {
                 const supabase = createClient();
@@ -112,7 +112,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                     data.profile.avatar_url = user.user_metadata.picture || user.user_metadata.avatar_url;
                 }
             }
-            
+
             setProfileData(data as ProfileData);
 
             // Load user's interactions with gallery artworks
@@ -211,10 +211,10 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
 
     const handleDelete = async (artworkId: string) => {
         if (!confirm("Are you sure you want to delete this artwork? This cannot be undone.")) return;
-        
+
         setDeletingId(artworkId);
         const result = await deleteArtwork(artworkId);
-        
+
         if (result.success) {
             setProfileData(prev => {
                 if (!prev) return prev;
@@ -386,8 +386,8 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                                 key={tab.id}
                                 onClick={() => handleTabChange(tab.id)}
                                 className={`flex items-center gap-2 px-4 py-3 font-medium transition-colors relative ${activeTab === tab.id
-                                        ? "text-primary"
-                                        : "text-on-surface-variant hover:text-on-surface"
+                                    ? "text-primary"
+                                    : "text-on-surface-variant hover:text-on-surface"
                                     }`}
                             >
                                 <Icon className="w-4 h-4" />
@@ -534,9 +534,9 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                             <h3 className="text-xl font-headline font-bold">
                                 {getSketchTitle(viewingLikedArtwork.sketch_id)}
                             </h3>
-                            
+
                             {/* Artist Info */}
-                            <Link 
+                            <Link
                                 href={`/profile/${viewingLikedArtwork.user_id}`}
                                 className="inline-flex items-center gap-2 mt-2 hover:opacity-80"
                             >
@@ -656,8 +656,8 @@ function GalleryTab({
                             {/* Visibility Badge (own profile only) */}
                             {isOwnProfile && (
                                 <div className={`absolute top-2 left-2 px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1 ${artwork.is_public
-                                        ? "bg-green-500/90 text-white"
-                                        : "bg-gray-700/90 text-white"
+                                    ? "bg-green-500/90 text-white"
+                                    : "bg-gray-700/90 text-white"
                                     }`}>
                                     {artwork.is_public ? (
                                         <><Globe className="w-3 h-3" /> Public</>
@@ -684,8 +684,8 @@ function GalleryTab({
                                         <button
                                             onClick={() => onLike(artwork.id)}
                                             className={`p-2 rounded-full transition-colors ${isLiked
-                                                    ? "bg-error text-on-error"
-                                                    : "bg-white/20 text-white hover:bg-white/30"
+                                                ? "bg-error text-on-error"
+                                                : "bg-white/20 text-white hover:bg-white/30"
                                                 }`}
                                             title={isLiked ? "Unlike" : "Like"}
                                         >
@@ -733,8 +733,8 @@ function GalleryTab({
                                         <button
                                             onClick={() => onLike(artwork.id)}
                                             className={`p-2 rounded-full transition-colors ${isLiked
-                                                    ? "bg-error text-on-error"
-                                                    : "bg-white/20 text-white hover:bg-white/30"
+                                                ? "bg-error text-on-error"
+                                                : "bg-white/20 text-white hover:bg-white/30"
                                                 }`}
                                         >
                                             <Icons.Heart className={`w-5 h-5 ${isLiked ? "fill-current" : ""}`} />
@@ -742,8 +742,8 @@ function GalleryTab({
                                         <button
                                             onClick={() => onBookmark(artwork.id)}
                                             className={`p-2 rounded-full transition-colors ${isBookmarked
-                                                    ? "bg-primary text-on-primary"
-                                                    : "bg-white/20 text-white hover:bg-white/30"
+                                                ? "bg-primary text-on-primary"
+                                                : "bg-white/20 text-white hover:bg-white/30"
                                                 }`}
                                         >
                                             <Icons.Bookmark className={`w-5 h-5 ${isBookmarked ? "fill-current" : ""}`} />
@@ -858,7 +858,7 @@ function LikedTab({
                         <p className="font-headline font-medium text-sm truncate mb-1">
                             {getSketchTitle(artwork.sketch_id)}
                         </p>
-                        
+
                         {/* Artist Info */}
                         <Link href={`/profile/${artwork.user_id}`} className="flex items-center gap-1.5 mb-2 hover:opacity-80">
                             {artwork.artist_avatar ? (
@@ -878,7 +878,7 @@ function LikedTab({
                                 {artwork.artist_name}
                             </span>
                         </Link>
-                        
+
                         <div className="flex items-center justify-between text-xs text-on-surface-variant">
                             <span className="flex items-center gap-1">
                                 <Icons.Heart className="w-3 h-3 fill-current text-error" />

@@ -68,7 +68,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                 } else {
                     setUserName(user.email?.split("@")[0] ?? "Artist");
                 }
-                
+
                 // Set avatar: profile > auth metadata (picture for Google, avatar_url for others)
                 if (profile?.avatar_url) {
                     setUserAvatar(profile.avatar_url);

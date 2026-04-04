@@ -14,7 +14,7 @@ import { Leaderboard } from "@/components/Leaderboard";
 export default function HomePage() {
     const dailyTip = "";
     const { level, xp, xpToNextLevel, streak, totalSketches, achievements, checkStreak } = useProgressStore();
-    const { getInProgressSketches } = useColoringStore();
+    const { savedProgress } = useColoringStore();
 
     // Check streak on page load
     useEffect(() => {
@@ -23,16 +23,20 @@ export default function HomePage() {
 
     // Get in-progress sketches with sketch data
     const inProgressSketches = useMemo(() => {
-        const progressList = getInProgressSketches();
+        const progressList = Object.entries(savedProgress)
+            .filter(([, progress]) => Object.keys(progress.fills).length > 0)
+            .map(([sketchId, progress]) => ({ sketchId, progress }))
+            .sort((a, b) => b.progress.lastModified - a.progress.lastModified);
+
         return progressList
             .map(({ sketchId, progress }) => {
                 const sketch = sketches.find(s => s.id === sketchId);
                 if (!sketch) return null;
-                
+
                 const filledRegions = Object.keys(progress.fills).length;
                 const totalRegions = progress.totalRegions || sketch.regions?.length || 20; // fallback estimate
                 const progressPercent = Math.min(100, Math.round((filledRegions / totalRegions) * 100));
-                
+
                 return {
                     id: sketch.id,
                     title: sketch.title,
@@ -44,7 +48,7 @@ export default function HomePage() {
             })
             .filter((s): s is NonNullable<typeof s> => s !== null)
             .slice(0, 6); // Show up to 6 recent sketches
-    }, [getInProgressSketches]);
+    }, [savedProgress]);
 
     // Convert achievement IDs to full achievement objects
     const unlockedAchievements = useMemo(() => {

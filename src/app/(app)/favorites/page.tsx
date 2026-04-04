@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/image";;
 import { Button, Card } from "@/components/ui";
 import { useFavoritesStore } from "@/stores/favoritesStore";
 import { useProgressStore } from "@/stores/progressStore";
@@ -57,6 +57,7 @@ export default function FavoritesPage() {
     const [activeTab, setActiveTab] = useState<TabType>("sketches");
     const [bookmarkedArtworks, setBookmarkedArtworks] = useState<CommunityArtwork[]>([]);
     const [isLoadingBookmarks, setIsLoadingBookmarks] = useState(false);
+    const hasStartedLoadingBookmarks = useRef(false);
 
     // Hooks
     const { favorites, loadFavorites, toggle: toggleFavorite } = useFavoritesStore();
@@ -70,14 +71,17 @@ export default function FavoritesPage() {
 
     // Load bookmarked artworks when switching tabs
     useEffect(() => {
-        if (activeTab === "bookmarks" && bookmarkedArtworks.length === 0 && !isLoadingBookmarks) {
-            setIsLoadingBookmarks(true);
-            getUserBookmarkedArtworks().then(data => {
+        if (activeTab === "bookmarks" && !hasStartedLoadingBookmarks.current) {
+            hasStartedLoadingBookmarks.current = true;
+            // Start async fetch - loading state handled by initial true value
+            (async () => {
+                setIsLoadingBookmarks(true);
+                const data = await getUserBookmarkedArtworks();
                 setBookmarkedArtworks(data as unknown as CommunityArtwork[]);
                 setIsLoadingBookmarks(false);
-            });
+            })();
         }
-    }, [activeTab, bookmarkedArtworks.length, isLoadingBookmarks]);
+    }, [activeTab]);
 
     // Handle favorite toggle (always removes on this page)
     const handleFavoriteToggle = (sketchId: string, sketchTitle: string) => {
@@ -131,8 +135,8 @@ export default function FavoritesPage() {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`flex items-center gap-2 px-4 py-3 font-medium transition-colors relative ${activeTab === tab.id
-                                    ? "text-primary"
-                                    : "text-on-surface-variant hover:text-on-surface"
+                                ? "text-primary"
+                                : "text-on-surface-variant hover:text-on-surface"
                                 }`}
                         >
                             <Icon className={`w-4 h-4 ${tab.id === "sketches" && activeTab === tab.id ? "fill-current" : ""}`} />

@@ -74,26 +74,33 @@ function LibraryContent() {
     const { savedProgress } = useColoringStore();
 
     // Get in-progress and completed sketch IDs
+    // Use both local savedProgress AND database progressMap
     const { inProgressIds, completedIds } = useMemo(() => {
-        const inProgress: string[] = [];
-        const completed: string[] = [];
-        
+        const inProgress = new Set<string>();
+        const completed = new Set<string>();
+
+        // Check database progress (progressMap) - has completed_at field
+        Object.entries(progressMap).forEach(([sketchId, progress]) => {
+            if (progress.completed_at) {
+                completed.add(sketchId);
+            } else if (Object.keys(progress.fills).length > 0) {
+                inProgress.add(sketchId);
+            }
+        });
+
+        // Also check local savedProgress for in-progress items not yet synced
         Object.entries(savedProgress).forEach(([sketchId, progress]) => {
             const filledCount = Object.keys(progress.fills).length;
             if (filledCount === 0) return;
-            
-            const totalRegions = progress.totalRegions || 20; // fallback estimate
-            const percent = (filledCount / totalRegions) * 100;
-            
-            if (percent >= 100) {
-                completed.push(sketchId);
-            } else {
-                inProgress.push(sketchId);
-            }
+
+            // Don't override if already marked as completed in database
+            if (completed.has(sketchId)) return;
+
+            inProgress.add(sketchId);
         });
-        
-        return { inProgressIds: inProgress, completedIds: completed };
-    }, [savedProgress]);
+
+        return { inProgressIds: Array.from(inProgress), completedIds: Array.from(completed) };
+    }, [savedProgress, progressMap]);
 
     // Load favorites on mount
     useEffect(() => {
@@ -119,14 +126,14 @@ function LibraryContent() {
         if (effectiveCategory !== "all" && sketch.category !== effectiveCategory) {
             return false;
         }
-        
+
         // Status filter
         if (statusFilter === "in-progress") {
             return inProgressIds.includes(sketch.id);
         } else if (statusFilter === "completed") {
             return completedIds.includes(sketch.id);
         }
-        
+
         return true;
     });
     const sortedSketches = sortSketches(filteredSketches, sortBy);
@@ -155,34 +162,31 @@ function LibraryContent() {
             </div>
 
             {/* Status Tabs */}
-            <div className="flex gap-1 bg-surface-container-low rounded-xl p-1">
+            <div className="flex gap-1 bg-surface-container-low rounded-xl p-1 max-w-lg">
                 <button
                     onClick={() => setStatusFilter("all")}
-                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${
-                        statusFilter === "all"
+                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${statusFilter === "all"
                             ? "bg-primary text-white shadow-sm"
                             : "text-on-surface-variant hover:bg-surface-container"
-                    }`}
+                        }`}
                 >
                     All ({statusCounts.all})
                 </button>
                 <button
                     onClick={() => setStatusFilter("in-progress")}
-                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${
-                        statusFilter === "in-progress"
+                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${statusFilter === "in-progress"
                             ? "bg-primary text-white shadow-sm"
                             : "text-on-surface-variant hover:bg-surface-container"
-                    }`}
+                        }`}
                 >
                     In Progress ({statusCounts.inProgress})
                 </button>
                 <button
                     onClick={() => setStatusFilter("completed")}
-                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${
-                        statusFilter === "completed"
+                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${statusFilter === "completed"
                             ? "bg-primary text-white shadow-sm"
                             : "text-on-surface-variant hover:bg-surface-container"
-                    }`}
+                        }`}
                 >
                     Completed ({statusCounts.completed})
                 </button>
@@ -212,22 +216,20 @@ function LibraryContent() {
                     <div className="flex items-center gap-1 bg-surface-container-low rounded-lg p-1 shrink-0">
                         <button
                             onClick={() => setViewMode("grid")}
-                            className={`p-2 rounded transition-all ${
-                                viewMode === "grid"
+                            className={`p-2 rounded transition-all ${viewMode === "grid"
                                     ? "bg-primary text-white"
                                     : "text-on-surface-variant hover:bg-surface-container"
-                            }`}
+                                }`}
                             aria-label="Grid view"
                         >
                             <Icons.Grid className="w-4 h-4" />
                         </button>
                         <button
                             onClick={() => setViewMode("list")}
-                            className={`p-2 rounded transition-all ${
-                                viewMode === "list"
+                            className={`p-2 rounded transition-all ${viewMode === "list"
                                     ? "bg-primary text-white"
                                     : "text-on-surface-variant hover:bg-surface-container"
-                            }`}
+                                }`}
                             aria-label="List view"
                         >
                             <Icons.List className="w-4 h-4" />

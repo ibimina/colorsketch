@@ -18,12 +18,16 @@ interface ColoringStore {
   brushSize: number;
   mode: "fill" | "draw";
   zoom: number;
-  
+
   // Multi-sketch progress tracking
   savedProgress: Record<string, SketchProgress>;
 
   // Actions
-  setActiveSketch: (sketchId: string, initialFills?: FillState, totalRegions?: number) => void;
+  setActiveSketch: (
+    sketchId: string,
+    initialFills?: FillState,
+    totalRegions?: number,
+  ) => void;
   setColor: (color: string) => void;
   setBrushSize: (size: number) => void;
   setMode: (mode: "fill" | "draw") => void;
@@ -33,9 +37,12 @@ interface ColoringStore {
   redo: () => void;
   reset: () => void;
   clearSession: () => void;
-  
+
   // Multi-sketch helpers
-  getInProgressSketches: () => Array<{ sketchId: string; progress: SketchProgress }>;
+  getInProgressSketches: () => Array<{
+    sketchId: string;
+    progress: SketchProgress;
+  }>;
   saveCurrentProgress: (totalRegions?: number) => void;
   loadSketchProgress: (sketchId: string) => FillState | null;
   clearSketchProgress: (sketchId: string) => void;
@@ -58,7 +65,7 @@ export const useColoringStore = create<ColoringStore>()(
       // Actions
       setActiveSketch: (sketchId, initialFills, totalRegions) => {
         const { savedProgress, activeSketchId, fills } = get();
-        
+
         // Save current sketch progress before switching (if there was an active sketch with fills)
         if (activeSketchId && Object.keys(fills).length > 0) {
           const existingProgress = savedProgress[activeSketchId];
@@ -73,11 +80,11 @@ export const useColoringStore = create<ColoringStore>()(
             },
           });
         }
-        
+
         // Load saved progress for new sketch, or use initialFills
         const existingSketchProgress = savedProgress[sketchId];
         const fillsToUse = existingSketchProgress?.fills || initialFills || {};
-        
+
         set({
           activeSketchId: sketchId,
           fills: fillsToUse,
@@ -88,7 +95,8 @@ export const useColoringStore = create<ColoringStore>()(
             [sketchId]: {
               fills: fillsToUse,
               lastModified: Date.now(),
-              totalRegions: totalRegions || existingSketchProgress?.totalRegions,
+              totalRegions:
+                totalRegions || existingSketchProgress?.totalRegions,
             },
           },
         });
@@ -100,9 +108,10 @@ export const useColoringStore = create<ColoringStore>()(
       setZoom: (zoom) => set({ zoom: Math.min(200, Math.max(25, zoom)) }),
 
       fillRegion: (regionId) => {
-        const { fills, selectedColor, history, activeSketchId, savedProgress } = get();
+        const { fills, selectedColor, history, activeSketchId, savedProgress } =
+          get();
         const newFills = { ...fills, [regionId]: selectedColor };
-        
+
         // Update savedProgress for the active sketch
         const updatedSavedProgress = activeSketchId
           ? {
@@ -114,7 +123,7 @@ export const useColoringStore = create<ColoringStore>()(
               },
             }
           : savedProgress;
-        
+
         set({
           fills: newFills,
           history: [...history, fills], // Save current state to history
@@ -179,7 +188,7 @@ export const useColoringStore = create<ColoringStore>()(
           redoStack: [],
         });
       },
-      
+
       // Multi-sketch helpers
       getInProgressSketches: () => {
         const { savedProgress } = get();
@@ -188,28 +197,29 @@ export const useColoringStore = create<ColoringStore>()(
           .map(([sketchId, progress]) => ({ sketchId, progress }))
           .sort((a, b) => b.progress.lastModified - a.progress.lastModified);
       },
-      
+
       saveCurrentProgress: (totalRegions) => {
         const { activeSketchId, fills, savedProgress } = get();
         if (!activeSketchId) return;
-        
+
         set({
           savedProgress: {
             ...savedProgress,
             [activeSketchId]: {
               fills,
               lastModified: Date.now(),
-              totalRegions: totalRegions || savedProgress[activeSketchId]?.totalRegions,
+              totalRegions:
+                totalRegions || savedProgress[activeSketchId]?.totalRegions,
             },
           },
         });
       },
-      
+
       loadSketchProgress: (sketchId) => {
         const { savedProgress } = get();
         return savedProgress[sketchId]?.fills || null;
       },
-      
+
       clearSketchProgress: (sketchId) => {
         const { savedProgress } = get();
         const { [sketchId]: _, ...rest } = savedProgress;

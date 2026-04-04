@@ -75,24 +75,20 @@ export function SketchCard({
         <Card
             variant="elevated"
             padding="none"
-            className={`overflow-hidden transition-transform ${
-                viewMode === "list" ? "flex flex-row border-b border-surface-container-high last:border-b-0" : ""
-            }`}
+            className={`overflow-hidden transition-transform ${viewMode === "list" ? "flex flex-row border-b border-surface-container-high last:border-b-0" : ""
+                }`}
         >
             <Link
                 href={isLocked ? "#" : `/canvas/${sketch.id}`}
                 onClick={handleLinkClick}
-                className={`${
-                    viewMode === "list" ? "flex w-full min-w-0" : "block"
-                } hover:scale-[1.01] transition-transform ${
-                    isLocked ? "cursor-not-allowed" : ""
-                }`}
+                className={`${viewMode === "list" ? "flex w-full min-w-0" : "block"
+                    } hover:scale-[1.01] transition-transform ${isLocked ? "cursor-not-allowed" : ""
+                    }`}
             >
                 {/* Thumbnail */}
                 <div
-                    className={`relative bg-surface-container-low flex items-center justify-center ${
-                        viewMode === "list" ? "w-28 sm:w-40 h-28 sm:h-32 shrink-0" : "aspect-square"
-                    }`}
+                    className={`relative bg-surface-container-low flex items-center justify-center ${viewMode === "list" ? "w-28 sm:w-40 h-28 sm:h-32 shrink-0" : "aspect-square"
+                        }`}
                 >
                     {hasProgress && progress ? (
                         <ColoredSketchPreview
@@ -112,11 +108,10 @@ export function SketchCard({
                     {/* Favorite Button */}
                     <button
                         onClick={handleFavoriteClick}
-                        className={`absolute top-1 sm:top-2 left-1 sm:left-2 w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 ${
-                            isFavorited
+                        className={`absolute top-1 sm:top-2 left-1 sm:left-2 w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 ${isFavorited
                                 ? "bg-red-500 text-white shadow-lg"
                                 : "bg-white/80 dark:bg-gray-800/80 text-gray-500 hover:text-red-500 hover:bg-white shadow-md"
-                        }`}
+                            }`}
                         aria-label={isFavorited ? "Remove from favorites" : "Add to favorites"}
                     >
                         <Heart className={`w-4 h-4 ${isFavorited ? "fill-current" : ""}`} />
@@ -142,11 +137,10 @@ export function SketchCard({
 
                 {/* Info */}
                 <div
-                    className={`p-3 sm:p-4 ${
-                        viewMode === "list"
+                    className={`p-3 sm:p-4 ${viewMode === "list"
                             ? "flex-1 flex flex-col justify-between min-w-0 overflow-hidden"
                             : ""
-                    }`}
+                        }`}
                 >
                     <div>
                         <h3 className="font-headline font-bold mb-1 text-sm sm:text-base truncate w-full">
@@ -154,9 +148,8 @@ export function SketchCard({
                         </h3>
                         <div className="flex items-center gap-2 text-xs text-on-surface-variant mb-2 flex-wrap">
                             {/* Difficulty Badge */}
-                            <span className={`px-2 py-0.5 rounded-full font-medium capitalize ${
-                                difficultyColors[sketch.difficulty as keyof typeof difficultyColors] || difficultyColors.medium
-                            }`}>
+                            <span className={`px-2 py-0.5 rounded-full font-medium capitalize ${difficultyColors[sketch.difficulty as keyof typeof difficultyColors] || difficultyColors.medium
+                                }`}>
                                 {sketch.difficulty}
                             </span>
                             {status === "completed" ? (
@@ -206,13 +199,12 @@ export function SketchCard({
                             isLocked
                                 ? "secondary"
                                 : status === "completed"
-                                ? "secondary"
-                                : "primary"
+                                    ? "secondary"
+                                    : "primary"
                         }
                         size="sm"
-                        className={`${
-                            viewMode === "list" ? "w-auto self-start" : "w-full"
-                        } text-xs sm:text-sm ${isLocked ? "opacity-70" : ""}`}
+                        className={`${viewMode === "list" ? "w-auto self-start" : "w-full"
+                            } text-xs sm:text-sm ${isLocked ? "opacity-70" : ""}`}
                     >
                         {buttonText}
                     </Button>
