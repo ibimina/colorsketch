@@ -15,14 +15,6 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
                     </div>
                     <span className="hidden sm:inline">ColorSketch</span>
                 </Link>
-                <div className="hidden md:flex items-center gap-8">
-                    <Link
-                        href="/home"
-                        className="text-on-surface-variant hover:text-primary transition-all font-headline font-medium"
-                    >
-                        Explore
-                    </Link>
-                </div>
                 <div className="flex items-center gap-3">
                     <Link
                         href="/login"

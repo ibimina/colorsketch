@@ -19,7 +19,7 @@ import {
 } from "@/lib/actions";
 import { sketches } from "@/data/sketches";
 import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit, Palette, CheckCircle, Download } from "lucide-react";
-import { AlbumCreatorModal } from "@/components/AlbumCreatorModal";
+import { GalleryAlbumModal } from "@/components/GalleryAlbumModal";
 
 // Sketch titles mapping
 const sketchTitles: Record<string, string> = {
@@ -437,6 +437,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                         onDelete={handleDelete}
                         onView={setViewingArtwork}
                         deletingId={deletingId}
+                        artistName={profile.name || "Anonymous Artist"}
                     />
                 )}
 
@@ -445,7 +446,6 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                         sketches={completedSketches}
                         isLoading={sketchesLoadState === "loading"}
                         isOwnProfile={isOwnProfile}
-                        artistName={profile.name || "Anonymous Artist"}
                     />
                 )}
 
@@ -629,7 +629,8 @@ function GalleryTab({
     onToggleVisibility,
     onDelete,
     onView,
-    deletingId
+    deletingId,
+    artistName
 }: {
     artworks: ProfileData["artworks"];
     isOwnProfile: boolean;
@@ -640,7 +641,10 @@ function GalleryTab({
     onDelete: (id: string) => void;
     onView: (artwork: ProfileData["artworks"][0]) => void;
     deletingId: string | null;
+    artistName: string;
 }) {
+    const [showAlbumModal, setShowAlbumModal] = useState(false);
+
     if (artworks.length === 0) {
         return (
             <Card variant="filled" className="text-center py-12">
@@ -665,147 +669,168 @@ function GalleryTab({
     }
 
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {artworks.map((artwork) => {
-                const isLiked = interactions.liked.includes(artwork.id);
-                const isBookmarked = interactions.bookmarked.includes(artwork.id);
+        <>
+            {/* Download Album Header */}
+            {isOwnProfile && artworks.length > 0 && (
+                <div className="flex justify-end mb-4">
+                    <Button variant="secondary" className="flrx items-center" onClick={() => setShowAlbumModal(true)}>
+                        <Download className="w-4 h-4 mr-2" />
+                        Download Album
+                    </Button>
+                </div>
+            )}
 
-                return (
-                    <Card
-                        key={artwork.id}
-                        variant="elevated"
-                        padding="none"
-                        className="overflow-hidden group rounded-lg"
-                    >
-                        <div className="relative aspect-square bg-surface-container">
-                            <Image
-                                src={artwork.image_url}
-                                alt={getSketchTitle(artwork.sketch_id)}
-                                fill
-                                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                                className="object-cover"
-                                quality={90}
-                            />
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {artworks.map((artwork) => {
+                    const isLiked = interactions.liked.includes(artwork.id);
+                    const isBookmarked = interactions.bookmarked.includes(artwork.id);
 
-                            {/* Visibility Badge (own profile only) */}
-                            {isOwnProfile && (
-                                <div className={`absolute top-2 left-2 px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1 ${artwork.is_public
-                                    ? "bg-green-500/90 text-white"
-                                    : "bg-gray-700/90 text-white"
-                                    }`}>
-                                    {artwork.is_public ? (
-                                        <><Globe className="w-3 h-3" /> Public</>
+                    return (
+                        <Card
+                            key={artwork.id}
+                            variant="elevated"
+                            padding="none"
+                            className="overflow-hidden group rounded-lg"
+                        >
+                            <div className="relative aspect-square bg-surface-container">
+                                <Image
+                                    src={artwork.image_url}
+                                    alt={getSketchTitle(artwork.sketch_id)}
+                                    fill
+                                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                                    className="object-cover"
+                                    quality={90}
+                                />
+
+                                {/* Visibility Badge (own profile only) */}
+                                {isOwnProfile && (
+                                    <div className={`absolute top-2 left-2 px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1 ${artwork.is_public
+                                        ? "bg-green-500/90 text-white"
+                                        : "bg-gray-700/90 text-white"
+                                        }`}>
+                                        {artwork.is_public ? (
+                                            <><Globe className="w-3 h-3" /> Public</>
+                                        ) : (
+                                            <><Lock className="w-3 h-3" /> Private</>
+                                        )}
+                                    </div>
+                                )}
+
+                                {/* Hover Overlay */}
+                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                                    {/* View Button - always show */}
+                                    <button
+                                        onClick={() => onView(artwork)}
+                                        className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+                                        title="View"
+                                    >
+                                        <Eye className="w-5 h-5" />
+                                    </button>
+
+                                    {isOwnProfile ? (
+                                        <>
+                                            {/* Like Button */}
+                                            <button
+                                                onClick={() => onLike(artwork.id)}
+                                                className={`p-2 rounded-full transition-colors ${isLiked
+                                                    ? "bg-error text-on-error"
+                                                    : "bg-white/20 text-white hover:bg-white/30"
+                                                    }`}
+                                                title={isLiked ? "Unlike" : "Like"}
+                                            >
+                                                <Icons.Heart className={`w-5 h-5 ${isLiked ? "fill-current" : ""}`} />
+                                            </button>
+
+                                            {/* Edit Button - link to canvas */}
+                                            <Link
+                                                href={`/canvas/${artwork.sketch_id}`}
+                                                className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+                                                title="Edit"
+                                            >
+                                                <Edit className="w-5 h-5" />
+                                            </Link>
+
+                                            {/* Visibility Toggle */}
+                                            <button
+                                                onClick={() => onToggleVisibility(artwork.id, artwork.is_public)}
+                                                className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+                                                title={artwork.is_public ? "Make Private" : "Make Public"}
+                                            >
+                                                {artwork.is_public ? (
+                                                    <Lock className="w-5 h-5" />
+                                                ) : (
+                                                    <Globe className="w-5 h-5" />
+                                                )}
+                                            </button>
+
+                                            {/* Delete Button */}
+                                            <button
+                                                onClick={() => onDelete(artwork.id)}
+                                                disabled={deletingId === artwork.id}
+                                                className="p-2 rounded-full bg-error/80 text-white hover:bg-error transition-colors disabled:opacity-50"
+                                                title="Delete"
+                                            >
+                                                {deletingId === artwork.id ? (
+                                                    <Loader2 className="w-5 h-5 animate-spin" />
+                                                ) : (
+                                                    <Trash2 className="w-5 h-5" />
+                                                )}
+                                            </button>
+                                        </>
                                     ) : (
-                                        <><Lock className="w-3 h-3" /> Private</>
+                                        <>
+                                            <button
+                                                onClick={() => onLike(artwork.id)}
+                                                className={`p-2 rounded-full transition-colors ${isLiked
+                                                    ? "bg-error text-on-error"
+                                                    : "bg-white/20 text-white hover:bg-white/30"
+                                                    }`}
+                                            >
+                                                <Icons.Heart className={`w-5 h-5 ${isLiked ? "fill-current" : ""}`} />
+                                            </button>
+                                            <button
+                                                onClick={() => onBookmark(artwork.id)}
+                                                className={`p-2 rounded-full transition-colors ${isBookmarked
+                                                    ? "bg-primary text-on-primary"
+                                                    : "bg-white/20 text-white hover:bg-white/30"
+                                                    }`}
+                                            >
+                                                <Icons.Bookmark className={`w-5 h-5 ${isBookmarked ? "fill-current" : ""}`} />
+                                            </button>
+                                        </>
                                     )}
                                 </div>
-                            )}
-
-                            {/* Hover Overlay */}
-                            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-                                {/* View Button - always show */}
-                                <button
-                                    onClick={() => onView(artwork)}
-                                    className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
-                                    title="View"
-                                >
-                                    <Eye className="w-5 h-5" />
-                                </button>
-
-                                {isOwnProfile ? (
-                                    <>
-                                        {/* Like Button */}
-                                        <button
-                                            onClick={() => onLike(artwork.id)}
-                                            className={`p-2 rounded-full transition-colors ${isLiked
-                                                ? "bg-error text-on-error"
-                                                : "bg-white/20 text-white hover:bg-white/30"
-                                                }`}
-                                            title={isLiked ? "Unlike" : "Like"}
-                                        >
-                                            <Icons.Heart className={`w-5 h-5 ${isLiked ? "fill-current" : ""}`} />
-                                        </button>
-
-                                        {/* Edit Button - link to canvas */}
-                                        <Link
-                                            href={`/canvas/${artwork.sketch_id}`}
-                                            className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
-                                            title="Edit"
-                                        >
-                                            <Edit className="w-5 h-5" />
-                                        </Link>
-
-                                        {/* Visibility Toggle */}
-                                        <button
-                                            onClick={() => onToggleVisibility(artwork.id, artwork.is_public)}
-                                            className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
-                                            title={artwork.is_public ? "Make Private" : "Make Public"}
-                                        >
-                                            {artwork.is_public ? (
-                                                <Lock className="w-5 h-5" />
-                                            ) : (
-                                                <Globe className="w-5 h-5" />
-                                            )}
-                                        </button>
-
-                                        {/* Delete Button */}
-                                        <button
-                                            onClick={() => onDelete(artwork.id)}
-                                            disabled={deletingId === artwork.id}
-                                            className="p-2 rounded-full bg-error/80 text-white hover:bg-error transition-colors disabled:opacity-50"
-                                            title="Delete"
-                                        >
-                                            {deletingId === artwork.id ? (
-                                                <Loader2 className="w-5 h-5 animate-spin" />
-                                            ) : (
-                                                <Trash2 className="w-5 h-5" />
-                                            )}
-                                        </button>
-                                    </>
-                                ) : (
-                                    <>
-                                        <button
-                                            onClick={() => onLike(artwork.id)}
-                                            className={`p-2 rounded-full transition-colors ${isLiked
-                                                ? "bg-error text-on-error"
-                                                : "bg-white/20 text-white hover:bg-white/30"
-                                                }`}
-                                        >
-                                            <Icons.Heart className={`w-5 h-5 ${isLiked ? "fill-current" : ""}`} />
-                                        </button>
-                                        <button
-                                            onClick={() => onBookmark(artwork.id)}
-                                            className={`p-2 rounded-full transition-colors ${isBookmarked
-                                                ? "bg-primary text-on-primary"
-                                                : "bg-white/20 text-white hover:bg-white/30"
-                                                }`}
-                                        >
-                                            <Icons.Bookmark className={`w-5 h-5 ${isBookmarked ? "fill-current" : ""}`} />
-                                        </button>
-                                    </>
-                                )}
                             </div>
-                        </div>
 
-                        <div className="p-3">
-                            <p className="font-headline font-medium text-sm truncate mb-1">
-                                {getSketchTitle(artwork.sketch_id)}
-                            </p>
-                            <div className="flex items-center justify-between text-xs text-on-surface-variant">
-                                <span className="flex items-center gap-1">
-                                    <Icons.Heart className="w-3 h-3" />
-                                    {artwork.likes_count || 0}
-                                </span>
-                                <span className="flex items-center gap-1">
-                                    <Icons.Bookmark className="w-3 h-3" />
-                                    {artwork.saves_count || 0}
-                                </span>
+                            <div className="p-3">
+                                <p className="font-headline font-medium text-sm truncate mb-1">
+                                    {getSketchTitle(artwork.sketch_id)}
+                                </p>
+                                <div className="flex items-center justify-between text-xs text-on-surface-variant">
+                                    <span className="flex items-center gap-1">
+                                        <Icons.Heart className="w-3 h-3" />
+                                        {artwork.likes_count || 0}
+                                    </span>
+                                    <span className="flex items-center gap-1">
+                                        <Icons.Bookmark className="w-3 h-3" />
+                                        {artwork.saves_count || 0}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    </Card>
-                );
-            })}
-        </div>
+                        </Card>
+                    );
+                })}
+            </div>
+
+            {/* Gallery Album Modal */}
+            {showAlbumModal && (
+                <GalleryAlbumModal
+                    artworks={artworks}
+                    artistName={artistName}
+                    onClose={() => setShowAlbumModal(false)}
+                />
+            )}
+        </>
     );
 }
 
@@ -938,16 +963,12 @@ function LikedTab({
 function SketchesTab({
     sketches: completedSketches,
     isLoading,
-    isOwnProfile,
-    artistName
+    isOwnProfile
 }: {
     sketches: CompletedSketch[];
     isLoading: boolean;
     isOwnProfile: boolean;
-    artistName: string;
 }) {
-    const [showAlbumModal, setShowAlbumModal] = useState(false);
-
     if (isLoading) {
         return (
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -982,18 +1003,7 @@ function SketchesTab({
     }
 
     return (
-        <>
-            {/* Download Album Header */}
-            {isOwnProfile && completedSketches.length > 0 && (
-                <div className="flex justify-end mb-4">
-                    <Button variant="secondary" onClick={() => setShowAlbumModal(true)}>
-                        <Download className="w-4 h-4 mr-2" />
-                        Download Album
-                    </Button>
-                </div>
-            )}
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {completedSketches.map((progress) => {
                 // Find the sketch data
                 const sketchData = sketches.find(s => s.id === progress.sketch_id);
@@ -1055,17 +1065,7 @@ function SketchesTab({
                     </Card>
                 );
             })}
-            </div>
-
-            {/* Album Creator Modal */}
-            {showAlbumModal && (
-                <AlbumCreatorModal
-                    completedSketches={completedSketches}
-                    artistName={artistName}
-                    onClose={() => setShowAlbumModal(false)}
-                />
-            )}
-        </>
+        </div>
     );
 }
 
