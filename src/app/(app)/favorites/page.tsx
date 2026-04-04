@@ -208,11 +208,12 @@ function ArtworkGrid({
                 >
                     <div className="relative aspect-square bg-surface-container">
                         <Image
-                            src={artwork.thumbnail_url || artwork.image_url}
+                            src={artwork.image_url}
                             alt={getSketchTitle(artwork.sketch_id)}
                             fill
+                            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                             className="object-cover"
-                            unoptimized
+                            quality={90}
                         />
 
                         {/* Hover Overlay */}
@@ -286,7 +287,7 @@ function EmptyState({ type }: { type: "sketches" | "bookmarks" }) {
             title: "No bookmarked artworks yet",
             description: "Bookmark community artworks to build your private collection.",
             buttonText: "Explore Gallery",
-            buttonLink: "/explore"
+            buttonLink: "/home"
         }
     };
 
@@ -301,8 +302,8 @@ function EmptyState({ type }: { type: "sketches" | "bookmarks" }) {
             <p className="text-on-surface-variant mb-6 max-w-md mx-auto">
                 {description}
             </p>
-            <Link href={buttonLink}>
-                <Button variant="primary" size="lg">
+            <Link href={buttonLink} className="flex items-center justify-center">
+                <Button variant="primary" className="flex items-center" size="lg">
                     <Sparkles className="w-5 h-5 mr-2" />
                     {buttonText}
                 </Button>

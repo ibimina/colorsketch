@@ -30,7 +30,7 @@ export default function NotFound() {
                 <div className="pt-8 text-sm text-on-surface-variant">
                     <p>Lost? Try one of these:</p>
                     <div className="flex flex-wrap gap-4 justify-center mt-4">
-                        <Link href="/explore" className="text-primary hover:underline">
+                        <Link href="/home" className="text-primary hover:underline">
                             Explore
                         </Link>
                         <Link href="/profile" className="text-primary hover:underline">

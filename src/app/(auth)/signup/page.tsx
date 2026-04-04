@@ -114,7 +114,7 @@ export default function SignupPage() {
                 return;
             }
 
-            router.push("/explore");
+            router.push("/home");
             router.refresh();
         } catch {
             setError("An unexpected error occurred");
@@ -291,8 +291,8 @@ export default function SignupPage() {
                                     <div
                                         key={level}
                                         className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${level <= passwordStrength.score
-                                                ? passwordStrength.color
-                                                : 'bg-surface-variant'
+                                            ? passwordStrength.color
+                                            : 'bg-surface-variant'
                                             }`}
                                     />
                                 ))}
@@ -322,10 +322,10 @@ export default function SignupPage() {
                             onBlur={() => setFocusedField(null)}
                             required
                             className={`w-full bg-surface-container-lowest border-2 focus:bg-white rounded-2xl py-3.5 pl-12 pr-12 text-on-surface font-body placeholder:text-on-surface-variant/40 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary/10 ${confirmPassword
-                                    ? passwordsMatch
-                                        ? 'border-tertiary/50 focus:border-tertiary'
-                                        : 'border-error/50 focus:border-error'
-                                    : 'border-transparent focus:border-primary/50'
+                                ? passwordsMatch
+                                    ? 'border-tertiary/50 focus:border-tertiary'
+                                    : 'border-error/50 focus:border-error'
+                                : 'border-transparent focus:border-primary/50'
                                 }`}
                         />
                         <button

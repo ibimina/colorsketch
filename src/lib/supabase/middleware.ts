@@ -36,7 +36,7 @@ export async function updateSession(request: NextRequest) {
 
   // Protected routes - redirect to login if not authenticated
   const protectedPaths = [
-    "/explore",
+    "/home",
     "/library",
     "/canvas",
     "/settings",
@@ -60,7 +60,7 @@ export async function updateSession(request: NextRequest) {
 
   if (isAuthRoute && user) {
     const url = request.nextUrl.clone();
-    url.pathname = "/explore";
+    url.pathname = "/home";
     return NextResponse.redirect(url);
   }
 

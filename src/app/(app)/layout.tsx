@@ -14,7 +14,6 @@ import { LogOut } from "lucide-react";
 
 const navItems = [
     { href: "/home", label: "Home", Icon: Icons.Home },
-    { href: "/explore", label: "Explore", Icon: Icons.Search },
     { href: "/library", label: "Library", Icon: Icons.Library },
     { href: "/favorites", label: "Favorites", Icon: Icons.Heart },
     { href: "/profile", label: "Profile", Icon: Icons.Profile },
@@ -88,7 +87,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                 <aside className="hidden lg:flex flex-col w-64 h-screen fixed top-0 left-0 bg-surface-container-low p-6 gap-6 z-40">
                     {/* Logo */}
                     <div className="shrink-0 mb-4">
-                        <Link href="/explore" className="block">
+                        <Link href="/home" className="block">
                             <span className="text-2xl font-bold text-primary font-headline">
                                 ColorSketch
                             </span>
@@ -102,7 +101,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                     <nav className="flex-1 space-y-2 overflow-y-auto">
                         {navItems.map((item) => {
                             const isActive = pathname === item.href ||
-                                (item.href !== "/explore" && pathname.startsWith(item.href));
+                                (item.href !== "/home" && pathname.startsWith(item.href));
 
                             return (
                                 <Link
@@ -189,7 +188,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                     <div className="flex justify-around">
                         {navItems.filter(item => !item.desktopOnly).slice(0, 5).map((item) => {
                             const isActive = pathname === item.href ||
-                                (item.href !== "/explore" && pathname.startsWith(item.href));
+                                (item.href !== "/home" && pathname.startsWith(item.href));
 
                             return (
                                 <Link

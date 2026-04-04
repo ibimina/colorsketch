@@ -276,9 +276,9 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                     <p className="text-on-surface-variant mb-6">
                         This profile doesn&apos;t exist or has no public artworks.
                     </p>
-                    <Link href="/explore">
+                    <Link href="/home">
                         <Button variant="primary">
-                            Back to Explore
+                            Back to Home
                         </Button>
                     </Link>
                 </Card>
@@ -434,8 +434,8 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
 
                 {/* Back Link */}
                 <div className="text-center pt-4">
-                    <Link href="/explore" className="text-primary hover:underline font-medium">
-                        ← Back to Explore
+                    <Link href="/home" className="text-primary hover:underline font-medium">
+                        ← Back to Home
                     </Link>
                 </div>
             </div>
@@ -471,8 +471,10 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                                 src={viewingArtwork.image_url}
                                 alt={getSketchTitle(viewingArtwork.sketch_id)}
                                 fill
+                                sizes="(min-width: 768px) 70vw, 90vw"
                                 className="object-contain"
-                                unoptimized
+                                quality={95}
+                                priority
                             />
                         </div>
 
@@ -525,8 +527,10 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                                 src={viewingLikedArtwork.image_url}
                                 alt={getSketchTitle(viewingLikedArtwork.sketch_id)}
                                 fill
+                                sizes="(min-width: 768px) 70vw, 90vw"
                                 className="object-contain"
-                                unoptimized
+                                quality={95}
+                                priority
                             />
                         </div>
 
@@ -646,11 +650,12 @@ function GalleryTab({
                     >
                         <div className="relative aspect-square bg-surface-container">
                             <Image
-                                src={artwork.thumbnail_url || artwork.image_url}
+                                src={artwork.image_url}
                                 alt={getSketchTitle(artwork.sketch_id)}
                                 fill
+                                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                                 className="object-cover"
-                                unoptimized
+                                quality={90}
                             />
 
                             {/* Visibility Badge (own profile only) */}
@@ -808,7 +813,7 @@ function LikedTab({
                 <p className="text-on-surface-variant mb-4">
                     Explore the community and like artworks that inspire you!
                 </p>
-                <Link href="/explore">
+                <Link href="/home">
                     <Button variant="primary">
                         Explore Gallery
                     </Button>
@@ -828,11 +833,12 @@ function LikedTab({
                 >
                     <div className="relative aspect-square bg-surface-container">
                         <Image
-                            src={artwork.thumbnail_url || artwork.image_url}
+                            src={artwork.image_url}
                             alt={getSketchTitle(artwork.sketch_id)}
                             fill
+                            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                             className="object-cover"
-                            unoptimized
+                            quality={90}
                         />
 
                         {/* Hover Overlay */}
