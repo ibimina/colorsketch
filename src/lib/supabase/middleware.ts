@@ -39,7 +39,6 @@ export async function updateSession(request: NextRequest) {
     "/explore",
     "/library",
     "/canvas",
-    "/gallery",
     "/settings",
     "/profile",
   ];

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Heart, Lock } from "lucide-react";
+import { Heart, Lock, Clock } from "lucide-react";
 import { Card, Button, ColoredSketchPreview } from "@/components/ui";
 import { Sketch } from "@/types";
 import { SketchProgressData } from "@/hooks/useSketchProgress";
@@ -15,6 +15,13 @@ import {
     getButtonText,
     ProgressStatus,
 } from "@/lib/sketch-utils";
+
+// Difficulty color mapping
+const difficultyColors = {
+    easy: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
+    medium: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400",
+    hard: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
+} as const;
 
 // ============================================
 // Types
@@ -69,7 +76,7 @@ export function SketchCard({
             variant="elevated"
             padding="none"
             className={`overflow-hidden transition-transform ${
-                viewMode === "list" ? "flex flex-row" : ""
+                viewMode === "list" ? "flex flex-row border-b border-surface-container-high last:border-b-0" : ""
             }`}
         >
             <Link
@@ -84,7 +91,7 @@ export function SketchCard({
                 {/* Thumbnail */}
                 <div
                     className={`relative bg-surface-container-low flex items-center justify-center ${
-                        viewMode === "list" ? "w-32 sm:w-48 shrink-0" : "aspect-square"
+                        viewMode === "list" ? "w-28 sm:w-40 h-28 sm:h-32 shrink-0" : "aspect-square"
                     }`}
                 >
                     {hasProgress && progress ? (
@@ -137,36 +144,62 @@ export function SketchCard({
                 <div
                     className={`p-3 sm:p-4 ${
                         viewMode === "list"
-                            ? "flex-1 flex flex-col justify-center min-w-0 overflow-hidden"
+                            ? "flex-1 flex flex-col justify-between min-w-0 overflow-hidden"
                             : ""
                     }`}
                 >
-                    <h3 className="font-headline font-bold mb-1 text-sm sm:text-base truncate w-full">
-                        {sketch.title}
-                    </h3>
-                    <div className="flex items-center gap-2 text-xs text-on-surface-variant mb-3 shrink-0 flex-wrap">
-                        <span className="capitalize">{sketch.difficulty}</span>
-                        <span>•</span>
-                        {status === "completed" ? (
-                            <span className="text-green-600 font-medium">Completed ✓</span>
-                        ) : (
-                            <span>~{sketch.estimatedMinutes} min</span>
+                    <div>
+                        <h3 className="font-headline font-bold mb-1 text-sm sm:text-base truncate w-full">
+                            {sketch.title}
+                        </h3>
+                        <div className="flex items-center gap-2 text-xs text-on-surface-variant mb-2 flex-wrap">
+                            {/* Difficulty Badge */}
+                            <span className={`px-2 py-0.5 rounded-full font-medium capitalize ${
+                                difficultyColors[sketch.difficulty as keyof typeof difficultyColors] || difficultyColors.medium
+                            }`}>
+                                {sketch.difficulty}
+                            </span>
+                            {status === "completed" ? (
+                                <span className="text-green-600 font-medium">Completed ✓</span>
+                            ) : (
+                                <span className="flex items-center gap-1">
+                                    <Clock className="w-3 h-3" />
+                                    ~{sketch.estimatedMinutes} min
+                                </span>
+                            )}
+                        </div>
+
+                        {/* Progress Bar (list view, in-progress only) */}
+                        {viewMode === "list" && status === "in-progress" && progress && (
+                            <div className="mb-2">
+                                <div className="flex items-center gap-2">
+                                    <div className="flex-1 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+                                        <div
+                                            className="h-full bg-yellow-500 rounded-full transition-all"
+                                            style={{ width: `${Math.min(100, Object.keys(progress.fills).length * 5)}%` }}
+                                        />
+                                    </div>
+                                    <span className="text-xs text-on-surface-variant font-medium">
+                                        {Object.keys(progress.fills).length} regions
+                                    </span>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Tags (list view only) */}
+                        {viewMode === "list" && sketch.tags && (
+                            <div className="flex gap-1 mb-2 flex-wrap overflow-hidden">
+                                {sketch.tags.slice(0, 3).map((tag) => (
+                                    <span
+                                        key={tag}
+                                        className="text-xs bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant shrink-0"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
                         )}
                     </div>
-
-                    {/* Tags (list view only) */}
-                    {viewMode === "list" && sketch.tags && (
-                        <div className="flex gap-1 mb-3 flex-wrap overflow-hidden">
-                            {sketch.tags.slice(0, 3).map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="text-xs bg-surface-container px-2 py-1 rounded-full text-on-surface-variant shrink-0 max-w-full truncate"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                    )}
 
                     <Button
                         variant={
@@ -177,7 +210,9 @@ export function SketchCard({
                                 : "primary"
                         }
                         size="sm"
-                        className={`w-full text-xs sm:text-sm ${isLocked ? "opacity-70" : ""}`}
+                        className={`${
+                            viewMode === "list" ? "w-auto self-start" : "w-full"
+                        } text-xs sm:text-sm ${isLocked ? "opacity-70" : ""}`}
                     >
                         {buttonText}
                     </Button>
@@ -250,7 +285,7 @@ export function SketchGrid({
             className={
                 viewMode === "grid"
                     ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
-                    : "flex flex-col gap-4"
+                    : "flex flex-col gap-3"
             }
         >
             {sketches.map((sketch) => (

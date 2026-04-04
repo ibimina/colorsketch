@@ -243,7 +243,7 @@ export default function ExplorePage() {
                                         key={artwork.id}
                                         variant="elevated"
                                         padding="none"
-                                        className="overflow-hidden group"
+                                        className="overflow-hidden group rounded-lg"
                                     >
                                         <div className="relative aspect-square bg-surface-container">
                                             <Image

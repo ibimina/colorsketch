@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, Suspense, useEffect } from "react";
+import { useState, Suspense, useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui";
 import { Category } from "@/types";
@@ -8,6 +8,7 @@ import { Icons } from "@/lib/icons";
 import { useSketchProgress } from "@/hooks";
 import { useFavoritesStore } from "@/stores/favoritesStore";
 import { useProgressStore } from "@/stores/progressStore";
+import { useColoringStore } from "@/stores/coloringStore";
 import { notify } from "@/stores/notificationsStore";
 
 // Shared data and utilities
@@ -54,12 +55,15 @@ function LibraryLoadingSkeleton() {
 // Library Content
 // ============================================
 
+type StatusFilter = "all" | "in-progress" | "completed";
+
 function LibraryContent() {
     const searchParams = useSearchParams();
     const categoryParam = searchParams.get("category") as Category | null;
 
     // State
     const [selectedCategory, setSelectedCategory] = useState<Category | "all">("all");
+    const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
     const [sortBy, setSortBy] = useState<SortOption>("popularity");
     const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
@@ -67,6 +71,29 @@ function LibraryContent() {
     const { progressMap } = useSketchProgress();
     const { favorites, loadFavorites, toggle: toggleFavorite } = useFavoritesStore();
     const { level } = useProgressStore();
+    const { savedProgress } = useColoringStore();
+
+    // Get in-progress and completed sketch IDs
+    const { inProgressIds, completedIds } = useMemo(() => {
+        const inProgress: string[] = [];
+        const completed: string[] = [];
+        
+        Object.entries(savedProgress).forEach(([sketchId, progress]) => {
+            const filledCount = Object.keys(progress.fills).length;
+            if (filledCount === 0) return;
+            
+            const totalRegions = progress.totalRegions || 20; // fallback estimate
+            const percent = (filledCount / totalRegions) * 100;
+            
+            if (percent >= 100) {
+                completed.push(sketchId);
+            } else {
+                inProgress.push(sketchId);
+            }
+        });
+        
+        return { inProgressIds: inProgress, completedIds: completed };
+    }, [savedProgress]);
 
     // Load favorites on mount
     useEffect(() => {
@@ -86,11 +113,36 @@ function LibraryContent() {
     // Derive effective category from URL param or local state
     const effectiveCategory = categoryParam || selectedCategory;
 
-    // Filter and sort sketches
-    const filteredSketches = sketches.filter(
-        (sketch) => effectiveCategory === "all" || sketch.category === effectiveCategory
-    );
+    // Filter by category and status
+    const filteredSketches = sketches.filter((sketch) => {
+        // Category filter
+        if (effectiveCategory !== "all" && sketch.category !== effectiveCategory) {
+            return false;
+        }
+        
+        // Status filter
+        if (statusFilter === "in-progress") {
+            return inProgressIds.includes(sketch.id);
+        } else if (statusFilter === "completed") {
+            return completedIds.includes(sketch.id);
+        }
+        
+        return true;
+    });
     const sortedSketches = sortSketches(filteredSketches, sortBy);
+
+    // Counts for status tabs
+    const statusCounts = {
+        all: sketches.filter(s => effectiveCategory === "all" || s.category === effectiveCategory).length,
+        inProgress: inProgressIds.filter(id => {
+            const sketch = sketches.find(s => s.id === id);
+            return sketch && (effectiveCategory === "all" || sketch.category === effectiveCategory);
+        }).length,
+        completed: completedIds.filter(id => {
+            const sketch = sketches.find(s => s.id === id);
+            return sketch && (effectiveCategory === "all" || sketch.category === effectiveCategory);
+        }).length,
+    };
 
     return (
         <div className="space-y-6 pb-20 lg:pb-0">
@@ -102,27 +154,56 @@ function LibraryContent() {
                 </p>
             </div>
 
+            {/* Status Tabs */}
+            <div className="flex gap-1 bg-surface-container-low rounded-xl p-1">
+                <button
+                    onClick={() => setStatusFilter("all")}
+                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${
+                        statusFilter === "all"
+                            ? "bg-primary text-white shadow-sm"
+                            : "text-on-surface-variant hover:bg-surface-container"
+                    }`}
+                >
+                    All ({statusCounts.all})
+                </button>
+                <button
+                    onClick={() => setStatusFilter("in-progress")}
+                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${
+                        statusFilter === "in-progress"
+                            ? "bg-primary text-white shadow-sm"
+                            : "text-on-surface-variant hover:bg-surface-container"
+                    }`}
+                >
+                    In Progress ({statusCounts.inProgress})
+                </button>
+                <button
+                    onClick={() => setStatusFilter("completed")}
+                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${
+                        statusFilter === "completed"
+                            ? "bg-primary text-white shadow-sm"
+                            : "text-on-surface-variant hover:bg-surface-container"
+                    }`}
+                >
+                    Completed ({statusCounts.completed})
+                </button>
+            </div>
+
             {/* Filters */}
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-                {/* Category Pills */}
-                <div className="flex gap-2 overflow-x-auto pb-2 sm:flex-wrap scrollbar-hide w-full sm:w-auto">
-                    {categories.map((cat) => (
-                        <button
-                            key={cat.id}
-                            onClick={() => setSelectedCategory(cat.id)}
-                            className={`
-                                shrink-0 px-4 py-2 rounded-full font-headline font-medium text-sm
-                                transition-all duration-150 soft-touch
-                                ${
-                                    effectiveCategory === cat.id
-                                        ? "bg-primary text-white"
-                                        : "bg-surface-container-low text-on-surface-variant hover:bg-surface-container"
-                                }
-                            `}
-                        >
-                            {cat.label}
-                        </button>
-                    ))}
+                {/* Category Dropdown */}
+                <div className="flex items-center gap-2">
+                    <span className="text-sm text-on-surface-variant">Category:</span>
+                    <select
+                        value={effectiveCategory}
+                        onChange={(e) => setSelectedCategory(e.target.value as Category | "all")}
+                        className="bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm font-headline focus:outline-none focus:ring-2 focus:ring-primary/30 min-w-[140px]"
+                    >
+                        {categories.map((cat) => (
+                            <option key={cat.id} value={cat.id}>
+                                {cat.label}
+                            </option>
+                        ))}
+                    </select>
                 </div>
 
                 {/* View Mode & Sort Controls */}

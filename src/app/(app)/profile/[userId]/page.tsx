@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Card, Button, Input } from "@/components/ui";
 import { Icons } from "@/lib/icons";
+import { createClient } from "@/lib/supabase/client";
 import {
     getProfileData,
     getProfileLikedArtworks,
@@ -12,9 +13,10 @@ import {
     toggleArtworkLike,
     toggleArtworkBookmark,
     toggleArtworkVisibility,
-    updateProfile
+    updateProfile,
+    deleteArtwork
 } from "@/lib/actions";
-import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw } from "lucide-react";
+import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit } from "lucide-react";
 
 // Sketch titles mapping
 const sketchTitles: Record<string, string> = {
@@ -68,6 +70,8 @@ interface LikedArtwork {
     likes_count: number;
     saves_count: number;
     liked_at: string;
+    artist_name: string;
+    artist_avatar: string | null;
 }
 
 interface Interactions {
@@ -87,6 +91,9 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
     const [notFound, setNotFound] = useState(false);
     const [activeTab, setActiveTab] = useState<TabType>("gallery");
     const [showEditModal, setShowEditModal] = useState(false);
+    const [viewingArtwork, setViewingArtwork] = useState<ProfileData["artworks"][0] | null>(null);
+    const [viewingLikedArtwork, setViewingLikedArtwork] = useState<LikedArtwork | null>(null);
+    const [deletingId, setDeletingId] = useState<string | null>(null);
 
     useEffect(() => {
         async function loadProfile() {
@@ -96,6 +103,16 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                 setIsLoading(false);
                 return;
             }
+            
+            // If own profile and no avatar_url, try to get from auth metadata
+            if (data.isOwnProfile && !data.profile.avatar_url) {
+                const supabase = createClient();
+                const { data: { user } } = await supabase.auth.getUser();
+                if (user?.user_metadata?.picture || user?.user_metadata?.avatar_url) {
+                    data.profile.avatar_url = user.user_metadata.picture || user.user_metadata.avatar_url;
+                }
+            }
+            
             setProfileData(data as ProfileData);
 
             // Load user's interactions with gallery artworks
@@ -190,6 +207,24 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                 };
             });
         }
+    };
+
+    const handleDelete = async (artworkId: string) => {
+        if (!confirm("Are you sure you want to delete this artwork? This cannot be undone.")) return;
+        
+        setDeletingId(artworkId);
+        const result = await deleteArtwork(artworkId);
+        
+        if (result.success) {
+            setProfileData(prev => {
+                if (!prev) return prev;
+                return {
+                    ...prev,
+                    artworks: prev.artworks.filter(artwork => artwork.id !== artworkId)
+                };
+            });
+        }
+        setDeletingId(null);
     };
 
     const handleProfileUpdate = async (updates: { name?: string; bio?: string; avatar_url?: string }) => {
@@ -379,6 +414,9 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                         onLike={handleLike}
                         onBookmark={handleBookmark}
                         onToggleVisibility={handleToggleVisibility}
+                        onDelete={handleDelete}
+                        onView={setViewingArtwork}
+                        deletingId={deletingId}
                     />
                 )}
 
@@ -386,6 +424,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                     <LikedTab
                         artworks={likedArtworks}
                         isLoading={likedLoadState === "loading"}
+                        onView={setViewingLikedArtwork}
                     />
                 )}
 
@@ -409,6 +448,137 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                     onSave={handleProfileUpdate}
                 />
             )}
+
+            {/* View Artwork Modal */}
+            {viewingArtwork && (
+                <div
+                    className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+                    onClick={() => setViewingArtwork(null)}
+                >
+                    <div
+                        className="relative max-w-4xl max-h-[90vh] w-full"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            onClick={() => setViewingArtwork(null)}
+                            className="absolute -top-12 right-0 p-2 text-white hover:text-gray-300 transition-colors"
+                        >
+                            <X className="w-8 h-8" />
+                        </button>
+
+                        <div className="relative aspect-square max-h-[70vh] w-full bg-surface-container rounded-xl overflow-hidden">
+                            <Image
+                                src={viewingArtwork.image_url}
+                                alt={getSketchTitle(viewingArtwork.sketch_id)}
+                                fill
+                                className="object-contain"
+                                unoptimized
+                            />
+                        </div>
+
+                        <div className="mt-4 text-center text-white">
+                            <h3 className="text-xl font-headline font-bold">
+                                {getSketchTitle(viewingArtwork.sketch_id)}
+                            </h3>
+                            <div className="flex items-center justify-center gap-4 mt-2 text-sm text-gray-300">
+                                <span className="flex items-center gap-1">
+                                    <Icons.Heart className="w-4 h-4" />
+                                    {viewingArtwork.likes_count || 0} likes
+                                </span>
+                                <span className="flex items-center gap-1">
+                                    <Icons.Bookmark className="w-4 h-4" />
+                                    {viewingArtwork.saves_count || 0} saves
+                                </span>
+                            </div>
+                            {isOwnProfile && (
+                                <Link
+                                    href={`/canvas/${viewingArtwork.sketch_id}`}
+                                    className="inline-block mt-4 px-4 py-2 bg-primary text-on-primary rounded-full hover:bg-primary/90 transition-colors"
+                                >
+                                    Continue Editing
+                                </Link>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* View Liked Artwork Modal */}
+            {viewingLikedArtwork && (
+                <div
+                    className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+                    onClick={() => setViewingLikedArtwork(null)}
+                >
+                    <div
+                        className="relative max-w-4xl max-h-[90vh] w-full"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            onClick={() => setViewingLikedArtwork(null)}
+                            className="absolute -top-12 right-0 p-2 text-white hover:text-gray-300 transition-colors"
+                        >
+                            <X className="w-8 h-8" />
+                        </button>
+
+                        <div className="relative aspect-square max-h-[70vh] w-full bg-surface-container rounded-xl overflow-hidden">
+                            <Image
+                                src={viewingLikedArtwork.image_url}
+                                alt={getSketchTitle(viewingLikedArtwork.sketch_id)}
+                                fill
+                                className="object-contain"
+                                unoptimized
+                            />
+                        </div>
+
+                        <div className="mt-4 text-center text-white">
+                            <h3 className="text-xl font-headline font-bold">
+                                {getSketchTitle(viewingLikedArtwork.sketch_id)}
+                            </h3>
+                            
+                            {/* Artist Info */}
+                            <Link 
+                                href={`/profile/${viewingLikedArtwork.user_id}`}
+                                className="inline-flex items-center gap-2 mt-2 hover:opacity-80"
+                            >
+                                {viewingLikedArtwork.artist_avatar ? (
+                                    <Image
+                                        src={viewingLikedArtwork.artist_avatar}
+                                        alt={viewingLikedArtwork.artist_name}
+                                        width={24}
+                                        height={24}
+                                        className="rounded-full"
+                                    />
+                                ) : (
+                                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                                        <span className="text-xs">🎨</span>
+                                    </div>
+                                )}
+                                <span className="text-sm text-gray-300">
+                                    by {viewingLikedArtwork.artist_name}
+                                </span>
+                            </Link>
+
+                            <div className="flex items-center justify-center gap-4 mt-2 text-sm text-gray-300">
+                                <span className="flex items-center gap-1">
+                                    <Icons.Heart className="w-4 h-4 fill-current text-error" />
+                                    {viewingLikedArtwork.likes_count || 0} likes
+                                </span>
+                                <span className="flex items-center gap-1">
+                                    <Icons.Bookmark className="w-4 h-4" />
+                                    {viewingLikedArtwork.saves_count || 0} saves
+                                </span>
+                            </div>
+
+                            <Link
+                                href={`/profile/${viewingLikedArtwork.user_id}`}
+                                className="inline-block mt-4 px-4 py-2 bg-primary text-on-primary rounded-full hover:bg-primary/90 transition-colors"
+                            >
+                                View Artist Profile
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
@@ -423,7 +593,10 @@ function GalleryTab({
     interactions,
     onLike,
     onBookmark,
-    onToggleVisibility
+    onToggleVisibility,
+    onDelete,
+    onView,
+    deletingId
 }: {
     artworks: ProfileData["artworks"];
     isOwnProfile: boolean;
@@ -431,6 +604,9 @@ function GalleryTab({
     onLike: (id: string) => void;
     onBookmark: (id: string) => void;
     onToggleVisibility: (id: string, isPublic: boolean) => void;
+    onDelete: (id: string) => void;
+    onView: (artwork: ProfileData["artworks"][0]) => void;
+    deletingId: string | null;
 }) {
     if (artworks.length === 0) {
         return (
@@ -493,18 +669,65 @@ function GalleryTab({
 
                             {/* Hover Overlay */}
                             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                                {/* View Button - always show */}
+                                <button
+                                    onClick={() => onView(artwork)}
+                                    className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+                                    title="View"
+                                >
+                                    <Eye className="w-5 h-5" />
+                                </button>
+
                                 {isOwnProfile ? (
-                                    <button
-                                        onClick={() => onToggleVisibility(artwork.id, artwork.is_public)}
-                                        className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
-                                        title={artwork.is_public ? "Make Private" : "Make Public"}
-                                    >
-                                        {artwork.is_public ? (
-                                            <Lock className="w-5 h-5" />
-                                        ) : (
-                                            <Globe className="w-5 h-5" />
-                                        )}
-                                    </button>
+                                    <>
+                                        {/* Like Button */}
+                                        <button
+                                            onClick={() => onLike(artwork.id)}
+                                            className={`p-2 rounded-full transition-colors ${isLiked
+                                                    ? "bg-error text-on-error"
+                                                    : "bg-white/20 text-white hover:bg-white/30"
+                                                }`}
+                                            title={isLiked ? "Unlike" : "Like"}
+                                        >
+                                            <Icons.Heart className={`w-5 h-5 ${isLiked ? "fill-current" : ""}`} />
+                                        </button>
+
+                                        {/* Edit Button - link to canvas */}
+                                        <Link
+                                            href={`/canvas/${artwork.sketch_id}`}
+                                            className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+                                            title="Edit"
+                                        >
+                                            <Edit className="w-5 h-5" />
+                                        </Link>
+
+                                        {/* Visibility Toggle */}
+                                        <button
+                                            onClick={() => onToggleVisibility(artwork.id, artwork.is_public)}
+                                            className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+                                            title={artwork.is_public ? "Make Private" : "Make Public"}
+                                        >
+                                            {artwork.is_public ? (
+                                                <Lock className="w-5 h-5" />
+                                            ) : (
+                                                <Globe className="w-5 h-5" />
+                                            )}
+                                        </button>
+
+                                        {/* Delete Button */}
+                                        <button
+                                            onClick={() => onDelete(artwork.id)}
+                                            disabled={deletingId === artwork.id}
+                                            className="p-2 rounded-full bg-error/80 text-white hover:bg-error transition-colors disabled:opacity-50"
+                                            title="Delete"
+                                        >
+                                            {deletingId === artwork.id ? (
+                                                <Loader2 className="w-5 h-5 animate-spin" />
+                                            ) : (
+                                                <Trash2 className="w-5 h-5" />
+                                            )}
+                                        </button>
+                                    </>
                                 ) : (
                                     <>
                                         <button
@@ -558,10 +781,12 @@ function GalleryTab({
 
 function LikedTab({
     artworks,
-    isLoading
+    isLoading,
+    onView
 }: {
     artworks: LikedArtwork[];
     isLoading: boolean;
+    onView: (artwork: LikedArtwork) => void;
 }) {
     if (isLoading) {
         return (
@@ -595,39 +820,77 @@ function LikedTab({
     return (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {artworks.map((artwork) => (
-                <Link key={artwork.id} href={`/profile/${artwork.user_id}`}>
-                    <Card
-                        variant="elevated"
-                        padding="none"
-                        className="overflow-hidden group cursor-pointer"
-                    >
-                        <div className="relative aspect-square bg-surface-container">
-                            <Image
-                                src={artwork.thumbnail_url || artwork.image_url}
-                                alt={getSketchTitle(artwork.sketch_id)}
-                                fill
-                                className="object-cover group-hover:scale-105 transition-transform"
-                                unoptimized
-                            />
-                        </div>
+                <Card
+                    key={artwork.id}
+                    variant="elevated"
+                    padding="none"
+                    className="overflow-hidden group"
+                >
+                    <div className="relative aspect-square bg-surface-container">
+                        <Image
+                            src={artwork.thumbnail_url || artwork.image_url}
+                            alt={getSketchTitle(artwork.sketch_id)}
+                            fill
+                            className="object-cover"
+                            unoptimized
+                        />
 
-                        <div className="p-3">
-                            <p className="font-headline font-medium text-sm truncate mb-1">
-                                {getSketchTitle(artwork.sketch_id)}
-                            </p>
-                            <div className="flex items-center justify-between text-xs text-on-surface-variant">
-                                <span className="flex items-center gap-1">
-                                    <Icons.Heart className="w-3 h-3 fill-current text-error" />
-                                    {artwork.likes_count || 0}
-                                </span>
-                                <span className="flex items-center gap-1">
-                                    <Icons.Bookmark className="w-3 h-3" />
-                                    {artwork.saves_count || 0}
-                                </span>
-                            </div>
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                            <button
+                                onClick={() => onView(artwork)}
+                                className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+                                title="View"
+                            >
+                                <Eye className="w-5 h-5" />
+                            </button>
+                            <Link
+                                href={`/profile/${artwork.user_id}`}
+                                className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+                                title="View Artist Profile"
+                            >
+                                <Icons.Profile className="w-5 h-5" />
+                            </Link>
                         </div>
-                    </Card>
-                </Link>
+                    </div>
+
+                    <div className="p-3">
+                        <p className="font-headline font-medium text-sm truncate mb-1">
+                            {getSketchTitle(artwork.sketch_id)}
+                        </p>
+                        
+                        {/* Artist Info */}
+                        <Link href={`/profile/${artwork.user_id}`} className="flex items-center gap-1.5 mb-2 hover:opacity-80">
+                            {artwork.artist_avatar ? (
+                                <Image
+                                    src={artwork.artist_avatar}
+                                    alt={artwork.artist_name}
+                                    width={16}
+                                    height={16}
+                                    className="rounded-full"
+                                />
+                            ) : (
+                                <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span className="text-[8px]">🎨</span>
+                                </div>
+                            )}
+                            <span className="text-xs text-on-surface-variant truncate">
+                                {artwork.artist_name}
+                            </span>
+                        </Link>
+                        
+                        <div className="flex items-center justify-between text-xs text-on-surface-variant">
+                            <span className="flex items-center gap-1">
+                                <Icons.Heart className="w-3 h-3 fill-current text-error" />
+                                {artwork.likes_count || 0}
+                            </span>
+                            <span className="flex items-center gap-1">
+                                <Icons.Bookmark className="w-3 h-3" />
+                                {artwork.saves_count || 0}
+                            </span>
+                        </div>
+                    </div>
+                </Card>
             ))}
         </div>
     );

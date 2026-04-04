@@ -1,23 +1,50 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Card, Button } from "@/components/ui";
 import { useProgressStore } from "@/stores/progressStore";
+import { useColoringStore } from "@/stores/coloringStore";
 import { Emojis } from "@/lib/icons";
 import { ACHIEVEMENTS } from "@/lib/achievements";
+import { sketches } from "@/data/sketches";
 import { useEffect, useMemo } from "react";
 import { Leaderboard } from "@/components/Leaderboard";
 
 export default function HomePage() {
-    // No dummy data - ready for real data integration
-    const recentSketches: any[] = [];
     const dailyTip = "";
     const { level, xp, xpToNextLevel, streak, totalSketches, achievements, checkStreak } = useProgressStore();
+    const { getInProgressSketches } = useColoringStore();
 
     // Check streak on page load
     useEffect(() => {
         checkStreak();
     }, [checkStreak]);
+
+    // Get in-progress sketches with sketch data
+    const inProgressSketches = useMemo(() => {
+        const progressList = getInProgressSketches();
+        return progressList
+            .map(({ sketchId, progress }) => {
+                const sketch = sketches.find(s => s.id === sketchId);
+                if (!sketch) return null;
+                
+                const filledRegions = Object.keys(progress.fills).length;
+                const totalRegions = progress.totalRegions || sketch.regions?.length || 20; // fallback estimate
+                const progressPercent = Math.min(100, Math.round((filledRegions / totalRegions) * 100));
+                
+                return {
+                    id: sketch.id,
+                    title: sketch.title,
+                    category: sketch.category,
+                    thumbnail: sketch.thumbnail,
+                    progress: progressPercent,
+                    lastModified: progress.lastModified,
+                };
+            })
+            .filter((s): s is NonNullable<typeof s> => s !== null)
+            .slice(0, 6); // Show up to 6 recent sketches
+    }, [getInProgressSketches]);
 
     // Convert achievement IDs to full achievement objects
     const unlockedAchievements = useMemo(() => {
@@ -189,27 +216,36 @@ export default function HomePage() {
             </section>
 
             {/* Continue Coloring */}
-            {recentSketches.length > 0 && (
+            {inProgressSketches.length > 0 && (
                 <section>
                     <div className="flex items-center justify-between mb-4">
                         <h2 className="text-xl font-headline font-bold">Continue Coloring</h2>
-                        <Link href="/gallery" className="text-primary font-headline font-medium text-sm">
+                        <Link href="/library" className="text-primary font-headline font-medium text-sm">
                             View All →
                         </Link>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {recentSketches.map((sketch) => (
+                        {inProgressSketches.map((sketch) => (
                             <Card key={sketch.id} variant="elevated" padding="none" className="overflow-hidden">
-                                <div className="aspect-video bg-surface-container flex items-center justify-center">
-                                    <span className="text-4xl opacity-40">🎨</span>
+                                <div className="aspect-video bg-surface-container flex items-center justify-center relative">
+                                    {sketch.thumbnail ? (
+                                        <Image
+                                            src={sketch.thumbnail}
+                                            alt={sketch.title}
+                                            fill
+                                            className="object-contain p-2"
+                                        />
+                                    ) : (
+                                        <span className="text-4xl opacity-40">🎨</span>
+                                    )}
                                 </div>
                                 <div className="p-4">
                                     <h3 className="font-headline font-bold">{sketch.title}</h3>
-                                    <p className="text-sm text-on-surface-variant mb-3">{sketch.category}</p>
+                                    <p className="text-sm text-on-surface-variant mb-3 capitalize">{sketch.category}</p>
                                     <div className="flex items-center gap-3">
                                         <div className="flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
                                             <div
-                                                className="h-full bg-primary rounded-full"
+                                                className="h-full bg-primary rounded-full transition-all"
                                                 style={{ width: `${sketch.progress}%` }}
                                             />
                                         </div>

@@ -33,8 +33,8 @@ export default function NotFound() {
                         <Link href="/explore" className="text-primary hover:underline">
                             Explore
                         </Link>
-                        <Link href="/gallery" className="text-primary hover:underline">
-                            Gallery
+                        <Link href="/profile" className="text-primary hover:underline">
+                            Profile
                         </Link>
                         <Link href="/settings" className="text-primary hover:underline">
                             Settings

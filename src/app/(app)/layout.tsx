@@ -17,7 +17,6 @@ const navItems = [
     { href: "/explore", label: "Explore", Icon: Icons.Search },
     { href: "/library", label: "Library", Icon: Icons.Library },
     { href: "/favorites", label: "Favorites", Icon: Icons.Heart },
-    { href: "/gallery", label: "Gallery", Icon: Icons.Gallery },
     { href: "/profile", label: "Profile", Icon: Icons.Profile },
     { href: "/leaderboard", label: "Leaderboard", Icon: Icons.Trophy, desktopOnly: true },
     { href: "/settings", label: "Settings", Icon: Icons.Settings },
@@ -37,6 +36,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
     const pathname = usePathname();
     const router = useRouter();
     const [userName, setUserName] = useState<string | null>(null);
+    const [userAvatar, setUserAvatar] = useState<string | null>(null);
     const { level } = useProgressStore();
 
     // Logout handler
@@ -53,18 +53,27 @@ export default function AppLayout({ children }: { children: ReactNode }) {
             const { data: { user } } = await supabase.auth.getUser();
 
             if (user) {
-                // Try to get name from user_profiles first
+                // Try to get name and avatar from user_profiles first
                 const { data: profile } = await supabase
                     .from("user_profiles")
-                    .select("name")
+                    .select("name, avatar_url")
                     .eq("id", user.id)
                     .single();
 
+                // Set name: profile > auth metadata > email
                 if (profile?.name) {
                     setUserName(profile.name);
+                } else if (user.user_metadata?.full_name || user.user_metadata?.name) {
+                    setUserName(user.user_metadata.full_name || user.user_metadata.name);
                 } else {
-                    // Fallback to email username
                     setUserName(user.email?.split("@")[0] ?? "Artist");
+                }
+                
+                // Set avatar: profile > auth metadata (picture for Google, avatar_url for others)
+                if (profile?.avatar_url) {
+                    setUserAvatar(profile.avatar_url);
+                } else if (user.user_metadata?.picture || user.user_metadata?.avatar_url) {
+                    setUserAvatar(user.user_metadata.picture || user.user_metadata.avatar_url);
                 }
             }
         }
@@ -120,9 +129,17 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                     {/* User Profile */}
                     <div className="shrink-0 pt-4 border-t border-surface-variant/30">
                         <div className="flex items-center gap-3 mb-3">
-                            <div className="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
-                                <Icons.Profile className="w-5 h-5 text-primary" />
-                            </div>
+                            {userAvatar ? (
+                                <img
+                                    src={userAvatar}
+                                    alt={userName || "Profile"}
+                                    className="w-10 h-10 rounded-full object-cover"
+                                />
+                            ) : (
+                                <div className="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                    <Icons.Profile className="w-5 h-5 text-primary" />
+                                </div>
+                            )}
                             <div className="flex-1 min-w-0">
                                 <p className="font-headline font-bold text-sm truncate">
                                     {userName ?? "Guest"}

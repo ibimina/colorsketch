@@ -17,12 +17,6 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
                 </Link>
                 <div className="hidden md:flex items-center gap-8">
                     <Link
-                        href="/gallery"
-                        className="text-on-surface-variant hover:text-primary transition-all font-headline font-medium"
-                    >
-                        Gallery
-                    </Link>
-                    <Link
                         href="/explore"
                         className="text-on-surface-variant hover:text-primary transition-all font-headline font-medium"
                     >
