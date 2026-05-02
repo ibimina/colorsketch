@@ -17,10 +17,12 @@ import {
 } from "@/lib/sketch-utils";
 
 // Difficulty color mapping
+// Using explicit hex values (instead of Tailwind's default oklch palette)
+// to guarantee readable contrast in Safari, which can render oklch yellows/greens washed out.
 const difficultyColors = {
-    easy: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
-    medium: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400",
-    hard: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
+    easy: "bg-[#dcfce7] text-[#166534] dark:bg-[#14532d]/40 dark:text-[#86efac]",
+    medium: "bg-[#fef3c7] text-[#854d0e] dark:bg-[#713f12]/40 dark:text-[#fde68a]",
+    hard: "bg-[#fee2e2] text-[#991b1b] dark:bg-[#7f1d1d]/40 dark:text-[#fca5a5]",
 } as const;
 
 // ============================================
@@ -128,8 +130,8 @@ export function SketchCard({
                         <button
                             onClick={handleFavoriteClick}
                             className={`shrink-0 p-1.5 rounded-full transition-all ${isFavorited
-                                    ? "text-red-500"
-                                    : "text-on-surface-variant/50 hover:text-red-500"
+                                ? "text-red-500"
+                                : "text-on-surface-variant/50 hover:text-red-500"
                                 }`}
                             aria-label={isFavorited ? "Remove from favorites" : "Add to favorites"}
                         >
@@ -203,7 +205,7 @@ export function SketchCard({
         <Card
             variant="elevated"
             padding="none"
-            className="overflow-hidden transition-transform"
+            className="overflow-hidden rounded-lg transition-transform"
         >
             <Link
                 href={isLocked ? "#" : `/canvas/${sketch.id}`}
@@ -213,7 +215,7 @@ export function SketchCard({
             >
                 {/* Thumbnail */}
                 <div
-                    className="relative bg-surface-container-low flex items-center justify-center aspect-square"
+                    className="relative flex items-center justify-center aspect-square"
                 >
                     {hasProgress && progress ? (
                         <ColoredSketchPreview
@@ -292,7 +294,7 @@ export function SketchCard({
                                     : "primary"
                         }
                         size="sm"
-                        className={`w-full text-xs sm:text-sm ${isLocked ? "opacity-70" : ""}`}
+                        className={`w-full text-xs mt-4 mt-1 sm:text-sm ${isLocked ? "opacity-70" : ""}`}
                     >
                         {buttonText}
                     </Button>

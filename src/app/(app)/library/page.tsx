@@ -165,7 +165,7 @@ function LibraryContent() {
             <div className="flex gap-1 bg-surface-container-low rounded-xl p-1 max-w-lg">
                 <button
                     onClick={() => setStatusFilter("all")}
-                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${statusFilter === "all"
+                    className={` px-2 py-1 rounded-lg font-headline font-medium text-sm transition-all ${statusFilter === "all"
                             ? "bg-primary text-white shadow-sm"
                             : "text-on-surface-variant hover:bg-surface-container"
                         }`}
@@ -174,7 +174,7 @@ function LibraryContent() {
                 </button>
                 <button
                     onClick={() => setStatusFilter("in-progress")}
-                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${statusFilter === "in-progress"
+                    className={` px-2 py-1 rounded-lg font-headline font-medium text-sm transition-all ${statusFilter === "in-progress"
                             ? "bg-primary text-white shadow-sm"
                             : "text-on-surface-variant hover:bg-surface-container"
                         }`}
@@ -183,7 +183,7 @@ function LibraryContent() {
                 </button>
                 <button
                     onClick={() => setStatusFilter("completed")}
-                    className={`flex-1 px-4 py-2.5 rounded-lg font-headline font-medium text-sm transition-all ${statusFilter === "completed"
+                    className={` px-2 py-1 rounded-lg font-headline font-medium text-sm transition-all ${statusFilter === "completed"
                             ? "bg-primary text-white shadow-sm"
                             : "text-on-surface-variant hover:bg-surface-container"
                         }`}

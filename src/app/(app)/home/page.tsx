@@ -191,7 +191,7 @@ export default function HomePage() {
     return (
         <div className="space-y-6 pb-20 lg:pb-0">
             {/* Compact Progress Bar */}
-            <div className="flex items-center gap-4 p-4 w-6/12 bg-surface-container rounded-2xl">
+            <div className="flex items-center gap-4 p-4 md:w-6/12 bg-surface-container rounded-lg">
                 <div className="flex items-center gap-6 flex-1">
                     {stats.map((stat, i) => (
                         <div key={i} className="flex items-center gap-2">
@@ -440,9 +440,9 @@ export default function HomePage() {
                             {achievements.length} unlocked
                         </span>
                     </div>
-                    <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-4">
+                    <div className="grid gap-3 overflow-x-auto pb-2 -mx-4 px-4 lg:mx-0 lg:px-0  lg:grid-cols-4">
                         {unlockedAchievements.map((achievement) => (
-                            <Card key={achievement!.id} variant="elevated" className="shrink-0 w-40 lg:w-auto flex items-center gap-3">
+                            <Card key={achievement!.id} variant="elevated" className="shrink-0 flex items-center gap-3">
                                 <span className="text-2xl">{achievement!.icon}</span>
                                 <div className="flex-1 min-w-0">
                                     <p className="font-headline font-bold text-sm truncate">{achievement!.title}</p>
@@ -500,7 +500,7 @@ function ArtworkModal({
             onClick={onClose}
         >
             <div
-                className="relative bg-surface rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row"
+                className="relative bg-[#fffafa] rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Close Button */}
