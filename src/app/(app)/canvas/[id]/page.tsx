@@ -698,7 +698,7 @@ export default function CanvasPage({ params }: CanvasPageProps) {
 
 
             </div>
-            <div className="flex items-center justify-end gap-2 sm:gap-3">
+            <div className="flex items-center justify-end mr-4 gap-2 sm:gap-3">
                 {/* Ambient music toggle hidden — feature temporarily disabled */}
                 {false && (
                     <IconButton
