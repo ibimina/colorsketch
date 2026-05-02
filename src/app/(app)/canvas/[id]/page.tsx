@@ -741,7 +741,7 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                     className="px-3 sm:px-4 flex items-center whitespace-nowrap"
                 >
                     <span className="mr-1.5 sm:mr-2 shrink-0">✓</span>
-                    <span className="hidden sm:inline">Done</span>
+                    <span className="sm:inline">Done</span>
                 </Button>
             </div>
             {/* Canvas Area */}
