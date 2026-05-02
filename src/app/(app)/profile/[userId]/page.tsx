@@ -398,14 +398,14 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                 </Card>
 
                 {/* Tabs */}
-                <div className="flex gap-1 border-b border-outline-variant">
+                <div className="flex gap-1 border-b border-outline-variant overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
                     {tabs.map((tab) => {
                         const Icon = tab.icon;
                         return (
                             <button
                                 key={tab.id}
                                 onClick={() => handleTabChange(tab.id)}
-                                className={`flex items-center gap-2 px-4 py-3 font-medium transition-colors relative ${activeTab === tab.id
+                                className={`shrink-0 whitespace-nowrap flex items-center gap-2 px-4 py-3 font-medium transition-colors relative ${activeTab === tab.id
                                     ? "text-primary"
                                     : "text-on-surface-variant hover:text-on-surface"
                                     }`}
@@ -673,7 +673,7 @@ function GalleryTab({
             {/* Download Album Header */}
             {isOwnProfile && artworks.length > 0 && (
                 <div className="flex justify-end mb-4">
-                    <Button variant="secondary" className="flrx items-center" onClick={() => setShowAlbumModal(true)}>
+                    <Button variant="secondary" className="flex items-center" onClick={() => setShowAlbumModal(true)}>
                         <Download className="w-4 h-4 mr-2" />
                         Download Album
                     </Button>
