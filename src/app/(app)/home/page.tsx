@@ -500,7 +500,7 @@ function ArtworkModal({
             onClick={onClose}
         >
             <div
-                className="relative bg-[#fffafa] rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row"
+                className="relative bg-[#fffafa] rounded-2xl shadow-2xl w-full max-w-3xl lg:max-w-5xl xl:max-w-6xl max-h-[90vh] lg:h-[85vh] overflow-hidden flex flex-col md:flex-row"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Close Button */}
@@ -517,7 +517,7 @@ function ArtworkModal({
                         src={artwork.image_url}
                         alt={getSketchTitle(artwork.sketch_id)}
                         fill
-                        sizes="(min-width: 768px) 50vw, 100vw"
+                        sizes="(min-width: 1024px) 66vw, (min-width: 768px) 50vw, 100vw"
                         className="object-contain"
                         quality={95}
                         priority
@@ -525,7 +525,7 @@ function ArtworkModal({
                 </div>
 
                 {/* Details Sidebar */}
-                <div className="w-full md:w-72 p-5 flex flex-col border-t md:border-t-0 md:border-l border-surface-container-high">
+                <div className="w-full md:w-80 lg:w-96 p-5 flex flex-col border-t md:border-t-0 md:border-l border-surface-container-high overflow-y-auto">
                     {/* Title */}
                     <h3 className="text-xl font-headline font-bold mb-2">
                         {getSketchTitle(artwork.sketch_id)}

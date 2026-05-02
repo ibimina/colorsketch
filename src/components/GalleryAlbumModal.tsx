@@ -146,7 +146,7 @@ export function GalleryAlbumModal({
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-            <Card className="w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col bg-surface">
+            <Card className="w-full max-w-2xl lg:max-w-4xl xl:max-w-5xl max-h-[90vh] overflow-hidden flex flex-col bg-surface">
                 {/* Header */}
                 <div className="flex items-center justify-between p-4 border-b border-outline-variant">
                     <h2 className="text-xl font-semibold text-on-surface">
@@ -188,8 +188,8 @@ export function GalleryAlbumModal({
                                 onClick={() => setFormat("pdf")}
                                 disabled={isGenerating}
                                 className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-xl border-2 transition-all ${format === "pdf"
-                                        ? "border-primary bg-primary/10 text-primary"
-                                        : "border-outline-variant hover:border-outline"
+                                    ? "border-primary bg-primary/10 text-primary"
+                                    : "border-outline-variant hover:border-outline"
                                     }`}
                             >
                                 <FileText className="w-5 h-5" />
@@ -199,8 +199,8 @@ export function GalleryAlbumModal({
                                 onClick={() => setFormat("zip")}
                                 disabled={isGenerating}
                                 className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-xl border-2 transition-all ${format === "zip"
-                                        ? "border-primary bg-primary/10 text-primary"
-                                        : "border-outline-variant hover:border-outline"
+                                    ? "border-primary bg-primary/10 text-primary"
+                                    : "border-outline-variant hover:border-outline"
                                     }`}
                             >
                                 <FileImage className="w-5 h-5" />
@@ -226,8 +226,8 @@ export function GalleryAlbumModal({
                                     onClick={() => setFilter(f)}
                                     disabled={isGenerating}
                                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${filter === f
-                                            ? "bg-primary text-on-primary"
-                                            : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
+                                        ? "bg-primary text-on-primary"
+                                        : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"
                                         }`}
                                 >
                                     {f.charAt(0).toUpperCase() + f.slice(1)}
@@ -262,7 +262,7 @@ export function GalleryAlbumModal({
                     </div>
 
                     {/* Artwork Grid */}
-                    <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-3">
                         {filteredArtworks.map((artwork) => {
                             const isSelected = selectedIds.has(artwork.id);
                             return (
@@ -271,8 +271,8 @@ export function GalleryAlbumModal({
                                     onClick={() => toggleSelection(artwork.id)}
                                     disabled={isGenerating}
                                     className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all ${isSelected
-                                            ? "border-primary ring-2 ring-primary/30"
-                                            : "border-transparent hover:border-outline-variant"
+                                        ? "border-primary ring-2 ring-primary/30"
+                                        : "border-transparent hover:border-outline-variant"
                                         }`}
                                 >
                                     <Image

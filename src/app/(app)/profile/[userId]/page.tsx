@@ -485,7 +485,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                     onClick={() => setViewingArtwork(null)}
                 >
                     <div
-                        className="relative max-w-4xl max-h-[90vh] w-full"
+                        className="relative max-w-4xl lg:max-w-5xl xl:max-w-6xl max-h-[90vh] w-full"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
@@ -495,12 +495,12 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                             <X className="w-8 h-8" />
                         </button>
 
-                        <div className="relative aspect-square max-h-[70vh] w-full bg-surface-container rounded-xl overflow-hidden">
+                        <div className="relative aspect-square max-h-[70vh] lg:max-h-[75vh] w-full bg-surface-container rounded-xl overflow-hidden">
                             <Image
                                 src={viewingArtwork.image_url}
                                 alt={getSketchTitle(viewingArtwork.sketch_id)}
                                 fill
-                                sizes="(min-width: 768px) 70vw, 90vw"
+                                sizes="(min-width: 1024px) 80vw, (min-width: 768px) 70vw, 90vw"
                                 className="object-contain"
                                 quality={95}
                                 priority
@@ -541,7 +541,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                     onClick={() => setViewingLikedArtwork(null)}
                 >
                     <div
-                        className="relative max-w-4xl max-h-[90vh] w-full"
+                        className="relative max-w-4xl lg:max-w-5xl xl:max-w-6xl max-h-[90vh] w-full"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
@@ -551,12 +551,12 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                             <X className="w-8 h-8" />
                         </button>
 
-                        <div className="relative aspect-square max-h-[70vh] w-full bg-surface-container rounded-xl overflow-hidden">
+                        <div className="relative aspect-square max-h-[70vh] lg:max-h-[75vh] w-full bg-surface-container rounded-xl overflow-hidden">
                             <Image
                                 src={viewingLikedArtwork.image_url}
                                 alt={getSketchTitle(viewingLikedArtwork.sketch_id)}
                                 fill
-                                sizes="(min-width: 768px) 70vw, 90vw"
+                                sizes="(min-width: 1024px) 80vw, (min-width: 768px) 70vw, 90vw"
                                 className="object-contain"
                                 quality={95}
                                 priority
