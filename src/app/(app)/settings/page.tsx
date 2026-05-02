@@ -136,33 +136,36 @@ export default function SettingsPage() {
                             <div className="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                         </label>
                     </div>
-                    <div className="flex items-center justify-between py-2">
-                        <div>
-                            <p className="font-medium">Sound effects</p>
-                            <p className="text-sm text-on-surface-variant">Play sounds when coloring</p>
+                    {/* Sound effects toggle hidden — feature temporarily disabled */}
+                    {false && (
+                        <div className="flex items-center justify-between py-2">
+                            <div>
+                                <p className="font-medium">Sound effects</p>
+                                <p className="text-sm text-on-surface-variant">Play sounds when coloring</p>
+                            </div>
+                            <label className="relative inline-flex items-center cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    checked={soundEffects}
+                                    onChange={(e) => {
+                                        setSoundEffects(e.target.checked);
+                                        addToast(
+                                            e.target.checked ? '🔊 Sound effects enabled' : '🔇 Sound effects disabled',
+                                            'success'
+                                        );
+                                        provideFeedback({
+                                            haptic: hapticFeedback,
+                                            hapticType: 'light',
+                                            sound: e.target.checked, // Use new setting value
+                                            soundName: 'click',
+                                        });
+                                    }}
+                                    className="sr-only peer"
+                                />
+                                <div className="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
                         </div>
-                        <label className="relative inline-flex items-center cursor-pointer">
-                            <input
-                                type="checkbox"
-                                checked={soundEffects}
-                                onChange={(e) => {
-                                    setSoundEffects(e.target.checked);
-                                    addToast(
-                                        e.target.checked ? '🔊 Sound effects enabled' : '🔇 Sound effects disabled',
-                                        'success'
-                                    );
-                                    provideFeedback({
-                                        haptic: hapticFeedback,
-                                        hapticType: 'light',
-                                        sound: e.target.checked, // Use new setting value
-                                        soundName: 'click',
-                                    });
-                                }}
-                                className="sr-only peer"
-                            />
-                            <div className="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-                        </label>
-                    </div>
+                    )}
                     <div className="flex items-center justify-between py-2">
                         <div>
                             <p className="font-medium">Haptic feedback</p>

@@ -697,16 +697,18 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                 </div>
 
                 <div className="flex items-center gap-2 sm:gap-3">
-                    <IconButton
-                        icon={isMusicPlaying
-                            ? <Icons.Music className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-                            : <Icons.MusicOff className="w-4 h-4 sm:w-5 sm:h-5" />
-                        }
-                        variant="ghost"
-                        label={isMusicPlaying ? "Stop music" : "Play ambient music"}
-                        onClick={toggleMusic}
-                    />
-                    <IconButton
+                    {/* Ambient music toggle hidden — feature temporarily disabled */}
+                    {false && (
+                        <IconButton
+                            icon={isMusicPlaying
+                                ? <Icons.Music className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                                : <Icons.MusicOff className="w-4 h-4 sm:w-5 sm:h-5" />
+                            }
+                            variant="ghost"
+                            label={isMusicPlaying ? "Stop music" : "Play ambient music"}
+                            onClick={toggleMusic}
+                        />
+                    )}                    <IconButton
                         icon={<Icons.Export className="w-4 h-4 sm:w-5 sm:h-5" />}
                         variant="ghost"
                         label="Export artwork"
