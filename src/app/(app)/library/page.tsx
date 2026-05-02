@@ -162,7 +162,7 @@ function LibraryContent() {
             </div>
 
             {/* Status Tabs */}
-            <div className="flex gap-1 bg-surface-container-low rounded-xl p-1 max-w-lg">
+            <div className="flex gap-1 bg-surface-container-low rounded-xl p-1 w-max">
                 <button
                     onClick={() => setStatusFilter("all")}
                     className={` px-2 py-1 rounded-lg font-headline font-medium text-sm transition-all ${statusFilter === "all"

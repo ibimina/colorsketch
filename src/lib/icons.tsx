@@ -24,7 +24,8 @@ import {
     Share2,
     Trophy,
     Music,
-    VolumeX
+    VolumeX,
+    MoreHorizontal
 } from 'lucide-react';
 
 export const Icons = {
@@ -54,7 +55,8 @@ export const Icons = {
     Trophy,
     Share: Share2,
     Music,
-    MusicOff: VolumeX
+    MusicOff: VolumeX,
+    More: MoreHorizontal
 };
 
 // Keep emojis for decorative/fun elements

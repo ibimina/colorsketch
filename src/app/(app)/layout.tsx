@@ -21,6 +21,10 @@ const navItems = [
     { href: "/settings", label: "Settings", Icon: Icons.Settings },
 ];
 
+// Items shown directly in the mobile bottom nav (in order). The rest spill
+// into the "More" bottom sheet.
+const mobilePrimaryHrefs = new Set(["/home", "/library", "/favorites", "/profile"]);
+
 // Helper to get level title
 function getLevelTitle(level: number): string {
     if (level >= 50) return "Master Artist";
@@ -36,6 +40,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
     const router = useRouter();
     const [userName, setUserName] = useState<string | null>(null);
     const [userAvatar, setUserAvatar] = useState<string | null>(null);
+    const [isMoreOpen, setIsMoreOpen] = useState(false);
     const { level } = useProgressStore();
 
     // Logout handler
@@ -184,9 +189,9 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                 </main>
 
                 {/* Mobile Bottom Nav */}
-                <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-surface glass border-t border-surface-variant/30 px-4 py-2 z-50">
+                <nav className={`lg:hidden fixed bottom-0 left-0 right-0 bg-surface glass border-t border-surface-variant/30 px-4 py-2 z-50 ${pathname.startsWith('/canvas') ? 'hidden' : ''}`}>
                     <div className="flex justify-around">
-                        {navItems.filter(item => !item.desktopOnly).slice(0, 5).map((item) => {
+                        {navItems.filter(item => mobilePrimaryHrefs.has(item.href)).map((item) => {
                             const isActive = pathname === item.href ||
                                 (item.href !== "/home" && pathname.startsWith(item.href));
 
@@ -205,8 +210,103 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                                 </Link>
                             );
                         })}
+                        <button
+                            type="button"
+                            onClick={() => setIsMoreOpen(true)}
+                            aria-label="More"
+                            aria-expanded={isMoreOpen}
+                            className={`flex flex-col items-center gap-1 p-2 rounded-xl ${isMoreOpen ? "text-primary" : "text-on-surface-variant"}`}
+                        >
+                            <Icons.More className="w-5 h-5" aria-hidden="true" />
+                            <span className="text-xs font-headline">More</span>
+                        </button>
                     </div>
                 </nav>
+
+                {/* Mobile More Sheet */}
+                {isMoreOpen && (
+                    <div className="lg:hidden fixed inset-0 z-60">
+                        {/* Backdrop */}
+                        <button
+                            type="button"
+                            aria-label="Close menu"
+                            onClick={() => setIsMoreOpen(false)}
+                            className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-in fade-in duration-200"
+                        />
+                        {/* Sheet */}
+                        <div
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label="More options"
+                            className="absolute bottom-0 left-0 right-0 bg-surface rounded-t-3xl shadow-2xl pt-2 pb-6 px-4 animate-in slide-in-from-bottom duration-200"
+                        >
+                            {/* Grabber */}
+                            <div className="mx-auto mb-3 h-1.5 w-10 rounded-full bg-surface-variant" />
+
+                            {/* Profile preview */}
+                            <div className="flex items-center gap-3 px-2 py-3">
+                                {userAvatar ? (
+                                    <img
+                                        src={userAvatar}
+                                        alt={userName || "Profile"}
+                                        className="w-10 h-10 rounded-full object-cover"
+                                    />
+                                ) : (
+                                    <div className="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                        <Icons.Profile className="w-5 h-5 text-primary" />
+                                    </div>
+                                )}
+                                <div className="flex-1 min-w-0">
+                                    <p className="font-headline font-bold text-sm truncate">
+                                        {userName ?? "Guest"}
+                                    </p>
+                                    <p className="text-xs text-on-surface-variant">
+                                        Level {level} • {getLevelTitle(level)}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="h-px bg-surface-variant/40 my-2" />
+
+                            {/* Overflow nav items */}
+                            <div className="space-y-1">
+                                {navItems
+                                    .filter(item => !mobilePrimaryHrefs.has(item.href))
+                                    .map((item) => {
+                                        const isActive = pathname === item.href ||
+                                            (item.href !== "/home" && pathname.startsWith(item.href));
+                                        return (
+                                            <Link
+                                                key={item.label}
+                                                href={item.href}
+                                                aria-label={item.label}
+                                                onClick={() => setIsMoreOpen(false)}
+                                                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-headline font-medium transition-colors ${isActive
+                                                    ? "bg-primary/10 text-primary"
+                                                    : "text-on-surface hover:bg-surface-container"
+                                                    }`}
+                                            >
+                                                <item.Icon className="w-5 h-5" aria-hidden="true" />
+                                                <span>{item.label}</span>
+                                            </Link>
+                                        );
+                                    })}
+
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setIsMoreOpen(false);
+                                        handleLogout();
+                                    }}
+                                    className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-on-surface-variant hover:text-error hover:bg-error/10 transition-colors font-headline font-medium"
+                                >
+                                    <LogOut className="w-5 h-5" />
+                                    <span>Sign Out</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )}
 
                 {/* Toast Notifications */}
                 <ToastContainer />

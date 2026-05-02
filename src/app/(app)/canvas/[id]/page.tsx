@@ -696,56 +696,56 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-2 sm:gap-3">
-                    {/* Ambient music toggle hidden — feature temporarily disabled */}
-                    {false && (
-                        <IconButton
-                            icon={isMusicPlaying
-                                ? <Icons.Music className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-                                : <Icons.MusicOff className="w-4 h-4 sm:w-5 sm:h-5" />
-                            }
-                            variant="ghost"
-                            label={isMusicPlaying ? "Stop music" : "Play ambient music"}
-                            onClick={toggleMusic}
-                        />
-                    )}                    <IconButton
-                        icon={<Icons.Export className="w-4 h-4 sm:w-5 sm:h-5" />}
-                        variant="ghost"
-                        label="Export artwork"
-                        onClick={handleExport}
-                        disabled={isExporting}
-                    />
-                    <IconButton
-                        icon={<Icons.Share className="w-4 h-4 sm:w-5 sm:h-5" />}
-                        variant="ghost"
-                        label="Share artwork"
-                        onClick={handleShare}
-                        disabled={isSharing}
-                    />
-                    <Button
-                        variant="secondary"
-                        size="sm"
-                        onClick={handleSave}
-                        disabled={isSaving}
-                        className="px-3 sm:px-4 flex items-center whitespace-nowrap"
-                    >
-                        <Icons.Save className="w-4 h-4 mr-1.5 sm:mr-2 shrink-0" />
-                        <span className="hidden sm:inline">{isSaving ? 'Saving...' : 'Save'}</span>
-                    </Button>
-                    <Button
-                        variant="primary"
-                        size="sm"
-                        onClick={() => setShowPublishModal(true)}
-                        className="px-3 sm:px-4 flex items-center whitespace-nowrap"
-                    >
-                        <span className="mr-1.5 sm:mr-2 shrink-0">✓</span>
-                        <span className="hidden sm:inline">Done</span>
-                    </Button>
-                </div>
-            </div>
 
+            </div>
+            <div className="flex items-center justify-end gap-2 sm:gap-3">
+                {/* Ambient music toggle hidden — feature temporarily disabled */}
+                {false && (
+                    <IconButton
+                        icon={isMusicPlaying
+                            ? <Icons.Music className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                            : <Icons.MusicOff className="w-4 h-4 sm:w-5 sm:h-5" />
+                        }
+                        variant="ghost"
+                        label={isMusicPlaying ? "Stop music" : "Play ambient music"}
+                        onClick={toggleMusic}
+                    />
+                )}                    <IconButton
+                    icon={<Icons.Export className="w-4 h-4 sm:w-5 sm:h-5" />}
+                    variant="ghost"
+                    label="Export artwork"
+                    onClick={handleExport}
+                    disabled={isExporting}
+                />
+                <IconButton
+                    icon={<Icons.Share className="w-4 h-4 sm:w-5 sm:h-5" />}
+                    variant="ghost"
+                    label="Share artwork"
+                    onClick={handleShare}
+                    disabled={isSharing}
+                />
+                <Button
+                    variant="secondary"
+                    size="sm"
+                    onClick={handleSave}
+                    disabled={isSaving}
+                    className="px-3 sm:px-4 flex items-center whitespace-nowrap"
+                >
+                    <Icons.Save className="w-4 h-4 mr-1.5 sm:mr-2 shrink-0" />
+                    <span className="hidden sm:inline">{isSaving ? 'Saving...' : 'Save'}</span>
+                </Button>
+                <Button
+                    variant="primary"
+                    size="sm"
+                    onClick={() => setShowPublishModal(true)}
+                    className="px-3 sm:px-4 flex items-center whitespace-nowrap"
+                >
+                    <span className="mr-1.5 sm:mr-2 shrink-0">✓</span>
+                    <span className="hidden sm:inline">Done</span>
+                </Button>
+            </div>
             {/* Canvas Area */}
-            <div className="flex-1 p-4 bg-surface-container-low rounded-2xl m-4 overflow-auto">
+            <div className="flex-1 p-4 pb-40 bg-surface-container-low rounded-2xl m-4 overflow-auto">
                 <div
                     className="flex items-center justify-center"
                     style={{
@@ -835,12 +835,12 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                 </div>
             </div>
 
-            {/* Left Sidebar - Colors */}
-            <div className="fixed left-2 sm:left-6 lg:left-76 top-1/2 -translate-y-1/2 z-40">
+            {/* Colors Bar (always horizontal, sits above the tools bar) */}
+            <div className="fixed z-40 left-1/2 -translate-x-1/2 lg:left-[calc(50%+8rem)] bottom-20 max-w-[calc(100%-1rem)] lg:max-w-[calc(100%-17rem)] w-fit">
                 <div className="bg-surface/95 backdrop-blur-lg border border-surface-variant/30 rounded-2xl shadow-lg p-1.5">
-                    <div className="flex flex-col gap-1 max-h-[70vh] overflow-y-auto scrollbar-hide">
+                    <div className="flex flex-row gap-1 max-w-full overflow-x-auto scrollbar-hide">
                         {/* Custom Color Picker */}
-                        <label className="relative cursor-pointer mb-1">
+                        <label className="relative cursor-pointer shrink-0 mr-1">
                             <input
                                 type="color"
                                 value={selectedColor}
@@ -857,7 +857,7 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                         </label>
 
                         {/* Divider */}
-                        <div className="w-6 h-px bg-surface-variant/50 mx-auto my-0.5"></div>
+                        <div className="shrink-0 w-px h-6 bg-surface-variant/50 self-center mx-0.5"></div>
 
                         {/* Preset Colors */}
                         {DEFAULT_PALETTE.map((swatch) => (
@@ -880,12 +880,12 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                 </div>
             </div>
 
-            {/* Right Sidebar - Tools */}
-            <div className="fixed right-2 sm:right-12 top-1/2 -translate-y-1/2 z-40">
+            {/* Tools Bar (always horizontal, pinned to the very bottom) */}
+            <div className="fixed z-40 left-1/2 -translate-x-1/2 lg:left-[calc(50%+8rem)] bottom-2 max-w-[calc(100%-1rem)] lg:max-w-[calc(100%-17rem)] w-fit">
                 <div className="bg-surface/95 backdrop-blur-lg border border-surface-variant/30 rounded-2xl shadow-lg p-2.5">
-                    <div className="flex flex-col gap-1.5">
+                    <div className="flex flex-row items-center gap-1.5 overflow-x-auto scrollbar-hide">
                         {/* Mode Toggle */}
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 shrink-0">
                             <button
                                 onClick={() => setMode("fill")}
                                 className={`w-7 h-7 rounded-md flex items-center justify-center transition-all ${mode === "fill"
@@ -912,8 +912,8 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                         {/* Brush Size (only show in draw mode) */}
                         {mode === "draw" && (
                             <>
-                                <div className="h-px bg-surface-variant/50"></div>
-                                <div className="grid grid-cols-2 gap-1.5">
+                                <div className="shrink-0 w-px h-6 bg-surface-variant/50 self-center"></div>
+                                <div className="flex gap-1.5 shrink-0">
                                     {brushSizes.map(({ name, size }) => (
                                         <button
                                             key={name}
@@ -933,7 +933,7 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                                 </div>
                                 <button
                                     onClick={clearDrawing}
-                                    className="w-full h-8 rounded-lg flex items-center justify-center transition-all hover:bg-surface-container-high active:scale-95 text-xs"
+                                    className="shrink-0 h-8 px-2 rounded-lg flex items-center justify-center transition-all hover:bg-surface-container-high active:scale-95 text-xs whitespace-nowrap"
                                     title="Clear Drawing"
                                 >
                                     <span>🗑️ Clear</span>
@@ -941,10 +941,10 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                             </>
                         )}
 
-                        <div className="h-px bg-surface-variant/50"></div>
+                        <div className="shrink-0 w-px h-6 bg-surface-variant/50 self-center"></div>
 
                         {/* Undo/Redo */}
-                        <div className="flex gap-1.5">
+                        <div className="flex gap-1.5 shrink-0">
                             <button
                                 onClick={undo}
                                 disabled={history.length === 0}
@@ -970,10 +970,10 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                             </button>
                         </div>
 
-                        <div className="h-px bg-surface-variant/50"></div>
+                        <div className="shrink-0 w-px h-6 bg-surface-variant/50 self-center"></div>
 
                         {/* Zoom */}
-                        <div className="flex gap-1.5">
+                        <div className="flex gap-1.5 shrink-0">
                             <button
                                 onClick={() => setZoom(Math.max(25, zoom - 25))}
                                 disabled={zoom <= 25}
@@ -1002,7 +1002,7 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                         <button
                             onClick={() => setZoom(100)}
                             disabled={zoom === 100}
-                            className={`w-full h-6 rounded-lg flex items-center justify-center text-xs font-medium transition-all ${zoom === 100
+                            className={`shrink-0 h-6 px-2 rounded-lg flex items-center justify-center text-xs font-medium transition-all whitespace-nowrap ${zoom === 100
                                 ? "opacity-50"
                                 : "hover:bg-surface-container-high active:scale-95"
                                 }`}
@@ -1011,12 +1011,12 @@ export default function CanvasPage({ params }: CanvasPageProps) {
                             {zoom}%
                         </button>
 
-                        <div className="h-px bg-surface-variant/50"></div>
+                        <div className="shrink-0 w-px h-6 bg-surface-variant/50 self-center"></div>
 
                         {/* Reset */}
                         <button
                             onClick={handleReset}
-                            className="w-full h-8 rounded-lg flex items-center justify-center hover:bg-error/10 hover:text-error transition-all active:scale-95 text-xs"
+                            className="shrink-0 h-8 w-8 rounded-lg flex items-center justify-center hover:bg-error/10 hover:text-error transition-all active:scale-95 text-xs"
                             title="Reset All"
                         >
                             <span>🔄</span>
