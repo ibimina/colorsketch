@@ -11,7 +11,7 @@ import { ACHIEVEMENTS } from "@/lib/achievements";
 import { sketches } from "@/data/sketches";
 import { useEffect, useMemo, useState, useRef } from "react";
 import { Sparkles, Palette, TrendingUp, Clock, ChevronRight, Flame, Star, Zap, Heart, Bookmark, X, Eye, RefreshCw, MessageCircle } from "lucide-react";
-import { getPublicArtworks, getArtworkInteractions, toggleArtworkLike, toggleArtworkBookmark, repostArtwork, unrepostArtwork, getFollowingArtworks } from "@/lib/actions";
+import { getPublicArtworks, getArtworkInteractions, toggleArtworkLike, toggleArtworkBookmark, repostArtwork, unrepostArtwork, getFollowingArtworks, getTrendingArtworks } from "@/lib/actions";
 import { ArtworkComments } from "@/components/ArtworkComments";
 
 const categories = [
@@ -64,7 +64,7 @@ export default function HomePage() {
     const [interactions, setInteractions] = useState<Interactions>({ liked: [], bookmarked: [], reposted: [] });
     const [isLoadingArtworks, setIsLoadingArtworks] = useState(true);
     const [selectedArtwork, setSelectedArtwork] = useState<PublicArtwork | null>(null);
-    const [feedMode, setFeedMode] = useState<"all" | "following">("all");
+    const [feedMode, setFeedMode] = useState<"all" | "following" | "trending">("all");
 
     useEffect(() => {
         // Use async IIFE to avoid synchronous setState warning
@@ -84,7 +84,9 @@ export default function HomePage() {
             setIsLoadingArtworks(true);
             const data = feedMode === "following"
                 ? await getFollowingArtworks(8)
-                : await getPublicArtworks(8);
+                : feedMode === "trending"
+                    ? await getTrendingArtworks(8)
+                    : await getPublicArtworks(8);
             if (cancelled) return;
             setCommunityArtworks(data as PublicArtwork[]);
 
@@ -366,7 +368,7 @@ export default function HomePage() {
             <section>
                 <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
                     <h2 className="text-lg font-headline font-bold flex items-center gap-2">
-                        🌟 {feedMode === "following" ? "Following" : "Community Gallery"}
+                        🌟 {feedMode === "following" ? "Following" : feedMode === "trending" ? "Trending" : "Community Gallery"}
                     </h2>
                     <div className="inline-flex rounded-full bg-surface-container p-1">
                         <button
@@ -377,6 +379,15 @@ export default function HomePage() {
                                 }`}
                         >
                             All
+                        </button>
+                        <button
+                            onClick={() => setFeedMode("trending")}
+                            className={`px-3 py-1.5 text-sm font-medium rounded-full transition-colors ${feedMode === "trending"
+                                ? "bg-primary text-on-primary"
+                                : "text-on-surface-variant hover:text-on-surface"
+                                }`}
+                        >
+                            Trending
                         </button>
                         <button
                             onClick={() => setFeedMode("following")}

@@ -1393,6 +1393,11 @@ export async function listFollowing(userId: string, limit: number = 100) {
 }
 
 export async function getFollowingArtworks(limit: number = 20) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return [];
 
   // Find who the current user follows
   const { data: followsData } = await supabase
@@ -1430,6 +1435,64 @@ export async function getFollowingArtworks(limit: number = 20) {
 
   return data.map((artwork) => {
     const artistProfile = profileMap.get(artwork.user_id);
+    return {
+      ...artwork,
+      artist_name: artistProfile?.name || "Anonymous Artist",
+      artist_avatar: artistProfile?.avatar_url || null,
+    };
+  });
+}
+
+export async function getTrendingArtworks(limit: number = 20) {
+  const supabase = await createClient();
+
+  const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
+  const { data, error } = await supabase
+    .from("saved_artworks")
+    .select("*")
+    .eq("is_public", true)
+    .gte("created_at", thirtyDaysAgo)
+    .order("created_at", { ascending: false })
+    .limit(Math.max(limit * 5, 50));
+
+  if (error) {
+    console.error("Error fetching trending artworks:", error);
+    return [];
+  }
+  if (!data || data.length === 0) return [];
+
+  const now = Date.now();
+  const ranked = [...data]
+    .map((a) => {
+      const ageHours = Math.max(
+        2,
+        (now - new Date(a.created_at).getTime()) / 3_600_000,
+      );
+      const engagement =
+        (a.likes_count || 0) +
+        2 * (a.saves_count || 0) +
+        3 * (a.reposts_count || 0) +
+        2 * (a.comments_count || 0);
+      const score = engagement / Math.pow(ageHours + 2, 1.4);
+      return { artwork: a, score };
+    })
+    .sort((x, y) => y.score - x.score)
+    .slice(0, limit)
+    .map((r) => r.artwork);
+
+  const userIds = [...new Set(ranked.map((a) => a.user_id))];
+  const { data: trendingProfiles } = await supabase
+    .from("user_profiles")
+    .select("id, name, avatar_url")
+    .in("id", userIds);
+
+  const trendingProfileMap = new Map(
+    trendingProfiles?.map((p) => [p.id, { name: p.name, avatar_url: p.avatar_url }]) ||
+      [],
+  );
+
+  return ranked.map((artwork) => {
+    const artistProfile = trendingProfileMap.get(artwork.user_id);
     return {
       ...artwork,
       artist_name: artistProfile?.name || "Anonymous Artist",
