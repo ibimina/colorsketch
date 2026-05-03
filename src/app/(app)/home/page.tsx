@@ -10,8 +10,8 @@ import { Icons } from "@/lib/icons";
 import { ACHIEVEMENTS } from "@/lib/achievements";
 import { sketches } from "@/data/sketches";
 import { useEffect, useMemo, useState, useRef } from "react";
-import { Sparkles, Palette, TrendingUp, Clock, ChevronRight, Flame, Star, Zap, Heart, Bookmark, X, Eye } from "lucide-react";
-import { getPublicArtworks, getArtworkInteractions, toggleArtworkLike, toggleArtworkBookmark } from "@/lib/actions";
+import { Sparkles, Palette, TrendingUp, Clock, ChevronRight, Flame, Star, Zap, Heart, Bookmark, X, Eye, RefreshCw } from "lucide-react";
+import { getPublicArtworks, getArtworkInteractions, toggleArtworkLike, toggleArtworkBookmark, repostArtwork, unrepostArtwork } from "@/lib/actions";
 
 const categories = [
     { id: "animals", label: "Animals", emoji: "🦋", href: "/library?category=animals" },
@@ -31,6 +31,7 @@ interface PublicArtwork {
     user_id: string;
     likes_count: number;
     saves_count: number;
+    reposts_count: number;
     artist_name: string;
     artist_avatar: string | null;
 }
@@ -38,6 +39,7 @@ interface PublicArtwork {
 interface Interactions {
     liked: string[];
     bookmarked: string[];
+    reposted: string[];
 }
 
 function getSketchTitle(sketchId: string): string {
@@ -57,7 +59,7 @@ export default function HomePage() {
 
     // Community gallery state
     const [communityArtworks, setCommunityArtworks] = useState<PublicArtwork[]>([]);
-    const [interactions, setInteractions] = useState<Interactions>({ liked: [], bookmarked: [] });
+    const [interactions, setInteractions] = useState<Interactions>({ liked: [], bookmarked: [], reposted: [] });
     const [isLoadingArtworks, setIsLoadingArtworks] = useState(true);
     const [selectedArtwork, setSelectedArtwork] = useState<PublicArtwork | null>(null);
 
@@ -119,6 +121,27 @@ export default function HomePage() {
             setCommunityArtworks(prev => prev.map(artwork =>
                 artwork.id === artworkId
                     ? { ...artwork, saves_count: artwork.saves_count + (isBookmarked ? -1 : 1) }
+                    : artwork
+            ));
+        }
+    };
+
+    const handleRepost = async (artworkId: string) => {
+        const isReposted = interactions.reposted.includes(artworkId);
+        const result = isReposted
+            ? await unrepostArtwork(artworkId)
+            : await repostArtwork(artworkId);
+
+        if (result.success) {
+            setInteractions(prev => ({
+                ...prev,
+                reposted: isReposted
+                    ? prev.reposted.filter(id => id !== artworkId)
+                    : [...prev.reposted, artworkId]
+            }));
+            setCommunityArtworks(prev => prev.map(artwork =>
+                artwork.id === artworkId
+                    ? { ...artwork, reposts_count: (artwork.reposts_count || 0) + (isReposted ? -1 : 1) }
                     : artwork
             ));
         }
@@ -423,8 +446,10 @@ export default function HomePage() {
                     onClose={() => setSelectedArtwork(null)}
                     isLiked={interactions.liked.includes(selectedArtwork.id)}
                     isBookmarked={interactions.bookmarked.includes(selectedArtwork.id)}
+                    isReposted={interactions.reposted.includes(selectedArtwork.id)}
                     onLike={() => handleLike(selectedArtwork.id)}
                     onBookmark={() => handleBookmark(selectedArtwork.id)}
+                    onRepost={() => handleRepost(selectedArtwork.id)}
                 />
             )}
 
@@ -463,15 +488,19 @@ function ArtworkModal({
     onClose,
     isLiked,
     isBookmarked,
+    isReposted,
     onLike,
     onBookmark,
+    onRepost,
 }: {
     artwork: PublicArtwork;
     onClose: () => void;
     isLiked: boolean;
     isBookmarked: boolean;
+    isReposted: boolean;
     onLike: () => void;
     onBookmark: () => void;
+    onRepost: () => void;
 }) {
     // Close on escape key
     useEffect(() => {
@@ -566,6 +595,10 @@ function ArtworkModal({
                             <Bookmark className={`w-4 h-4 ${isBookmarked ? "fill-primary text-primary" : ""}`} />
                             <span className="text-sm font-medium">{artwork.saves_count || 0}</span>
                         </div>
+                        <div className="flex items-center gap-1.5 text-on-surface-variant">
+                            <RefreshCw className={`w-4 h-4 ${isReposted ? "text-primary" : ""}`} />
+                            <span className="text-sm font-medium">{artwork.reposts_count || 0}</span>
+                        </div>
                     </div>
 
                     {/* Actions */}
@@ -587,6 +620,15 @@ function ArtworkModal({
                         >
                             <Bookmark className={`w-4 h-4 ${isBookmarked ? "fill-current" : ""}`} />
                             {isBookmarked ? "Saved" : "Save"}
+                        </Button>
+                        <Button
+                            variant={isReposted ? "primary" : "secondary"}
+                            size="md"
+                            className="flex-1 flex items-center justify-center gap-2"
+                            onClick={onRepost}
+                        >
+                            <RefreshCw className="w-4 h-4" />
+                            {isReposted ? "Reposted" : "Repost"}
                         </Button>
                     </div>
                 </div>

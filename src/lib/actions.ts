@@ -881,10 +881,10 @@ export async function getArtworkInteractions(artworkIds: string[]) {
   } = await supabase.auth.getUser();
 
   if (!user || artworkIds.length === 0) {
-    return { liked: [], bookmarked: [] };
+    return { liked: [], bookmarked: [], reposted: [] };
   }
 
-  const [likesResult, savesResult] = await Promise.all([
+  const [likesResult, savesResult, repostsResult] = await Promise.all([
     supabase
       .from("artwork_likes")
       .select("artwork_id")
@@ -895,11 +895,17 @@ export async function getArtworkInteractions(artworkIds: string[]) {
       .select("artwork_id")
       .eq("user_id", user.id)
       .in("artwork_id", artworkIds),
+    supabase
+      .from("artwork_reposts")
+      .select("artwork_id")
+      .eq("user_id", user.id)
+      .in("artwork_id", artworkIds),
   ]);
 
   return {
     liked: likesResult.data?.map((l) => l.artwork_id) || [],
     bookmarked: savesResult.data?.map((s) => s.artwork_id) || [],
+    reposted: repostsResult.data?.map((r) => r.artwork_id) || [],
   };
 }
 
@@ -1325,4 +1331,82 @@ export async function unrepostArtwork(artworkId: string) {
     .eq("artwork_id", artworkId);
   if (error) return { error: error.message };
   return { success: true };
+}
+
+export async function getProfileReposts(userId: string) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("artwork_reposts")
+    .select(
+      `
+      artwork_id,
+      created_at,
+      saved_artworks!inner (
+        id,
+        user_id,
+        sketch_id,
+        image_url,
+        thumbnail_url,
+        likes_count,
+        saves_count,
+        reposts_count,
+        is_public,
+        created_at
+      )
+    `,
+    )
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Error fetching reposted artworks for profile:", error);
+    return [];
+  }
+
+  const publicArtworks = data.filter((item) => {
+    const artwork = item.saved_artworks as unknown as { is_public: boolean };
+    return artwork.is_public;
+  });
+
+  const artistIds = [
+    ...new Set(
+      publicArtworks.map((item) => {
+        const artwork = item.saved_artworks as unknown as { user_id: string };
+        return artwork.user_id;
+      }),
+    ),
+  ];
+
+  const { data: profiles } = await supabase
+    .from("user_profiles")
+    .select("id, name, avatar_url")
+    .in("id", artistIds);
+
+  const profileMap = new Map(
+    profiles?.map((p) => [p.id, { name: p.name, avatar_url: p.avatar_url }]) ||
+      [],
+  );
+
+  return publicArtworks.map((item) => {
+    const artwork = item.saved_artworks as unknown as {
+      id: string;
+      user_id: string;
+      sketch_id: string;
+      image_url: string;
+      thumbnail_url: string | null;
+      likes_count: number;
+      saves_count: number;
+      reposts_count: number;
+      is_public: boolean;
+      created_at: string;
+    };
+    const artistProfile = profileMap.get(artwork.user_id);
+    return {
+      ...artwork,
+      reposted_at: item.created_at,
+      artist_name: artistProfile?.name || "Anonymous Artist",
+      artist_avatar: artistProfile?.avatar_url || null,
+    };
+  });
 }

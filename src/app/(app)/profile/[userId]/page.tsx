@@ -18,7 +18,10 @@ import {
     deleteArtwork,
     getFollowStats,
     followUser,
-    unfollowUser
+    unfollowUser,
+    getProfileReposts,
+    repostArtwork,
+    unrepostArtwork
 } from "@/lib/actions";
 import { sketches } from "@/data/sketches";
 import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit, Palette, CheckCircle, Download, UserPlus, UserMinus } from "lucide-react";
@@ -80,9 +83,24 @@ interface LikedArtwork {
     artist_avatar: string | null;
 }
 
+interface RepostedArtwork {
+    id: string;
+    user_id: string;
+    sketch_id: string;
+    image_url: string;
+    thumbnail_url: string | null;
+    likes_count: number;
+    saves_count: number;
+    reposts_count: number;
+    reposted_at: string;
+    artist_name: string;
+    artist_avatar: string | null;
+}
+
 interface Interactions {
     liked: string[];
     bookmarked: string[];
+    reposted: string[];
 }
 
 interface CompletedSketch {
@@ -99,9 +117,11 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
     const [profileData, setProfileData] = useState<ProfileData | null>(null);
     const [likedLoadState, setLikedLoadState] = useState<"idle" | "loading" | "loaded">("idle");
     const [likedArtworks, setLikedArtworks] = useState<LikedArtwork[]>([]);
+    const [repostsLoadState, setRepostsLoadState] = useState<"idle" | "loading" | "loaded">("idle");
+    const [repostedArtworks, setRepostedArtworks] = useState<RepostedArtwork[]>([]);
     const [sketchesLoadState, setSketchesLoadState] = useState<"idle" | "loading" | "loaded">("idle");
     const [completedSketches, setCompletedSketches] = useState<CompletedSketch[]>([]);
-    const [interactions, setInteractions] = useState<Interactions>({ liked: [], bookmarked: [] });
+    const [interactions, setInteractions] = useState<Interactions>({ liked: [], bookmarked: [], reposted: [] });
     const [isLoading, setIsLoading] = useState(true);
     const [notFound, setNotFound] = useState(false);
     const [activeTab, setActiveTab] = useState<TabType>("gallery");
@@ -164,6 +184,13 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                 setSketchesLoadState("loaded");
             });
         }
+        if (tab === "reposts" && repostsLoadState === "idle") {
+            setRepostsLoadState("loading");
+            getProfileReposts(userId).then(data => {
+                setRepostedArtworks(data as unknown as RepostedArtwork[]);
+                setRepostsLoadState("loaded");
+            });
+        }
     };
 
     const handleLike = async (artworkId: string) => {
@@ -215,6 +242,22 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                     )
                 };
             });
+        }
+    };
+
+    const handleRepost = async (artworkId: string) => {
+        const isReposted = interactions.reposted.includes(artworkId);
+        const result = isReposted
+            ? await unrepostArtwork(artworkId)
+            : await repostArtwork(artworkId);
+
+        if (result.success) {
+            setInteractions(prev => ({
+                ...prev,
+                reposted: isReposted
+                    ? prev.reposted.filter(id => id !== artworkId)
+                    : [...prev.reposted, artworkId]
+            }));
         }
     };
 
@@ -344,7 +387,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
         { id: "gallery" as TabType, label: "Gallery", icon: ImageIcon, count: artworks.length },
         { id: "sketches" as TabType, label: "Sketches", icon: Palette, count: progress.total_sketches },
         { id: "liked" as TabType, label: "Liked", icon: Heart, count: likedArtworks.length },
-        { id: "reposts" as TabType, label: "Reposts", icon: RefreshCw, count: 0 },
+        { id: "reposts" as TabType, label: "Reposts", icon: RefreshCw, count: repostedArtworks.length },
     ];
 
     return (
@@ -519,7 +562,11 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                 )}
 
                 {activeTab === "reposts" && (
-                    <RepostsTab />
+                    <RepostsTab
+                        artworks={repostedArtworks}
+                        isLoading={repostsLoadState === "loading"}
+                        isOwnProfile={isOwnProfile}
+                    />
                 )}
 
                 {/* Back Link */}
@@ -582,14 +629,26 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                                     {viewingArtwork.saves_count || 0} saves
                                 </span>
                             </div>
-                            {isOwnProfile && (
-                                <Link
-                                    href={`/canvas/${viewingArtwork.sketch_id}`}
-                                    className="inline-block mt-4 px-4 py-2 bg-primary text-on-primary rounded-full hover:bg-primary/90 transition-colors"
+                            <div className="mt-4 flex items-center justify-center gap-3">
+                                <button
+                                    onClick={() => handleRepost(viewingArtwork.id)}
+                                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-colors ${interactions.reposted.includes(viewingArtwork.id)
+                                        ? "bg-primary text-on-primary"
+                                        : "bg-white/10 text-white hover:bg-white/20"
+                                        }`}
                                 >
-                                    Continue Editing
-                                </Link>
-                            )}
+                                    <RefreshCw className="w-4 h-4" />
+                                    {interactions.reposted.includes(viewingArtwork.id) ? "Reposted" : "Repost"}
+                                </button>
+                                {isOwnProfile && (
+                                    <Link
+                                        href={`/canvas/${viewingArtwork.sketch_id}`}
+                                        className="inline-block px-4 py-2 bg-primary text-on-primary rounded-full hover:bg-primary/90 transition-colors"
+                                    >
+                                        Continue Editing
+                                    </Link>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1131,20 +1190,113 @@ function SketchesTab({
 }
 
 // ============================================
-// Reposts Tab Component (Placeholder)
+// Reposts Tab Component
 // ============================================
 
-function RepostsTab() {
+function RepostsTab({
+    artworks,
+    isLoading,
+    isOwnProfile,
+}: {
+    artworks: RepostedArtwork[];
+    isLoading: boolean;
+    isOwnProfile: boolean;
+}) {
+    if (isLoading) {
+        return (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {[1, 2, 3, 4].map(i => (
+                    <div key={i} className="aspect-square bg-surface-container rounded-xl animate-pulse" />
+                ))}
+            </div>
+        );
+    }
+
+    if (artworks.length === 0) {
+        return (
+            <Card variant="filled" className="text-center py-12">
+                <div className="text-5xl mb-4">🔄</div>
+                <h3 className="text-lg font-headline font-bold mb-2">
+                    {isOwnProfile ? "No reposts yet" : "No reposts yet"}
+                </h3>
+                <p className="text-on-surface-variant mb-4">
+                    {isOwnProfile
+                        ? "Repost artworks you love to share them with your followers."
+                        : "This artist hasn't reposted anything yet."}
+                </p>
+                {isOwnProfile && (
+                    <Link href="/home">
+                        <Button variant="primary">
+                            Explore Gallery
+                        </Button>
+                    </Link>
+                )}
+            </Card>
+        );
+    }
+
     return (
-        <Card variant="filled" className="text-center py-12">
-            <div className="text-5xl mb-4">🔄</div>
-            <h3 className="text-lg font-headline font-bold mb-2">
-                Reposts Coming Soon
-            </h3>
-            <p className="text-on-surface-variant">
-                Soon you&apos;ll be able to repost your favorite artworks to share with your followers!
-            </p>
-        </Card>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {artworks.map((artwork) => (
+                <Card
+                    key={artwork.id}
+                    variant="elevated"
+                    padding="none"
+                    className="overflow-hidden group rounded-lg"
+                >
+                    <div className="relative aspect-square bg-surface-container">
+                        <Image
+                            src={artwork.image_url}
+                            alt={getSketchTitle(artwork.sketch_id)}
+                            fill
+                            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                            className="object-cover"
+                            quality={90}
+                        />
+                        <div className="absolute top-2 left-2 px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1 bg-primary/90 text-on-primary">
+                            <RefreshCw className="w-3 h-3" />
+                            Reposted
+                        </div>
+                    </div>
+
+                    <div className="p-3">
+                        <p className="font-headline font-medium text-sm truncate mb-1">
+                            {getSketchTitle(artwork.sketch_id)}
+                        </p>
+
+                        <Link href={`/profile/${artwork.user_id}`} className="flex items-center gap-1.5 mb-2 hover:opacity-80">
+                            {artwork.artist_avatar ? (
+                                <Image
+                                    src={artwork.artist_avatar}
+                                    alt={artwork.artist_name}
+                                    width={16}
+                                    height={16}
+                                    className="rounded-full"
+                                />
+                            ) : (
+                                <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span className="text-[8px]">🎨</span>
+                                </div>
+                            )}
+                            <span className="text-xs text-on-surface-variant truncate">
+                                {artwork.artist_name}
+                            </span>
+                        </Link>
+
+                        <div className="flex items-center justify-between text-xs text-on-surface-variant">
+                            <span className="flex items-center gap-1">
+                                <Icons.Heart className="w-3 h-3 fill-current text-error" />
+                                {artwork.likes_count || 0}
+                            </span>
+                            <span className="flex items-center gap-1">
+                                <RefreshCw className="w-3 h-3" />
+                                {artwork.reposts_count || 0}
+                            </span>
+                        </div>
+                    </div>
+                </Card>
+            ))}
+        </div>
     );
 }
 
