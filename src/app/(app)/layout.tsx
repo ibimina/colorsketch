@@ -12,7 +12,7 @@ import { ToastContainer } from "@/components/Toast";
 import { LevelUpCelebration } from "@/components/LevelUpCelebration";
 import { useRouter } from "next/navigation";
 import { LogOut } from "lucide-react";
-import { useNotificationsStore } from "@/stores/notificationsStore";
+import { NotificationBell } from "@/components/NotificationBell";
 
 const navItems = [
     { href: "/home", label: "Home", Icon: Icons.Home },
@@ -43,10 +43,6 @@ export default function AppLayout({ children }: { children: ReactNode }) {
     const [userName, setUserName] = useState<string | null>(null);
     const [userAvatar, setUserAvatar] = useState<string | null>(null);
     const [isMoreOpen, setIsMoreOpen] = useState(false);
-    const [isNotifOpen, setIsNotifOpen] = useState(false);
-    const notifications = useNotificationsStore((s) => s.notifications);
-    const removeNotification = useNotificationsStore((s) => s.remove);
-    const clearNotifications = useNotificationsStore((s) => s.clear);
     const { level } = useProgressStore();
 
     // Logout handler
@@ -175,91 +171,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                 <main className="flex-1 flex flex-col min-h-screen overflow-x-hidden lg:ml-64">
                     {/* Top Bar */}
                     <header className={`flex items-center justify-end px-4 sm:px-6 py-4 bg-surface glass sticky top-0 z-40 ${pathname.startsWith('/canvas') ? 'hidden' : ''}`}>
-                        {/* Actions */}
-                        <div className="relative flex items-center gap-2 sm:gap-4">
-                            <button
-                                type="button"
-                                aria-label="Notifications"
-                                aria-expanded={isNotifOpen}
-                                onClick={() => setIsNotifOpen((v) => !v)}
-                                className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors"
-                            >
-                                <Icons.Notification className="w-4 h-4 sm:w-5 sm:h-5" />
-                                {notifications.length > 0 && (
-                                    <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-error text-on-error text-[10px] font-semibold flex items-center justify-center">
-                                        {notifications.length > 9 ? "9+" : notifications.length}
-                                    </span>
-                                )}
-                            </button>
-
-                            {isNotifOpen && (
-                                <>
-                                    {/* Click-away backdrop */}
-                                    <button
-                                        type="button"
-                                        aria-label="Close notifications"
-                                        onClick={() => setIsNotifOpen(false)}
-                                        className="fixed inset-0 z-40 cursor-default"
-                                    />
-                                    <div
-                                        role="dialog"
-                                        aria-label="Notifications"
-                                        className="absolute right-0 top-12 z-50 w-[calc(100vw-2rem)] sm:w-80 max-h-[70vh] bg-surface border border-surface-variant/30 rounded-2xl shadow-xl overflow-hidden flex flex-col"
-                                    >
-                                        <div className="flex items-center justify-between px-4 py-3 border-b border-surface-variant/30">
-                                            <h2 className="text-sm font-headline font-semibold">Notifications</h2>
-                                            {notifications.length > 0 && (
-                                                <button
-                                                    type="button"
-                                                    onClick={clearNotifications}
-                                                    className="text-xs text-primary hover:underline"
-                                                >
-                                                    Clear all
-                                                </button>
-                                            )}
-                                        </div>
-                                        <div className="flex-1 overflow-y-auto">
-                                            {notifications.length === 0 ? (
-                                                <div className="px-4 py-10 text-center text-sm text-on-surface-variant">
-                                                    You&apos;re all caught up.
-                                                </div>
-                                            ) : (
-                                                <ul className="divide-y divide-surface-variant/20">
-                                                    {notifications.map((n) => (
-                                                        <li key={n.id} className="px-4 py-3 flex items-start gap-3">
-                                                            <span
-                                                                className={`mt-1 w-2 h-2 rounded-full shrink-0 ${n.type === "success"
-                                                                    ? "bg-emerald-500"
-                                                                    : n.type === "error"
-                                                                        ? "bg-error"
-                                                                        : n.type === "achievement"
-                                                                            ? "bg-amber-500"
-                                                                            : "bg-primary"
-                                                                    }`}
-                                                            />
-                                                            <div className="flex-1 min-w-0">
-                                                                <p className="text-sm font-medium truncate">{n.title}</p>
-                                                                {n.message && (
-                                                                    <p className="text-xs text-on-surface-variant mt-0.5 line-clamp-2">{n.message}</p>
-                                                                )}
-                                                            </div>
-                                                            <button
-                                                                type="button"
-                                                                aria-label="Dismiss notification"
-                                                                onClick={() => removeNotification(n.id)}
-                                                                className="text-on-surface-variant hover:text-on-surface text-lg leading-none px-1"
-                                                            >
-                                                                ×
-                                                            </button>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            )}
-                                        </div>
-                                    </div>
-                                </>
-                            )}
-                        </div>
+                        <NotificationBell />
                     </header>
 
                     {/* Page Content */}

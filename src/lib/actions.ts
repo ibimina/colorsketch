@@ -1072,3 +1072,257 @@ export async function getProfileCompletedSketches(userId: string) {
     .order("completed_at", { ascending: false });
   return data || [];
 }
+
+// ============================================
+// Notifications
+// ============================================
+
+export type NotificationType =
+  | "like"
+  | "save"
+  | "follow"
+  | "repost"
+  | "level_up"
+  | "achievement"
+  | "system";
+
+export interface NotificationRow {
+  id: string;
+  type: NotificationType;
+  target_type: string | null;
+  target_id: string | null;
+  payload: Record<string, unknown>;
+  read_at: string | null;
+  created_at: string;
+  actor_id: string | null;
+  actor_name: string | null;
+  actor_avatar: string | null;
+}
+
+export async function listNotifications(
+  limit = 30,
+): Promise<NotificationRow[]> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return [];
+
+  const { data, error } = await supabase
+    .from("notifications")
+    .select(
+      "id, type, target_type, target_id, payload, read_at, created_at, actor_id",
+    )
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+
+  if (error || !data) return [];
+
+  // Hydrate actor profile in one round-trip
+  const actorIds = Array.from(
+    new Set(data.map((n) => n.actor_id).filter((id): id is string => !!id)),
+  );
+
+  let actorMap = new Map<
+    string,
+    { name: string | null; avatar_url: string | null }
+  >();
+  if (actorIds.length > 0) {
+    const { data: profiles } = await supabase
+      .from("user_profiles")
+      .select("id, name, avatar_url")
+      .in("id", actorIds);
+    actorMap = new Map(
+      (profiles || []).map((p) => [
+        p.id,
+        { name: p.name, avatar_url: p.avatar_url },
+      ]),
+    );
+  }
+
+  return data.map((n) => {
+    const actor = n.actor_id ? actorMap.get(n.actor_id) : undefined;
+    return {
+      ...n,
+      payload: (n.payload as Record<string, unknown>) ?? {},
+      actor_name: actor?.name ?? null,
+      actor_avatar: actor?.avatar_url ?? null,
+    };
+  });
+}
+
+export async function getUnreadNotificationCount(): Promise<number> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return 0;
+
+  const { count } = await supabase
+    .from("notifications")
+    .select("id", { count: "exact", head: true })
+    .eq("user_id", user.id)
+    .is("read_at", null);
+
+  return count ?? 0;
+}
+
+export async function markNotificationsRead(ids?: string[]) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not authenticated" };
+
+  const query = supabase
+    .from("notifications")
+    .update({ read_at: new Date().toISOString() })
+    .eq("user_id", user.id)
+    .is("read_at", null);
+
+  const { error } =
+    ids && ids.length > 0 ? await query.in("id", ids) : await query;
+  if (error) return { error: error.message };
+  return { success: true };
+}
+
+export async function deleteNotification(id: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase
+    .from("notifications")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("id", id);
+  if (error) return { error: error.message };
+  return { success: true };
+}
+
+export async function clearAllNotifications() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase
+    .from("notifications")
+    .delete()
+    .eq("user_id", user.id);
+  if (error) return { error: error.message };
+  return { success: true };
+}
+
+// ============================================
+// Follows
+// ============================================
+
+export async function followUser(targetUserId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not authenticated" };
+  if (user.id === targetUserId) return { error: "Cannot follow yourself" };
+
+  const { error } = await supabase
+    .from("follows")
+    .insert({ follower_id: user.id, following_id: targetUserId });
+  if (error && !error.message.toLowerCase().includes("duplicate")) {
+    return { error: error.message };
+  }
+  revalidatePath(`/profile/${targetUserId}`);
+  return { success: true };
+}
+
+export async function unfollowUser(targetUserId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase
+    .from("follows")
+    .delete()
+    .eq("follower_id", user.id)
+    .eq("following_id", targetUserId);
+  if (error) return { error: error.message };
+  revalidatePath(`/profile/${targetUserId}`);
+  return { success: true };
+}
+
+export async function getFollowStats(userId: string) {
+  const supabase = await createClient();
+  const [{ count: followers }, { count: following }] = await Promise.all([
+    supabase
+      .from("follows")
+      .select("follower_id", { count: "exact", head: true })
+      .eq("following_id", userId),
+    supabase
+      .from("follows")
+      .select("following_id", { count: "exact", head: true })
+      .eq("follower_id", userId),
+  ]);
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  let isFollowing = false;
+  if (user && user.id !== userId) {
+    const { data } = await supabase
+      .from("follows")
+      .select("follower_id")
+      .eq("follower_id", user.id)
+      .eq("following_id", userId)
+      .maybeSingle();
+    isFollowing = !!data;
+  }
+
+  return {
+    followers: followers ?? 0,
+    following: following ?? 0,
+    isFollowing,
+  };
+}
+
+// ============================================
+// Reposts
+// ============================================
+
+export async function repostArtwork(artworkId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase
+    .from("artwork_reposts")
+    .insert({ user_id: user.id, artwork_id: artworkId });
+  if (error && !error.message.toLowerCase().includes("duplicate")) {
+    return { error: error.message };
+  }
+  return { success: true };
+}
+
+export async function unrepostArtwork(artworkId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase
+    .from("artwork_reposts")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("artwork_id", artworkId);
+  if (error) return { error: error.message };
+  return { success: true };
+}
