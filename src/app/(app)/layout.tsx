@@ -13,6 +13,7 @@ import { LevelUpCelebration } from "@/components/LevelUpCelebration";
 import { useRouter } from "next/navigation";
 import { LogOut } from "lucide-react";
 import { NotificationBell } from "@/components/NotificationBell";
+import { Search } from "lucide-react";
 
 const navItems = [
     { href: "/home", label: "Home", Icon: Icons.Home },
@@ -170,7 +171,14 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                 {/* Main Content */}
                 <main className="flex-1 flex flex-col min-h-screen overflow-x-hidden lg:ml-64">
                     {/* Top Bar */}
-                    <header className={`flex items-center justify-end px-4 sm:px-6 py-4 bg-surface glass sticky top-0 z-40 ${pathname.startsWith('/canvas') ? 'hidden' : ''}`}>
+                    <header className={`flex items-center justify-end gap-2 px-4 sm:px-6 py-4 bg-surface glass sticky top-0 z-40 ${pathname.startsWith('/canvas') ? 'hidden' : ''}`}>
+                        <Link
+                            href="/search"
+                            aria-label="Search"
+                            className="p-2 rounded-full hover:bg-surface-container transition-colors"
+                        >
+                            <Search className="w-5 h-5" />
+                        </Link>
                         <NotificationBell />
                     </header>
 

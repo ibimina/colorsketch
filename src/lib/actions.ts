@@ -1711,3 +1711,155 @@ export async function deleteComment(commentId: string) {
   if (error) return { error: error.message };
   return { success: true };
 }
+
+// ============================================
+// Search
+// ============================================
+
+export interface ArtistSearchResult {
+  id: string;
+  name: string | null;
+  avatar_url: string | null;
+  bio: string | null;
+  isFollowing: boolean;
+  isSelf: boolean;
+}
+
+export interface ArtworkSearchResult {
+  id: string;
+  user_id: string;
+  sketch_id: string;
+  image_url: string;
+  thumbnail_url: string | null;
+  likes_count: number;
+  saves_count: number;
+  reposts_count: number;
+  comments_count: number;
+  created_at: string;
+  artist_name: string;
+  artist_avatar: string | null;
+}
+
+function escapeIlike(value: string) {
+  return value.replace(/[\\%_]/g, (m) => `\\${m}`);
+}
+
+export async function searchArtists(
+  query: string,
+  limit: number = 20,
+): Promise<ArtistSearchResult[]> {
+  const trimmed = query.trim();
+  if (trimmed.length < 2) return [];
+
+  const supabase = await createClient();
+  const escaped = escapeIlike(trimmed);
+
+  const { data, error } = await supabase
+    .from("user_profiles")
+    .select("id, name, avatar_url, bio")
+    .ilike("name", `%${escaped}%`)
+    .limit(limit);
+
+  if (error || !data || data.length === 0) return [];
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let myFollowing = new Set<string>();
+  if (user) {
+    const ids = data.map((p) => p.id);
+    const { data: myFollows } = await supabase
+      .from("follows")
+      .select("following_id")
+      .eq("follower_id", user.id)
+      .in("following_id", ids);
+    myFollowing = new Set((myFollows ?? []).map((f) => f.following_id));
+  }
+
+  return data.map((p) => ({
+    id: p.id,
+    name: p.name,
+    avatar_url: p.avatar_url,
+    bio: p.bio,
+    isFollowing: myFollowing.has(p.id),
+    isSelf: user?.id === p.id,
+  }));
+}
+
+export async function searchArtworks(
+  query: string,
+  limit: number = 30,
+): Promise<ArtworkSearchResult[]> {
+  const trimmed = query.trim();
+  if (trimmed.length < 2) return [];
+
+  const supabase = await createClient();
+  const escaped = escapeIlike(trimmed);
+
+  // Match artwork rows whose sketch_id contains the query (acts as title proxy).
+  const { data: byTitle } = await supabase
+    .from("saved_artworks")
+    .select("*")
+    .eq("is_public", true)
+    .ilike("sketch_id", `%${escaped}%`)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+
+  // Match artwork rows authored by users whose name contains the query.
+  const { data: matchingArtists } = await supabase
+    .from("user_profiles")
+    .select("id")
+    .ilike("name", `%${escaped}%`)
+    .limit(limit);
+  const artistIds = (matchingArtists ?? []).map((p) => p.id);
+
+  let byArtist: typeof byTitle = [];
+  if (artistIds.length > 0) {
+    const { data } = await supabase
+      .from("saved_artworks")
+      .select("*")
+      .eq("is_public", true)
+      .in("user_id", artistIds)
+      .order("created_at", { ascending: false })
+      .limit(limit);
+    byArtist = data ?? [];
+  }
+
+  const merged = new Map<string, NonNullable<typeof byTitle>[number]>();
+  for (const row of [...(byTitle ?? []), ...(byArtist ?? [])]) {
+    merged.set(row.id, row);
+  }
+  const rows = [...merged.values()]
+    .sort(
+      (a, b) =>
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+    )
+    .slice(0, limit);
+  if (rows.length === 0) return [];
+
+  const userIds = [...new Set(rows.map((r) => r.user_id))];
+  const { data: profiles } = await supabase
+    .from("user_profiles")
+    .select("id, name, avatar_url")
+    .in("id", userIds);
+  const profileMap = new Map(profiles?.map((p) => [p.id, p]) ?? []);
+
+  return rows.map((r) => {
+    const p = profileMap.get(r.user_id);
+    return {
+      id: r.id,
+      user_id: r.user_id,
+      sketch_id: r.sketch_id,
+      image_url: r.image_url,
+      thumbnail_url: r.thumbnail_url,
+      likes_count: r.likes_count ?? 0,
+      saves_count: r.saves_count ?? 0,
+      reposts_count: r.reposts_count ?? 0,
+      comments_count: r.comments_count ?? 0,
+      created_at: r.created_at,
+      artist_name: p?.name || "Anonymous Artist",
+      artist_avatar: p?.avatar_url || null,
+    };
+  });
+}
