@@ -10,8 +10,9 @@ import { Icons } from "@/lib/icons";
 import { ACHIEVEMENTS } from "@/lib/achievements";
 import { sketches } from "@/data/sketches";
 import { useEffect, useMemo, useState, useRef } from "react";
-import { Sparkles, Palette, TrendingUp, Clock, ChevronRight, Flame, Star, Zap, Heart, Bookmark, X, Eye, RefreshCw } from "lucide-react";
+import { Sparkles, Palette, TrendingUp, Clock, ChevronRight, Flame, Star, Zap, Heart, Bookmark, X, Eye, RefreshCw, MessageCircle } from "lucide-react";
 import { getPublicArtworks, getArtworkInteractions, toggleArtworkLike, toggleArtworkBookmark, repostArtwork, unrepostArtwork, getFollowingArtworks } from "@/lib/actions";
+import { ArtworkComments } from "@/components/ArtworkComments";
 
 const categories = [
     { id: "animals", label: "Animals", emoji: "🦋", href: "/library?category=animals" },
@@ -32,6 +33,7 @@ interface PublicArtwork {
     likes_count: number;
     saves_count: number;
     reposts_count: number;
+    comments_count: number;
     artist_name: string;
     artist_avatar: string | null;
 }
@@ -87,7 +89,7 @@ export default function HomePage() {
             setCommunityArtworks(data as PublicArtwork[]);
 
             if (data.length > 0) {
-                const artworkIds = data.map(a => a.id);
+                const artworkIds = data.map((a: { id: string }) => a.id);
                 const userInteractions = await getArtworkInteractions(artworkIds);
                 if (cancelled) return;
                 setInteractions(userInteractions);
@@ -561,6 +563,8 @@ function ArtworkModal({
         year: "numeric",
     });
 
+    const [commentsDelta, setCommentsDelta] = useState(0);
+
     return (
         <div
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
@@ -637,10 +641,14 @@ function ArtworkModal({
                             <RefreshCw className={`w-4 h-4 ${isReposted ? "text-primary" : ""}`} />
                             <span className="text-sm font-medium">{artwork.reposts_count || 0}</span>
                         </div>
+                        <div className="flex items-center gap-1.5 text-on-surface-variant">
+                            <MessageCircle className="w-4 h-4" />
+                            <span className="text-sm font-medium">{(artwork.comments_count || 0) + commentsDelta}</span>
+                        </div>
                     </div>
 
                     {/* Actions */}
-                    <div className="flex gap-2 mt-auto">
+                    <div className="flex gap-2">
                         <Button
                             variant={isLiked ? "primary" : "secondary"}
                             size="md"
@@ -668,6 +676,16 @@ function ArtworkModal({
                             <RefreshCw className="w-4 h-4" />
                             {isReposted ? "Reposted" : "Repost"}
                         </Button>
+                    </div>
+
+                    {/* Comments */}
+                    <div className="mt-5 pt-5 border-t border-surface-container-high">
+                        <ArtworkComments
+                            artworkId={artwork.id}
+                            artworkOwnerId={artwork.user_id}
+                            onCountChange={(d) => setCommentsDelta((c) => c + d)}
+                            closeOnNavigate={onClose}
+                        />
                     </div>
                 </div>
             </div>

@@ -1088,6 +1088,7 @@ export type NotificationType =
   | "save"
   | "follow"
   | "repost"
+  | "comment"
   | "level_up"
   | "achievement"
   | "system";
@@ -1549,4 +1550,101 @@ export async function getProfileReposts(userId: string) {
       artist_avatar: artistProfile?.avatar_url || null,
     };
   });
+}
+
+// ============================================
+// Comments
+// ============================================
+
+export interface CommentRow {
+  id: string;
+  artwork_id: string;
+  user_id: string;
+  body: string;
+  created_at: string;
+  updated_at: string;
+  author_name: string | null;
+  author_avatar: string | null;
+}
+
+export async function listComments(
+  artworkId: string,
+  limit: number = 100,
+): Promise<CommentRow[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("artwork_comments")
+    .select("id, artwork_id, user_id, body, created_at, updated_at")
+    .eq("artwork_id", artworkId)
+    .order("created_at", { ascending: true })
+    .limit(limit);
+  if (error || !data || data.length === 0) return [];
+
+  const userIds = [...new Set(data.map((c) => c.user_id))];
+  const { data: profiles } = await supabase
+    .from("user_profiles")
+    .select("id, name, avatar_url")
+    .in("id", userIds);
+
+  const profileMap = new Map(profiles?.map((p) => [p.id, p]) ?? []);
+  return data.map((c) => {
+    const p = profileMap.get(c.user_id);
+    return {
+      ...c,
+      author_name: p?.name ?? null,
+      author_avatar: p?.avatar_url ?? null,
+    };
+  });
+}
+
+export async function addComment(artworkId: string, body: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not authenticated" };
+
+  const trimmed = body.trim();
+  if (trimmed.length === 0) return { error: "Comment is empty" };
+  if (trimmed.length > 500) return { error: "Comment is too long (max 500)" };
+
+  const { data, error } = await supabase
+    .from("artwork_comments")
+    .insert({
+      artwork_id: artworkId,
+      user_id: user.id,
+      body: trimmed,
+    })
+    .select("id, artwork_id, user_id, body, created_at, updated_at")
+    .single();
+  if (error || !data) return { error: error?.message ?? "Failed to add comment" };
+
+  const { data: profile } = await supabase
+    .from("user_profiles")
+    .select("name, avatar_url")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  const row: CommentRow = {
+    ...data,
+    author_name: profile?.name ?? null,
+    author_avatar: profile?.avatar_url ?? null,
+  };
+  return { success: true, comment: row };
+}
+
+export async function deleteComment(commentId: string) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not authenticated" };
+
+  const { error } = await supabase
+    .from("artwork_comments")
+    .delete()
+    .eq("id", commentId)
+    .eq("user_id", user.id);
+  if (error) return { error: error.message };
+  return { success: true };
 }

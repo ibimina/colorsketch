@@ -24,9 +24,10 @@ import {
     unrepostArtwork
 } from "@/lib/actions";
 import { sketches } from "@/data/sketches";
-import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit, Palette, CheckCircle, Download, UserPlus, UserMinus } from "lucide-react";
+import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit, Palette, CheckCircle, Download, UserPlus, UserMinus, MessageCircle } from "lucide-react";
 import { GalleryAlbumModal } from "@/components/GalleryAlbumModal";
 import { FollowListModal } from "@/components/FollowListModal";
+import { ArtworkComments } from "@/components/ArtworkComments";
 
 // Sketch titles mapping
 const sketchTitles: Record<string, string> = {
@@ -622,7 +623,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                             <X className="w-8 h-8" />
                         </button>
 
-                        <div className="relative aspect-square max-h-[70vh] lg:max-h-[75vh] w-full bg-surface-container rounded-xl overflow-hidden">
+                        <div className="relative aspect-square max-h-[60vh] lg:max-h-[65vh] w-full bg-surface-container rounded-xl overflow-hidden">
                             <Image
                                 src={viewingArtwork.image_url}
                                 alt={getSketchTitle(viewingArtwork.sketch_id)}
@@ -647,6 +648,10 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                                     <Icons.Bookmark className="w-4 h-4" />
                                     {viewingArtwork.saves_count || 0} saves
                                 </span>
+                                <span className="flex items-center gap-1">
+                                    <MessageCircle className="w-4 h-4" />
+                                    {((viewingArtwork as { comments_count?: number }).comments_count || 0)} comments
+                                </span>
                             </div>
                             <div className="mt-4 flex items-center justify-center gap-3">
                                 <button
@@ -668,6 +673,14 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                                     </Link>
                                 )}
                             </div>
+                        </div>
+
+                        <div className="mt-4 bg-surface rounded-xl p-4 max-h-[40vh] overflow-y-auto">
+                            <ArtworkComments
+                                artworkId={viewingArtwork.id}
+                                artworkOwnerId={profile.id}
+                                closeOnNavigate={() => setViewingArtwork(null)}
+                            />
                         </div>
                     </div>
                 </div>
@@ -747,6 +760,14 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                             >
                                 View Artist Profile
                             </Link>
+                        </div>
+
+                        <div className="mt-4 bg-surface rounded-xl p-4 max-h-[40vh] overflow-y-auto text-left">
+                            <ArtworkComments
+                                artworkId={viewingLikedArtwork.id}
+                                artworkOwnerId={viewingLikedArtwork.user_id}
+                                closeOnNavigate={() => setViewingLikedArtwork(null)}
+                            />
                         </div>
                     </div>
                 </div>

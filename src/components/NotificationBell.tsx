@@ -22,6 +22,7 @@ const dotClass: Record<NotificationType, string> = {
     save: "bg-amber-500",
     follow: "bg-primary",
     repost: "bg-sky-500",
+    comment: "bg-violet-500",
     level_up: "bg-emerald-500",
     achievement: "bg-amber-500",
     system: "bg-on-surface-variant",
@@ -50,6 +51,15 @@ function describe(n: NotificationRow): { title: string; href?: string } {
                 title: `${actor} reposted your artwork`,
                 href: n.actor_id ? `/profile/${n.actor_id}` : undefined,
             };
+        case "comment": {
+            const preview = (n.payload?.preview as string | undefined) || "";
+            return {
+                title: preview
+                    ? `${actor} commented: “${preview}”`
+                    : `${actor} commented on your artwork`,
+                href: n.actor_id ? `/profile/${n.actor_id}` : undefined,
+            };
+        }
         case "level_up":
             return { title: `You leveled up!` };
         case "achievement":
