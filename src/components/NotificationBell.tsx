@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Icons } from "@/lib/icons";
+import { createClient } from "@/lib/supabase/client";
 import {
     listNotifications,
     markNotificationsRead,
@@ -13,7 +14,8 @@ import {
     type NotificationType,
 } from "@/lib/actions";
 
-const REFRESH_MS = 60_000;
+// Fallback poll if realtime drops (firewalls, sleeping tab waking)
+const REFRESH_MS = 5 * 60_000;
 
 const dotClass: Record<NotificationType, string> = {
     like: "bg-rose-500",
@@ -88,11 +90,46 @@ export function NotificationBell() {
         }
     }, []);
 
-    // Initial load + polling
+    // Initial load + slow fallback poll
     useEffect(() => {
         refresh();
         const id = setInterval(refresh, REFRESH_MS);
         return () => clearInterval(id);
+    }, [refresh]);
+
+    // Realtime subscription on the notifications table for the current user
+    useEffect(() => {
+        const supabase = createClient();
+        let channel: ReturnType<typeof supabase.channel> | null = null;
+        let cancelled = false;
+
+        async function subscribe() {
+            const { data: { user } } = await supabase.auth.getUser();
+            if (!user || cancelled) return;
+
+            channel = supabase
+                .channel(`notifications:${user.id}`)
+                .on(
+                    "postgres_changes",
+                    {
+                        event: "INSERT",
+                        schema: "public",
+                        table: "notifications",
+                        filter: `user_id=eq.${user.id}`,
+                    },
+                    () => {
+                        // Re-fetch to hydrate actor profile fields
+                        refresh();
+                    },
+                )
+                .subscribe();
+        }
+
+        subscribe();
+        return () => {
+            cancelled = true;
+            if (channel) supabase.removeChannel(channel);
+        };
     }, [refresh]);
 
     // When opening, mark unread items as read

@@ -26,6 +26,7 @@ import {
 import { sketches } from "@/data/sketches";
 import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit, Palette, CheckCircle, Download, UserPlus, UserMinus } from "lucide-react";
 import { GalleryAlbumModal } from "@/components/GalleryAlbumModal";
+import { FollowListModal } from "@/components/FollowListModal";
 
 // Sketch titles mapping
 const sketchTitles: Record<string, string> = {
@@ -131,6 +132,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
     const [deletingId, setDeletingId] = useState<string | null>(null);
     const [followStats, setFollowStats] = useState<{ followers: number; following: number; isFollowing: boolean }>({ followers: 0, following: 0, isFollowing: false });
     const [isFollowPending, setIsFollowPending] = useState(false);
+    const [followListMode, setFollowListMode] = useState<"followers" | "following" | null>(null);
 
     useEffect(() => {
         async function loadProfile() {
@@ -464,22 +466,30 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                                         Artworks
                                     </div>
                                 </div>
-                                <div className="text-center">
+                                <button
+                                    type="button"
+                                    onClick={() => setFollowListMode("followers")}
+                                    className="text-center hover:opacity-80 transition-opacity"
+                                >
                                     <div className="text-xl font-bold">
                                         {followStats.followers.toLocaleString()}
                                     </div>
                                     <div className="text-xs text-on-surface-variant">
                                         Followers
                                     </div>
-                                </div>
-                                <div className="text-center">
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setFollowListMode("following")}
+                                    className="text-center hover:opacity-80 transition-opacity"
+                                >
                                     <div className="text-xl font-bold">
                                         {followStats.following.toLocaleString()}
                                     </div>
                                     <div className="text-xs text-on-surface-variant">
                                         Following
                                     </div>
-                                </div>
+                                </button>
                                 <div className="text-center">
                                     <div className="text-xl font-bold text-secondary">
                                         {progress.total_xp_earned.toLocaleString()}
@@ -583,6 +593,15 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                     profile={profile}
                     onClose={() => setShowEditModal(false)}
                     onSave={handleProfileUpdate}
+                />
+            )}
+
+            {/* Followers / Following list */}
+            {followListMode && (
+                <FollowListModal
+                    userId={userId}
+                    mode={followListMode}
+                    onClose={() => setFollowListMode(null)}
                 />
             )}
 

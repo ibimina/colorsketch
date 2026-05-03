@@ -1297,12 +1297,101 @@ export async function getFollowStats(userId: string) {
   };
 }
 
-export async function getFollowingArtworks(limit: number = 20) {
+export async function listFollowers(userId: string, limit: number = 100) {
   const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("follows")
+    .select("follower_id, created_at")
+    .eq("following_id", userId)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  if (error || !data || data.length === 0) return [];
+
+  const ids = data.map((f) => f.follower_id);
+  const { data: profiles } = await supabase
+    .from("user_profiles")
+    .select("id, name, avatar_url, bio")
+    .in("id", ids);
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) return [];
+
+  let myFollowing = new Set<string>();
+  if (user) {
+    const { data: myFollows } = await supabase
+      .from("follows")
+      .select("following_id")
+      .eq("follower_id", user.id)
+      .in("following_id", ids);
+    myFollowing = new Set((myFollows ?? []).map((f) => f.following_id));
+  }
+
+  const profileMap = new Map(profiles?.map((p) => [p.id, p]) ?? []);
+  return data
+    .map((f) => {
+      const p = profileMap.get(f.follower_id);
+      if (!p) return null;
+      return {
+        id: p.id,
+        name: p.name,
+        avatar_url: p.avatar_url,
+        bio: p.bio,
+        isFollowing: myFollowing.has(p.id),
+        isSelf: user?.id === p.id,
+      };
+    })
+    .filter((p): p is NonNullable<typeof p> => p !== null);
+}
+
+export async function listFollowing(userId: string, limit: number = 100) {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("follows")
+    .select("following_id, created_at")
+    .eq("follower_id", userId)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  if (error || !data || data.length === 0) return [];
+
+  const ids = data.map((f) => f.following_id);
+  const { data: profiles } = await supabase
+    .from("user_profiles")
+    .select("id, name, avatar_url, bio")
+    .in("id", ids);
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let myFollowing = new Set<string>();
+  if (user) {
+    const { data: myFollows } = await supabase
+      .from("follows")
+      .select("following_id")
+      .eq("follower_id", user.id)
+      .in("following_id", ids);
+    myFollowing = new Set((myFollows ?? []).map((f) => f.following_id));
+  }
+
+  const profileMap = new Map(profiles?.map((p) => [p.id, p]) ?? []);
+  return data
+    .map((f) => {
+      const p = profileMap.get(f.following_id);
+      if (!p) return null;
+      return {
+        id: p.id,
+        name: p.name,
+        avatar_url: p.avatar_url,
+        bio: p.bio,
+        isFollowing: myFollowing.has(p.id),
+        isSelf: user?.id === p.id,
+      };
+    })
+    .filter((p): p is NonNullable<typeof p> => p !== null);
+}
+
+export async function getFollowingArtworks(limit: number = 20) {
 
   // Find who the current user follows
   const { data: followsData } = await supabase
