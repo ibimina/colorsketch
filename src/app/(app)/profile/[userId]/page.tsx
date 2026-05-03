@@ -15,10 +15,13 @@ import {
     toggleArtworkBookmark,
     toggleArtworkVisibility,
     updateProfile,
-    deleteArtwork
+    deleteArtwork,
+    getFollowStats,
+    followUser,
+    unfollowUser
 } from "@/lib/actions";
 import { sketches } from "@/data/sketches";
-import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit, Palette, CheckCircle, Download } from "lucide-react";
+import { Globe, Lock, Pencil, X, Loader2, Image as ImageIcon, Heart, RefreshCw, Trash2, Eye, Edit, Palette, CheckCircle, Download, UserPlus, UserMinus } from "lucide-react";
 import { GalleryAlbumModal } from "@/components/GalleryAlbumModal";
 
 // Sketch titles mapping
@@ -106,6 +109,8 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
     const [viewingArtwork, setViewingArtwork] = useState<ProfileData["artworks"][0] | null>(null);
     const [viewingLikedArtwork, setViewingLikedArtwork] = useState<LikedArtwork | null>(null);
     const [deletingId, setDeletingId] = useState<string | null>(null);
+    const [followStats, setFollowStats] = useState<{ followers: number; following: number; isFollowing: boolean }>({ followers: 0, following: 0, isFollowing: false });
+    const [isFollowPending, setIsFollowPending] = useState(false);
 
     useEffect(() => {
         async function loadProfile() {
@@ -126,6 +131,9 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
             }
 
             setProfileData(data as ProfileData);
+
+            // Load follow stats in parallel (non-blocking)
+            getFollowStats(userId).then(setFollowStats);
 
             // Load user's interactions with gallery artworks
             if (data.artworks.length > 0) {
@@ -260,6 +268,30 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
         return result;
     };
 
+    const handleFollowToggle = async () => {
+        if (isFollowPending) return;
+        setIsFollowPending(true);
+        const wasFollowing = followStats.isFollowing;
+        // Optimistic update
+        setFollowStats(prev => ({
+            ...prev,
+            isFollowing: !wasFollowing,
+            followers: prev.followers + (wasFollowing ? -1 : 1),
+        }));
+        const result = wasFollowing
+            ? await unfollowUser(userId)
+            : await followUser(userId);
+        if (!result.success) {
+            // Revert on failure
+            setFollowStats(prev => ({
+                ...prev,
+                isFollowing: wasFollowing,
+                followers: prev.followers + (wasFollowing ? 1 : -1),
+            }));
+        }
+        setIsFollowPending(false);
+    };
+
     if (isLoading) {
         return (
             <div className="max-w-4xl mx-auto pb-20 lg:pb-0">
@@ -343,7 +375,7 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
 
                         {/* Info */}
                         <div className="flex-1">
-                            <div className="flex items-center justify-center sm:justify-start gap-3 mb-1">
+                            <div className="flex items-center justify-center sm:justify-start gap-3 mb-1 flex-wrap">
                                 <h1 className="text-2xl font-headline font-bold">
                                     {profile.name || "Anonymous Artist"}
                                 </h1>
@@ -356,6 +388,19 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                                         <Pencil className="w-4 h-4 text-on-surface-variant" />
                                     </button>
                                 )}
+                                {!isOwnProfile && (
+                                    <Button
+                                        size="sm"
+                                        variant={followStats.isFollowing ? "outline" : "primary"}
+                                        onClick={handleFollowToggle}
+                                        disabled={isFollowPending}
+                                    >
+                                        <span className="flex items-center gap-2">
+                                            {followStats.isFollowing ? <UserMinus className="w-4 h-4" /> : <UserPlus className="w-4 h-4" />}
+                                            {followStats.isFollowing ? "Following" : "Follow"}
+                                        </span>
+                                    </Button>
+                                )}
                             </div>
                             <p className="text-on-surface-variant text-sm mb-2">
                                 Level {progress.level} Artist
@@ -367,13 +412,29 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
                             )}
 
                             {/* Stats */}
-                            <div className="flex justify-center sm:justify-start gap-6">
+                            <div className="flex justify-center sm:justify-start gap-6 flex-wrap">
                                 <div className="text-center">
                                     <div className="text-xl font-bold text-primary">
                                         {isOwnProfile ? artworks.length : publicArtworksCount}
                                     </div>
                                     <div className="text-xs text-on-surface-variant">
                                         Artworks
+                                    </div>
+                                </div>
+                                <div className="text-center">
+                                    <div className="text-xl font-bold">
+                                        {followStats.followers.toLocaleString()}
+                                    </div>
+                                    <div className="text-xs text-on-surface-variant">
+                                        Followers
+                                    </div>
+                                </div>
+                                <div className="text-center">
+                                    <div className="text-xl font-bold">
+                                        {followStats.following.toLocaleString()}
+                                    </div>
+                                    <div className="text-xs text-on-surface-variant">
+                                        Following
                                     </div>
                                 </div>
                                 <div className="text-center">
