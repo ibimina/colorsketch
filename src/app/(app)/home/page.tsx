@@ -11,7 +11,7 @@ import { ACHIEVEMENTS } from "@/lib/achievements";
 import { sketches } from "@/data/sketches";
 import { useEffect, useMemo, useState, useRef } from "react";
 import { Sparkles, Palette, TrendingUp, Clock, ChevronRight, Flame, Star, Zap, Heart, Bookmark, X, Eye, RefreshCw } from "lucide-react";
-import { getPublicArtworks, getArtworkInteractions, toggleArtworkLike, toggleArtworkBookmark, repostArtwork, unrepostArtwork } from "@/lib/actions";
+import { getPublicArtworks, getArtworkInteractions, toggleArtworkLike, toggleArtworkBookmark, repostArtwork, unrepostArtwork, getFollowingArtworks } from "@/lib/actions";
 
 const categories = [
     { id: "animals", label: "Animals", emoji: "🦋", href: "/library?category=animals" },
@@ -62,6 +62,7 @@ export default function HomePage() {
     const [interactions, setInteractions] = useState<Interactions>({ liked: [], bookmarked: [], reposted: [] });
     const [isLoadingArtworks, setIsLoadingArtworks] = useState(true);
     const [selectedArtwork, setSelectedArtwork] = useState<PublicArtwork | null>(null);
+    const [feedMode, setFeedMode] = useState<"all" | "following">("all");
 
     useEffect(() => {
         // Use async IIFE to avoid synchronous setState warning
@@ -72,21 +73,32 @@ export default function HomePage() {
             }
         })();
         checkStreak();
+    }, [checkStreak]);
 
-        // Load community artworks
-        async function loadCommunityArtworks() {
-            const data = await getPublicArtworks(8);
+    // Load gallery whenever feed mode changes
+    useEffect(() => {
+        let cancelled = false;
+        async function loadFeed() {
+            setIsLoadingArtworks(true);
+            const data = feedMode === "following"
+                ? await getFollowingArtworks(8)
+                : await getPublicArtworks(8);
+            if (cancelled) return;
             setCommunityArtworks(data as PublicArtwork[]);
 
             if (data.length > 0) {
                 const artworkIds = data.map(a => a.id);
                 const userInteractions = await getArtworkInteractions(artworkIds);
+                if (cancelled) return;
                 setInteractions(userInteractions);
+            } else {
+                setInteractions({ liked: [], bookmarked: [], reposted: [] });
             }
             setIsLoadingArtworks(false);
         }
-        loadCommunityArtworks();
-    }, [checkStreak]);
+        loadFeed();
+        return () => { cancelled = true; };
+    }, [feedMode]);
 
     const handleLike = async (artworkId: string) => {
         const isLiked = interactions.liked.includes(artworkId);
@@ -350,10 +362,30 @@ export default function HomePage() {
 
             {/* Community Gallery */}
             <section>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
                     <h2 className="text-lg font-headline font-bold flex items-center gap-2">
-                        🌟 Community Gallery
+                        🌟 {feedMode === "following" ? "Following" : "Community Gallery"}
                     </h2>
+                    <div className="inline-flex rounded-full bg-surface-container p-1">
+                        <button
+                            onClick={() => setFeedMode("all")}
+                            className={`px-3 py-1.5 text-sm font-medium rounded-full transition-colors ${feedMode === "all"
+                                ? "bg-primary text-on-primary"
+                                : "text-on-surface-variant hover:text-on-surface"
+                                }`}
+                        >
+                            All
+                        </button>
+                        <button
+                            onClick={() => setFeedMode("following")}
+                            className={`px-3 py-1.5 text-sm font-medium rounded-full transition-colors ${feedMode === "following"
+                                ? "bg-primary text-on-primary"
+                                : "text-on-surface-variant hover:text-on-surface"
+                                }`}
+                        >
+                            Following
+                        </button>
+                    </div>
                 </div>
 
                 {isLoadingArtworks ? (
@@ -432,9 +464,15 @@ export default function HomePage() {
                     </div>
                 ) : (
                     <Card variant="filled" className="text-center py-8">
-                        <p className="text-4xl mb-3">🎨</p>
-                        <p className="font-headline font-bold">No artworks yet</p>
-                        <p className="text-on-surface-variant text-sm">Be the first to share your creation!</p>
+                        <p className="text-4xl mb-3">{feedMode === "following" ? "👀" : "🎨"}</p>
+                        <p className="font-headline font-bold">
+                            {feedMode === "following" ? "Nothing from your follows yet" : "No artworks yet"}
+                        </p>
+                        <p className="text-on-surface-variant text-sm">
+                            {feedMode === "following"
+                                ? "Follow some artists to see their work here."
+                                : "Be the first to share your creation!"}
+                        </p>
                     </Card>
                 )}
             </section>

@@ -1297,6 +1297,57 @@ export async function getFollowStats(userId: string) {
   };
 }
 
+export async function getFollowingArtworks(limit: number = 20) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return [];
+
+  // Find who the current user follows
+  const { data: followsData } = await supabase
+    .from("follows")
+    .select("following_id")
+    .eq("follower_id", user.id);
+
+  const followingIds = (followsData ?? []).map((f) => f.following_id);
+  if (followingIds.length === 0) return [];
+
+  const { data, error } = await supabase
+    .from("saved_artworks")
+    .select("*")
+    .eq("is_public", true)
+    .in("user_id", followingIds)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+
+  if (error) {
+    console.error("Error fetching following artworks:", error);
+    return [];
+  }
+  if (!data || data.length === 0) return [];
+
+  const userIds = [...new Set(data.map((artwork) => artwork.user_id))];
+  const { data: profiles } = await supabase
+    .from("user_profiles")
+    .select("id, name, avatar_url")
+    .in("id", userIds);
+
+  const profileMap = new Map(
+    profiles?.map((p) => [p.id, { name: p.name, avatar_url: p.avatar_url }]) ||
+      [],
+  );
+
+  return data.map((artwork) => {
+    const artistProfile = profileMap.get(artwork.user_id);
+    return {
+      ...artwork,
+      artist_name: artistProfile?.name || "Anonymous Artist",
+      artist_avatar: artistProfile?.avatar_url || null,
+    };
+  });
+}
+
 // ============================================
 // Reposts
 // ============================================
