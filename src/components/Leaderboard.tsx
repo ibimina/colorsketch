@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { getLeaderboard, type LeaderboardEntry } from "@/lib/actions";
 import { Crown, Flame, Medal, Star, TrendingUp, User } from "lucide-react";
 
@@ -88,31 +89,28 @@ export function Leaderboard({
           <div className="flex gap-1 p-1 bg-gray-100 dark:bg-gray-700 rounded-lg">
             <button
               onClick={() => setPeriod("daily")}
-              className={`px-2 py-1 text-xs font-medium rounded-md transition-colors ${
-                period === "daily"
+              className={`px-2 py-1 text-xs font-medium rounded-md transition-colors ${period === "daily"
                   ? "bg-white dark:bg-gray-600 text-purple-600 dark:text-purple-400 shadow-sm"
                   : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-              }`}
+                }`}
             >
               Today
             </button>
             <button
               onClick={() => setPeriod("weekly")}
-              className={`px-2 py-1 text-xs font-medium rounded-md transition-colors ${
-                period === "weekly"
+              className={`px-2 py-1 text-xs font-medium rounded-md transition-colors ${period === "weekly"
                   ? "bg-white dark:bg-gray-600 text-purple-600 dark:text-purple-400 shadow-sm"
                   : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-              }`}
+                }`}
             >
               Weekly
             </button>
             <button
               onClick={() => setPeriod("all-time")}
-              className={`px-2 py-1 text-xs font-medium rounded-md transition-colors ${
-                period === "all-time"
+              className={`px-2 py-1 text-xs font-medium rounded-md transition-colors ${period === "all-time"
                   ? "bg-white dark:bg-gray-600 text-purple-600 dark:text-purple-400 shadow-sm"
                   : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-              }`}
+                }`}
             >
               All Time
             </button>
@@ -143,9 +141,11 @@ export function Leaderboard({
 
               <div className="relative">
                 {entry.avatarUrl ? (
-                  <img
+                  <Image
                     src={entry.avatarUrl}
                     alt={entry.name || "Artist"}
+                    width={40}
+                    height={40}
                     className="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-gray-700"
                   />
                 ) : (
@@ -161,11 +161,10 @@ export function Leaderboard({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5">
                   <p
-                    className={`font-semibold truncate ${
-                      entry.isCurrentUser
+                    className={`font-semibold truncate ${entry.isCurrentUser
                         ? "text-purple-700 dark:text-purple-300"
                         : "text-gray-900 dark:text-white"
-                    }`}
+                      }`}
                   >
                     {entry.name || "Anonymous Artist"}
                   </p>

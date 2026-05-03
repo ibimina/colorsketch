@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { getLeaderboard, getUserRank, type LeaderboardEntry } from "@/lib/actions";
-import { Crown, Flame, Medal, Star, Trophy, TrendingUp, User, ArrowLeft } from "lucide-react";
+import { Crown, Flame, Medal, Star, Trophy, User, ArrowLeft } from "lucide-react";
 
 type Period = "daily" | "weekly" | "all-time";
 
@@ -92,16 +93,14 @@ export default function LeaderboardPage() {
                     <button
                         key={tab.id}
                         onClick={() => setPeriod(tab.id)}
-                        className={`flex-1 min-w-[100px] px-4 py-3 rounded-lg font-headline font-medium transition-all ${
-                            period === tab.id
+                        className={`flex-1 min-w-[100px] px-4 py-3 rounded-lg font-headline font-medium transition-all ${period === tab.id
                                 ? "bg-primary text-white shadow-md"
                                 : "text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
-                        }`}
+                            }`}
                     >
                         <span className="block text-sm sm:text-base">{tab.label}</span>
-                        <span className={`hidden sm:block text-xs mt-0.5 ${
-                            period === tab.id ? "text-white/80" : "text-on-surface-variant/70"
-                        }`}>
+                        <span className={`hidden sm:block text-xs mt-0.5 ${period === tab.id ? "text-white/80" : "text-on-surface-variant/70"
+                            }`}>
                             {tab.description}
                         </span>
                     </button>
@@ -128,8 +127,8 @@ export default function LeaderboardPage() {
                         {period === "daily"
                             ? "Be the first to color today!"
                             : period === "weekly"
-                            ? "No activity this week yet. Start coloring!"
-                            : "Start your creative journey to appear here!"}
+                                ? "No activity this week yet. Start coloring!"
+                                : "Start your creative journey to appear here!"}
                     </p>
                 </div>
             ) : (
@@ -150,9 +149,11 @@ export default function LeaderboardPage() {
                             {/* Avatar */}
                             <div className="relative shrink-0">
                                 {entry.avatarUrl ? (
-                                    <img
+                                    <Image
                                         src={entry.avatarUrl}
                                         alt={entry.name || "Artist"}
+                                        width={56}
+                                        height={56}
                                         className="w-14 h-14 rounded-full object-cover border-2 border-white dark:border-gray-700 shadow-md"
                                     />
                                 ) : (
@@ -169,11 +170,10 @@ export default function LeaderboardPage() {
                             <div className="flex-1 min-w-0">
                                 <div className="flex items-center gap-2 mb-1">
                                     <p
-                                        className={`font-headline font-bold truncate ${
-                                            entry.isCurrentUser
+                                        className={`font-headline font-bold truncate ${entry.isCurrentUser
                                                 ? "text-purple-700 dark:text-purple-300"
                                                 : "text-on-surface dark:text-white"
-                                        }`}
+                                            }`}
                                     >
                                         {entry.name || "Anonymous Artist"}
                                     </p>

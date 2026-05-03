@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import {
   useNotificationsStore,
   type Notification,
@@ -37,7 +36,7 @@ function Toast({ notification }: { notification: Notification }) {
       className={`flex items-start gap-3 p-4 rounded-xl border shadow-lg animate-slide-in-right ${colorMap[notification.type]}`}
       role="alert"
     >
-      <Icon className={`h-5 w-5 flex-shrink-0 mt-0.5 ${iconColorMap[notification.type]}`} />
+      <Icon className={`h-5 w-5 shrink-0 mt-0.5 ${iconColorMap[notification.type]}`} />
       <div className="flex-1 min-w-0">
         <p className="font-semibold text-sm">{notification.title}</p>
         {notification.message && (
@@ -46,7 +45,7 @@ function Toast({ notification }: { notification: Notification }) {
       </div>
       <button
         onClick={() => remove(notification.id)}
-        className="flex-shrink-0 p-1 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+        className="shrink-0 p-1 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
       >
         <X className="h-4 w-4" />
       </button>

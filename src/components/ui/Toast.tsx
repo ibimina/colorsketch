@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { Icons } from '@/lib/icons';
+import { useToastStore, type Toast as ToastItem } from '@/stores/toastStore';
 
 interface ToastProps {
     message: string;
@@ -33,11 +34,12 @@ export function Toast({ message, type = 'success', duration = 3000, onClose }: T
 }
 
 export function ToastContainer() {
-    const { toasts, removeToast } = require('@/stores/toastStore').useToastStore();
+    const toasts = useToastStore((s) => s.toasts);
+    const removeToast = useToastStore((s) => s.removeToast);
 
     return (
         <>
-            {toasts.map((toast: any) => (
+            {toasts.map((toast: ToastItem) => (
                 <Toast
                     key={toast.id}
                     message={toast.message}

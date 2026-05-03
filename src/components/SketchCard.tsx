@@ -294,7 +294,7 @@ export function SketchCard({
                                     : "primary"
                         }
                         size="sm"
-                        className={`w-full text-xs mt-4 mt-1 sm:text-sm ${isLocked ? "opacity-70" : ""}`}
+                        className={`w-full text-xs mt-4 sm:text-sm ${isLocked ? "opacity-70" : ""}`}
                     >
                         {buttonText}
                     </Button>

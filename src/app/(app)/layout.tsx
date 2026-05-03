@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
 import { Icons } from "@/lib/icons";
@@ -139,9 +140,11 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                     <div className="shrink-0 pt-4 border-t border-surface-variant/30">
                         <div className="flex items-center gap-3 mb-3">
                             {userAvatar ? (
-                                <img
+                                <Image
                                     src={userAvatar}
                                     alt={userName || "Profile"}
+                                    width={40}
+                                    height={40}
                                     className="w-10 h-10 rounded-full object-cover"
                                 />
                             ) : (
@@ -321,9 +324,11 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                             {/* Profile preview */}
                             <div className="flex items-center gap-3 px-2 py-3">
                                 {userAvatar ? (
-                                    <img
+                                    <Image
                                         src={userAvatar}
                                         alt={userName || "Profile"}
+                                        width={40}
+                                        height={40}
                                         className="w-10 h-10 rounded-full object-cover"
                                     />
                                 ) : (

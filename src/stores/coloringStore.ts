@@ -222,7 +222,8 @@ export const useColoringStore = create<ColoringStore>()(
 
       clearSketchProgress: (sketchId) => {
         const { savedProgress } = get();
-        const { [sketchId]: _, ...rest } = savedProgress;
+        const rest = { ...savedProgress };
+        delete rest[sketchId];
         set({ savedProgress: rest });
       },
     }),
