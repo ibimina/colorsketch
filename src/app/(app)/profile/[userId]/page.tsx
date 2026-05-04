@@ -609,11 +609,11 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
             {/* View Artwork Modal */}
             {viewingArtwork && (
                 <div
-                    className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+                    className="fixed inset-0 bg-black/80 z-[60] flex items-start lg:items-center justify-center p-4 pt-12 pb-24 lg:pb-4 overflow-y-auto"
                     onClick={() => setViewingArtwork(null)}
                 >
                     <div
-                        className="relative max-w-4xl lg:max-w-5xl xl:max-w-6xl max-h-[90vh] w-full"
+                        className="relative max-w-4xl lg:max-w-5xl xl:max-w-6xl w-full"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
@@ -689,11 +689,11 @@ export default function ProfilePage({ params }: { params: Promise<{ userId: stri
             {/* View Liked Artwork Modal */}
             {viewingLikedArtwork && (
                 <div
-                    className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+                    className="fixed inset-0 bg-black/80 z-[60] flex items-start lg:items-center justify-center p-4 pt-12 pb-24 lg:pb-4 overflow-y-auto"
                     onClick={() => setViewingLikedArtwork(null)}
                 >
                     <div
-                        className="relative max-w-4xl lg:max-w-5xl xl:max-w-6xl max-h-[90vh] w-full"
+                        className="relative max-w-4xl lg:max-w-5xl xl:max-w-6xl w-full"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button

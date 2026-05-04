@@ -578,11 +578,11 @@ function ArtworkModal({
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+            className="fixed inset-0 z-[60] flex items-center justify-center p-4 pb-24 lg:pb-4 bg-black/70 backdrop-blur-sm"
             onClick={onClose}
         >
             <div
-                className="relative bg-[#fffafa] rounded-2xl shadow-2xl w-full max-w-3xl lg:max-w-5xl xl:max-w-6xl max-h-[90vh] lg:h-[85vh] overflow-hidden flex flex-col md:flex-row"
+                className="relative bg-[#fffafa] rounded-2xl shadow-2xl w-full max-w-3xl lg:max-w-5xl xl:max-w-6xl max-h-full lg:h-[85vh] overflow-hidden flex flex-col md:flex-row"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Close Button */}
